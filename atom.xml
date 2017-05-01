@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>一盒</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://ihozh.com/"/>
+  <updated>2017-05-01T06:37:04.000Z</updated>
+  <id>http://ihozh.com/</id>
+  
+  <author>
+    <name>一盒</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSL初探</title>
+    <link href="http://ihozh.com/2017/04/30/SSL%E5%88%9D%E6%8E%A2/"/>
+    <id>http://ihozh.com/2017/04/30/SSL初探/</id>
+    <published>2017-04-30T07:03:55.000Z</published>
+    <updated>2017-05-01T06:37:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近需要了解一些关于SSL的知识，绘制一张思维导图，看起来轻松多了。<br>SSL(Secure Sockets Layer 安全套接层)，是https的主战场。曾经的http用户和服务器之间是明文传播，安全性可想而知了。https 也就是http over SSL，服务器和用户之间传送的信息是加密过的。<a id="more"></a>对于一个商业性的网站来说，SSL是必须的，颁发SSL的机构不少，从昂贵到免费，应有尽有。当然鼎鼎大名的就要数领头羊Symantec了。SSL证书的选择也要根据自己网站的规模，没有最好，只有更好。SSL也不能保证网络的绝对安全。WoSign 和 StartCom 已经被苹果和多家主流浏览器商封杀，而被当时他们喷击的免费SSL机构let’s encrypt却走向了主流。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/techWebSecuritySSL.jpg" alt="webSSL"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近需要了解一些关于SSL的知识，绘制一张思维导图，看起来轻松多了。&lt;br&gt;SSL(Secure Sockets Layer 安全套接层)，是https的主战场。曾经的http用户和服务器之间是明文传播，安全性可想而知了。https 也就是http over SSL，服务器和用户之间传送的信息是加密过的。
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="web" scheme="http://ihozh.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eclipse搭建scala语言的spark环境</title>
+    <link href="http://ihozh.com/2016/04/17/eclipse%E6%90%AD%E5%BB%BAscala%E8%AF%AD%E8%A8%80%E7%9A%84spark%E7%8E%AF%E5%A2%83/"/>
+    <id>http://ihozh.com/2016/04/17/eclipse搭建scala语言的spark环境/</id>
+    <published>2016-04-17T04:24:00.000Z</published>
+    <updated>2017-05-01T06:58:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在eclipse上搭建使用Scala IDE 和 Maven 的 Spark 项目。<br><a id="more"></a><br>系统：OS X EI Capitan 10.11.4<br>Eclipse: Mars.2<br>要确定eclipse为Java环境 (JDK6,JDK7 or JDK8)  </p>
+<h2 id="安装scala-IDE-plugin"><a href="#安装scala-IDE-plugin" class="headerlink" title="安装scala IDE plugin"></a>安装scala IDE plugin</h2><p>最简单的方法直接在scala官网下载IDE，<a href="http://scala-ide.org/download/sdk.html" target="_blank" rel="external">scala IDE</a>    </p>
+<p>如果在现有的eclipse上加入scala插件，在<a href="http://scala-ide.org/download/current.html" target="_blank" rel="external">这里</a>找到最新的插件版本   </p>
+<p>eclipse-&gt;Help-&gt;Install New Software<br>在work with栏里输入路径：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://download.scala-ide.org/sdk/lithium/e44/scala211/stable/site</div></pre></td></tr></table></figure>
+<p>选择全部安装</p>
+<p>安装完成后会自动弹出或者通过菜单栏进入scala-&gt;Run Setup Diagnostics，勾选Use recommended default settings 并将 eclipse.ini中heap size 设置为1280M（-Xmx1280M）。如果不设置会出现outof memory 的报错。   </p>
+<p>这时已经可以运行scala的项目了。如果要运行spark项目还需要maven进行项目管理。   </p>
+<h2 id="安装scala-maven管理插件-不必须"><a href="#安装scala-maven管理插件-不必须" class="headerlink" title="安装scala maven管理插件,不必须"></a>安装scala maven管理插件,不必须</h2><p>默认的maven插件是不包括m2eclipse-scala的，若果没有，在eclipse-&gt;Help-&gt;Install New Software下输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://alchim31.free.fr/m2e-scala/update-site/</div></pre></td></tr></table></figure>
+<p>安装全部</p>
+<h2 id="建立maven项目"><a href="#建立maven项目" class="headerlink" title="建立maven项目"></a>建立maven项目</h2><p>新建maven项目，在pom中配置：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">     &lt;groupId&gt;org.apache.spark&lt;/groupId&gt;</div><div class="line">     &lt;artifactId&gt;spark-core_2.10&lt;/artifactId&gt;</div><div class="line">     &lt;version&gt;1.5.2&lt;/version&gt;</div><div class="line">   &lt;/dependency&gt;</div><div class="line">   &lt;dependency&gt;</div><div class="line">     &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">     &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">     &lt;version&gt;2.6.0&lt;/version&gt;</div><div class="line">   &lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<p>注意由于要在EMR上运行程序，所以版本号选择与EMR上版本号一致。</p>
+<p>右键项目-&gt;configure，选择引入scala环境，这时会看到编译错误<br>右键项目-&gt;properties-&gt;Scala Compiler-&gt;Use Project Settings-&gt;Fixe Scala Installation:2.10.6   </p>
+<p>这时scala语言的spark全部搭建完成，在src下新建scala对象便可以写自己的程序了。这时可以把java改为scala了。    </p>
+<p>视频资料：<a href="https://www.youtube.com/watch?v=aB4-RD_MMf0" target="_blank" rel="external">https://www.youtube.com/watch?v=aB4-RD_MMf0</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在eclipse上搭建使用Scala IDE 和 Maven 的 Spark 项目。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="spark" scheme="http://ihozh.com/tags/spark/"/>
+    
+      <category term="scala" scheme="http://ihozh.com/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>方寸间的壮美河山（1）下</title>
+    <link href="http://ihozh.com/2016/04/15/%E3%80%8A%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE%E3%80%8B%E6%96%B9%E5%AF%B8%E9%97%B4%E7%9A%84%E5%A3%AE%E7%BE%8E%E6%B2%B3%E5%B1%B1%EF%BC%881%EF%BC%89%E4%B8%8B/"/>
+    <id>http://ihozh.com/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/</id>
+    <published>2016-04-15T22:53:52.000Z</published>
+    <updated>2016-04-16T03:08:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者： 一盒<br>微信： zyh_1991   </p>
+<h3 id="1997-16-黄山"><a href="#1997-16-黄山" class="headerlink" title="1997-16 黄山"></a>1997-16 黄山</h3><p>继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，版别为套票小版张。套票小版张是</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者： 一盒&lt;br&gt;微信： zyh_1991   &lt;/p&gt;
+&lt;h3 id=&quot;1997-16-黄山&quot;&gt;&lt;a href=&quot;#1997-16-黄山&quot; class=&quot;headerlink&quot; title=&quot;1997-16 黄山&quot;&gt;&lt;/a&gt;1997-16 黄山&lt;/h3&gt;&lt;p&gt;继特57《
+    
+    </summary>
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/categories/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/tags/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《一盒品邮》方寸间的壮美河山（1）上</title>
+    <link href="http://ihozh.com/2016/04/07/%E3%80%8A%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE%E3%80%8B%E6%96%B9%E5%AF%B8%E9%97%B4%E7%9A%84%E5%A3%AE%E7%BE%8E%E6%B2%B3%E5%B1%B1%EF%BC%881%EF%BC%89/"/>
+    <id>http://ihozh.com/2016/04/07/《一盒品邮》方寸间的壮美河山（1）/</id>
+    <published>2016-04-07T07:41:58.000Z</published>
+    <updated>2016-04-16T04:25:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者: 一盒<br>微信: zyh_1991<br>自古神仙清修境，今有三山睥睨之。   </p>
+<p>在新中国的邮票中，自然山川的主题无疑是一道最亮丽的风景。即使是在方寸中，仍然不失原景，要么大气磅礴，要么温婉灵动的神韵，再加以设计师的独特写意，使这些邮票至今散发着无尽的韵味。  </p>
+<p>笔者在学生时代就已经将名山系列基本收集齐全。该系列除了部分主题入手难度较大，整体非常适合初级的集邮爱好者。     </p>
+<a id="more"></a>   
+<p>中国名山首推五岳，但在邮票世界，五岳的成就却远逊于三山，所以方寸之间当属三山。三山五岳是个成语，出于清人曹寅的《舟中望惠山举酒调培山》：“三山五岳渺何许？云烟汗漫空竛竮。”一句。其实已经泛指中国名山。但是还是有人愿意将其一一指定，就像五湖四海，也有好事之人一定要说出是哪五个湖，哪四片海。强迫症患者看来是古来就有了。而至现代，也不妨旅游景区给自己加一个噱头。   </p>
+<p>中国有着很深厚的名山文化，这个文化是受到道教的影响。但凡烟波飘渺，云雾缭绕之处，便让人产生对“神”和“仙”的向往。在《史记卷二十八封禅书》和《史记秦始皇本纪中》都有过记载，“海中有三神山,名曰蓬莱、方丈、瀛洲”，山上有神仙居住，金屋银瓦，长生不老药。这是古时三山原型。那时五岳已经有所名气，五岳的方位也是相对中原而言。随着后来文化南迁, 可能是古人惊羡于南方山水之美，所以在南方又选了三座山代替了传说中的三座神山，也就逐渐形成了现在三山的的概念。</p>
+<h2 id="黄山"><a href="#黄山" class="headerlink" title="黄山"></a>黄山</h2><p>黄山位于安徽省黄山市，明人徐霞客曾赞道：“登黄山，天下无山，观止矣”，后来便演化成耳熟能详的“五岳归来不看山，黄山归来不看岳”一说。<br>首先介绍的这套邮票在名山系列中，不论设计还是价值，都是前无古人后无来者，她是名山系列邮票的标杆之作，也是新中国邮票的标杆之作，我没有任何理由不先从她开始讲起。   </p>
+<h3 id="特57-黄山风景-比黄山更美的邮票"><a href="#特57-黄山风景-比黄山更美的邮票" class="headerlink" title="特57 黄山风景 比黄山更美的邮票"></a>特57 黄山风景 比黄山更美的邮票</h3><p>特57黄山风景发行于1963年，由邮票设计泰斗－孙传哲设计。全套邮票16枚，选取了黄山16处绝胜景致。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%89%B957%20%E9%BB%84%E5%B1%B1%E9%A3%8E%E6%99%AF.jpg" alt=""><br>黄山邮票之绝一绝在于取景。孙老师在1962中国摄影学会举办的《黄山风景摄影展览》中，精选出16帧照片作为蓝本进行二次创作，集合百家之长。以最简之笔法，凝炼出黄山之精髓。山川再美，只不过数笔之间，此乃二绝。全套邮票使用影雕套印技术，得益于60年北京邮票厂的建立，先进技术的使用，雕刻处尽显苍遒，影写出峰峦隐绰，此乃三绝。有此三绝，才有人评论：“比黄山实景更美！”。<br>面对实景，已经无法用语言形容，描述邮票，更绝词穷。笔者也只用一些诗句或是聊聊数语做简介，而将欣赏的权利完全交给读者。<br>4分：   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%8E%89%E5%B1%8F%E5%B3%B0.jpg" alt=""><br>玉屏峰：因峰壁如玉雕屏障，清人汪土宏有诗赞曰：“玉屏峙霄汉，鸟道度松门。”  峰顶建有文殊院，人文景观丰富，徐霞客誉为“黄山绝胜处”。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%BF%8E%E5%AE%A2%E6%9D%BE.jpg" alt=""><br>迎客松：位于玉屏峰左侧，奇松乃黄山四绝之一，有“迎客”、“陪客”、“送客”三大名松。 前景松树雕刻细腻，背景简洁明亮。     </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%90%8E%E6%B5%B7%E6%9D%BE%E7%9F%B3.jpg" alt=""><br>后海松石：奇松怪石，皆为四绝。“百道飞泉鸣玉佩，千寻石柱架琼峦。”，由远及近，层次鲜明，中间所绘，似航海观音。     </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E6%B8%85%E5%87%89%E5%8F%B0.jpg" alt=""><br>清凉台： 为观黄山绝景云海的最佳处。玉屏楼观南海，清凉台望北海，排云亭看西海，白鹅岭赏东海，螯鱼峰眺天海。      </p>
+<p>8分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%A4%A9%E9%83%BD%E8%BF%9C%E7%9C%BA.jpg" alt=""><br>天都远眺： 天都峰与莲花峰、光明顶并称为黄山三大主峰。乾隆御题“天都九百仞，巍然切太虚”。 天都以奇险闻名，古诗有赞：“任它五岳归来客，一见天都也叫奇”。邮票让人不由自主从近及远，远眺天都峰，明人罗洪先应该也是由于此景，发出“何年白日骑鸾鹤，踏碎天都峰上云”之感慨。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%89%AA%E5%88%80%E5%B3%B0.jpg" alt=""><br>剪刀峰：“欲借剪刀峰下景，好裁一半与平分”， 票中景色取自黄昏，阳面如熊熊烈火，使人望而生畏。    </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%87%E6%9D%BE%E6%9E%97.jpg" alt=""><br>万松林：李白诗句“昨夜谁为吴会吟，风生万壑振空林”应是由此景而发。群峦之间，松林摇曳，诗与画融为一体。    </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E6%A2%A6%E7%AC%94%E7%94%9F%E8%8A%B1.jpg" alt=""><br>梦笔生花：仙人的一支笔斗，画尽黄山绝胜。笔锋的遗墨，化作一棵苍松。正如清人项黻所赞：“天然一管生花笔，写遍奇峰入画图。”    </p>
+<p>10分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%8E%B2%E8%8A%B1%E5%B3%B0.jpg" alt=""><br>莲花峰：黄山最高峰，李白赞曰“黄山四千仞，三十二莲峰。丹崔夹石柱，菡萏金芙蓉”。票面如雨后般清新，云雾缭绕，正是“真好造化”，“非人间也”。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%A5%BF%E6%B5%B7%E4%BA%91%E6%BD%AE.jpg" alt=""><br>西海云潮：西海奇秀，由四周山峰围成巨大空间，如入画境，奇哉幻哉。    </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E9%BB%84%E5%B1%B1%E5%8F%A4%E6%9D%BE.jpg" alt=""><br>黄山古松：描绘始信峰古松。始信峰，指古人到了这里才开始相信，黄山之奇。有言道：“不到始信峰，不知黄山松”     </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9C%E6%B5%B7%E8%A7%82%E6%BD%AE.jpg" alt=""><br>东海观潮：描绘黄山云海日出，蕴红色调。 海到尽头天是岸，山登绝顶我为峰。   </p>
+<p>20分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%9F%B3%E7%AC%8B%E5%B3%B0.jpg" alt=""><br>石笋峰：黄山的石笋与雁荡的龙湫、匡庐的瀑布并称天下三奇。此处应有仙人下棋等景点，可邮票中并不明显。    </p>
+<p>22分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%9F%B3%E7%8C%B4%E8%A7%82%E6%B5%B7.jpg" alt=""><br>石猴观海：一巧石，静观潮起潮落。坐看人间兴废事，几经沧海变桑田。      </p>
+<p>30分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%8B%AE%E5%AD%90%E6%9E%97.jpg" alt=""><br>狮子林：清晨薄暮，熟睡的雄狮还未醒来，轻轻的，请不要吵醒它。      </p>
+<p>50分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%93%AC%E8%8E%B1%E4%B8%89%E5%B2%9B.jpg" alt=""><br>蓬莱三岛：每到云海弥漫，三座山峰山尖微露，犹如海上仙岛。    </p>
+<p>设计者孙传哲一生情系黄山，在去世后留下未完成遗作《黄山图》，遗书中也要求将骨灰撒在黄山。</p>
+<p>黄山风景凭借出色的设计，荣获建国三十周年最佳邮票奖。其价格在2013年也一度创下1万5000元记录。现在市场价依然在1万元附近，足见其珍贵。全套票以30分狮子林和50分蓬莱仙岛为精票，因其发行量稀少为100万枚。 集邮爱好者可以像笔者一样，即使入手盖销或者信销，仍然会满足感十足。     </p>
+<h3 id="1997-16-黄山"><a href="#1997-16-黄山" class="headerlink" title="1997-16 黄山"></a>1997-16 黄山</h3><p>继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，连印成套票小版张。套票小版张是指将整套邮票在一版上呈现出来。由于特57占尽天时地利，在邮市的口碑高居不下，这套小版张在还未发行时就一直被人瞩目，能否在设计上超越前者一直是热门话题。这也是我国第一套套票小版。<br>同一题材的二次发行还有一个原因就是给99年的世界集邮展览筹款，所以我们可以注意到这八枚邮票的面值都为200分，高于当时的平信邮资80分。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者: 一盒&lt;br&gt;微信: zyh_1991&lt;br&gt;自古神仙清修境，今有三山睥睨之。   &lt;/p&gt;
+&lt;p&gt;在新中国的邮票中，自然山川的主题无疑是一道最亮丽的风景。即使是在方寸中，仍然不失原景，要么大气磅礴，要么温婉灵动的神韵，再加以设计师的独特写意，使这些邮票至今散发着无尽的韵味。  &lt;/p&gt;
+&lt;p&gt;笔者在学生时代就已经将名山系列基本收集齐全。该系列除了部分主题入手难度较大，整体非常适合初级的集邮爱好者。     &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/categories/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/tags/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo安装第三方插件</title>
+    <link href="http://ihozh.com/2016/04/05/hexo%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6/"/>
+    <id>http://ihozh.com/2016/04/05/hexo安装第三方插件/</id>
+    <published>2016-04-06T02:34:39.000Z</published>
+    <updated>2016-04-06T04:13:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo 支持丰富的第三方插件，可以满足用户大部分的需求。   </p>
+<h2 id="统计分析"><a href="#统计分析" class="headerlink" title="统计分析"></a>统计分析</h2><h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>百度统计是一款免费的站点分析工具，可以统计站点的访问量，用户行为等。<br><a id="more"></a><br>1.登陆<a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external">百度统计</a>，需要注册。<br>2.选择<strong>百度统计-网站统计</strong>。<br>3.在<strong>网站中心</strong>选择<strong>新增网站</strong>，输入自己的网站域名。<br>4.在代码获取页面，复制 <code>hm.js?</code> 后面统计脚本id，如图红线部分<br> <img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_zaihuopu_%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7_%E7%99%BE%E5%BA%A6%E7%AB%99%E7%82%B9.png" alt=""><br>5.进入站点配置文件，主题下的<code>_config.yml</code><br>    新加入   </p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">baidu_analytics: &lt;复制的内容&gt;</div></pre></td></tr></table></figure>
+</code></pre><p>6.发布<code>hexo g -d</code><br>7.在百度站点下，选择<code>首页代码状态</code>，如果显示<code>代码安装正确</code>就Ok啦      </p>
+<h3 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h3><p>leanCloud是一款在线统计工具，可以统计每篇文章的阅读数量，已被hexo/next集成。<br>1.登陆<a href="https://leancloud.cn/" target="_blank" rel="external">leancloud</a>,注册。<br>2.创建新应用。<br>3.在<code>储存</code>目录下，新建一个名为<code>Counter</code>的class<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_zaihuopu_%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7_leancloud1.png" alt=""><br>4.在<code>设置</code>目录下，选择’Key’,可以找到<code>App ID</code>和<code>App Key</code><br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_zaihuopu_%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7_leancloud3.png" alt=""><br>5.进入站点配置文件，主题下的<code>_config.yml</code><br>    新加入   </p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">leancloud_visitors:</div><div class="line">enable: true</div><div class="line">app_id: &lt;your_app_id&gt;</div><div class="line">app_key: &lt;your_app_key&gt;</div></pre></td></tr></table></figure>
+</code></pre><p>6.发布<code>hexo g -d</code><br>7.现在可以在<code>储存</code>-&gt;<code>Counter</code>下查看点击统计了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo 支持丰富的第三方插件，可以满足用户大部分的需求。   &lt;/p&gt;
+&lt;h2 id=&quot;统计分析&quot;&gt;&lt;a href=&quot;#统计分析&quot; class=&quot;headerlink&quot; title=&quot;统计分析&quot;&gt;&lt;/a&gt;统计分析&lt;/h2&gt;&lt;h3 id=&quot;百度统计&quot;&gt;&lt;a href=&quot;#百度统计&quot; class=&quot;headerlink&quot; title=&quot;百度统计&quot;&gt;&lt;/a&gt;百度统计&lt;/h3&gt;&lt;p&gt;百度统计是一款免费的站点分析工具，可以统计站点的访问量，用户行为等。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂货铺" scheme="http://ihozh.com/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
+    
+    
+      <category term="hexo" scheme="http://ihozh.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《一盒品邮》邮票上的中国古代名画－清明上河图</title>
+    <link href="http://ihozh.com/2016/04/01/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE%E9%82%AE%E7%A5%A8%E4%B8%8A%E7%9A%84%E4%B8%AD%E5%9B%BD%E5%8F%A4%E4%BB%A3%E5%90%8D%E7%94%BB%EF%BC%8D%E6%B8%85%E6%98%8E%E4%B8%8A%E6%B2%B3%E5%9B%BE/"/>
+    <id>http://ihozh.com/2016/04/01/一盒品邮邮票上的中国古代名画－清明上河图/</id>
+    <published>2016-04-01T15:41:15.000Z</published>
+    <updated>2016-04-01T20:55:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者：一盒<br>虹桥影落繁华尽，梦回汴京认归帆。</p>
+<p>2013，我去台湾交换。心泽找我，说想入门下邮票的收藏和投资。<br>我是一个业余的集邮爱好者。之前还从来不知道台湾票长什么样。正好逮到这个机会，因为一直玩老票，稳扎稳打，没怎么栽过跟头，再加上认票的直觉，也就答应着去帮他做一笔。<br>那时我们校区在桃园，邮市最好最大的当然是台北的牯岭街。去邮市，要赶个大早，先坐校车到桃园火车站，再搭最近一班的捷运叮叮哐哐的晃向台北。这样一条路竟然让我现在无比怀念。</p>
+<a id="more"></a>   
+<p>单独把清明上河图拿出来写一篇文章，一个是因为两岸都曾以清明上河图为主题发行过邮票，但是因为不同的背景而际遇大相径庭。另一个就是我想尝试在黄沙之中，挑挑拣拣，将一些被利益的淤泥埋没的真金洗捡出来。让更多的人能认识这些珍品。<br>讲了这么多废话，先上图一睹为快吧<br>下图是台湾1968年专53 清明上河图(第一组7枚)<br>低面值5张联票<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9353_3.jpg" alt=""><br>高面值2张<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9353_4.jpg" alt=""><br>该套邮票设计原型是清院本清明上河图，现存于台北故宫博物院中。可能有些朋友不知道，原来清明上河图也有这么多的版本。清明上河图是北宋流行的一种绘画题材，其中以张择端所绘最为出名，受到历代喜爱。所以仿本各朝都有出现。清院本的清明上河图是在清乾隆元年，由陈枚、孙祜、金昆、戴洪、程志道五位宫廷画家合作而成。他们集合各家所长，又将明清时期特有的娱乐表演，踏青等风俗加入，画面内容更加丰富，成为自张后最为出名一幅。<br>这个时期的明清画，正是我想强调的，由于受到西洋画风影响，色彩明亮，物做细腻严谨。这种风格与现代的邮票设计擦却微妙的火花。以大陆邮票而言，仅凭笔者个人喜爱程度，新中国邮票设计的巅峰时期出现在老纪特后期，经历文革，编号，到新JT的74-82时期。这三十年的邮票设计极为精美，这段时期的邮票也被广大集邮爱好者喜爱，市场价就足以说明一切问题。<br>68年正处于大陆文革票的后期，由于文革时期本身特殊的政治意义，邮票设计特点鲜明，我们抛开不谈。回过头再看看台湾发行的清明上河图，其设计与配色非常接近大陆老纪特后期的邮票风格。色彩鲜而不艳，画面丰而不繁，配色总给人那种恰到好处的感觉。在六七是年代，印刷技术配色的局限反而给我们最舒服的视觉享受。反而在现代发达的印刷术下，大块使用对比鲜明的靓丽色块，再加上计算机辅助的图形设计，使得邮票总是缺乏那么些美感，欠了几分灵动的火候。<br>68年发行的这套邮票，是台湾第一套连票形式印刷的古画邮票，票种为影写版印刷。其中五张连票面值均为1元，画面取原作的连续一部分，金明池春景。这一部分是张本中没有的，第一二枚主要景色是宝津楼，临水殿，骆驼虹和水心殿，“天阔云高，溪横水远，晚日寒生轻晕“，气势磅礴。后三枚逐渐将景色过度到热闹的街市。还有两张则选择了画面中最为经典的两个场景，城门（面值5元）和虹桥（面值8元）。</p>
+<p>下图是台湾1969年专58 清明上河图(第二组5枚)<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9358_1.jpg" alt=""><br>清院本清明上河图画中人物超过4000人，反应很多明清时期的社会风俗。所以在69年，台局又发行了清明上河图第二组邮票。这五张邮票是原画中的五个局部特写。其中两枚为连票面值均为1元，取景迎亲图，还有迁居（面值2.5元），画廊（面值5元）和露店（面值8元）.每一枚邮票都可以看见栩栩如生的原画人物。还可以看到当时人们使用的穿着，使用的工具，居住条件等。由此我们可以推测出当时的社会风气非常开放，康乾盛事可见一斑。   </p>
+<p>2004年大陆发行特种邮票 2004-26T《清明上河图》（9枚 套票连印）<br><img src="http://www.chinesestamp.cn/wp-content/uploads/2014/06/2004-26.jpg" alt=""><br>此邮票原本为张择端本清明上河图,图案取景为其全景，此本现藏于北京故宫博物馆中。前七枚80分，第八枚1元，第九枚2元。胶雕套印，印刷技术细腻程度为现代邮票罕有。所以在短短几年，身价暴涨十倍一度到百元之上。后来中国邮政又在2010世博会推出5米长的丝绢邮票，与原作等比例制作，是目前世界上最大的邮票。<br>当然这个对我来说过于奢华，我甚至没有机会亲眼目睹。现代科技对邮票的印制工艺发挥的淋漓尽致，邮票品种甚至五花八门，再加上新票人为炒作严重，我自己不敢轻易介入。有时候也只能从朋友口中感受下那种潮起潮落的激迫之感。<br>就从艺术价值而言，两套清明上河图都是佳品，各有所长。尤其台湾版笔者推为珍品，下表做些对比给读者直观的感受。 </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">版本</th>
+<th style="text-align:left">发型年</th>
+<th style="text-align:left">版别</th>
+<th style="text-align:left">枚数</th>
+<th style="text-align:left">发行量</th>
+<th style="text-align:left">价格(中邮)¥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">台湾</td>
+<td style="text-align:left">1968</td>
+<td style="text-align:left">影写</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">45万</td>
+<td style="text-align:left">650</td>
+</tr>
+<tr>
+<td style="text-align:left">大陆</td>
+<td style="text-align:left">2004</td>
+<td style="text-align:left">胶雕</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">1080万</td>
+<td style="text-align:left">90</td>
+</tr>
+</tbody>
+</table>
+<p>2013年，台版清明上河图是我推荐的邮票之一，当时的价钱在200人民币上下。作为学生资金有限，也不敢搏命。即使现在，这个价位在笔者看来仍然偏低。各位集邮爱好者如有兴趣，现在入手不失为合适时机。</p>
+<p>笔者注：在网上所查资料中，包括百度百科在内，很多资料将两幅清明上河图混为一谈，实属不该。对于清明踏青扫墓的习俗民间相传始于朱元璋时期。其实早在唐朝，扫墓开始流行，唐玄宗下令“寒食上墓”，那时的扫墓是在寒食。至于踏青一说，应该只存在于清院本中。<br>资料整理：<br>清明上河图张择端本高清图： <a href="http://news.sohu.com/s2015/qmsht/index.shtml?_t=t" target="_blank" rel="external">点击这里</a><br>清明上河图清院本高清图：<a href="http://www.npm.gov.tw/exh96/orientation/flash_4/index.html" target="_blank" rel="external">点击这里</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者：一盒&lt;br&gt;虹桥影落繁华尽，梦回汴京认归帆。&lt;/p&gt;
+&lt;p&gt;2013，我去台湾交换。心泽找我，说想入门下邮票的收藏和投资。&lt;br&gt;我是一个业余的集邮爱好者。之前还从来不知道台湾票长什么样。正好逮到这个机会，因为一直玩老票，稳扎稳打，没怎么栽过跟头，再加上认票的直觉，也就答应着去帮他做一笔。&lt;br&gt;那时我们校区在桃园，邮市最好最大的当然是台北的牯岭街。去邮市，要赶个大早，先坐校车到桃园火车站，再搭最近一班的捷运叮叮哐哐的晃向台北。这样一条路竟然让我现在无比怀念。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/categories/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+    
+      <category term="一盒品邮" scheme="http://ihozh.com/tags/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CC的学习经验</title>
+    <link href="http://ihozh.com/2016/03/18/CC%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
+    <id>http://ihozh.com/2016/03/18/CC学习的经验/</id>
+    <published>2016-03-19T01:20:46.000Z</published>
+    <updated>2017-05-01T06:59:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CC的半学期学习总结"><a href="#CC的半学期学习总结" class="headerlink" title="CC的半学期学习总结"></a>CC的半学期学习总结</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg" alt=""><br><a id="more"></a><br>感谢王达师兄，让我在学习他的同时感觉到点滴进步。<br>学期过了一半，Cloud Computing 的project也已过半。<br>20号凌晨5点，随着强一致和终端一致的两个测试的通过，意味着可以享受一下周末的惬意了。白天的时间去冲了下奖励，拿到两分后也是黔驴技穷，还是腾出点时间写写总结，分享分享学习经验。通常自己一个星期挣扎出的作业，见识过第一天就能荣登榜首的神牛。也不用提在第二周作业就被EMR活活逼哭的黑历史。说是分享，也请各位大神高抬贵手。<br>我是如何学习这门课的，有什么感悟。这里不会过多去纠结课程本身内容，而是分享下我自身的学习经历。</p>
+<h2 id="实验指导是否理解透彻"><a href="#实验指导是否理解透彻" class="headerlink" title="实验指导是否理解透彻"></a>实验指导是否理解透彻</h2><p>实验指导是指在每次做项目前，官方发布的说明文档。它包括   </p>
+<ul>
+<li>项目简介   </li>
+<li>知识点讲解   </li>
+<li>平台要求   </li>
+<li>任务步骤和目标   </li>
+<li>惩罚，奖励，提示   </li>
+</ul>
+<p>对指导的理解程度会极大的影响每次作业的速度和质量。<br>刚开学时，每次CC的作业在读完指导后就直接开始，这样虽然可以很快的进入工作，有两个缺点。   </p>
+<ol>
+<li>写程序bug百出   </li>
+<li>完成后很快忘记   </li>
+</ol>
+<p>如果bug如果不是代码的生疏，便是自己没有理解。 </p>
+<h3 id="做一项最愚蠢的工作"><a href="#做一项最愚蠢的工作" class="headerlink" title="做一项最愚蠢的工作"></a>做一项最愚蠢的工作</h3><p>开始试着重新排版指导说明，对重点部分进行加粗和注释，通过这种方法，加强对指导的梳理和理解。问题来了，这样每次的作业都有一多半的时间在处理这项任务。这是一项很蠢的工作，直到突然看到师兄在博客中翻译上课内容，才恍然一笑，原来还有一样蠢的人。但是师兄，很快！后来的实验开始，我尝试着去翻译这些指导。刚开始极其痛苦，汉语翻译是要比英文注释还要慢的一项工作，有几周差点没有完成作业。但坚信的是，学习方法是比内容更重要的，既然你觉得是对的，那就做下去。</p>
+<h3 id="你会越来越快"><a href="#你会越来越快" class="headerlink" title="你会越来越快"></a>你会越来越快</h3><p>翻译的工作实际上是，在理解原文的情况下做出总结，这是一个双倍的学习工程。翻译的难点在于：   </p>
+<ol>
+<li>准确把握原文   </li>
+<li>翻译通顺   </li>
+<li>专业词汇的使用   </li>
+</ol>
+<p>奇迹也会来的很突然。在翻译工作进行了一个月左右的时候，可以很明显感觉到翻译速度的提升，伴随对指导的理解深入，作业会完成的越来越顺利。以这一周为例，个人项目花费两天时间翻译理解指导，复习涉及到的知识和自己查找的一些资料，笔记字数1万字左右。作业程序花费1天通过了12个测试的11个，半天时间冲奖励和补漏。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_CC%E5%AD%A6%E4%B9%A0%E5%8D%8A%E5%AD%A6%E6%9C%9F.png" alt=""></p>
+<h3 id="深入理解是一种技能"><a href="#深入理解是一种技能" class="headerlink" title="深入理解是一种技能"></a>深入理解是一种技能</h3><p>深入理解是翻译这项愚蠢工作的副产品，也是主要目的。<br>举个例子来说，在最近的一次作业，要求实现一个终端一致的服务器，只有一个要求：（原文）with only one requirement- the newly received write operation must have a greater timestamp than the write operation that updated the currently stored value. 就这一个要求挡住了不少同学满分的道路。这里我理解的至关重要的一个词就是<strong>write</strong>而不是<strong>new</strong>。只有在连续写请求的条件下，终端一致有效。如遇读请求，复位。这并不是官方提供模版的标准写法，我甚至没有补全其他的相关联函数，因为这样的理解已经实现了终端一致的要求，足够通过所有的测试了。</p>
+<h2 id="自立更生与舶来主义"><a href="#自立更生与舶来主义" class="headerlink" title="自立更生与舶来主义"></a>自立更生与舶来主义</h2><p>没有对错之分。一定要给自己足够的思考空间！一定要给自己足够的思考空间！一定要给自己足够的思考空间。我总结这三句，是因为前半学期的作业中，依赖他人思想过多。自己思考和交流讨论都是学习的基本方式。我自己总结了一个请教他人最佳的时间点：在对方不对你感到厌烦的同时，因为帮助你解决了问题而能极大满足自己虚荣心的那个时间就是最佳请教时间。嘿嘿，只是道理是这样讲的。</p>
+<h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>看个标题就能懂了。也没有什么过多的内容，亘古不变的真理。对学习的坚持，不要轻言放弃；对学习习惯的坚持，习惯会提高能力。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CC的半学期学习总结&quot;&gt;&lt;a href=&quot;#CC的半学期学习总结&quot; class=&quot;headerlink&quot; title=&quot;CC的半学期学习总结&quot;&gt;&lt;/a&gt;CC的半学期学习总结&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="总结" scheme="http://ihozh.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 博客搭建</title>
+    <link href="http://ihozh.com/2016/03/16/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://ihozh.com/2016/03/16/hexo-博客搭建/</id>
+    <published>2016-03-17T02:05:21.000Z</published>
+    <updated>2016-03-17T16:08:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_github%2Bhexo.png-ihogithubfirst" alt=""><br><a id="more"></a></p>
+<h2 id="第一个标题"><a href="#第一个标题" class="headerlink" title="第一个标题"></a>第一个标题</h2><p>心血来潮，在github上自己搭了个博客，写第一篇留个纪念吧。<br>初探hexo，还有很多地方不懂，这篇博客也会持续更新探索hexo发现的好玩的事物。<br>关于如何在github上搭建静态博客，网上的教程已经非常多了，大多很清晰，详细请看<a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客</a>。<br>两个关键要素： github 和 域名</p>
+<h2 id="第二个标题"><a href="#第二个标题" class="headerlink" title="第二个标题"></a>第二个标题</h2><p>虽然看了教程，但还是在一些地方花了不少时间。例如，在 <code>_config.yml</code>中，要填入值的<code>:</code>后边一定要留一个空格，不然是不会产生效果的。</p>
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>我使用了DNSPod做域名解析。不论自动还是手动，要确保添加了主机纪录为<code>www</code>和<code>@</code>，记录类型为CNAME，记录值为<code>xxxx.github.io</code>的解析记录。这里解释下所谓的主机纪录就是域名前缀，常见的有<code>www</code>(万维网：www.xxx.com),<code>@</code>(直接解析：xxx.com),<code>*</code>(泛解析：*.xxx.com)   </p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p><strong>创建新的文章</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;My New Post&quot;</div><div class="line">hexo n</div></pre></td></tr></table></figure></p>
+<p><strong>创建新页面</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page img</div></pre></td></tr></table></figure></p>
+<p>前一条会在<code>/source/_posts</code>下生成一个新的｀.md｀文件，后一条会在<code>/source/</code>下生成新的文件夹</p>
+<p><strong>生成静态文件</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo g</div></pre></td></tr></table></figure></p>
+<p><strong>本地服务器测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
+<p><strong>部署github</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>如果部署Github时没有任何反应，需要安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<h3 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">language: zh-Hans #简体汉字</div><div class="line"></div><div class="line"># depolyment</div><div class="line">deploy:</div><div class="line">	type: git</div><div class="line">	repo:&lt;ssh of github&gt;</div></pre></td></tr></table></figure>
+<h2 id="NEXT主题"><a href="#NEXT主题" class="headerlink" title="NEXT主题"></a>NEXT主题</h2><p>看到在知乎中主题排名第一，我就拿来用了，提供很多的有趣的内容，还在探索中。  </p>
+<h3 id="增加菜单栏"><a href="#增加菜单栏" class="headerlink" title="增加菜单栏"></a>增加菜单栏</h3><p>例如增加学习菜单：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">	学习: /categories/学习/  #菜单的URL，绝对路径，在source下</div></pre></td></tr></table></figure>
+<p>如果要保证名字正常显示，进入｀‘主题路径’/language/zh-Hans.yml｀</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">	学习: 学习  # 学习菜单显示为“学习”</div></pre></td></tr></table></figure>
+<h3 id="添加侧边栏头像"><a href="#添加侧边栏头像" class="headerlink" title="添加侧边栏头像"></a>添加侧边栏头像</h3><p>将头像命名为<code>default_avatar.jpg</code> 放入<code>‘主题路径’/source/images</code>下，可以看到侧边栏头像更改</p>
+<h3 id="添加logo"><a href="#添加logo" class="headerlink" title="添加logo"></a>添加logo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">custom_logs:</div><div class="line">	enabled: true</div><div class="line">	image:&lt;image url&gt;  #logo的绝对路径</div></pre></td></tr></table></figure>
+<h3 id="添加tag页"><a href="#添加tag页" class="headerlink" title="添加tag页"></a>添加tag页</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
+<p>在生成的 <code>source/tags/index.md</code> 添加   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type: &quot;tags&quot;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_github%2Bhexo.png-ihogithubfirst&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂货铺" scheme="http://ihozh.com/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
+    
+    
+      <category term="hexo" scheme="http://ihozh.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
