@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-03T08:38:25.000Z</updated>
+  <updated>2017-05-03T09:38:38.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学生可享受的优惠汇总-持续更新</title>
+    <link href="http://ihozh.com/2017/05/03/%E5%AD%A6%E7%94%9F%E5%8F%AF%E4%BA%AB%E5%8F%97%E7%9A%84%E4%BC%98%E6%83%A0%E6%B1%87%E6%80%BB-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>http://ihozh.com/2017/05/03/学生可享受的优惠汇总-持续更新/</id>
+    <published>2017-05-03T08:39:39.000Z</published>
+    <updated>2017-05-03T09:38:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>撸羊毛要从学生抓起</p>
+<p>2017年5月3日 更新</p>
+<p>#【技术类】github 学生开发包<br>Student Developer Pack, <a href="https://education.github.com/pack" target="_blank" rel="external">申请链接</a> </p>
+<p>实践才是硬道理，码农也要赢在起跑线上</p>
+<a id="more"></a>
+<p>包括：</p>
+<ul>
+<li>ATOM：免费使用震撼的ATOM编辑器</li>
+<li>AWS：亚马逊免费云技术学习，最高$110额度奖励</li>
+<li>Bitnami：开源web服务商，一年免费</li>
+<li>CART：数据分析平台，2年免费使用升级服务</li>
+<li>CrowdFlower：数据服务公司，可使用他家数据平台</li>
+<li>DataDog：他家专做系统监控，专业账户，免费2年使用</li>
+<li>DigitalOcean：云服务提供商，$50额度奖励</li>
+<li>Flatrion School：编程培训界的哈佛商业学院，价值$149的一月会员</li>
+<li>GitHub：版本控制代码托管，无限制的私有仓库功能</li>
+<li>GitKraken：高逼格Git客户端，1年专业账户</li>
+<li>HackHands：在线代码帮助中心，7*24小时，$25额度奖励</li>
+<li>Microsoft Imagine：包括Azure，VisualStudio一票工具，免费</li>
+<li>Namecheap：域名提供商，一年SSL证书，一年.me域名。</li>
+<li>SendGrid：邮件服务商，每月15K免费电子邮件</li>
+<li>Stripe：在线移动支付工具，首1000刀免除手续费</li>
+<li>Taplytics：动态A/B测试，免费6个月</li>
+<li>Thinkful：在线编程学习，一个月免费学习</li>
+<li>Transiffex：位置信息平台，一年免费Starter Plan</li>
+<li>Travis CI：持续集成，可private build</li>
+<li>Udacity：硅谷在线计算机学习，一个月免费学习任何时候课程</li>
+<li>UnrealEngine：游戏引擎，免费使用</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;撸羊毛要从学生抓起&lt;/p&gt;
+&lt;p&gt;2017年5月3日 更新&lt;/p&gt;
+&lt;p&gt;#【技术类】github 学生开发包&lt;br&gt;Student Developer Pack, &lt;a href=&quot;https://education.github.com/pack&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;申请链接&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;实践才是硬道理，码农也要赢在起跑线上&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="兰山" scheme="http://ihozh.com/categories/%E5%85%B0%E5%B1%B1/"/>
+    
+    
+      <category term="生活" scheme="http://ihozh.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建经济的个人站点</title>
