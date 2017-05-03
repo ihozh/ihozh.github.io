@@ -74,7 +74,7 @@
     <link href="http://ihozh.com/2017/05/03/%E6%90%AD%E5%BB%BA%E7%BB%8F%E6%B5%8E%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/03/搭建经济的个人站点/</id>
     <published>2017-05-03T06:44:32.000Z</published>
-    <updated>2017-05-03T08:38:25.000Z</updated>
+    <updated>2017-05-03T19:37:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>昨天看到阿里云给共享虚拟主机做广告，免费一年的虚拟主机加上安全服务一共六元，心里一动就拿下尝尝鲜。兴致勃勃地打开控制台，第一次体验阿里云的产品，看看究竟是何方圣神。</p>
 <p>阿里云的虚拟主机权限很低，稍感失望。只能通过FTP上传文件和网站。而且要要绑定域名，备案后才能正常访问。这个6元的共享主机用来部署个人博客，文件系统都是非常不错的。这里特别说下，阿里云给学生提供特别的优惠，学生用户可以注册货真价实的ECS服务器，一个月不到10元，打了一折不到。<br><a id="more"></a></p>
@@ -93,7 +93,7 @@
       <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
     
     
-      <category term="web" scheme="http://ihozh.com/tags/web/"/>
+      <category term="服务器, 网络" scheme="http://ihozh.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
