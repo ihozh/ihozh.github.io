@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-01T06:37:04.000Z</updated>
+  <updated>2017-05-03T08:32:43.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建经济的个人站点</title>
+    <link href="http://ihozh.com/2017/05/03/%E6%90%AD%E5%BB%BA%E7%BB%8F%E6%B5%8E%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
+    <id>http://ihozh.com/2017/05/03/搭建经济的个人站点/</id>
+    <published>2017-05-03T06:44:32.000Z</published>
+    <updated>2017-05-03T08:32:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天看到阿里云给共享虚拟主机做广告，免费一年的虚拟主机加上安全服务一共六元，心里一动就拿下尝尝鲜。兴致勃勃地打开控制台，第一次体验阿里云的产品，看看究竟是何方圣神。</p>
+<p>阿里云的虚拟主机权限很低，稍感失望。只能通过FTP上传文件和网站。而且要要绑定域名，备案后才能正常访问。这个6元的共享主机用来部署个人博客，文件系统都是非常不错的。这里特别说下，阿里云给学生提供特别的优惠，学生用户可以注册货真价实的ECS服务器，一个月不到10元，打了一折不到。</p>
+<p>6元用到阿里云的服务也是值的，但是如果一定要找免费的空间的话，也不是没有。一个是在github page可搭建hexo的博客，还有一个就是000webhost（也就是三蛋网）的免费空间。github page搭建稍微麻烦，三蛋网却提供一键傻瓜式搭建个人站点。1分钟就可登录自己wordpress博客了。发现三蛋会给新的博客添加自己的评论，不知这种算不算是防不胜防的广告，天底下没有免费的午餐嘛。还有个缺点，三蛋说是提供FTP，但是我换了多个工具都没有和服务器连接成功，倒是他家自带的网页传输一直好用。</p>
+<p>又想有一台服务器，可以随便折腾，又不想备案，那么境外的云服务商就是最好的选择。vultr，digitalocean，Linode算是差不多的三家，一个月5刀的服务器差距不大，vultr最低到2.5刀。而且这三家都是注册就送，买一送一，也就是说充10刀送十刀。按时间收费的服务器对于我这种小农来说真是福音。一年的费用就是一顿饭钱，非常爽啊。现在自己在digitalocean部署了django网站，非常顺利，到国内的延迟也稳定在200ms。顺便提下三家的控制台，digitalocean最简单，除了基本信息和监控好像就没啥了，就是简洁。vultr，linode就专业的多，功能也多，还有通过手机app监控控制服务器的功能。</p>
+<p>为啥没提AWS和Azure，计时收费花花的开着服务器就是开着烧钱机啊。虽然aws给每个账号第一年有免费的ec2提供，国内访问也是一大问题。但是AWS的云服务真的是目前用过最好的了，控制台就是行业的标杆。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天看到阿里云给共享虚拟主机做广告，免费一年的虚拟主机加上安全服务一共六元，心里一动就拿下尝尝鲜。兴致勃勃地打开控制台，第一次体验阿里云的产品，看看究竟是何方圣神。&lt;/p&gt;
+&lt;p&gt;阿里云的虚拟主机权限很低，稍感失望。只能通过FTP上传文件和网站。而且要要绑定域名，备案后才能
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="web" scheme="http://ihozh.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SSL初探</title>
     <link href="http://ihozh.com/2017/04/30/SSL%E5%88%9D%E6%8E%A2/"/>
     <id>http://ihozh.com/2017/04/30/SSL初探/</id>
     <published>2017-04-30T07:03:55.000Z</published>
-    <updated>2017-05-01T06:37:04.000Z</updated>
+    <updated>2017-05-02T03:51:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近需要了解一些关于SSL的知识，绘制一张思维导图，看起来轻松多了。<br>SSL(Secure Sockets Layer 安全套接层)，是https的主战场。曾经的http用户和服务器之间是明文传播，安全性可想而知了。https 也就是http over SSL，服务器和用户之间传送的信息是加密过的。<a id="more"></a>对于一个商业性的网站来说，SSL是必须的，颁发SSL的机构不少，从昂贵到免费，应有尽有。当然鼎鼎大名的就要数领头羊Symantec了。SSL证书的选择也要根据自己网站的规模，没有最好，只有更好。SSL也不能保证网络的绝对安全。WoSign 和 StartCom 已经被苹果和多家主流浏览器商封杀，而被当时他们喷击的免费SSL机构let’s encrypt却走向了主流。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/techWebSecuritySSL.jpg" alt="webSSL"></p>
 ]]></content>
