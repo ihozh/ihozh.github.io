@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-04T10:10:27.000Z</updated>
+  <updated>2017-05-04T20:04:07.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/04/Nginx+uwsgi%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/</id>
     <published>2017-05-04T07:10:29.000Z</published>
-    <updated>2017-05-04T10:10:27.000Z</updated>
+    <updated>2017-05-04T20:04:07.000Z</updated>
     
     <content type="html"><![CDATA[<p>Django有Apache和Nginx两种常见部署方式 </p>
 <p>主要工具：  </p>
@@ -51,8 +51,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
 <h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
-<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p>待补充  </p>
-<h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p>待补充  </p>
+<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p>默认下，Nginx会安装在<code>/usr/local/nginx</code></p>
+<h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.pngdjangoStructureAll.png" alt="djangoe结构"></p>
 <p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a> 官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a> uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a> DigitalOcean提供的部署指导  </p>
 ]]></content>
     
@@ -139,7 +139,7 @@
     <link href="http://ihozh.com/2017/05/03/%E6%90%AD%E5%BB%BA%E7%BB%8F%E6%B5%8E%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/03/搭建经济的个人站点/</id>
     <published>2017-05-03T06:44:32.000Z</published>
-    <updated>2017-05-04T10:00:59.000Z</updated>
+    <updated>2017-05-04T20:53:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>昨天看到阿里云给共享虚拟主机做广告，免费一年的虚拟主机加上安全服务一共六元，心里一动就拿下尝尝鲜。兴致勃勃地打开控制台，第一次体验阿里云的产品，看看究竟是何方圣神。</p>
 <p>阿里云的虚拟主机权限很低，稍感失望。只能通过FTP上传文件和网站。而且要要绑定域名，备案后才能正常访问。这个6元的共享主机用来部署个人博客，文件系统都是非常不错的。这里特别说下，阿里云给学生提供特别的优惠，学生用户可以注册货真价实的ECS服务器，一个月不到10元，打了一折不到。<br><a id="more"></a></p>
@@ -147,7 +147,7 @@
 <p>又想有一台服务器，可以随便折腾，又不想备案，那么境外的云服务商就是最好的选择。vultr，digitalocean，Linode算是差不多的三家，一个月5刀的服务器差距不大，vultr最低到2.5刀。而且这三家都是注册就送，买一送一，也就是说充10刀送十刀。按时间收费的服务器对于我这种小农来说真是福音。一年的费用就是一顿饭钱，非常爽啊。现在自己在digitalocean部署了django网站，非常顺利，到国内的延迟也稳定在200ms。顺便提下三家的控制台，digitalocean最简单，除了基本信息和监控好像就没啥了，就是简洁。vultr，linode就专业的多，功能也多，还有通过手机app监控控制服务器的功能。</p>
 <p>为啥没提AWS和Azure，计时收费花花的开着服务器就是开着烧钱机啊。虽然aws给每个账号第一年有免费的ec2提供，国内访问也是一大问题。但是AWS的云服务真的是目前用过最好的了，控制台就是行业的标杆。</p>
 <p>最后提供资源链接：</p>
-<p><a href="digitalocean">000webhost</a> 免费空间<br><a href="https://m.do.co/c/10c818488510" target="_blank" rel="external">DigitalOcean</a> 通过连接可获得$10奖励  </p>
+<p><a href="digitalocean">000webhost</a> 免费空间<br><a href="https://m.do.co/c/10c818488510" target="_blank" rel="external">DigitalOcean</a> 通过连接可获得$10奖励<br><a href="https://www.linode.com/?r=10daa75601f70e38a05c192f47281fb795c9c60f" target="_blank" rel="external">Linode</a> 通过连接可获得$10奖励  </p>
 ]]></content>
     
     <summary type="html">

@@ -99,10 +99,12 @@
 <meta property="og:url" content="http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/index.html">
 <meta property="og:site_name" content="一盒">
 <meta property="og:description" content="Django有Apache和Nginx两种常见部署方式  主要工具：    一台远程服务器 Nginx uWSGI Django">
-<meta property="og:updated_time" content="2017-05-04T10:10:27.000Z">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.pngdjangoStructureAll.png">
+<meta property="og:updated_time" content="2017-05-04T20:04:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx + uWSGI 部署Django站点">
 <meta name="twitter:description" content="Django有Apache和Nginx两种常见部署方式  主要工具：    一台远程服务器 Nginx uWSGI Django">
+<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.pngdjangoStructureAll.png">
 
 
 
@@ -438,8 +440,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
 <h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
-<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p>待补充  </p>
-<h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p>待补充  </p>
+<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p>默认下，Nginx会安装在<code>/usr/local/nginx</code></p>
+<h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.pngdjangoStructureAll.png" alt="djangoe结构"></p>
 <p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a> 官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a> uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a> DigitalOcean提供的部署指导  </p>
 
       
