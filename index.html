@@ -400,8 +400,7 @@
 
       
         
-          
-            <p>Django有Apache和Nginx两种常见部署方式 </p>
+          <p>Django有Apache和Nginx两种常见部署方式 </p>
 <p>主要工具：  </p>
 <ul>
 <li>一台远程服务器</li>
@@ -416,23 +415,13 @@
 <li>debug方式</li>
 </ul>
 <p>主机使用的是DigitalOcean家的基础版ubuntu，版本16.01。</p>
-<p>#1.从裸机开始的环境准备</p>
-<h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
-<h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
-<h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
-<p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
-<h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
-<p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
-<p>用wWSGI挂起：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
-<p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
-<h1 id="2-理解Nginx服务器的结构"><a href="#2-理解Nginx服务器的结构" class="headerlink" title="2.理解Nginx服务器的结构"></a>2.理解Nginx服务器的结构</h1><h1 id="3-理解Django部署结构"><a href="#3-理解Django部署结构" class="headerlink" title="3.理解Django部署结构"></a>3.理解Django部署结构</h1><p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a>官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a>uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a>DigitalOcean提供的部署指导  </p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/04/Nginx+uwsgi部署Django站点/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
