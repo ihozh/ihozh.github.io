@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-05T07:10:45.000Z</updated>
+  <updated>2017-05-05T21:30:01.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/04/Nginx+uwsgi%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/</id>
     <published>2017-05-04T07:10:29.000Z</published>
-    <updated>2017-05-05T07:10:45.000Z</updated>
+    <updated>2017-05-05T21:30:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>Django有Apache和Nginx两种常见部署方式 </p>
 <p>主要工具：  </p>
@@ -72,6 +72,22 @@
 <p><strong>location:</strong>文件系统配置<br><code>location</code>设置可以让服务器去应答一些要服务器资源的请求请求。例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># http://example.com/blog/</div><div class="line"></div><div class="line">location /blog/ &#123; &#125;</div></pre></td></tr></table></figure>
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
+<h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
+<p>linux 新建用户名用于部署Nginx并赋予权限.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
+<p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 8000;</div><div class="line">	server_name mysite.com</div><div class="line">	charset utf_8;</div><div class="line"></div><div class="line">	access_log /home/username/mysite/log/access.log;</div><div class="line">	error_log /home/username/mysite/log/error_log;</div><div class="line"></div><div class="line">	location /media/ &#123;</div><div class="line">		alias /home/username/mysite/media/;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"># 命令行软连接到Nginx</div><div class="line">sudo ln -s /home/username/mysite/nti.conf /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure>
+<p>重启Nginx后，在 <code>http://mysite.com/media/test.png</code>能够看到正常显示内容就说名Nginx正常工作了。log文件显示正常。</p>
+<h2 id="常见的错误"><a href="#常见的错误" class="headerlink" title="常见的错误"></a>常见的错误</h2><h3 id="403-forbidden"><a href="#403-forbidden" class="headerlink" title="403 forbidden"></a>403 forbidden</h3><p>这里就要注意下用户名了，很多时候登录一台主机用户是root，而Nginx用户不是root，所以忽略了用户名的部署多会遇到这个问题。  </p>
+<ol>
+<li>可以将Nginx的用户名改为root，这样风险会很大。  </li>
+<li>网站静态内容部署在当前用户目录下，如列子所示。  </li>
+<li>在<code>/usr/share/nginx/html</code>下部署静态文件或软连接到网站目录。  </li>
+</ol>
+<h3 id="404-notfound"><a href="#404-notfound" class="headerlink" title="404 notfound"></a>404 notfound</h3><p>一般出现这个问题是目录的配置出现问题，使用绝对路径可解决</p>
+<h2 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h2><p>最好的办法就是log文件了，每次的请求，错误记录都会非常详细。</p>
 <h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.png" alt="djangoe结构"></p>
 <p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a> django官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a> uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a> DigitalOcean提供的部署指导<br><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx" target="_blank" rel="external">How to Configure nginx</a> 如何配置Nginx</p>
 ]]></content>
