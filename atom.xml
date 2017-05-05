@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-05T04:45:32.000Z</updated>
+  <updated>2017-05-05T07:10:45.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/04/Nginx+uwsgi%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/</id>
     <published>2017-05-04T07:10:29.000Z</published>
-    <updated>2017-05-05T04:45:32.000Z</updated>
+    <updated>2017-05-05T07:10:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>Django有Apache和Nginx两种常见部署方式 </p>
 <p>主要工具：  </p>
@@ -51,10 +51,29 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
 <h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
-<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><h2 id="最重要的文件"><a href="#最重要的文件" class="headerlink" title="最重要的文件"></a>最重要的文件</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是<code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
+<h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
+<h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
-<h2 id="Nginx如何工作"><a href="#Nginx如何工作" class="headerlink" title="Nginx如何工作"></a>Nginx如何工作</h2><h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.pngdjangoStructureAll.png" alt="djangoe结构"></p>
-<p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a> 官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a> uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a> DigitalOcean提供的部署指导  </p>
+<p><code>nginx.conf</code> 的结构如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">user www-data;</div><div class="line">worker_processes auto;</div><div class="line">pid /run/nginx.pid;</div><div class="line"></div><div class="line">events &#123;</div><div class="line">	worker_connections 768;</div><div class="line">&#125;</div><div class="line"></div><div class="line">http &#123;</div><div class="line">	......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>nginx.conf</code> 配置了主要的工作功能，<code>include</code>允许从后面的地址中找到配置文件，这样可以让主配置文件看起来更加精简，但是多层套用<code>include</code>也不推荐，让代码不易读。从默认的配置文件可以看出，<code>/etc/nginx/conf.d/</code>里所有的配置文件和<code>/etc/nginx/sites-enalbed/</code>里的配置文件都会在一开始被加载。log文件在<code>/var/log/nginx/</code>下。</p>
+<h2 id="HTTP模块：全局配置"><a href="#HTTP模块：全局配置" class="headerlink" title="HTTP模块：全局配置"></a>HTTP模块：全局配置</h2><p>HTTP 模块会处理所有来自于网络的HTTP请求，这是Nginx的大门。<br>重点说下<code>/etc/nginx/sites-enalbed/</code>这个目录，它可以让不同的虚拟域名分开来。一般都是通过软连接将配置文件连接进这个目录，很容易修改，ngnix提供了一个配置模版：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com</div></pre></td></tr></table></figure>
+<h2 id="Server模块：虚拟域名的配置"><a href="#Server模块：虚拟域名的配置" class="headerlink" title="Server模块：虚拟域名的配置"></a>Server模块：虚拟域名的配置</h2><p>在<code>/etc/nginx/sites-enalbed/</code>下配置的格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 80</div><div class="line">	root /usr/share/nginx/html;</div><div class="line">	</div><div class="line">	server_name localhost;</div><div class="line">	</div><div class="line">	location / &#123;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>server 模块是用户修改量最大的地方。对于每一个虚拟域名都可以有不同的配置文件。<code>/usr/share/nginx/html</code>这个路径现在已经是Nginx默认存放静态文件的路径了，不需要再配置。</p>
+<p><strong>listen:</strong> 用来监听端口<br><strong>server_name:</strong> 自己网站的域名  </p>
+<blockquote>
+<p>是否可以使用不有效的域名呢？<br>完全可以，在局域网中，是一个很好的办法。</p>
+</blockquote>
+<p><strong>log:</strong> log文件，HTTP模块已经设置过，在server模块里可以更细致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">access_log logs/example.access.log;</div><div class="line">access_log /srv/www/example.com/logs/access.log;</div></pre></td></tr></table></figure>
+<p>建议使用完全路径，相对路径是与现在的路径下部分匹配的，不好控制。</p>
+<p><strong>location:</strong>文件系统配置<br><code>location</code>设置可以让服务器去应答一些要服务器资源的请求请求。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># http://example.com/blog/</div><div class="line"></div><div class="line">location /blog/ &#123; &#125;</div></pre></td></tr></table></figure>
+<p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
+<h1 id="理解Django部署结构"><a href="#理解Django部署结构" class="headerlink" title="理解Django部署结构"></a>理解Django部署结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/djangoStructureAll.png" alt="djangoe结构"></p>
+<p>参考资料：<br><a href="https://docs.djangoproject.com/en/1.11/" target="_blank" rel="external">Django Document</a> django官方最权威的参考文档<br><a href="http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html" target="_blank" rel="external">Setting up Django and your web server with uWSGI and nginx</a> uWSGI提供的参考文档，有些小问题<br><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04#setting-up-the-uwsgi-application-server" target="_blank" rel="external">How To Serve Django Applications with uWSGI and Nginx on Ubuntu 16.04</a> DigitalOcean提供的部署指导<br><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx" target="_blank" rel="external">How to Configure nginx</a> 如何配置Nginx</p>
 ]]></content>
     
     <summary type="html">
