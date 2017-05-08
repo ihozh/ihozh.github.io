@@ -400,15 +400,15 @@
 
       
         
-          
-            <p>一键清屏这个功能非常好用，但是发现mac没有直接提供清屏的功能，有一些软件能够实现这个功能，但是实在没有必要。通过两行简单的命令行命令就可以实现。</p>
+          <p>一键清屏这个功能非常好用，但是发现mac没有直接提供清屏的功能，有一些软件能够实现这个功能，但是实在没有必要。通过两行简单的命令行命令就可以实现。</p>
 <p>新建’hideDesk.command’文件，command和sh文件都可以，command后缀直接执行。将下边代码粘贴在文件内：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/sh</div><div class="line">let deskVis=$(defaults read com.apple.finder CreateDesktop -bool)</div><div class="line"></div><div class="line">if [ "$deskVis" = "1" ]; then</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool false;killall Finder;say icons hidden</div><div class="line">else</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool true;killall Finder;say icons visible</div><div class="line">fi</div></pre></td></tr></table></figure>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop1.gif" alt="shell code"></p>
-<p>可以直接看到效果。如果不想要声音提示，可以删去say这一段。</p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop2.gif" alt=""></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/07/Mac通过命令行解决一键隐藏屏幕和回复/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
