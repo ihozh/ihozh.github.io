@@ -292,6 +292,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/05/07/Mac通过命令行解决一键隐藏屏幕和回复/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一盒酥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/mainphoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一盒酥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/07/Mac通过命令行解决一键隐藏屏幕和回复/" itemprop="url">
+                  Mac通过命令行解决一键隐藏屏幕和回复
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T22:16:49-04:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/兰山/" itemprop="url" rel="index">
+                    <span itemprop="name">兰山</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/05/07/Mac通过命令行解决一键隐藏屏幕和回复/" class="leancloud_visitors" data-flag-title="Mac通过命令行解决一键隐藏屏幕和回复">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一键清屏这个功能非常好用，但是发现mac没有直接提供清屏的功能，有一些软件能够实现这个功能，但是实在没有必要。通过两行简单的命令行命令就可以实现。</p>
+<p>新建’hideDesk.command’文件，command和sh文件都可以，command后缀直接执行。将下边代码粘贴在文件内：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/sh</div><div class="line">let deskVis=$(defaults read com.apple.finder CreateDesktop -bool)</div><div class="line"></div><div class="line">if [ "$deskVis" = "1" ]; then</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool false;killall Finder;say icons hidden</div><div class="line">else</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool true;killall Finder;say icons visible</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop1.gif" alt="shell code"></p>
+<p>可以直接看到效果。如果不想要声音提示，可以删去say这一段。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop2.gif" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2067,7 +2225,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2089,7 +2247,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

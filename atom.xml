@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-07T11:07:31.000Z</updated>
+  <updated>2017-05-08T02:26:17.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mac通过命令行解决一键隐藏屏幕和回复</title>
+    <link href="http://ihozh.com/2017/05/07/Mac%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E5%86%B3%E4%B8%80%E9%94%AE%E9%9A%90%E8%97%8F%E5%B1%8F%E5%B9%95%E5%92%8C%E5%9B%9E%E5%A4%8D/"/>
+    <id>http://ihozh.com/2017/05/07/Mac通过命令行解决一键隐藏屏幕和回复/</id>
+    <published>2017-05-08T02:16:49.000Z</published>
+    <updated>2017-05-08T02:26:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一键清屏这个功能非常好用，但是发现mac没有直接提供清屏的功能，有一些软件能够实现这个功能，但是实在没有必要。通过两行简单的命令行命令就可以实现。</p>
+<p>新建’hideDesk.command’文件，command和sh文件都可以，command后缀直接执行。将下边代码粘贴在文件内：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/sh</div><div class="line">let deskVis=$(defaults read com.apple.finder CreateDesktop -bool)</div><div class="line"></div><div class="line">if [ "$deskVis" = "1" ]; then</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool false;killall Finder;say icons hidden</div><div class="line">else</div><div class="line">	defaults write com.apple.finder CreateDesktop -bool true;killall Finder;say icons visible</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop1.gif" alt="shell code"></p>
+<p>可以直接看到效果。如果不想要声音提示，可以删去say这一段。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E5%85%B0%E5%B1%B1/Hide%20Desktop/hide_desktop2.gif" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一键清屏这个功能非常好用，但是发现mac没有直接提供清屏的功能，有一些软件能够实现这个功能，但是实在没有必要。通过两行简单的命令行命令就可以实现。&lt;/p&gt;
+&lt;p&gt;新建’hideDesk.command’文件，command和sh文件都可以，command后缀直接执行。将下边
+    
+    </summary>
+    
+      <category term="兰山" scheme="http://ihozh.com/categories/%E5%85%B0%E5%B1%B1/"/>
+    
+    
+      <category term="Mac" scheme="http://ihozh.com/tags/Mac/"/>
+    
+      <category term="小程序" scheme="http://ihozh.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="shell" scheme="http://ihozh.com/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Nginx + uWSGI 部署Django站点</title>
     <link href="http://ihozh.com/2017/05/04/Nginx+uwsgi%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/"/>
     <id>http://ihozh.com/2017/05/04/Nginx+uwsgi部署Django站点/</id>
     <published>2017-05-04T07:10:29.000Z</published>
-    <updated>2017-05-07T11:07:31.000Z</updated>
+    <updated>2017-05-07T12:14:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>Django有Apache和Nginx两种常见部署方式 </p>
 <p>主要工具：  </p>
@@ -41,16 +74,16 @@
 <h1 id="从裸机开始的环境准备"><a href="#从裸机开始的环境准备" class="headerlink" title="从裸机开始的环境准备"></a>从裸机开始的环境准备</h1><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
 <h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
 <h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> install</span></div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> basic operation</span></div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
 <p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
 <h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
 <p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
 <p>用wWSGI挂起：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create project</span></div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create app</span></div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">同步数据库</span></div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">开发服务器</span></div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
 <h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
 <h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
@@ -74,11 +107,11 @@
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
 <h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
 <p>linux 新建用户名用于部署Nginx并赋予权限.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span><span class="bash"> 添加权限：</span></div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
 <p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
 <p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 8000;</div><div class="line">	server_name mysite.com</div><div class="line">	charset utf_8;</div><div class="line"></div><div class="line">	access_log /home/username/mysite/log/access.log;</div><div class="line">	error_log /home/username/mysite/log/error_log;</div><div class="line"></div><div class="line">	location /media/ &#123;</div><div class="line">		alias /home/username/mysite/media/;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"># 命令行软连接到Nginx</div><div class="line">sudo ln -s /home/username/mysite/nti.conf /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 8000;</div><div class="line">	server_name mysite.com</div><div class="line">	charset utf_8;</div><div class="line"></div><div class="line">	access_log /home/username/mysite/log/access.log;</div><div class="line">	error_log /home/username/mysite/log/error_log;</div><div class="line"></div><div class="line">	location /media/ &#123;</div><div class="line">		alias /home/username/mysite/media/;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"># 命令行软连接到Nginx</div><div class="line">sudo ln -s /home/username/mysite/mysite.conf /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure>
 <p>重启Nginx后，在 <code>http://mysite.com/media/test.png</code>能够看到正常显示内容就说名Nginx正常工作了。log文件显示正常。</p>
 <h2 id="常见的错误"><a href="#常见的错误" class="headerlink" title="常见的错误"></a>常见的错误</h2><h3 id="403-forbidden"><a href="#403-forbidden" class="headerlink" title="403 forbidden"></a>403 forbidden</h3><p>这里就要注意下用户名了，很多时候登录一台主机用户是root，而Nginx用户不是root，所以忽略了用户名的部署多会遇到这个问题。  </p>
 <ol>

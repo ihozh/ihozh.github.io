@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://ihozh.com/2017/05/07/Mac%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E5%86%B3%E4%B8%80%E9%94%AE%E9%9A%90%E8%97%8F%E5%B1%8F%E5%B9%95%E5%92%8C%E5%9B%9E%E5%A4%8D/</loc>
+    <lastmod>2017-05-08T02:26:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac通过命令行解决一键隐藏屏幕和回复</title>
+        <pubTime>2017-05-08T02:16:49.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>小程序</tag>
+         
+        <tag>shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="兰山" url="http://ihozh.com/categories/%E5%85%B0%E5%B1%B1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ihozh.com/2017/05/04/Nginx+uwsgi%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/</loc>
-    <lastmod>2017-05-07T11:07:31.000Z</lastmod>
+    <lastmod>2017-05-07T12:14:22.000Z</lastmod>
     <data>
         <display>
         <title>Nginx + uWSGI 部署Django站点</title>
