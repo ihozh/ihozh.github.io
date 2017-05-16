@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="1. Vectors and Matrices向量和矩阵1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\left | \overrightar">
+<meta name="description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
 <meta name="keywords" content="微积分,公开课">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT多元微积分一：向量和矩阵 笔记">
 <meta property="og:url" content="http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="1. Vectors and Matrices向量和矩阵1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\left | \overrightar">
+<meta property="og:description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
-<meta property="og:updated_time" content="2017-05-16T04:40:54.000Z">
+<meta property="og:updated_time" content="2017-05-16T07:19:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分一：向量和矩阵 笔记">
-<meta name="twitter:description" content="1. Vectors and Matrices向量和矩阵1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\left | \overrightar">
+<meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
 <meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
 
 
@@ -411,19 +411,30 @@
       
 
       
-        <h1 id="1-Vectors-and-Matrices向量和矩阵"><a href="#1-Vectors-and-Matrices向量和矩阵" class="headerlink" title="1. Vectors and Matrices向量和矩阵"></a>1. Vectors and Matrices向量和矩阵</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
+        <h1 id="1-Vectors-Determinations-and-Planes-向量，限定和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，限定和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，限定和平面"></a>1. Vectors, Determinations and Planes 向量，限定和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
 <p><strong>计算向量的长度</strong>$\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   </p>
 <p><strong>向量的加法</strong>    </p>
 <script type="math/tex; mode=display">\overrightarrow{A}+\overrightarrow{B}=(a_{1}+b_{1},a_{2}+b_{2})</script><p>向量是头尾加法，同一方向可以进行标量加法。    </p>
 <a id="more"></a>
 <h2 id="1-2-Dot-Products点积"><a href="#1-2-Dot-Products点积" class="headerlink" title="1.2 Dot Products点积"></a>1.2 Dot Products点积</h2><p>两个向量相乘，结果是标量。几何意义是计算两个向量的夹角，以及在某一方向上的投影。   </p>
-<p>定义：   </p>
+<p><strong>定义：</strong>    </p>
 <script type="math/tex; mode=display">\overrightarrow{A}\cdot \overrightarrow{B}=\sum_{a_i,b_i}=a_{1}b_{1}+a_{2}b_{2}</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png" alt="dot product 向量点乘">   </p>
-<p>点积的几何意义：$\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)$<br>证明：    </p>
+<p>点积的几何意义：$\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)$   </p>
+<p><strong>证明：</strong>    </p>
 <script type="math/tex; mode=display">\overrightarrow{c}=\overrightarrow{a}-\overrightarrow{b}</script><script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}=(\overrightarrow{a}-\overrightarrow{b})\cdot (\overrightarrow{a}-\overrightarrow{b})={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\overrightarrow{a}\cdot \overrightarrow{b}</script><p>根据余弦定理：   </p>
 <script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}={\left | c \right |}^2={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\left | a \right |\left | b \right |\cos(\theta )</script><p>所以：  </p>
-<script type="math/tex; mode=display">\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)</script>
+<script type="math/tex; mode=display">\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)</script><h2 id="1-3-点乘的应用"><a href="#1-3-点乘的应用" class="headerlink" title="1.3 点乘的应用"></a>1.3 点乘的应用</h2><ul>
+<li>计算长度和角度<br>计算向量的角度的时候，先算出来的是cos，有趣的是cos的符号   <ul>
+<li>sign&gt;0，锐角   </li>
+<li>sign&lt;0，钝角   </li>
+<li>sign=0，直角   </li>
+</ul>
+</li>
+<li>检测正交<br><script type="math/tex">x+2y+3z=0</script> 的点集是什么形状?  平面    </li>
+</ul>
+<script type="math/tex; mode=display">\overrightarrow{A}=\left \langle 1,2,3 \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{P}=\left \langle x,y,z \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{A}\cdot \overrightarrow{OP}=0</script><script type="math/tex; mode=display">\overrightarrow{A}\perp \overrightarrow{OP}</script><p>所以点集是一个平面。</p>
+
       
     </div>
 
@@ -613,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-and-Matrices向量和矩阵"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors and Matrices向量和矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-Determinations-and-Planes-向量，限定和平面"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors, Determinations and Planes 向量，限定和平面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-点乘的应用"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 点乘的应用</span></a></li></ol></li></ol></div>
             
 
           </div>
