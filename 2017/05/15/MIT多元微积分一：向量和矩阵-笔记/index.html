@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
+<meta name="description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\">
 <meta name="keywords" content="微积分,公开课">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT多元微积分一：向量和矩阵 笔记">
 <meta property="og:url" content="http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
+<meta property="og:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
-<meta property="og:updated_time" content="2017-05-16T07:19:53.000Z">
+<meta property="og:updated_time" content="2017-05-16T07:31:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分一：向量和矩阵 笔记">
-<meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，限定和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\l">
+<meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度$\">
 <meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
 
 
@@ -411,7 +411,7 @@
       
 
       
-        <h1 id="1-Vectors-Determinations-and-Planes-向量，限定和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，限定和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，限定和平面"></a>1. Vectors, Determinations and Planes 向量，限定和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
+        <h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
 <p><strong>计算向量的长度</strong>$\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   </p>
 <p><strong>向量的加法</strong>    </p>
@@ -624,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-Determinations-and-Planes-向量，限定和平面"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors, Determinations and Planes 向量，限定和平面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-点乘的应用"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 点乘的应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors, Determinations and Planes 向量，行列式和平面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-点乘的应用"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 点乘的应用</span></a></li></ol></li></ol></div>
             
 
           </div>
