@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-12T03:35:12.000Z</updated>
+  <updated>2017-05-16T04:40:54.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIT多元微积分一：向量和矩阵 笔记</title>
+    <link href="http://ihozh.com/2017/05/15/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/"/>
+    <id>http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/</id>
+    <published>2017-05-15T20:51:16.000Z</published>
+    <updated>2017-05-16T04:40:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Vectors-and-Matrices向量和矩阵"><a href="#1-Vectors-and-Matrices向量和矩阵" class="headerlink" title="1. Vectors and Matrices向量和矩阵"></a>1. Vectors and Matrices向量和矩阵</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
+<p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
+<p><strong>计算向量的长度</strong>$\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   </p>
+<p><strong>向量的加法</strong>    </p>
+<script type="math/tex; mode=display">\overrightarrow{A}+\overrightarrow{B}=(a_{1}+b_{1},a_{2}+b_{2})</script><p>向量是头尾加法，同一方向可以进行标量加法。    </p>
+<a id="more"></a>
+<h2 id="1-2-Dot-Products点积"><a href="#1-2-Dot-Products点积" class="headerlink" title="1.2 Dot Products点积"></a>1.2 Dot Products点积</h2><p>两个向量相乘，结果是标量。几何意义是计算两个向量的夹角，以及在某一方向上的投影。   </p>
+<p>定义：   </p>
+<script type="math/tex; mode=display">\overrightarrow{A}\cdot \overrightarrow{B}=\sum_{a_i,b_i}=a_{1}b_{1}+a_{2}b_{2}</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png" alt="dot product 向量点乘">   </p>
+<p>点积的几何意义：$\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)$<br>证明：    </p>
+<script type="math/tex; mode=display">\overrightarrow{c}=\overrightarrow{a}-\overrightarrow{b}</script><script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}=(\overrightarrow{a}-\overrightarrow{b})\cdot (\overrightarrow{a}-\overrightarrow{b})={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\overrightarrow{a}\cdot \overrightarrow{b}</script><p>根据余弦定理：   </p>
+<script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}={\left | c \right |}^2={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\left | a \right |\left | b \right |\cos(\theta )</script><p>所以：  </p>
+<script type="math/tex; mode=display">\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-Vectors-and-Matrices向量和矩阵&quot;&gt;&lt;a href=&quot;#1-Vectors-and-Matrices向量和矩阵&quot; class=&quot;headerlink&quot; title=&quot;1. Vectors and Matrices向量和矩阵&quot;&gt;&lt;/a&gt;1. Vectors and Matrices向量和矩阵&lt;/h1&gt;&lt;h2 id=&quot;1-1-基础&quot;&gt;&lt;a href=&quot;#1-1-基础&quot; class=&quot;headerlink&quot; title=&quot;1.1 基础&quot;&gt;&lt;/a&gt;1.1 基础&lt;/h2&gt;&lt;p&gt;向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   &lt;/p&gt;
+&lt;p&gt;Pythagorean theory 毕达哥拉斯定理，勾股定理   &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算向量的长度&lt;/strong&gt;$\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;向量的加法&lt;/strong&gt;    &lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\overrightarrow{A}+\overrightarrow{B}=(a_{1}+b_{1},a_{2}+b_{2})&lt;/script&gt;&lt;p&gt;向量是头尾加法，同一方向可以进行标量加法。    &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="苦境" scheme="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+    
+    
+      <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>埃拉托色尼筛选法巧解质数问题</title>
@@ -492,6 +532,7 @@
 <p>单独把清明上河图拿出来写一篇文章，一个是因为两岸都曾以清明上河图为主题发行过邮票，但是因为不同的背景而际遇大相径庭。另一个就是我想尝试在黄沙之中，挑挑拣拣，将一些被利益的淤泥埋没的真金洗捡出来。让更多的人能认识这些珍品。<br>讲了这么多废话，先上图一睹为快吧<br>下图是台湾1968年专53 清明上河图(第一组7枚)<br>低面值5张联票<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9353_3.jpg" alt=""><br>高面值2张<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9353_4.jpg" alt=""><br>该套邮票设计原型是清院本清明上河图，现存于台北故宫博物院中。可能有些朋友不知道，原来清明上河图也有这么多的版本。清明上河图是北宋流行的一种绘画题材，其中以张择端所绘最为出名，受到历代喜爱。所以仿本各朝都有出现。清院本的清明上河图是在清乾隆元年，由陈枚、孙祜、金昆、戴洪、程志道五位宫廷画家合作而成。他们集合各家所长，又将明清时期特有的娱乐表演，踏青等风俗加入，画面内容更加丰富，成为自张后最为出名一幅。<br>这个时期的明清画，正是我想强调的，由于受到西洋画风影响，色彩明亮，物做细腻严谨。这种风格与现代的邮票设计擦却微妙的火花。以大陆邮票而言，仅凭笔者个人喜爱程度，新中国邮票设计的巅峰时期出现在老纪特后期，经历文革，编号，到新JT的74-82时期。这三十年的邮票设计极为精美，这段时期的邮票也被广大集邮爱好者喜爱，市场价就足以说明一切问题。<br>68年正处于大陆文革票的后期，由于文革时期本身特殊的政治意义，邮票设计特点鲜明，我们抛开不谈。回过头再看看台湾发行的清明上河图，其设计与配色非常接近大陆老纪特后期的邮票风格。色彩鲜而不艳，画面丰而不繁，配色总给人那种恰到好处的感觉。在六七是年代，印刷技术配色的局限反而给我们最舒服的视觉享受。反而在现代发达的印刷术下，大块使用对比鲜明的靓丽色块，再加上计算机辅助的图形设计，使得邮票总是缺乏那么些美感，欠了几分灵动的火候。<br>68年发行的这套邮票，是台湾第一套连票形式印刷的古画邮票，票种为影写版印刷。其中五张连票面值均为1元，画面取原作的连续一部分，金明池春景。这一部分是张本中没有的，第一二枚主要景色是宝津楼，临水殿，骆驼虹和水心殿，“天阔云高，溪横水远，晚日寒生轻晕“，气势磅礴。后三枚逐渐将景色过度到热闹的街市。还有两张则选择了画面中最为经典的两个场景，城门（面值5元）和虹桥（面值8元）。</p>
 <p>下图是台湾1969年专58 清明上河图(第二组5枚)<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9358_1.jpg" alt=""><br>清院本清明上河图画中人物超过4000人，反应很多明清时期的社会风俗。所以在69年，台局又发行了清明上河图第二组邮票。这五张邮票是原画中的五个局部特写。其中两枚为连票面值均为1元，取景迎亲图，还有迁居（面值2.5元），画廊（面值5元）和露店（面值8元）.每一枚邮票都可以看见栩栩如生的原画人物。还可以看到当时人们使用的穿着，使用的工具，居住条件等。由此我们可以推测出当时的社会风气非常开放，康乾盛事可见一斑。   </p>
 <p>2004年大陆发行特种邮票 2004-26T《清明上河图》（9枚 套票连印）<br><img src="http://www.chinesestamp.cn/wp-content/uploads/2014/06/2004-26.jpg" alt=""><br>此邮票原本为张择端本清明上河图,图案取景为其全景，此本现藏于北京故宫博物馆中。前七枚80分，第八枚1元，第九枚2元。胶雕套印，印刷技术细腻程度为现代邮票罕有。所以在短短几年，身价暴涨十倍一度到百元之上。后来中国邮政又在2010世博会推出5米长的丝绢邮票，与原作等比例制作，是目前世界上最大的邮票。<br>当然这个对我来说过于奢华，我甚至没有机会亲眼目睹。现代科技对邮票的印制工艺发挥的淋漓尽致，邮票品种甚至五花八门，再加上新票人为炒作严重，我自己不敢轻易介入。有时候也只能从朋友口中感受下那种潮起潮落的激迫之感。<br>就从艺术价值而言，两套清明上河图都是佳品，各有所长。尤其台湾版笔者推为珍品，下表做些对比给读者直观的感受。 </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -522,6 +563,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>2013年，台版清明上河图是我推荐的邮票之一，当时的价钱在200人民币上下。作为学生资金有限，也不敢搏命。即使现在，这个价位在笔者看来仍然偏低。各位集邮爱好者如有兴趣，现在入手不失为合适时机。</p>
 <p>笔者注：在网上所查资料中，包括百度百科在内，很多资料将两幅清明上河图混为一谈，实属不该。对于清明踏青扫墓的习俗民间相传始于朱元璋时期。其实早在唐朝，扫墓开始流行，唐玄宗下令“寒食上墓”，那时的扫墓是在寒食。至于踏青一说，应该只存在于清院本中。<br>资料整理：<br>清明上河图张择端本高清图： <a href="http://news.sohu.com/s2015/qmsht/index.shtml?_t=t" target="_blank" rel="external">点击这里</a><br>清明上河图清院本高清图：<a href="http://www.npm.gov.tw/exh96/orientation/flash_4/index.html" target="_blank" rel="external">点击这里</a></p>
 ]]></content>
