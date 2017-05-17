@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-17T21:45:21.000Z</updated>
+  <updated>2017-05-17T21:52:10.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/15/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/</id>
     <published>2017-05-15T20:51:16.000Z</published>
-    <updated>2017-05-17T21:45:21.000Z</updated>
+    <updated>2017-05-17T21:52:10.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
@@ -115,7 +115,7 @@ b_1&b_2
 <script type="math/tex; mode=display">\det(P_1P,P_1P_2,P_1P_3)=0</script><p>带入 $P(x,y,z)$ 就得到平面的方程。    </p>
 <p>另一个方法：如果P在平面上则可以推出   </p>
 <script type="math/tex; mode=display">\overrightarrow{P_1P}\perp \overrightarrow{n}</script><p>$\overrightarrow{n}$ 是平面法向量（normal vector）。<br>最后得到了一个我们很熟悉的公式，也是计算体积的公式：</p>
-<script type="math/tex; mode=display">\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})</script><p>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
+<script type="math/tex; mode=display">\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})=0</script><p>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
 ]]></content>
     
     <summary type="html">
