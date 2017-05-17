@@ -92,21 +92,21 @@
 
 
 
-<meta name="description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度 $">
+<meta name="description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度">
 <meta name="keywords" content="微积分,公开课,18.02">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT多元微积分一：向量和矩阵 笔记">
 <meta property="og:url" content="http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度 $">
+<meta property="og:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/det.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/right-hand%20rule.png?imageMogr2/auto-orient/thumbnail/200x200>/blur/1x0/quality/75|imageslim">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/volume.png">
-<meta property="og:updated_time" content="2017-05-17T21:52:10.000Z">
+<meta property="og:updated_time" content="2017-05-17T23:30:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分一：向量和矩阵 笔记">
-<meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度 $">
+<meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度">
 <meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
 
 
@@ -414,7 +414,7 @@
       
 
       
-        <h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both dirction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
+        <h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
 <p><strong>计算向量的长度</strong> $\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   </p>
 <p><strong>向量的加法</strong>    </p>
@@ -504,7 +504,7 @@ b_1&b_2
 <p>如何已知三点构成的平面，和另外一个点P，如何确定点P在这个平面上。   </p>
 </blockquote>
 <p>一个方法是：</p>
-<script type="math/tex; mode=display">\det(P_1P,P_1P_2,P_1P_3)=0</script><p>带入 $P(x,y,z)$ 就得到平面的方程。    </p>
+<script type="math/tex; mode=display">\det(\overrightarrow{P_1P},\overrightarrow{P_1P_2},\overrightarrow{P_1P_3})=0</script><p>带入 $P(x,y,z)$ 就得到平面的方程。    </p>
 <p>另一个方法：如果P在平面上则可以推出   </p>
 <script type="math/tex; mode=display">\overrightarrow{P_1P}\perp \overrightarrow{n}</script><p>$\overrightarrow{n}$ 是平面法向量（normal vector）。<br>最后得到了一个我们很熟悉的公式，也是计算体积的公式：</p>
 <script type="math/tex; mode=display">\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})=0</script><p>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
