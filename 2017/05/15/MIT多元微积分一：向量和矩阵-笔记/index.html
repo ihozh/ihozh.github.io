@@ -103,7 +103,8 @@
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/det.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/right-hand%20rule.png?imageMogr2/auto-orient/thumbnail/200x200>/blur/1x0/quality/75|imageslim">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/volume.png">
-<meta property="og:updated_time" content="2017-05-18T18:15:15.000Z">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Matrix_multiplication_diagram.png">
+<meta property="og:updated_time" content="2017-05-19T09:18:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分一：向量和矩阵 笔记">
 <meta name="twitter:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度">
@@ -508,6 +509,32 @@ b_1&b_2
 <p>另一个方法：如果P在平面上则可以推出   </p>
 <script type="math/tex; mode=display">\overrightarrow{P_1P}\perp \overrightarrow{n}</script><p>$\overrightarrow{n}$ 是平面法向量（normal vector）。<br>最后得到了一个我们很熟悉的公式，也是计算体积的公式：</p>
 <script type="math/tex; mode=display">\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})=0</script><p>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
+<h1 id="2-Matrices-and-Systems-of-Equations-矩阵和系统方程"><a href="#2-Matrices-and-Systems-of-Equations-矩阵和系统方程" class="headerlink" title="2. Matrices and Systems of Equations 矩阵和系统方程"></a>2. Matrices and Systems of Equations 矩阵和系统方程</h1><blockquote>
+<p>为什么要使用矩阵，使用矩阵的动机是什么</p>
+</blockquote>
+<p>在生活中，我们接触的很多东西都是线性的，或者需要简化成线性的。多个等式的联立得到的就是矩阵了。联立方程就是矩阵乘法。</p>
+<h2 id="2-1-矩阵乘法"><a href="#2-1-矩阵乘法" class="headerlink" title="2.1 矩阵乘法"></a>2.1 矩阵乘法</h2><blockquote>
+<p>举个熟悉的鸡兔同笼的问题. 鸡和兔共有 $a$只，共有脚 $b$ 个，用矩阵去表达这个问题。</p>
+</blockquote>
+<p>假设有鸡$x$只，兔$y$只</p>
+<script type="math/tex; mode=display">\left\{\begin{matrix}
+x+y=a\\
+2x+4y=b
+\end{matrix}\right.</script><p>用矩阵乘法表示：   </p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+ 1& 1\\
+ 2& 4
+\end{bmatrix}
+\begin{bmatrix}
+ x\\
+ y
+\end{bmatrix}=
+\begin{bmatrix}
+ a\\
+ b
+\end{bmatrix}</script><p>通用的数学符号表达方式为：</p>
+<script type="math/tex; mode=display">A\cdot X=U</script><p>在矩阵和向量中的每一个值都叫做元素（entries）<br>在计算矩阵乘法 $A\cdot B$ 时，每个元素都可以通过A矩阵的行和B矩阵的列做点乘得到。<strong>A矩阵的宽度必须要等于B矩阵的高度</strong>。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Matrix_multiplication_diagram.png" alt="矩阵乘法示意图"></p>
 
       
     </div>
@@ -700,7 +727,7 @@ b_1&b_2
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors, Determinations and Planes 向量，行列式和平面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-点积的应用"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 点积的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Determinations-行列式"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Determinations 行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-空间行列式"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 空间行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Cross-product-叉乘"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 Cross product 叉乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Equation-of-planes-平面的方程"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 Equation of planes 平面的方程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面"><span class="nav-number">1.</span> <span class="nav-text">1. Vectors, Determinations and Planes 向量，行列式和平面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-基础"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dot-Products点积"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Dot Products点积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-点积的应用"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 点积的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Determinations-行列式"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Determinations 行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-空间行列式"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 空间行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Cross-product-叉乘"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 Cross product 叉乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Equation-of-planes-平面的方程"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 Equation of planes 平面的方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Matrices-and-Systems-of-Equations-矩阵和系统方程"><span class="nav-number">2.</span> <span class="nav-text">2. Matrices and Systems of Equations 矩阵和系统方程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-矩阵乘法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 矩阵乘法</span></a></li></ol></li></ol></div>
             
 
           </div>
