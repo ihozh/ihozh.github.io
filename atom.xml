@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-19T09:18:37.000Z</updated>
+  <updated>2017-05-20T08:09:53.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/15/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/</id>
     <published>2017-05-15T20:51:16.000Z</published>
-    <updated>2017-05-19T09:18:37.000Z</updated>
+    <updated>2017-05-20T08:09:53.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
@@ -107,7 +107,7 @@ b_1&b_2
 =0\widehat{i}-0\widehat{j}+1\widehat{k}</script><p><strong>关于空间体积的一些观点</strong><br>前面说到三维行列式的几何学意义就是体积。   </p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/volume.png" alt="volume">  </p>
 <script type="math/tex; mode=display">Volume=base(area)\cdot height=\left | \overrightarrow{B}\times \overrightarrow{C} \right |(\overrightarrow{A}\cdot \overrightarrow{n})</script><script type="math/tex; mode=display">\overrightarrow{n}=\frac{\overrightarrow{B}\times \overrightarrow{C}}{\left | \overrightarrow{B}\times \overrightarrow{C} \right |}</script><script type="math/tex; mode=display">Volume=\overrightarrow{A}\cdot (\overrightarrow{B}\times \overrightarrow{C})=\det(\overrightarrow{A},\overrightarrow{B},\overrightarrow{C})</script><p><strong>补充</strong><br>$\overrightarrow{A}\times \overrightarrow{B}$ 和  $\overrightarrow{B}\times \overrightarrow{A}$ 由于方向的原因，是完全相反的。<br>$\overrightarrow{A}\times \overrightarrow{A}=0$</p>
-<h2 id="1-7-Equation-of-planes-平面的方程"><a href="#1-7-Equation-of-planes-平面的方程" class="headerlink" title="1.7 Equation of planes 平面的方程"></a>1.7 Equation of planes 平面的方程</h2><p>这一节主要讲的是叉乘的应用。   </p>
+<h2 id="1-7-Equations-of-planes-平面的方程"><a href="#1-7-Equations-of-planes-平面的方程" class="headerlink" title="1.7 Equations of planes 平面的方程"></a>1.7 Equations of planes 平面的方程</h2><p>这一节主要讲的是叉乘的应用。   </p>
 <blockquote>
 <p>如何已知三点构成的平面，和另外一个点P，如何确定点P在这个平面上。   </p>
 </blockquote>
@@ -120,7 +120,7 @@ b_1&b_2
 <p>为什么要使用矩阵，使用矩阵的动机是什么</p>
 </blockquote>
 <p>在生活中，我们接触的很多东西都是线性的，或者需要简化成线性的。多个等式的联立得到的就是矩阵了。联立方程就是矩阵乘法。</p>
-<h2 id="2-1-矩阵乘法"><a href="#2-1-矩阵乘法" class="headerlink" title="2.1 矩阵乘法"></a>2.1 矩阵乘法</h2><blockquote>
+<h2 id="2-1-Matrix-Multiplication-矩阵乘法"><a href="#2-1-Matrix-Multiplication-矩阵乘法" class="headerlink" title="2.1 Matrix Multiplication 矩阵乘法"></a>2.1 Matrix Multiplication 矩阵乘法</h2><blockquote>
 <p>举个熟悉的鸡兔同笼的问题. 鸡和兔共有 $a$只，共有脚 $b$ 个，用矩阵去表达这个问题。</p>
 </blockquote>
 <p>假设有鸡$x$只，兔$y$只</p>
@@ -142,6 +142,127 @@ x+y=a\\
 \end{bmatrix}</script><p>通用的数学符号表达方式为：</p>
 <script type="math/tex; mode=display">A\cdot X=U</script><p>在矩阵和向量中的每一个值都叫做元素（entries）<br>在计算矩阵乘法 $A\cdot B$ 时，每个元素都可以通过A矩阵的行和B矩阵的列做点乘得到。<strong>A矩阵的宽度必须要等于B矩阵的高度</strong>。</p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Matrix_multiplication_diagram.png" alt="矩阵乘法示意图"></p>
+<p>AB的乘积代表先做变换B再做变换A。我们习惯从左往右，但是矩阵计算是从右往左。直观的解释就是如果有两个连续的方程 $f(g(x))$ ，先要计算 $g(x)$, 再做 $f(x)$。   </p>
+<p><strong>矩阵的结合律（associativity）</strong></p>
+<script type="math/tex; mode=display">(AB)X=A(BX)</script><p><strong>补充</strong></p>
+<script type="math/tex; mode=display">AB \neq BA</script><p><strong>Identity matrix 单位矩阵</strong></p>
+<script type="math/tex; mode=display">IX=X</script><p>单位矩阵即对角全为一的矩阵。是一种“可有可无”的矩阵，单位矩阵的变换叫做恒等变换。</p>
+<blockquote>
+<p>在平面上，做90度逆时针旋转的变换</p>
+</blockquote>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E6%97%8B%E8%BD%AC90%E5%BA%A6.png" alt="旋转90度"></p>
+<script type="math/tex; mode=display">R=\begin{bmatrix}
+ 0& -1\\
+ 1& 0
+\end{bmatrix}</script><script type="math/tex; mode=display">R\hat{i}=
+\begin{bmatrix}
+ 0& -1\\
+ 1& 0
+\end{bmatrix}
+\begin{bmatrix}
+ 1\\
+ 0
+\end{bmatrix}=
+\begin{bmatrix}
+ 0\\
+ 1
+\end{bmatrix}=\hat{j}</script><script type="math/tex; mode=display">R\hat{j}=
+\begin{bmatrix}
+ 0& -1\\
+ 1& 0
+\end{bmatrix}
+\begin{bmatrix}
+ 0\\
+ 1
+\end{bmatrix}=
+\begin{bmatrix}
+ -1\\
+ 0
+\end{bmatrix}=-\hat{i}</script><script type="math/tex; mode=display">(x,y)\rightarrow (-y,x)</script><p>变换矩阵的每一列说明了对要变换的对象进行什么操作。<br>R的第一列就是对第一个基向量做R变换的结果，第二列是对第二个基向量做R变换后的结果。</p>
+<p>最有意思的是，通过矩阵计算大大简化了需要用公式计算的计算量，如果考虑连续做两次90度逆时针变换：</p>
+<script type="math/tex; mode=display">R^2=\begin{bmatrix}
+ -1& 0\\
+ 0& -1
+\end{bmatrix}=-I</script><script type="math/tex; mode=display">(x,y)\rightarrow (-x,-y)</script><script type="math/tex; mode=display">R^4=\begin{bmatrix}
+ 1& 0\\
+ 0& 1
+\end{bmatrix}=I</script><h2 id="2-2-Matrix-Inverses-逆矩阵"><a href="#2-2-Matrix-Inverses-逆矩阵" class="headerlink" title="2.2 Matrix Inverses 逆矩阵"></a>2.2 Matrix Inverses 逆矩阵</h2><p>如果定义A的逆矩阵为M，则有</p>
+<script type="math/tex; mode=display">AM=I</script><script type="math/tex; mode=display">MA=I</script><script type="math/tex; mode=display">M=A^{-1}</script><p>这里A需要是 $n\times n$的方阵，如果不是方阵的情况不在这里讨论。</p>
+<p>对线性系统 $AX=B$ 的解可以使用逆矩阵。等式两边同时乘A的逆矩阵</p>
+<script type="math/tex; mode=display">X=A^{-1}B</script><p><strong>公式（适合小矩阵）</strong></p>
+<script type="math/tex; mode=display">A^{-1}=\frac{1}{det(A)}adj(A)</script><p>adj（adjoint）是 <strong>伴随矩阵</strong></p>
+<p><strong>步骤（3*3矩阵)</strong>   </p>
+<script type="math/tex; mode=display">A=\begin{bmatrix}
+ 2& 2& 2\\
+ 2& 4& 5\\
+ 1& 1& 2
+\end{bmatrix}</script><p>1.首先要做的是，是找一个叫 <strong>余子式（minors）</strong> 的东西。   </p>
+<p>余子式是去除了一些元素的行列式。要找到A矩阵一行一列的余子式，去掉这个元素所在的行和列，计算剩余部分的行列式，即</p>
+<script type="math/tex; mode=display">\begin{vmatrix}
+ X& X& X\\
+ X& 4& 5\\
+ X& 1& 2
+\end{vmatrix}=
+\begin{vmatrix}
+ 4& 5\\
+ 1& 2
+\end{vmatrix}=3</script><p>得到矩阵A的余子式：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+ 3& -1& -2\\
+ 3&  1& -1\\
+ 3&  4& 2
+\end{pmatrix}</script><p>2.找到另外一个矩阵，叫做 <strong>代数余子式（cofactors)</strong><br>代数余子式就是给余子式加上符号。根据棋盘图所示，+表示保留余子式值，-表示反转余子式的值。顺便一提，棋盘法可以同样用来做叉乘的符号判定。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E6%A3%8B%E7%9B%98%E5%9B%BE.png" alt="棋盘图"></p>
+<p>得到代数余子式：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+  3&  1& -2\\
+ -3&  1& 1\\
+  3& -4& 2
+\end{pmatrix}</script><p>3.<strong>转置（transpose）</strong>，得到伴随矩阵<br>行列互换</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+  3&  -3& 3\\
+  1&  1& -4\\
+  -2& 1& 2
+\end{pmatrix}=adj(A)</script><p>4.除以行列式</p>
+<script type="math/tex; mode=display">A^{-1}=\frac{1}{3}\begin{pmatrix}
+  3&  -3& 3\\
+  1&  1& -4\\
+  -2& 1& 2
+\end{pmatrix}</script><h2 id="2-3-Equations-of-planes-平面的方程再探"><a href="#2-3-Equations-of-planes-平面的方程再探" class="headerlink" title="2.3 Equations of planes 平面的方程再探"></a>2.3 Equations of planes 平面的方程再探</h2><p>之前学习点积的时候就知道如何去检测正交或者垂直。平面的公式是：</p>
+<script type="math/tex; mode=display">ax+by+cz=d</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B.png" alt="平面方程"></p>
+<p>第一种情况，平面过原点，知道法向量 $\overrightarrow{N}=\left \langle 1,5,10 \right \rangle$ , 对于在平面上的点 $P(x,y,z)$ , 有：</p>
+<script type="math/tex; mode=display">\overrightarrow{OP}\cdot \overrightarrow{N}=0</script><script type="math/tex; mode=display">x+5y+10z=0</script><p>第二种情况，同样的法向量，平面过 $P0(2,1,-1)$    </p>
+<script type="math/tex; mode=display">\overrightarrow{P_0P}\cdot \overrightarrow{N}=0</script><script type="math/tex; mode=display">x+5y+10z=-3</script><p>总结下两种情况下的特点：</p>
+<ul>
+<li>不同情况等式右边常数项不同</li>
+<li>常数项是平面的平移距离的一个表示</li>
+<li>等式左边的系数刚好和法向量对应</li>
+</ul>
+<p>一个有意思的事情是，这里又和叉乘联系起来了。<strong>平面方程的系数就是法向量，如何得到法向量呢？叉乘。</strong> 点乘，平面，叉乘就这么在一起了。</p>
+<p>举个例子：</p>
+<p>向量 $\overrightarrow{v}=\left \langle 1,2,-1 \right \rangle$ 和平面方程 $x+y+3z=5$ 是什么关系？   </p>
+<p>快速确定平面方程的法向量，发现和已知向量不成比例，但是点积为0，说明向量垂直于法向量，所以和平面是平行的。如果把平面移到原点，如果向量和平面平行，向量的末端就在被移动到原点的平面上。    </p>
+<h2 id="2-4-Linear-Systems-and-Planes-线性系统和平面"><a href="#2-4-Linear-Systems-and-Planes-线性系统和平面" class="headerlink" title="2.4 Linear Systems and Planes 线性系统和平面"></a>2.4 Linear Systems and Planes 线性系统和平面</h2><p>线性方程组的几何意义。<br>线性方程组，对于三纬空间来说（3*3线性方程组），方程组的每一个方程决定一个平面。解方程组的本质就是找平面的交点。<br>一般会有这三种情况：<br>三条交线交于一点：有唯一解</p>
+<script type="math/tex; mode=display">X=A^{-1}B</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E4%BA%A4%E7%82%B9.png" alt="三面交于一点"></p>
+<p>平面交线平行：没有解，条件矛盾，无法同时满足<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E4%BA%A4%E7%BA%BF%E5%B9%B3%E8%A1%8C.png" alt="交线平行"></p>
+<p>平面交线重叠：有无数解，条件不足</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E4%B8%89%E9%9D%A2%E5%85%B1%E7%BA%BF.png" alt="交线重叠"></p>
+<p>讨论下平面方程关于常数项d，d的数值并不是平移的距离，常数项除以法向量的长度才是平面到原点的距离。   </p>
+<p>将这个问题回归到从代数上，矩阵不一定能够求逆是因为行列式有可能为0（矩阵的求逆公式）。所以，矩阵的行列式不为0，矩阵可求逆，方程组有解。  </p>
+<p>行列式不为0是三个平面有唯一交点的情况，行列式为0是交线平行的情况。</p>
+<h2 id="2-5-Solutions-to-Square-Systems-方阵系统的解"><a href="#2-5-Solutions-to-Square-Systems-方阵系统的解" class="headerlink" title="2.5 Solutions to Square Systems 方阵系统的解"></a>2.5 Solutions to Square Systems 方阵系统的解</h2><p>这一节从另一个角度去认识行列式为0，为什么方程会没有解。</p>
+<p>有一种方程组叫做 <strong>齐次方程组(homogeneous systems)</strong>, 特点是常数项全部为0。方程组各项次数整齐，在数乘运算下不变。    </p>
+<script type="math/tex; mode=display">AX=0</script><p>齐次方程总是存在一个平凡解(trivial solution)，即原点。几何学表示三个平面都过原点。   </p>
+<p>第一种情况，A的行列式不为0</p>
+<script type="math/tex; mode=display">AX=0\Leftrightarrow X=A^{-1}0=0</script><p>原点是唯一解。   </p>
+<p>第二种情况，A的行列式为0<br>我们知道A中的项是方程组的系数，而方程组的系数又是平面的法向量。行列式为0，说明三个平面的法向量的行列式为0:</p>
+<script type="math/tex; mode=display">\det(\overrightarrow{N_1},\overrightarrow{N_2},\overrightarrow{N_3})=0</script><p>这就意味着三个法向量共面（coplanar）（参考上一章）。用这三个法向量围成了一个不占任何体积的平行六面体。   </p>
+<p>证明有无穷多解：<br>存在一条垂直于三个法向量所在平面且过原点的直线，平行于三个平面，而且现在面上，所以存在无穷多解。</p>
+<p>如何求出这些解：<br>对法向量做叉乘，这就是方程的非平凡解（nontrivial solution）</p>
+<hr>
+<p>如果是一般情况，系统不再是齐次方程。</p>
+<script type="math/tex; mode=display">AX=B</script><p>if $\det(A) \neq 0$</p>
+<script type="math/tex; mode=display">AX=B\Leftrightarrow X=A^{-1}B</script><p>if $\det(A) = 0$ 无解或无穷多解</p>
 ]]></content>
     
     <summary type="html">
