@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-20T08:09:53.000Z</updated>
+  <updated>2017-05-23T06:52:52.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/15/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/</id>
     <published>2017-05-15T20:51:16.000Z</published>
-    <updated>2017-05-20T08:09:53.000Z</updated>
+    <updated>2017-05-23T06:52:52.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
@@ -263,6 +263,64 @@ x+y=a\\
 <p>如果是一般情况，系统不再是齐次方程。</p>
 <script type="math/tex; mode=display">AX=B</script><p>if $\det(A) \neq 0$</p>
 <script type="math/tex; mode=display">AX=B\Leftrightarrow X=A^{-1}B</script><p>if $\det(A) = 0$ 无解或无穷多解</p>
+<h1 id="3-Parametric-Equations-for-Curves-直线和曲线的参数方程"><a href="#3-Parametric-Equations-for-Curves-直线和曲线的参数方程" class="headerlink" title="3. Parametric Equations for Curves  直线和曲线的参数方程"></a>3. Parametric Equations for Curves  直线和曲线的参数方程</h1><h2 id="3-1-Equations-of-Lines-直线的方程"><a href="#3-1-Equations-of-Lines-直线的方程" class="headerlink" title="3.1  Equations of Lines 直线的方程"></a>3.1  Equations of Lines 直线的方程</h2><p>直线，可以用两个平面的交集表示，但这种方法并不高效率。更好的办法是 <strong>把直线当作运动点的轨迹</strong>。轨迹就是 <strong>参数方程</strong>。</p>
+<p>例：确定经过点 $Q0=(-1,2,2)$ 和 $Q1=(1,3,-1)$ 的直线。<br>定义Q(t)是一个移动点，在t=0时刻，在Q0点。在直线上做匀速运动，在单位时间内，到达点Q1。直线的方程问题就转化为当时刻为t的时候，点Q(t)在什么位置？   </p>
+<script type="math/tex; mode=display">\overrightarrow{Q_0Q(t)}=t\overrightarrow{Q_0Q_1}</script><p>分别以x(t),y(t),z(t)表示Q(t)的坐标，可以得到直线的参数方程：</p>
+<script type="math/tex; mode=display">\left\{\begin{matrix}
+x(t)=-1+2t\\
+y(t)=2+t\\
+z(t)=2-3t
+\end{matrix}\right.</script><p>等价于：</p>
+<script type="math/tex; mode=display">Q(t)=Q_0+t\overrightarrow{Q_0Q_1}</script><p>常数项（-1，2，2）是t0时刻的位置，一次项（2，1，-3）就是向量P0P1，告诉了点应该移动的方向。</p>
+<h2 id="3-2-Intersection-of-a-Line-and-a-Plane-直线和平面的相交"><a href="#3-2-Intersection-of-a-Line-and-a-Plane-直线和平面的相交" class="headerlink" title="3.2 Intersection of a Line and a Plane  直线和平面的相交"></a>3.2 Intersection of a Line and a Plane  直线和平面的相交</h2><p>得到了直线的参数方程，再来一个平面 $x+2y+4z=7$，平面和直线是否相交，交点在哪里。如何判断点相对于平面的位置。<br>将点的坐标带入平面方程，可判断点相对平面的位置。带入参数方程，可以求出交点。<strong>带入方程实际上是运动轨迹和平面法向量做点积。</strong> 如果t的系数为0，说明运动轨迹平行于平面。等式成立说明轨迹在平面上。   </p>
+<h2 id="3-3-General-Parametric-Equations-the-Cycloid-参数方程组-摆线"><a href="#3-3-General-Parametric-Equations-the-Cycloid-参数方程组-摆线" class="headerlink" title="3.3 General Parametric Equations: the Cycloid 参数方程组:摆线"></a>3.3 General Parametric Equations: the Cycloid 参数方程组:摆线</h2><p>除直线外，更普遍的是点的任意运动，如何用参数方程表示，以摆线为例子。<br>摆线：半径为a的轮子，沿着x轴方向滚动，轮子边缘上的一点产生的轨迹。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid_f.gif" alt="Cycloid"></p>
+<p>参数有很多种选择，这里使用角度代替时间参数t，这样可以使结果更加简单。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid_h.png" alt="Cycloid"></p>
+<script type="math/tex; mode=display">\overrightarrow{OP}=\overrightarrow{OT}+\overrightarrow{TC}+\overrightarrow{CP}</script><script type="math/tex; mode=display">\overrightarrow{OT}=\left \langle r\theta,0 \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{TC}=\left \langle 0,r \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{CP}=\left \langle -r\sin{\theta},-r\cos{\theta} \right \rangle</script><p>得到P的参数方程为：</p>
+<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle</script><h2 id="3-4-Point-Cusp-on-Cycloid-摆线的顶点"><a href="#3-4-Point-Cusp-on-Cycloid-摆线的顶点" class="headerlink" title="3.4 Point (Cusp) on Cycloid 摆线的顶点"></a>3.4 Point (Cusp) on Cycloid 摆线的顶点</h2><p>仔细思考，摆线在接近底面的时候到底是什么样子？<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid-%E9%A1%B6%E7%82%B9.png" alt="摆线的顶点"></p>
+<p>想要知道原点处到底发生了什么，就要自己的研究参数方程了，首先要做的就是近似。大家都知道的是，当角度足够小的时候，</p>
+<script type="math/tex; mode=display">\sin{\theta}\sim 0</script><script type="math/tex; mode=display">\cos{\theta}\sim 1</script><p>但是将这个近似代入原参数方程中，并不能提供好的结果，我们需要更加准确的近似：<strong>泰勒展开</strong>。   </p>
+<blockquote>
+<p>定理：<br>设 n 是一个正整数。如果定义在一个包含 a 的区间上的函数 f 在 a 点处 n+1 次可导，那么对于这个区间上的任意 x，都有：</p>
+<script type="math/tex; mode=display">f(x)=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+...+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)</script><p>其中的多项式称为函数在$a$处的泰勒展开式，剩余的 <script type="math/tex">R_n(x)</script> 是泰勒公式的余项，是 $(x−a)^n$ 的高阶无穷小。</p>
+</blockquote>
+<p>得到三角函数的三阶泰勒展开：</p>
+<script type="math/tex; mode=display">\sin(\theta)\approx\theta-\frac{1}{6}\theta^3</script><script type="math/tex; mode=display">\cos(\theta)\approx 1-\frac{1}{2}\theta^2</script><p>当半径为1，这时候的参数方程变成：   </p>
+<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle \frac{1}{6}\theta^3,\frac{1}{2}\theta^2 \right \rangle</script><p>在原点处的斜率，当角度足够小时：</p>
+<script type="math/tex; mode=display">\frac{y}{x}=\frac{3}{\theta}\rightarrow \infty</script><p>说明摆线在原点处有一个垂直的切线，选项是d。</p>
+<h2 id="3-5-Velocity-and-Acceleration-速度和加速度"><a href="#3-5-Velocity-and-Acceleration-速度和加速度" class="headerlink" title="3.5  Velocity and Acceleration 速度和加速度"></a>3.5  Velocity and Acceleration 速度和加速度</h2><p>不用泰勒展开，换一个思路来研究点的运动，还是摆线，看看摆线的速度和加速度</p>
+<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle</script><p><strong>位置向量</strong> 可以表示任意时刻的点的坐标，角度和时间成正比，半径为1，以单位速度运动的摆线：</p>
+<script type="math/tex; mode=display">\overrightarrow{r}=\left \langle t-\sin{t},1-\cos{t} \right \rangle</script><p><strong>速度向量（Velocity vector）：</strong>   </p>
+<script type="math/tex; mode=display">\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=
+\left \langle \frac{\mathrm{d} x}{\mathrm{d} t},\frac{\mathrm{d} y}{\mathrm{d} t} \right \rangle=
+\left \langle 1-\cos{t},\sin{t}\right \rangle</script><p>在t=0时刻时，速度为0。<br><strong>速率（speed）：</strong></p>
+<script type="math/tex; mode=display">\left | \overrightarrow{v} \right |=\sqrt{v_x^2+v_y^2}=
+\sqrt{2-2\cos{t}}</script><p>当$t=\pi$时，瞬时速率最大，这是点的运动速度是轮子速度的两倍。<br><strong>加速度（Acceleration）：</strong></p>
+<script type="math/tex; mode=display">\overrightarrow{a}=\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=
+\left \langle \sin{t},\cos{t}\right \rangle</script><p>在 t=0 时刻时，</p>
+<script type="math/tex; mode=display">\overrightarrow{a}=
+\left \langle 0,1\right \rangle</script><p>说明摆线在原点处只有垂直于x轴的向上加速度。</p>
+<h2 id="3-6-Velocity-and-Arc-Length-速度和弧长"><a href="#3-6-Velocity-and-Arc-Length-速度和弧长" class="headerlink" title="3.6 Velocity and Arc Length 速度和弧长"></a>3.6 Velocity and Arc Length 速度和弧长</h2><p><strong>单位切向量（unit tangent vector）：</strong> 用来表示轨迹运动的方向。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F.png" alt="单位切向量"></p>
+<script type="math/tex; mode=display">\widehat{T}=\frac{\overrightarrow{v}}{\left | v \right |}</script><p><strong>弧长（arc length）：</strong> 点运动沿着轨迹的长度。</p>
+<script type="math/tex; mode=display">\left | \frac{\mathrm{d} s}{\mathrm{d} t} \right |=
+\mathrm{speed/速率}=
+\left | \overrightarrow{v}\right |</script><p>求摆线的弧长，需要对速率进行积分</p>
+<script type="math/tex; mode=display">\int_{0}^{2\pi}\sqrt{2-2\sin{t}} \mathrm{d}t</script><p>发现，这个积分不太容易算。怎么用向量的思想解决问题呢？重新来看速度向量，我们把它分解下</p>
+<script type="math/tex; mode=display">\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=
+\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s}
+\frac{\mathrm{d} s}{\mathrm{d} t}=
+\widehat{T}\frac{\mathrm{d} s}{\mathrm{d} t}</script><p>发现第一部分近似于切向量，第二部分是速率，为什么可以把第一部分近似为切向量，如图所示：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F%E8%BF%91%E4%BC%BC.png" alt="近似为单位切向量"><br>由于移动的距离s是位置向量的模，在单位时间段足够小时，就可以近似的认为两者的比例为单位切向量：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s} \approx
+\widehat{T}</script><p>现在新的速度方程也是又有大小，又有方向，而且聪明的使用了切向量的概念。</p>
+<h2 id="3-7-例子：Kepler’s-Second-Law-开普勒第二定律"><a href="#3-7-例子：Kepler’s-Second-Law-开普勒第二定律" class="headerlink" title="3.7 例子：Kepler’s Second Law 开普勒第二定律"></a>3.7 例子：Kepler’s Second Law 开普勒第二定律</h2><p>这个例子说明为什么用向量的方法去分析运动是很好的方法。    </p>
+<blockquote>
+<p>普勒第二定律：<br>1.每个行星的运动都保持在一个平面内。<br>2.在相等时间内，太阳和运动着的行星的连线所扫过的面积都是相等的。   </p>
+</blockquote>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%BC%80%E6%99%AE%E5%8B%92%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B2.png" alt="开普勒第二定律"></p>
+<script type="math/tex; mode=display">面积=
+\frac{1}{2}\left | \overrightarrow{r}\times\Delta\overrightarrow{r}\right |=
+\frac{1}{2}\left | \overrightarrow{r}\times\overrightarrow{v}\right |\Delta t</script><p>根据开普勒第二定律，叉乘的模是常数，向量叉乘的方向是常数。也就是：</p>
+<script type="math/tex; mode=display">\overrightarrow{r}\times\overrightarrow{v}=constant</script><script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} t}(\overrightarrow{r}\times\overrightarrow{v})=0</script><script type="math/tex; mode=display">\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}\times \overrightarrow{v}+\overrightarrow{r}\times\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=0</script><script type="math/tex; mode=display">\overrightarrow{v}\times \overrightarrow{v}+\overrightarrow{r}\times\overrightarrow{a}=0</script><script type="math/tex; mode=display">\overrightarrow{r}\times\overrightarrow{a}=0</script><script type="math/tex; mode=display">\overrightarrow{r}\parallel\overrightarrow{a}</script><p>加速度是和位矢平行的。由于加速度由万有引力引起的，这个力是永远指向施力物体的，也就是太阳。现在发现，在向量的观念里，开普勒第二定律和牛顿万有引力定律有着异曲同工的妙处。</p>
 ]]></content>
     
     <summary type="html">
