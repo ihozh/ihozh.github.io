@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-27T07:02:28.000Z</updated>
+  <updated>2017-05-28T05:37:09.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,17 +20,17 @@
     <link href="http://ihozh.com/2017/05/24/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/24/MIT多元微积分二：偏微分-笔记/</id>
     <published>2017-05-24T18:35:50.000Z</published>
-    <updated>2017-05-27T07:02:28.000Z</updated>
+    <updated>2017-05-28T05:37:09.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="2-Partial-Derivatives-偏微分"><a href="#2-Partial-Derivatives-偏微分" class="headerlink" title="2. Partial Derivatives 偏微分"></a>2. Partial Derivatives 偏微分</h1><h2 id="2-1-Functions-of-Two-Variables-Graphs-二元函数：图"><a href="#2-1-Functions-of-Two-Variables-Graphs-二元函数：图" class="headerlink" title="2.1 Functions of Two Variables: Graphs 二元函数：图"></a>2.1 Functions of Two Variables: Graphs 二元函数：图</h2><p>有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   </p>
+    <content type="html"><![CDATA[<h1 id="1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><a href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization" class="headerlink" title="1. Functions of Two Variables, Tangent Approximation and Optimization"></a>1. Functions of Two Variables, Tangent Approximation and Optimization</h1><h2 id="1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><a href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图" class="headerlink" title="1.1 Functions of Two Variables: Graphs 二元函数：图"></a>1.1 Functions of Two Variables: Graphs 二元函数：图</h2><p>有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   </p>
 <script type="math/tex; mode=display">f(x,y)</script><p>如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：   </p>
 <a id="more"></a>
-<h2 id="2-2-Level-Curves-and-Contour-Plots-水平线和等高线图"><a href="#2-2-Level-Curves-and-Contour-Plots-水平线和等高线图" class="headerlink" title="2.2 Level Curves and Contour Plots 水平线和等高线图"></a>2.2 Level Curves and Contour Plots 水平线和等高线图</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E7%AD%89%E9%AB%98%E7%BA%BF.png" alt="等高线图"><br>等高线图就是把一个二元函数压扁在一个平面上，平面上不同的高线实际上是不同坐标的横截面。同一条等高线上所有的值都是一个常数。<br>例：画出这个函数的等高线图：</p>
+<h2 id="1-2-Level-Curves-and-Contour-Plots-水平线和等高线图"><a href="#1-2-Level-Curves-and-Contour-Plots-水平线和等高线图" class="headerlink" title="1.2 Level Curves and Contour Plots 水平线和等高线图"></a>1.2 Level Curves and Contour Plots 水平线和等高线图</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E7%AD%89%E9%AB%98%E7%BA%BF.png" alt="等高线图"><br>等高线图就是把一个二元函数压扁在一个平面上，平面上不同的高线实际上是不同坐标的横截面。同一条等高线上所有的值都是一个常数。<br>例：画出这个函数的等高线图：</p>
 <script type="math/tex; mode=display">f(x,y)=-y</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E7%AD%89%E9%AB%98%E7%BA%BF%E5%9B%BE2.png" alt=""></p>
 <script type="math/tex; mode=display">f(x,y)=1-(x^2+y^2)</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E7%AD%89%E9%AB%98%E7%BA%BF%E5%9B%BE3.png" alt=""><br>同心圆，等高线的间隔越来越小，说明越来越陡。   </p>
-<h2 id="2-3-Partial-Derivatives-偏微分"><a href="#2-3-Partial-Derivatives-偏微分" class="headerlink" title="2.3 Partial Derivatives 偏微分"></a>2.3 Partial Derivatives 偏微分</h2><p>根据等高线图，当固定一个变量为定值的时候，可以看出函数随着另一个变量的变化情况。<br>偏导数(Partial) 的定义就是每次只对一个变量求导数。多元函数只有偏导数。   </p>
+<h2 id="1-3-Partial-Derivatives-偏微分"><a href="#1-3-Partial-Derivatives-偏微分" class="headerlink" title="1.3 Partial Derivatives 偏微分"></a>1.3 Partial Derivatives 偏微分</h2><p>根据等高线图，当固定一个变量为定值的时候，可以看出函数随着另一个变量的变化情况。<br>偏导数(Partial) 的定义就是每次只对一个变量求导数。多元函数只有偏导数。   </p>
 <script type="math/tex; mode=display">\frac{\partial }{\partial x} f(x_0,y_0)=\lim_{\Delta x\rightarrow 0} \frac{(x_0+\Delta x,y_0)-(x_0,y_0)}{\Delta x}</script><script type="math/tex; mode=display">\frac{\partial }{\partial y} f(x_0,y_0)=\lim_{\Delta y\rightarrow 0} \frac{(x_0,y_0+\Delta y)-(x_0,y_0)}{\Delta y}</script><p>偏微分的几何意义：<br>固定一个变量为常数，用对应的平面切割函数。在平面内截线随另一个变量变化。</p>
-<h2 id="2-4-Approximation-Formula-近似公式"><a href="#2-4-Approximation-Formula-近似公式" class="headerlink" title="2.4 Approximation Formula 近似公式"></a>2.4 Approximation Formula 近似公式</h2><p>近似方程是用来表示多变量同时变动时的方程。直观的想法就是x的变化加上y的变化。</p>
+<h2 id="1-4-Approximation-Formula-近似公式"><a href="#1-4-Approximation-Formula-近似公式" class="headerlink" title="1.4 Approximation Formula 近似公式"></a>1.4 Approximation Formula 近似公式</h2><p>近似方程是用来表示多变量同时变动时的方程。直观的想法就是x的变化加上y的变化。</p>
 <script type="math/tex; mode=display">z=f(x,y)</script><script type="math/tex; mode=display">\Delta z \approx f_x \Delta x + f_y \Delta y</script><p>在多元函数的任一点上，可分别做固定x轴和y轴的切线，两个切线可以构成一个切平面。</p>
 <script type="math/tex; mode=display">\frac{\partial}{\partial x} f(x_0,y_0)=a\Rightarrow L_1=\left\{\begin{matrix}
 z=z_0+a(x-x_0) & \\
@@ -40,16 +40,16 @@ z=z_0+b(y-y_0) & \\
 x=x_0
 \end{matrix}\right.</script><p>两条直线都在切平面里，切平面的平面方程：</p>
 <script type="math/tex; mode=display">z=z_0+a(x-x_0)+b(y-y_0)</script><p>还有一种方法是：用参数方程表示两条直线，然后方向向量做叉乘，得到法向量，再用法向量得到平面方程。<br>函数的图像和切平面非常接近。可以用这个公式来估计x和y的变化对函数值的影响。   </p>
-<h2 id="2-5-Optimization-Problems-优化问题"><a href="#2-5-Optimization-Problems-优化问题" class="headerlink" title="2.5 Optimization Problems 优化问题"></a>2.5 Optimization Problems 优化问题</h2><p>如何找到多元函数的极大值和极小值。   </p>
+<h2 id="1-5-Optimization-Problems-优化问题"><a href="#1-5-Optimization-Problems-优化问题" class="headerlink" title="1.5 Optimization Problems 优化问题"></a>1.5 Optimization Problems 优化问题</h2><p>如何找到多元函数的极大值和极小值。   </p>
 <p>在局部极小值极大值处，对各个变量的一阶偏导数都为0。  </p>
 <p>这时候会发现函数的切平面是水平的。     </p>
 <p>这个条件是必要但不充分的，有其他的偏导数为0的点但不是极值点。<br>定义：在f上有一点为 <strong>临界点</strong>（critical point）,如果对各个变量的偏导数为0。<br>既不是最大值也不是最小值的点，称为 <strong>鞍点</strong>。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/Saddle_point-min.png" alt="鞍点"><br>临界点可能是局部极大，局部极小或者鞍点。   </p>
-<h2 id="2-6-Least-Squares-最小二乘"><a href="#2-6-Least-Squares-最小二乘" class="headerlink" title="2.6 Least Squares 最小二乘"></a>2.6 Least Squares 最小二乘</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/Linear_regression.png" alt="最小二乘"><br>对于所有的测量点，找到一条直线，使得所有点到直线的y坐标的差的平方最小(惯例)。</p>
+<h2 id="1-6-Least-Squares-最小二乘"><a href="#1-6-Least-Squares-最小二乘" class="headerlink" title="1.6 Least Squares 最小二乘"></a>1.6 Least Squares 最小二乘</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/Linear_regression.png" alt="最小二乘"><br>对于所有的测量点，找到一条直线，使得所有点到直线的y坐标的差的平方最小(惯例)。</p>
 <script type="math/tex; mode=display">y=ax+b</script><p>最小化：</p>
 <script type="math/tex; mode=display">D=\sum_{i=1}^n [y_i-(ax_i+b_i)]^2</script><script type="math/tex; mode=display">\frac{\partial D}{\partial a}=\sum_{i=1}^n 2[y_i-(ax_i+b_i)](-x_i)</script><script type="math/tex; mode=display">\frac{\partial D}{\partial b}=\sum_{i=1}^n 2[y_i-(ax_i+b_i)](-1)</script><p>得到2*2线性方程组</p>
 <script type="math/tex; mode=display">(\sum_{i=1}^n x_i^2)a+(\sum_{i=1}^n x_i)b=\sum_{i=1}^n x_iy_i</script><script type="math/tex; mode=display">(\sum_{i=1}^n x_i^2)a+nb=\sum_{i=1}^n y_i</script><p><strong>摩尔定律的指数方程做最小二乘</strong></p>
-<script type="math/tex; mode=display">y=c e^{ax}</script><script type="math/tex; mode=display">\ln(y)=\ln(c)+ax</script><h2 id="2-7-Second-Derivative-Test-二阶导数检验：边界与无穷"><a href="#2-7-Second-Derivative-Test-二阶导数检验：边界与无穷" class="headerlink" title="2.7 Second Derivative Test 二阶导数检验：边界与无穷"></a>2.7 Second Derivative Test 二阶导数检验：边界与无穷</h2><p>问题是如何判断局部最大值，局部最小值，鞍点。<br>如何找到全局最大值和最小值。<br>通常来说，最值可能出现在临界点，边界处或无穷远处。</p>
-<h3 id="2-7-1-二次方程"><a href="#2-7-1-二次方程" class="headerlink" title="2.7.1 二次方程"></a>2.7.1 二次方程</h3><script type="math/tex; mode=display">D=ax^2+bxy^2+cy^2</script><p>如果有二次方程，可以将方程修改为平方项的形式，然后分析各项系数正负来判断。<br>有一种情况，某一变量系数为0，称作退化（degenerate）。退化临界点有可能是极大值或极小值。在高次方程中，也有可能是退化鞍点。      </p>
+<script type="math/tex; mode=display">y=c e^{ax}</script><script type="math/tex; mode=display">\ln(y)=\ln(c)+ax</script><h2 id="1-7-Second-Derivative-Test-二阶导数检验：边界与无穷"><a href="#1-7-Second-Derivative-Test-二阶导数检验：边界与无穷" class="headerlink" title="1.7 Second Derivative Test 二阶导数检验：边界与无穷"></a>1.7 Second Derivative Test 二阶导数检验：边界与无穷</h2><p>问题是如何判断局部最大值，局部最小值，鞍点。<br>如何找到全局最大值和最小值。<br>通常来说，最值可能出现在临界点，边界处或无穷远处。</p>
+<h3 id="1-7-1-二次方程"><a href="#1-7-1-二次方程" class="headerlink" title="1.7.1 二次方程"></a>1.7.1 二次方程</h3><script type="math/tex; mode=display">D=ax^2+bxy^2+cy^2</script><p>如果有二次方程，可以将方程修改为平方项的形式，然后分析各项系数正负来判断。<br>有一种情况，某一变量系数为0，称作退化（degenerate）。退化临界点有可能是极大值或极小值。在高次方程中，也有可能是退化鞍点。      </p>
 <script type="math/tex; mode=display">D=x^3+y^3</script><p>在原点处就是退化鞍点。   </p>
 <p>也可以从判别式的角度得到同样的结论。   </p>
 <ul>
@@ -63,7 +63,7 @@ x=x_0
 </ul>
 <p>下图分别为三种情况的函数图像：   </p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E4%BA%8C%E6%AC%A1%E9%9E%8D%E7%82%B9.png" alt=""><br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E4%BA%8C%E6%AC%A1%E6%9E%81%E5%80%BC.png" alt=""><br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E4%BA%8C%E6%AC%A1%E9%80%80%E5%8C%96.png" alt=""></p>
-<h3 id="2-7-2-导数检测"><a href="#2-7-2-导数检测" class="headerlink" title="2.7.2 导数检测"></a>2.7.2 导数检测</h3><script type="math/tex; mode=display">A=\frac{\partial^2 f}{\partial x^2}=f_{xx}</script><script type="math/tex; mode=display">B=\frac{\partial^2 f}{\partial x \partial y }=f_{xy}=f_{yx}</script><script type="math/tex; mode=display">C=\frac{\partial^2 f}{\partial y^2}=f_{yy}</script><p>对于二阶函数    </p>
+<h3 id="1-7-2-导数检测"><a href="#1-7-2-导数检测" class="headerlink" title="1.7.2 导数检测"></a>1.7.2 导数检测</h3><script type="math/tex; mode=display">A=\frac{\partial^2 f}{\partial x^2}=f_{xx}</script><script type="math/tex; mode=display">B=\frac{\partial^2 f}{\partial x \partial y }=f_{xy}=f_{yx}</script><script type="math/tex; mode=display">C=\frac{\partial^2 f}{\partial y^2}=f_{yy}</script><p>对于二阶函数    </p>
 <script type="math/tex; mode=display">A=2a</script><script type="math/tex; mode=display">B=b</script><script type="math/tex; mode=display">C=2c</script><script type="math/tex; mode=display">AC-B^2=4ac-b^2</script><blockquote>
 <p>为什么要用二阶导数进行判断？二阶导数判断是如何来的？<br>这要从泰勒公式说起，首先看函数的一阶展开：    </p>
 </blockquote>
@@ -76,7 +76,7 @@ f_{xy}(x-x_0)(y-y_0)+
 <p>为什么判别式为0的时候不能判定函数形状？   </p>
 </blockquote>
 <p>当判别式为0的时候，二阶展开也不够用了，这时就需要判断更高阶的情况。在非退化情况下，函数的形状取决于二次项。在退化情形下，函数图像取决于更高阶导数。      </p>
-<h2 id="2-8-例子"><a href="#2-8-例子" class="headerlink" title="2.8 例子"></a>2.8 例子</h2><p>对于任意函数，如何分析？</p>
+<h2 id="1-8-例子"><a href="#1-8-例子" class="headerlink" title="1.8 例子"></a>1.8 例子</h2><p>对于任意函数，如何分析？</p>
 <ol>
 <li>通过一阶导找到临界点</li>
 <li>通过二阶导判断类别</li>
@@ -93,7 +93,7 @@ f_{xy}(x-x_0)(y-y_0)+
     
     <summary type="html">
     
-      &lt;h1 id=&quot;2-Partial-Derivatives-偏微分&quot;&gt;&lt;a href=&quot;#2-Partial-Derivatives-偏微分&quot; class=&quot;headerlink&quot; title=&quot;2. Partial Derivatives 偏微分&quot;&gt;&lt;/a&gt;2. Partial Derivatives 偏微分&lt;/h1&gt;&lt;h2 id=&quot;2-1-Functions-of-Two-Variables-Graphs-二元函数：图&quot;&gt;&lt;a href=&quot;#2-1-Functions-of-Two-Variables-Graphs-二元函数：图&quot; class=&quot;headerlink&quot; title=&quot;2.1 Functions of Two Variables: Graphs 二元函数：图&quot;&gt;&lt;/a&gt;2.1 Functions of Two Variables: Graphs 二元函数：图&lt;/h2&gt;&lt;p&gt;有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   &lt;/p&gt;
+      &lt;h1 id=&quot;1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization&quot;&gt;&lt;a href=&quot;#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization&quot; class=&quot;headerlink&quot; title=&quot;1. Functions of Two Variables, Tangent Approximation and Optimization&quot;&gt;&lt;/a&gt;1. Functions of Two Variables, Tangent Approximation and Optimization&lt;/h1&gt;&lt;h2 id=&quot;1-1-Functions-of-Two-Variables-Graphs-二元函数：图&quot;&gt;&lt;a href=&quot;#1-1-Functions-of-Two-Variables-Graphs-二元函数：图&quot; class=&quot;headerlink&quot; title=&quot;1.1 Functions of Two Variables: Graphs 二元函数：图&quot;&gt;&lt;/a&gt;1.1 Functions of Two Variables: Graphs 二元函数：图&lt;/h2&gt;&lt;p&gt;有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   &lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x,y)&lt;/script&gt;&lt;p&gt;如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：   &lt;/p&gt;
     
     </summary>
@@ -103,11 +103,11 @@ f_{xy}(x-x_0)(y-y_0)+
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
