@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-28T05:37:09.000Z</updated>
+  <updated>2017-05-30T05:31:54.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/24/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/24/MIT多元微积分二：偏微分-笔记/</id>
     <published>2017-05-24T18:35:50.000Z</published>
-    <updated>2017-05-28T05:37:09.000Z</updated>
+    <updated>2017-05-30T05:31:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><a href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization" class="headerlink" title="1. Functions of Two Variables, Tangent Approximation and Optimization"></a>1. Functions of Two Variables, Tangent Approximation and Optimization</h1><h2 id="1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><a href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图" class="headerlink" title="1.1 Functions of Two Variables: Graphs 二元函数：图"></a>1.1 Functions of Two Variables: Graphs 二元函数：图</h2><p>有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   </p>
 <script type="math/tex; mode=display">f(x,y)</script><p>如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：   </p>
@@ -88,8 +88,100 @@ f_{xy}(x-x_0)(y-y_0)+
 <p>第二步：</p>
 <script type="math/tex; mode=display">A=f_{xx}=\frac{2}{x^3y}</script><script type="math/tex; mode=display">B=f_{xy}=\frac{1}{x^2y^2}</script><script type="math/tex; mode=display">C=f_{yy}=\frac{2}{xy^3}</script><p>$AC-B^2&gt;0$，所以临界点(1,1)是极大值或者极小值</p>
 <p>第三步：<br>$A&gt;0$,(1,1)是极小值</p>
-<p>第四步：<br>考虑哪里是最大值，有边界处（0，0）和无穷远处，带入方程为无穷大，这时方程有最大值。</p>
-]]></content>
+<p>第四步：<br>考虑哪里是最大值，有边界处（0，0）和无穷远处，带入方程为无穷大，这时方程有最大值。   </p>
+<h1 id="2-Chain-Rule-Gradient-and-Directional-Derivatives-链式法则，梯度和方向导数"><a href="#2-Chain-Rule-Gradient-and-Directional-Derivatives-链式法则，梯度和方向导数" class="headerlink" title="2.Chain Rule, Gradient and Directional Derivatives 链式法则，梯度和方向导数"></a>2.Chain Rule, Gradient and Directional Derivatives 链式法则，梯度和方向导数</h1><p>这一节会讲分析多元方程的更多方法。我们想知道多元函数各个变量的变化情况，在任意方向上如何计算多变量的变化。这一节可以帮助我们去解决这些问题。  </p>
+<p>通常所说的函数指的是显函数，表达式为y=f(x)。很多时候，并不能直接通过x去表示y，而是F(x,y)=0的形式，这就是隐函数。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E5%BF%83%E7%BA%BF.png" alt="">   </p>
+<p>在求隐函数的微分的时候，可以使用些小窍门：</p>
+<script type="math/tex; mode=display">y=f(x)</script><script type="math/tex; mode=display">\mathrm{d} y=f'(x) \mathrm{d}x</script><p>对于多元或者复杂的函数，有一套标准的方法可以进行分析。  </p>
+<p>首先说下单变量下的链式法则，有一个函数链$z=f(g(x))$。<br>链式法则要回答的是链的斜率，要求整条链的导数。   </p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} z}{\mathrm{d} x}=
+\frac{\mathrm{d} z}{\mathrm{d} y}
+\frac{\mathrm{d} y}{\mathrm{d} x}</script><p>我们要求的复杂函数导数就会转化成两个已知简单函数的导数。看一个例子来直观的理解：      </p>
+<script type="math/tex; mode=display">\sin(3x)</script><p>内函数是$y=3x$，外函数是$z=\sin(y)$。<br>根据链式法则，得到：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} z}{\mathrm{d} x}=
+3\cos{3x}</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E4%BE%8B%E5%AD%90.png" alt=""></p>
+<p>函数z的频率是正弦函数频率的三倍，所以变化的幅度更大，在原点处，斜率也是3倍，这和导数图像的结果完全一样。这就是链式法则的直观的表示。   </p>
+<h2 id="2-1-Total-Differentials-and-the-Chain-Rule-全微分和链式法则"><a href="#2-1-Total-Differentials-and-the-Chain-Rule-全微分和链式法则" class="headerlink" title="2.1 Total Differentials and the Chain Rule 全微分和链式法则"></a>2.1 Total Differentials and the Chain Rule 全微分和链式法则</h2><p>全微分（Total Differentials）先来给个结果，对于f(x,y,z)，全微分：</p>
+<script type="math/tex; mode=display">\mathrm{d} f=f_x\mathrm{d} x+
+f_y\mathrm{d}y+
+f_z\mathrm{d}z</script><p>d 就是微分符号，如何去考虑微分符号? 首先看看不能怎么去考虑：      </p>
+<script type="math/tex; mode=display">\mathrm{d} f\neq \Delta f</script><p>$\Delta f$ 表示数量，而 $\mathrm{d} f$ 是符号。微分符号可以这样认为：</p>
+<ul>
+<li>反映了变量变化时多函数的影响。    </li>
+<li>是一个微小变化的占位符。   <blockquote>
+<p>有一个曾经使用过的公式，注意这里是约等号而不是等号：   </p>
+</blockquote>
+</li>
+</ul>
+<script type="math/tex; mode=display">\Delta f \approx f_x\Delta x+
+f_y\Delta y+
+f_z\Delta z</script><ul>
+<li>同时除以 $\mathrm{d}t$ 可以得到t趋近于0变化率。<script type="math/tex; mode=display">\frac{\mathrm{d} f}{\mathrm{d} t} =f_x\frac{\mathrm{d} x}{\mathrm{d} t}+
+f_y\frac{\mathrm{d} y}{\mathrm{d} t}+
+f_z\frac{\mathrm{d} z}{\mathrm{d} t}</script></li>
+</ul>
+<p>这个就是 <strong>链式法则</strong>（chain rule）。如果函数依赖于某些变量，变量又依赖于其他变量，链式法则可以寻找出函数在新变量下的变化率以及个变量之间的依赖关系。   </p>
+<p>先来一个不太严谨的证明：<br>如果x,y,z分别是t的函数，则有</p>
+<script type="math/tex; mode=display">\mathrm{d}x=x'(t) \mathrm{d}t,
+\mathrm{d}y=y'(t) \mathrm{d}t,
+\mathrm{d}z=z'(t) \mathrm{d}t</script><p>带入后：</p>
+<script type="math/tex; mode=display">\mathrm{d}f=f_xx'(t)\mathrm{d}t+
+f_yy'(t)\mathrm{d}t+
+f_zz'(t)\mathrm{d}t</script><p>除以 $\mathrm{d} t$ 就是链式法则。   </p>
+<p>更好点的证明：  </p>
+<script type="math/tex; mode=display">\Delta f \approx f_x\Delta x+
+f_y\Delta y+
+f_z\Delta z</script><script type="math/tex; mode=display">\frac{\Delta f}{\Delta t} \approx
+\frac{f_x\Delta x+
+f_y\Delta y+
+f_z\Delta z}{\Delta t}</script><p>当 $\Delta t$ 非常小的时候，变化率趋近的值就是微分,约等号也就变成等号了。  </p>
+<script type="math/tex; mode=display">\frac{\Delta f}{\Delta t} \rightarrow
+\frac{\mathrm d f}{\mathrm d t}，
+\frac{\Delta x}{\Delta t} \rightarrow
+\frac{\mathrm d x}{\mathrm d t}</script><p>例子：</p>
+<script type="math/tex; mode=display">w=x^2y+z,x=t,y=e^t,z=\sin t</script><script type="math/tex; mode=display">\frac{\mathrm d w}{\mathrm d t}=
+2xy\frac{\mathrm d x}{\mathrm d t}+
+x^2\frac{\mathrm d y}{\mathrm d t}+
+1 \frac{\mathrm d z}{\mathrm d t}</script><script type="math/tex; mode=display">=2te^t+t^2e^t+\cos t</script><p>也可以直接将各部分值带入，可以得到同样的结果，链式法则本质上是将多变量转化为单变量。如果x,y,z不能写成t的显性函数，则只能使用链式法则。      </p>
+<h2 id="2-2-链式法则和微分关系"><a href="#2-2-链式法则和微分关系" class="headerlink" title="2.2 链式法则和微分关系"></a>2.2 链式法则和微分关系</h2><p>一个很有意思的地方，很多人知道导数的乘法法则，确实乘法法则是链式法则的一个应用，反过来乘法法则也可以通过链式法则来证明。   </p>
+<script type="math/tex; mode=display">f=uv,u=u(t),v=v(t)</script><script type="math/tex; mode=display">\frac{\mathrm d (uv)}{\mathrm d t}=
+f_u\frac{\mathrm d u}{\mathrm d t}+
+f_v\frac{\mathrm d v}{\mathrm d t}\\
+=v\frac{\mathrm d u}{\mathrm d t}+
+u\frac{\mathrm d v}{\mathrm d t}</script><p>再来看看除法法则：</p>
+<script type="math/tex; mode=display">g=\frac{u}{v},u=u(t),v=v(t)</script><script type="math/tex; mode=display">\frac{\mathrm d g}{\mathrm d t}=
+\frac{1}{v}\frac{\mathrm d u}{\mathrm d t}+
+\frac{-u}{v^2}\frac{\mathrm d v}{\mathrm d t}\\
+=\frac{u'v-v'u}{v^2}</script><h2 id="2-3-多变量的链式法则"><a href="#2-3-多变量的链式法则" class="headerlink" title="2.3 多变量的链式法则"></a>2.3 多变量的链式法则</h2><p>到现在为止，感觉一切都没有问题，都是那么完美。突然一个声音在问，之前的链式法则，都是认为所有变量都是关于共同变量t的，都依赖于同一个t，这本质上就是单变量的求导，如果每个变量依赖多个不同的变量，比如说一个极坐标下的方程，链式法则怎么用，函数w关于u,v的偏导数到底是什么？   </p>
+<script type="math/tex; mode=display">w=f(x,y),x=x(u,v),y=y(u,v)</script><p>可以把x和y的公式带入，w就变成了u和v的方程。但是求这个偏导数绝对会让人抓狂的。或者，将链式法则进行到底：    </p>
+<script type="math/tex; mode=display">\mathrm d w = f_x\mathrm d x+f_y\mathrm d y</script><p>如果改变u的话，w如何改变？x，y如何改变，这些是微分关系给我们的。   </p>
+<script type="math/tex; mode=display">\mathrm d w =
+f_x(x_u \mathrm d u+x_v \mathrm d v)+
+f_y(y_u \mathrm d u+y_v \mathrm d v)\\
+=(f_xx_u+f_yy_u)\mathrm d u+
+(f_xx_v+f_yy_v)\mathrm d v</script><p>整理下这个式子，看括号内的部分：  </p>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial u}=
+\frac{\partial f}{\partial x}
+\frac{\partial x}{\partial u}+
+\frac{\partial f}{\partial y}
+\frac{\partial y}{\partial u}</script><script type="math/tex; mode=display">\frac{\partial f}{\partial v}=
+\frac{\partial f}{\partial x}
+\frac{\partial x}{\partial v}+
+\frac{\partial f}{\partial y}
+\frac{\partial y}{\partial v}</script><p>理解这个式子也不难，我们想知道，u如何影响f，f是关于x和y的函数，x和y又依赖于u，这就是链式法则的精华了。<br>有人发现分子分母上都有同样的偏微分符号，是不是可以再词约分化解，答案是不行。<br><strong>偏微分不能约分，偏微分不能约分，偏微分不能约分。</strong> 但是上下同时有微分符号，是可以约分的。    </p>
+<h2 id="2-4-例子"><a href="#2-4-例子" class="headerlink" title="2.4 例子"></a>2.4 例子</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%9D%90%E6%A0%871.png" alt=""><br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%9D%90%E6%A0%872.png" alt=""></p>
+<p>平面直角坐标系和极坐标系换元的公式是：   </p>
+<script type="math/tex; mode=display">\left\{\begin{matrix}
+x = r\cos\varphi \\
+y = r\sin\varphi
+
+\end{matrix}\right.</script><p>如果已知函数f(x,y)，想知道f关于 $r$ 或者 $\varphi$ 的变化，就可以用链式法则试下了。   </p>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial r}=
+\frac{\partial f}{\partial x}
+\frac{\partial x}{\partial r}+
+\frac{\partial f}{\partial y}
+\frac{\partial y}{\partial r} \\
+=f_x\cos{\varphi}+f_y\sin{\varphi}</script>]]></content>
     
     <summary type="html">
     
@@ -103,11 +195,11 @@ f_{xy}(x-x_0)(y-y_0)+
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
