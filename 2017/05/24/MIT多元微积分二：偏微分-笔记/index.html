@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="微积分,工程数学,公开课,18.02," />
+  <meta name="keywords" content="微积分,公开课,18.02,工程数学," />
 
 
 
@@ -93,7 +93,7 @@
 
 
 <meta name="description" content="1. Functions of Two Variables, Tangent Approximation and Optimization1.1 Functions of Two Variables: Graphs 二元函数：图有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。    f(x,y)如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：">
-<meta name="keywords" content="微积分,工程数学,公开课,18.02">
+<meta name="keywords" content="微积分,公开课,18.02,工程数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT多元微积分二：偏微分 笔记">
 <meta property="og:url" content="http://ihozh.com/2017/05/24/MIT多元微积分二：偏微分-笔记/index.html">
@@ -111,7 +111,7 @@
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E4%BE%8B%E5%AD%90.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%9D%90%E6%A0%871.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%9D%90%E6%A0%872.png">
-<meta property="og:updated_time" content="2017-05-30T05:31:54.000Z">
+<meta property="og:updated_time" content="2017-05-30T18:04:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分二：偏微分 笔记">
 <meta name="twitter:description" content="1. Functions of Two Variables, Tangent Approximation and Optimization1.1 Functions of Two Variables: Graphs 二元函数：图有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。    f(x,y)如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：">
@@ -507,7 +507,7 @@ f_y\mathrm{d}y+
 f_z\mathrm{d}z</script><p>d 就是微分符号，如何去考虑微分符号? 首先看看不能怎么去考虑：      </p>
 <script type="math/tex; mode=display">\mathrm{d} f\neq \Delta f</script><p>$\Delta f$ 表示数量，而 $\mathrm{d} f$ 是符号。微分符号可以这样认为：</p>
 <ul>
-<li>反映了变量变化时多函数的影响。    </li>
+<li>反映了变量变化时对函数的影响。    </li>
 <li>是一个微小变化的占位符。   <blockquote>
 <p>有一个曾经使用过的公式，注意这里是约等号而不是等号：   </p>
 </blockquote>
@@ -534,7 +534,7 @@ f_y\Delta y+
 f_z\Delta z</script><script type="math/tex; mode=display">\frac{\Delta f}{\Delta t} \approx
 \frac{f_x\Delta x+
 f_y\Delta y+
-f_z\Delta z}{\Delta t}</script><p>当 $\Delta t$ 非常小的时候，变化率趋近的值就是微分,约等号也就变成等号了。  </p>
+f_z\Delta z}{\Delta t}</script><p>当 $\Delta t$ 非常小的时候，就出现了0/0这种情况，这就是微积分要处理的。微积分保留了这个值，在极限条件下这个值就是导数。变化率趋近的值就是微分,约等号也就变成等号了。这就是链式法则最核心的原理。    </p>
 <script type="math/tex; mode=display">\frac{\Delta f}{\Delta t} \rightarrow
 \frac{\mathrm d f}{\mathrm d t}，
 \frac{\Delta x}{\Delta t} \rightarrow
@@ -543,7 +543,7 @@ f_z\Delta z}{\Delta t}</script><p>当 $\Delta t$ 非常小的时候，变化率�
 2xy\frac{\mathrm d x}{\mathrm d t}+
 x^2\frac{\mathrm d y}{\mathrm d t}+
 1 \frac{\mathrm d z}{\mathrm d t}</script><script type="math/tex; mode=display">=2te^t+t^2e^t+\cos t</script><p>也可以直接将各部分值带入，可以得到同样的结果，链式法则本质上是将多变量转化为单变量。如果x,y,z不能写成t的显性函数，则只能使用链式法则。      </p>
-<h2 id="2-2-链式法则和微分关系"><a href="#2-2-链式法则和微分关系" class="headerlink" title="2.2 链式法则和微分关系"></a>2.2 链式法则和微分关系</h2><p>一个很有意思的地方，很多人知道导数的乘法法则，确实乘法法则是链式法则的一个应用，反过来乘法法则也可以通过链式法则来证明。   </p>
+<h2 id="2-2-链式法则和微分的关系"><a href="#2-2-链式法则和微分的关系" class="headerlink" title="2.2 链式法则和微分的关系"></a>2.2 链式法则和微分的关系</h2><p>一个很有意思的地方，很多人知道导数的乘法法则，确实乘法法则是链式法则的一个应用，反过来乘法法则也可以通过链式法则来证明。   </p>
 <script type="math/tex; mode=display">f=uv,u=u(t),v=v(t)</script><script type="math/tex; mode=display">\frac{\mathrm d (uv)}{\mathrm d t}=
 f_u\frac{\mathrm d u}{\mathrm d t}+
 f_v\frac{\mathrm d v}{\mathrm d t}\\
@@ -552,7 +552,7 @@ u\frac{\mathrm d v}{\mathrm d t}</script><p>再来看看除法法则：</p>
 <script type="math/tex; mode=display">g=\frac{u}{v},u=u(t),v=v(t)</script><script type="math/tex; mode=display">\frac{\mathrm d g}{\mathrm d t}=
 \frac{1}{v}\frac{\mathrm d u}{\mathrm d t}+
 \frac{-u}{v^2}\frac{\mathrm d v}{\mathrm d t}\\
-=\frac{u'v-v'u}{v^2}</script><h2 id="2-3-多变量的链式法则"><a href="#2-3-多变量的链式法则" class="headerlink" title="2.3 多变量的链式法则"></a>2.3 多变量的链式法则</h2><p>到现在为止，感觉一切都没有问题，都是那么完美。突然一个声音在问，之前的链式法则，都是认为所有变量都是关于共同变量t的，都依赖于同一个t，这本质上就是单变量的求导，如果每个变量依赖多个不同的变量，比如说一个极坐标下的方程，链式法则怎么用，函数w关于u,v的偏导数到底是什么？   </p>
+=\frac{u'v-v'u}{v^2}</script><h2 id="2-3-多变量的链式法则"><a href="#2-3-多变量的链式法则" class="headerlink" title="2.3 多变量的链式法则"></a>2.3 多变量的链式法则</h2><p>到现在为止，感觉一切都没有问题，都是那么完美。突然有声音在问，之前的链式法则，都是认为所有变量都是关于共同变量t的，都依赖于同一个t，这本质上就是单变量的求导，如果每个变量依赖多个不同的变量，比如说一个极坐标下的方程，链式法则怎么用，函数w关于u,v的偏导数到底是什么？   </p>
 <script type="math/tex; mode=display">w=f(x,y),x=x(u,v),y=y(u,v)</script><p>可以把x和y的公式带入，w就变成了u和v的方程。但是求这个偏导数绝对会让人抓狂的。或者，将链式法则进行到底：    </p>
 <script type="math/tex; mode=display">\mathrm d w = f_x\mathrm d x+f_y\mathrm d y</script><p>如果改变u的话，w如何改变？x，y如何改变，这些是微分关系给我们的。   </p>
 <script type="math/tex; mode=display">\mathrm d w =
@@ -612,11 +612,11 @@ y = r\sin\varphi
           
             <a href="/tags/微积分/" rel="tag"># 微积分</a>
           
-            <a href="/tags/工程数学/" rel="tag"># 工程数学</a>
-          
             <a href="/tags/公开课/" rel="tag"># 公开课</a>
           
             <a href="/tags/18-02/" rel="tag"># 18.02</a>
+          
+            <a href="/tags/工程数学/" rel="tag"># 工程数学</a>
           
         </div>
       
@@ -775,7 +775,7 @@ y = r\sin\varphi
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><span class="nav-number">1.</span> <span class="nav-text">1. Functions of Two Variables, Tangent Approximation and Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Functions of Two Variables: Graphs 二元函数：图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Level-Curves-and-Contour-Plots-水平线和等高线图"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Level Curves and Contour Plots 水平线和等高线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Partial-Derivatives-偏微分"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Partial Derivatives 偏微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Approximation-Formula-近似公式"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Approximation Formula 近似公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Optimization-Problems-优化问题"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 Optimization Problems 优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Least-Squares-最小二乘"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 Least Squares 最小二乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Second-Derivative-Test-二阶导数检验：边界与无穷"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 Second Derivative Test 二阶导数检验：边界与无穷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-1-二次方程"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.7.1 二次方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-2-导数检测"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.7.2 导数检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-例子"><span class="nav-number">1.8.</span> <span class="nav-text">1.8 例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Chain-Rule-Gradient-and-Directional-Derivatives-链式法则，梯度和方向导数"><span class="nav-number">2.</span> <span class="nav-text">2.Chain Rule, Gradient and Directional Derivatives 链式法则，梯度和方向导数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Total-Differentials-and-the-Chain-Rule-全微分和链式法则"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Total Differentials and the Chain Rule 全微分和链式法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-链式法则和微分关系"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 链式法则和微分关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-多变量的链式法则"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 多变量的链式法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-例子"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 例子</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><span class="nav-number">1.</span> <span class="nav-text">1. Functions of Two Variables, Tangent Approximation and Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Functions of Two Variables: Graphs 二元函数：图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Level-Curves-and-Contour-Plots-水平线和等高线图"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Level Curves and Contour Plots 水平线和等高线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Partial-Derivatives-偏微分"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Partial Derivatives 偏微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Approximation-Formula-近似公式"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Approximation Formula 近似公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Optimization-Problems-优化问题"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 Optimization Problems 优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Least-Squares-最小二乘"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 Least Squares 最小二乘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Second-Derivative-Test-二阶导数检验：边界与无穷"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 Second Derivative Test 二阶导数检验：边界与无穷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-1-二次方程"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.7.1 二次方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-2-导数检测"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.7.2 导数检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-例子"><span class="nav-number">1.8.</span> <span class="nav-text">1.8 例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Chain-Rule-Gradient-and-Directional-Derivatives-链式法则，梯度和方向导数"><span class="nav-number">2.</span> <span class="nav-text">2.Chain Rule, Gradient and Directional Derivatives 链式法则，梯度和方向导数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Total-Differentials-and-the-Chain-Rule-全微分和链式法则"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Total Differentials and the Chain Rule 全微分和链式法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-链式法则和微分的关系"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 链式法则和微分的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-多变量的链式法则"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 多变量的链式法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-例子"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 例子</span></a></li></ol></li></ol></div>
             
 
           </div>
