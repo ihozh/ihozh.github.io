@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-05-30T18:04:09.000Z</updated>
+  <updated>2017-06-03T07:03:57.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/24/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/24/MIT多元微积分二：偏微分-笔记/</id>
     <published>2017-05-24T18:35:50.000Z</published>
-    <updated>2017-05-30T18:04:09.000Z</updated>
+    <updated>2017-06-03T07:03:57.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><a href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization" class="headerlink" title="1. Functions of Two Variables, Tangent Approximation and Optimization"></a>1. Functions of Two Variables, Tangent Approximation and Optimization</h1><h2 id="1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><a href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图" class="headerlink" title="1.1 Functions of Two Variables: Graphs 二元函数：图"></a>1.1 Functions of Two Variables: Graphs 二元函数：图</h2><p>有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   </p>
 <script type="math/tex; mode=display">f(x,y)</script><p>如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：   </p>
@@ -49,7 +49,7 @@ x=x_0
 <script type="math/tex; mode=display">D=\sum_{i=1}^n [y_i-(ax_i+b_i)]^2</script><script type="math/tex; mode=display">\frac{\partial D}{\partial a}=\sum_{i=1}^n 2[y_i-(ax_i+b_i)](-x_i)</script><script type="math/tex; mode=display">\frac{\partial D}{\partial b}=\sum_{i=1}^n 2[y_i-(ax_i+b_i)](-1)</script><p>得到2*2线性方程组</p>
 <script type="math/tex; mode=display">(\sum_{i=1}^n x_i^2)a+(\sum_{i=1}^n x_i)b=\sum_{i=1}^n x_iy_i</script><script type="math/tex; mode=display">(\sum_{i=1}^n x_i^2)a+nb=\sum_{i=1}^n y_i</script><p><strong>摩尔定律的指数方程做最小二乘</strong></p>
 <script type="math/tex; mode=display">y=c e^{ax}</script><script type="math/tex; mode=display">\ln(y)=\ln(c)+ax</script><h2 id="1-7-Second-Derivative-Test-二阶导数检验：边界与无穷"><a href="#1-7-Second-Derivative-Test-二阶导数检验：边界与无穷" class="headerlink" title="1.7 Second Derivative Test 二阶导数检验：边界与无穷"></a>1.7 Second Derivative Test 二阶导数检验：边界与无穷</h2><p>问题是如何判断局部最大值，局部最小值，鞍点。<br>如何找到全局最大值和最小值。<br>通常来说，最值可能出现在临界点，边界处或无穷远处。</p>
-<h3 id="1-7-1-二次方程"><a href="#1-7-1-二次方程" class="headerlink" title="1.7.1 二次方程"></a>1.7.1 二次方程</h3><script type="math/tex; mode=display">D=ax^2+bxy^2+cy^2</script><p>如果有二次方程，可以将方程修改为平方项的形式，然后分析各项系数正负来判断。<br>有一种情况，某一变量系数为0，称作退化（degenerate）。退化临界点有可能是极大值或极小值。在高次方程中，也有可能是退化鞍点。      </p>
+<h3 id="1-7-1-二次方程"><a href="#1-7-1-二次方程" class="headerlink" title="1.7.1 二次方程"></a>1.7.1 二次方程</h3><script type="math/tex; mode=display">D=ax^2+bxy+cy^2</script><p>如果有二次方程，可以将方程修改为平方项的形式，然后分析各项系数正负来判断。<br>有一种情况，某一变量系数为0，称作退化（degenerate）。退化临界点有可能是极大值或极小值。在高次方程中，也有可能是退化鞍点。      </p>
 <script type="math/tex; mode=display">D=x^3+y^3</script><p>在原点处就是退化鞍点。   </p>
 <p>也可以从判别式的角度得到同样的结论。   </p>
 <ul>
@@ -181,7 +181,69 @@ y = r\sin\varphi
 \frac{\partial x}{\partial r}+
 \frac{\partial f}{\partial y}
 \frac{\partial y}{\partial r} \\
-=f_x\cos{\varphi}+f_y\sin{\varphi}</script>]]></content>
+=f_x\cos{\varphi}+f_y\sin{\varphi}</script><h2 id="2-5-Gradient-Definition-Perpendicular-to-Level-Curves-梯度"><a href="#2-5-Gradient-Definition-Perpendicular-to-Level-Curves-梯度" class="headerlink" title="2.5 Gradient: Definition, Perpendicular to Level Curves 梯度"></a>2.5 Gradient: Definition, Perpendicular to Level Curves 梯度</h2><p>回顾一下链式法则：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} t} =w_x\frac{\mathrm{d} x}{\mathrm{d} t}+
+w_y\frac{\mathrm{d} y}{\mathrm{d} t}+
+w_z\frac{\mathrm{d} z}{\mathrm{d} t}</script><p>w的变化是由x，y，z的变化引起的。x，y，z又分别以自己的速度变化，通过的偏导数的影响直接影响原函数。偏导数告诉我们w对每个变量变化有多敏感。</p>
+<p>用一种新的写法：    </p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} t}=
+\bigtriangledown w\cdot \frac{\mathrm{d}\overrightarrow{ r}}{\mathrm{d} t}</script><script type="math/tex; mode=display">\bigtriangledown w=\left \langle  w_x,w_y,w_z\right \rangle</script><script type="math/tex; mode=display">\frac{\mathrm{d}\overrightarrow{ r}}{\mathrm{d} t}=\left \langle  \frac{\mathrm{d} x}{\mathrm{d} t},
+\frac{\mathrm{d} y}{\mathrm{d} t},
+\frac{\mathrm{d} z}{\mathrm{d} t}\right \rangle</script><p>这个向量包含了所有的偏导数。每个点都会有一个向量。可以称为函数w在某一点（x,y,z）处的 <strong>梯度</strong> （gradient）。r对t的微分就是 <strong>速度向量</strong>（velocity vector）。   </p>
+<p><strong>定理:</strong> 令w为常数，梯度向量垂直于原函数等值面。如图，画出函数的等高线，梯度向量是指向函数值更大的方向，并且垂直于等高线（投影于2维情况）。  </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/gradient_vis.png" alt=""></p>
+<p>看一种最简单的情况：</p>
+<script type="math/tex; mode=display">w=a_1x+a_2y+a_3z</script><script type="math/tex; mode=display">\bigtriangledown w=\left \langle  a_1,a_2,a_3\right \rangle</script><p>寻找这个函数的等值面，令w=c</p>
+<script type="math/tex; mode=display">a_1x+a_2y+a_3z=c</script><p>发现，等值面就是平面。由于平面的法向量是</p>
+<script type="math/tex; mode=display">\overrightarrow{n}=\left \langle  a_1,a_2,a_3\right \rangle</script><p>这个平面的法向量就是梯度向量。    </p>
+<p>其实，对任何函数，都可以有这种线性的近似来代替函数本身。这意味着用切平面取代等值面。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E8%BF%91%E4%BC%BC%E5%88%87%E5%B9%B3%E9%9D%A2.png" alt=""></p>
+<p>再来看一个例子：</p>
+<script type="math/tex; mode=display">w=x^2+y^2</script><script type="math/tex; mode=display">\bigtriangledown w=\left \langle  2x,2y\right \rangle</script><p>当w=c时，在等值面上有梯度向量<2x,2y>，如图所示，垂直于等值面：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E4%BA%8C%E7%BB%B4%E6%A2%AF%E5%BA%A6.png" alt=""></2x,2y></p>
+<h2 id="2-6-证明"><a href="#2-6-证明" class="headerlink" title="2.6 证明"></a>2.6 证明</h2><p>要理解向着等值曲线内部移动会发生什么？假设在等值曲线上有一个动点，这会令函数值保持为一个常数。通过链式法则，我们能够知道函数变化有多快。链式法则就是理解梯度向量和等值面之间的关键点。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E6%A2%AF%E5%BA%A6%E8%AF%81%E6%98%8E.png" alt=""></p>
+<p>令 $\overrightarrow{r}=\overrightarrow{r}(t)$ 是一条在等值面 $w=c$ 上的曲线</p>
+<p>首先观察速度向量，这个动点的速度向量和曲线相切，和等值面相切。</p>
+<script type="math/tex; mode=display">\overrightarrow{v}=
+\frac{\mathrm{d}\overrightarrow{r}}{\mathrm{d} t}</script><p>速度向量v和平面w=c相切，根据链式法则，我们知道w是如何变化的：   </p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} t}=
+\bigtriangledown w\cdot \frac{\mathrm{d}\overrightarrow{ r}}{\mathrm{d} t}</script><p>由于一直在等值面上运动，所以速度是0，所以</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} t}=0，w(t)=c=常数</script><p>可以推出，梯度向量和速度向量垂直：   </p>
+<script type="math/tex; mode=display">\bigtriangledown w \perp  \overrightarrow{ v}</script><p>更进一步的说，这对任何w=c上的动点，都成立。</p>
+<script type="math/tex; mode=display">\bigtriangledown w \perp  切平面</script><p>如果用二维来说，会有等高线，运动方向是切向量方向，梯度垂直于切向量。   </p>
+<h2 id="2-7-例子"><a href="#2-7-例子" class="headerlink" title="2.7 例子"></a>2.7 例子</h2><p>找到 $x^2+y^2-z^2=4$ 在点(2,1,1)的切平面。这个函数叫做双曲面（hyperpoloid），长得像这个样子：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/hyperboloid.png" alt=""></p>
+<p>这是 $w=x^2+y^2-z^2$ 在w=4时的等值面。梯度向量是：</p>
+<script type="math/tex; mode=display">\bigtriangledown w =
+\left \langle 2x,2y,-2z \right \rangle=
+\left \langle 4,2,-2 \right \rangle</script><p>这是曲面或者是切平面的法向量。 <strong>曲面和切平面有相同的法向量</strong>。得到切平面的方程：</p>
+<script type="math/tex; mode=display">4x+2y-2z=C</script><p>带入点（2，1，1），得到C=8。切平面和梯度向量如图所示：</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E5%8F%8C%E6%9B%B2%E7%BA%BF.png" alt=""></p>
+<p>换一个角度，使用微分来考虑：</p>
+<script type="math/tex; mode=display">\mathrm{d} w=2x\mathrm{d} x+2y\mathrm{d} y-2z\mathrm{d} z</script><script type="math/tex; mode=display">\Delta w \approx 4\Delta x+2\Delta y-2\Delta z</script><script type="math/tex; mode=display">4\Delta x+2\Delta y-2\Delta z=0</script><script type="math/tex; mode=display">4(x-2)+2(y-1)-2(z-1)=0</script><h2 id="2-8-Directional-Derivatives-方向导数"><a href="#2-8-Directional-Derivatives-方向导数" class="headerlink" title="2.8 Directional Derivatives 方向导数"></a>2.8 Directional Derivatives 方向导数</h2><p>方向导数是梯度的一个应用。<br>方向导数是沿着某方向上的导数，例如x轴，y轴。方向导数衡量了函数沿着某方向的变化情况。  </p>
+<p>在某点（x,y)开始，有一个向量u，沿着u的方向直线移动。同时有一个二元函数w(x,y)，沿着u的方向，变化有多快？<br>将直线的轨迹参数化：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s}=\widehat{u}</script><p>这个问题实际上就是求：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} s}</script><p><strong>定义</strong>：函数w沿着u方向的方向导数，不局限于坐标轴方向：   </p>
+<script type="math/tex; mode=display">\left.\begin{matrix}
+\frac{\mathrm{d} w}{\mathrm{d} s}
+\end{matrix}\right|_ {\widehat{u}}</script><p>学习偏导数的时候我们知道，偏导数是与x轴y轴平行的线做垂面所得到的截线的斜率。相似的，方向导数是沿着方向向量的垂面截取图像，得到的截线的斜率。</p>
+<p>链式法则里，就讲解过如何去求解了。现在，可视化这个问题。沿着3D图直线方向做垂面，可以得到这个垂面的截线，截线上的某点的斜率就是方向导数：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0.png" alt=""></p>
+<p><strong>方向导数的计算</strong><br>根据链式法则：   </p>
+<script type="math/tex; mode=display">\frac{\mathrm{d} w}{\mathrm{d} s}=
+\bigtriangledown w\cdot \frac{\mathrm{d}\overrightarrow{ r}}{\mathrm{d} s}</script><script type="math/tex; mode=display">\left.\begin{matrix}
+\frac{\mathrm{d} w}{\mathrm{d} s}
+\end{matrix}\right|_ {\widehat{u}}=
+\bigtriangledown w\cdot \widehat{u}</script><p>比如说在i方向上的方向导数：  </p>
+<script type="math/tex; mode=display">\left.\begin{matrix}
+\frac{\mathrm{d} w}{\mathrm{d} s}
+\end{matrix}\right|_ {\widehat{i}}=
+\bigtriangledown w\cdot \widehat{i}=
+\frac{\partial w}{\partial x}</script><p>i方向上的方向导数就是x方向的偏导数。   </p>
+<p><strong>梯度向量和方向导数的关系</strong><br>已经知道</p>
+<script type="math/tex; mode=display">\left.\begin{matrix}
+\frac{\mathrm{d} w}{\mathrm{d} s}
+\end{matrix}\right|_ {\widehat{u}}=
+\bigtriangledown w\cdot \widehat{u}=
+\left | \bigtriangledown w \right |\left | u \right | \cos \theta</script><p>当角度为0的时候，方向导数变化最大。所以梯度向量是在给定点处函数增加最快的向量。<br>当角度为180的时候，方向导数是负的梯度。<br>当角度为90的时候，运动方向与梯度向量垂直，相当于在等值面上运动，没有大小变化。此时与等值面相切。</p>
+]]></content>
     
     <summary type="html">
     
@@ -195,11 +257,11 @@ y = r\sin\varphi
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
