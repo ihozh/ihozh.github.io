@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-12T06:37:01.000Z</updated>
+  <updated>2017-06-17T07:22:39.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/05/24/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%8C%EF%BC%9A%E5%81%8F%E5%BE%AE%E5%88%86-%E7%AC%94%E8%AE%B0/"/>
     <id>http://ihozh.com/2017/05/24/MIT多元微积分二：偏微分-笔记/</id>
     <published>2017-05-24T18:35:50.000Z</published>
-    <updated>2017-06-12T06:37:01.000Z</updated>
+    <updated>2017-06-17T07:22:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization"><a href="#1-Functions-of-Two-Variables-Tangent-Approximation-and-Optimization" class="headerlink" title="1. Functions of Two Variables, Tangent Approximation and Optimization"></a>1. Functions of Two Variables, Tangent Approximation and Optimization</h1><h2 id="1-1-Functions-of-Two-Variables-Graphs-二元函数：图"><a href="#1-1-Functions-of-Two-Variables-Graphs-二元函数：图" class="headerlink" title="1.1 Functions of Two Variables: Graphs 二元函数：图"></a>1.1 Functions of Two Variables: Graphs 二元函数：图</h2><p>有没有试着去画一个二元函数的图，比起一元函数来，画二元函数的图简直就是灾难。   </p>
 <script type="math/tex; mode=display">f(x,y)</script><p>如何直观的表示一个二元函数的图，一个很好的列子就是等高线图：   </p>
@@ -333,6 +333,28 @@ y
 \lambda =\frac{u_3}{\sqrt{u_3^2+h^2}}
 \end{matrix}\right.</script><p>也就是</p>
 <script type="math/tex; mode=display">u_1=u_2=u_3</script><p>顶点距离三条底边距离相等的时候，总面积最小。</p>
+<h2 id="3-4-Constrained-Differentials-带约束条件的微分方程"><a href="#3-4-Constrained-Differentials-带约束条件的微分方程" class="headerlink" title="3.4 Constrained Differentials 带约束条件的微分方程"></a>3.4 Constrained Differentials 带约束条件的微分方程</h2><p>带约束条件的方程意味着方程有非独立变量(Non-independent variables)，即g(x,y,z)=c。</p>
+<p>有函数</p>
+<script type="math/tex; mode=display">f(x,y,z)</script><p>变量之间的关系为</p>
+<script type="math/tex; mode=display">g(x,y,z)=c</script><p>从偏微分的角度来看看约束条件。<br>已知：</p>
+<script type="math/tex; mode=display">x^2+yz+z^3=8</script><p>对方程微分：</p>
+<script type="math/tex; mode=display">2x\mathrm{d}x+z\mathrm{d}y+(y+3z^3)\mathrm{d}z=0</script><p>在(2,3,1)这一点上有：</p>
+<script type="math/tex; mode=display">4\mathrm{d}x+\mathrm{d}y+6\mathrm{d}z=0</script><p>这个方程反映了x，y，z在(2,3,1)这一点上发生变化的关系。它告诉我们诸如此类的一些问题，当x，y变化时，z如何变化。在等值面上，变化量之间有什么关系。如果将z看作是 x，y 的函数z=z(x,y)，可以得到z关于x，y的全微分，全微分符号前边部分为偏微分。     </p>
+<script type="math/tex; mode=display">\mathrm{d}z=-\frac{1}{6}(4\mathrm{d}x+\mathrm{d}y)</script><script type="math/tex; mode=display">\frac{\partial{z}}{\partial{x}}=-\frac{2}{3}</script><script type="math/tex; mode=display">\frac{\partial{z}}{\partial{y}}=-\frac{1}{6}</script><p>当考虑x对z的偏微分的时候，会假定y恒定，$\mathrm{d}y=0$；同理，y对z的偏微分会假定x恒定，$\mathrm{d}x=0$。   </p>
+<p>好了，通常来说：</p>
+<script type="math/tex; mode=display">g(x,y,z)=c</script><script type="math/tex; mode=display">\mathrm{d}g=g_x\mathrm{d}x+g_y\mathrm{d}y+g_z\mathrm{d}z=0</script><p>现在就可以用任意两个变量表示第三个：</p>
+<script type="math/tex; mode=display">\mathrm{d}z=-\frac{g_x}{g_z}\mathrm{d}x-\frac{g_y}{g_z}\mathrm{d}y</script><p>由于微分符号前边的系数可以把它考虑成偏微分，则有</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}z}{\mathrm{d}x}=-\frac{g_x}{g_z}</script><blockquote>
+<p>注意一个违反直觉的地方：负号出现了。</p>
+</blockquote>
+<p>这就是求约束变量之间变化率的通用方法。</p>
+<h2 id="Clearer-Notation-说明符号"><a href="#Clearer-Notation-说明符号" class="headerlink" title="Clearer Notation 说明符号"></a>Clearer Notation 说明符号</h2><p>一个有趣的函数：</p>
+<script type="math/tex; mode=display">f(x,y)=x+y</script><script type="math/tex; mode=display">x=u</script><script type="math/tex; mode=display">y=u+v</script><p>分别求偏导数：</p>
+<script type="math/tex; mode=display">\frac{\partial{f}}{\partial{x}}=1</script><script type="math/tex; mode=display">\frac{\partial{f}}{\partial{u}}=2</script><p>虽然x=u，但是对f的偏导数却是不相同的。f对于x的偏微分，要求y保持恒定，f对于u的偏微分要求v保持恒定。虽然x=y，但是y和v是不相同的。所以，很重要的一点是要明确哪个变量是维持恒定的。这里使用一种说明符号，注意这里不再表示偏微分，而是表示恒定量：</p>
+<script type="math/tex; mode=display">\left ( \frac{\partial f}{\partial x} \right )_ y</script><p>用新的表示法解决之前冲突的地方：</p>
+<script type="math/tex; mode=display">\left ( \frac{\partial f}{\partial x} \right )_ y \neq
+\left ( \frac{\partial f}{\partial x} \right )_ v =
+\left ( \frac{\partial f}{\partial u} \right )_ v</script><p>在处理关联变量的时候，这一点尤其重要。</p>
 ]]></content>
     
     <summary type="html">
@@ -347,11 +369,11 @@ y
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
