@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-19T09:53:47.000Z</updated>
+  <updated>2017-06-23T10:43:17.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIT多元微积分三：二重积分和线积分</title>
+    <link href="http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
+    <id>http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/</id>
+    <published>2017-06-19T20:43:14.000Z</published>
+    <updated>2017-06-23T10:43:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Double-Integrals-二重积分"><a href="#1-Double-Integrals-二重积分" class="headerlink" title="1. Double Integrals 二重积分"></a>1. Double Integrals 二重积分</h1><p>回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png" alt=""></p>
+<a id="more"></a>
+<h2 id="1-1-Definition-of-Double-Integration-二重积分定义"><a href="#1-1-Definition-of-Double-Integration-二重积分定义" class="headerlink" title="1.1 Definition of Double Integration 二重积分定义"></a>1.1 Definition of Double Integration 二重积分定义</h2><p>二重积分可以理解成二元函数下围城的体积。对区域R做积分，R为积分域，dA表示的是一小块面积。</p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A</script><p>将区域R分成多个小块，对每块面积取极限</p>
+<script type="math/tex; mode=display">\sum _ i f(x_i,y_i)\cdot \Delta A_i,\Delta A_i \rightarrow 0</script><p>这就是二重积分的定义。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/doubleIntegral.gif" alt=""></p>
+<p>但是，对体积取极限不是计算积分的常用算法。这样来考虑阴影部分体积，用一些平行的平面扫过定义域，在每个切面上，就会出现但变量积分所表示的面积。当把所有这些面积加起来时（积分），就得到了阴影部分的体积。</p>
+<p>定义 S(x) 为平行于yz面的切面，切面的厚度取极限为dx  </p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A =
+\int_{x_\min}^{x_\max}S(x)\mathrm{d}x</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral1.gif" alt=""></p>
+<p>下一步，计算每个切面的S(x)，这是一个一次积分，x是定值，指的是某一个切面。y的积分域随x变化</p>
+<script type="math/tex; mode=display">S(x)=\int_{y_{\min(x)}}^{y_{\max(x)}} f(x,y)\mathrm{d}y</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral2.gif" alt=""></p>
+<p>将两个积分结合到一起，就是一个非常重要的概念，<strong>累次积分</strong>(interated integral)：   </p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A =
+\int_{x_\min}^{x_\max}
+\left [\int_{y_{\min(x)}}^{y_{\max(x)}}  f(x,y)\mathrm{d}y \right ]\mathrm{d}x</script><p>计算累次积分就是分别对变量进行一次积分。</p>
+<h2 id="1-2-Examples-of-Double-Integration-二重积分例子"><a href="#1-2-Examples-of-Double-Integration-二重积分例子" class="headerlink" title="1.2 Examples of Double Integration 二重积分例子"></a>1.2 Examples of Double Integration 二重积分例子</h2><p><strong>例1</strong>   </p>
+<p>计算以下函数的积分,x，y的区间都为[0,1]：</p>
+<script type="math/tex; mode=display">z=1-x^2-y^2</script><p>这是最简单的情况，x和y的取值互相独立。积分域为矩形，阴影部分体积为所求积分。注意一部分在xy平面上方，为正，一部分为在xy平面下方，为负。    </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E6%96%B9.png" alt="">   </p>
+<script type="math/tex; mode=display">\int_{0}^{1}
+\int_{0}^{1} (1-x^2-y^2) \mathrm{d}y\mathrm{d}x</script><p>首先计算内积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (1-x^2-y^2) \mathrm{d}y=
+\left [ y^2-x^2y-\frac{1}{3}y^3\right ]_ 0^1=
+\frac{2}{3}-x^2</script><p>其次计算外积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (\frac{2}{3}-x^2) \mathrm{d}x=
+\left [ \frac{2}{3}x-\frac{1}{3}x^3 \right ]_ 0^1=
+\frac{1}{3}</script><p><strong>例2</strong><br>计算以下函数的积分, 积分域为x,y&gt;0，并且图像大于xy平面的部分</p>
+<script type="math/tex; mode=display">z=1-x^2-y^2</script><p>y的取值依赖于x，此时的积分域为四分之一个圆。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E5%9C%86.png" alt="">  </p>
+<script type="math/tex; mode=display">\iint_{R} (1-x^2-y^2) \mathrm{d}A=
+\int_{0}^{1}
+\int_{0}^{\sqrt{1-x^2}} (1-x^2-y^2) \mathrm{d}y\mathrm{d}x</script><p>内积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{\sqrt{1-x^2}} (1-x^2-y^2) \mathrm{d}y=
+\left [ y^2-x^2y-\frac{1}{3}y^3\right ]_ 0^{\sqrt{1-x^2}}=
+\frac{2}{3}(1-x^2)^{\frac{2}{3}}</script><p>外积分(用到三角变换，在极坐标下更好计算)：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} \frac{2}{3}(1-x^2)^{\frac{2}{3}} \mathrm{d}x=
+\frac{\pi}{8}</script><h2 id="1-3-Exchanging-the-Order-of-Integration-交换积分次序"><a href="#1-3-Exchanging-the-Order-of-Integration-交换积分次序" class="headerlink" title="1.3 Exchanging the Order of Integration 交换积分次序"></a>1.3 Exchanging the Order of Integration 交换积分次序</h2><p>几何学上，交换积分次序是有意义的，从不同的方向对积分域做切面。</p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{0}^{2} \mathrm{d}y\mathrm{d}x</script><p>交换积分次序也可能会让计算变得简单。改变积分次序，要考虑取值范围。    </p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{x}^{\sqrt{x}} \frac{e^y}{y}\mathrm{d}y\mathrm{d}x</script><p>积分域：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E4%BA%A4%E6%8D%A2%E7%A7%AF%E5%88%86%E7%A7%AF%E5%88%86%E5%9F%9F.png" alt="">  </p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{y^2}^{y} \frac{e^y}{y}\mathrm{d}x\mathrm{d}y</script><p>内积分：</p>
+<script type="math/tex; mode=display">\int_{y^2}^{y} \frac{e^y}{y}\mathrm{d}x=
+\left [ \frac{e^y}{y}x\right ]_ {y^2}^{y}=
+e^y-e^yy</script><p>外积分(不定积分)：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (e^y-e^yy) \mathrm{d}y=
+e-2</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-Double-Integrals-二重积分&quot;&gt;&lt;a href=&quot;#1-Double-Integrals-二重积分&quot; class=&quot;headerlink&quot; title=&quot;1. Double Integrals 二重积分&quot;&gt;&lt;/a&gt;1. Double Integrals 二重积分&lt;/h1&gt;&lt;p&gt;回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。&lt;br&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="苦境" scheme="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+    
+    
+      <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+  </entry>
   
   <entry>
     <title>MIT多元微积分二：偏微分 笔记</title>
@@ -847,16 +924,16 @@ z(t)=2-3t
 <h1 id="从裸机开始的环境准备"><a href="#从裸机开始的环境准备" class="headerlink" title="从裸机开始的环境准备"></a>从裸机开始的环境准备</h1><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
 <h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
 <h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> install</span></div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> basic operation</span></div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
 <p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
 <h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
 <p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
 <p>用wWSGI挂起：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create project</span></div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create app</span></div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">同步数据库</span></div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">开发服务器</span></div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
 <h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
 <h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
@@ -880,7 +957,7 @@ z(t)=2-3t
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
 <h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
 <p>linux 新建用户名用于部署Nginx并赋予权限.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span><span class="bash"> 添加权限：</span></div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
 <p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
 <p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>

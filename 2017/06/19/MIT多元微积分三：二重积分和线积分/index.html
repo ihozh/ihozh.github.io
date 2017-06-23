@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="一盒品邮," />
+  <meta name="keywords" content="微积分,二重积分,线积分,工程数学,公开课,18.02," />
 
 
 
@@ -92,17 +92,25 @@
 
 
 
-<meta name="description" content="作者： 一盒微信： zyh_1991    1997-16 黄山继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，版别为套票小版张。套票小版张是">
-<meta name="keywords" content="一盒品邮">
+<meta name="description" content="1. Double Integrals 二重积分回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。">
+<meta name="keywords" content="微积分,二重积分,线积分,工程数学,公开课,18.02">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方寸间的壮美河山（1）下">
-<meta property="og:url" content="http://ihozh.com/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/index.html">
+<meta property="og:title" content="MIT多元微积分三：二重积分和线积分">
+<meta property="og:url" content="http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="作者： 一盒微信： zyh_1991    1997-16 黄山继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，版别为套票小版张。套票小版张是">
-<meta property="og:updated_time" content="2016-04-16T03:08:52.000Z">
+<meta property="og:description" content="1. Double Integrals 二重积分回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/doubleIntegral.gif">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral1.gif">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral2.gif">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E6%96%B9.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E5%9C%86.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E4%BA%A4%E6%8D%A2%E7%A7%AF%E5%88%86%E7%A7%AF%E5%88%86%E5%9F%9F.png">
+<meta property="og:updated_time" content="2017-06-23T10:43:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="方寸间的壮美河山（1）下">
-<meta name="twitter:description" content="作者： 一盒微信： zyh_1991    1997-16 黄山继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，版别为套票小版张。套票小版张是">
+<meta name="twitter:title" content="MIT多元微积分三：二重积分和线积分">
+<meta name="twitter:description" content="1. Double Integrals 二重积分回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。">
+<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png">
 
 
 
@@ -130,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://ihozh.com/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/"/>
+  <link rel="canonical" href="http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/"/>
 
 
 
 
 
-  <title>方寸间的壮美河山（1）下 | 一盒酥</title>
+  <title>MIT多元微积分三：二重积分和线积分 | 一盒酥</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +303,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/">
+    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一盒酥">
@@ -316,7 +324,7 @@
             
             
               
-                方寸间的壮美河山（1）下
+                MIT多元微积分三：二重积分和线积分
               
             
           </h2>
@@ -331,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-15T18:53:52-04:00">
-                2016-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-19T16:43:14-04:00">
+                2017-06-19
               </time>
             
 
@@ -354,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/一盒品邮/" itemprop="url" rel="index">
-                    <span itemprop="name">一盒品邮</span>
+                  <a href="/categories/苦境/" itemprop="url" rel="index">
+                    <span itemprop="name">苦境</span>
                   </a>
                 </span>
 
@@ -372,7 +380,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/06/19/MIT多元微积分三：二重积分和线积分/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -381,7 +389,7 @@
 
           
           
-             <span id="/2016/04/15/《一盒品邮》方寸间的壮美河山（1）下/" class="leancloud_visitors" data-flag-title="方寸间的壮美河山（1）下">
+             <span id="/2017/06/19/MIT多元微积分三：二重积分和线积分/" class="leancloud_visitors" data-flag-title="MIT多元微积分三：二重积分和线积分">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,9 +417,52 @@
       
 
       
-        <p>作者： 一盒<br>微信： zyh_1991   </p>
-<h3 id="1997-16-黄山"><a href="#1997-16-黄山" class="headerlink" title="1997-16 黄山"></a>1997-16 黄山</h3><p>继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，版别为套票小版张。套票小版张是</p>
-
+        <h1 id="1-Double-Integrals-二重积分"><a href="#1-Double-Integrals-二重积分" class="headerlink" title="1. Double Integrals 二重积分"></a>1. Double Integrals 二重积分</h1><p>回顾单变量积分，积分可以看成函数与坐标轴所围城的面积。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png" alt=""></p>
+<a id="more"></a>
+<h2 id="1-1-Definition-of-Double-Integration-二重积分定义"><a href="#1-1-Definition-of-Double-Integration-二重积分定义" class="headerlink" title="1.1 Definition of Double Integration 二重积分定义"></a>1.1 Definition of Double Integration 二重积分定义</h2><p>二重积分可以理解成二元函数下围城的体积。对区域R做积分，R为积分域，dA表示的是一小块面积。</p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A</script><p>将区域R分成多个小块，对每块面积取极限</p>
+<script type="math/tex; mode=display">\sum _ i f(x_i,y_i)\cdot \Delta A_i,\Delta A_i \rightarrow 0</script><p>这就是二重积分的定义。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/doubleIntegral.gif" alt=""></p>
+<p>但是，对体积取极限不是计算积分的常用算法。这样来考虑阴影部分体积，用一些平行的平面扫过定义域，在每个切面上，就会出现但变量积分所表示的面积。当把所有这些面积加起来时（积分），就得到了阴影部分的体积。</p>
+<p>定义 S(x) 为平行于yz面的切面，切面的厚度取极限为dx  </p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A =
+\int_{x_\min}^{x_\max}S(x)\mathrm{d}x</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral1.gif" alt=""></p>
+<p>下一步，计算每个切面的S(x)，这是一个一次积分，x是定值，指的是某一个切面。y的积分域随x变化</p>
+<script type="math/tex; mode=display">S(x)=\int_{y_{\min(x)}}^{y_{\max(x)}} f(x,y)\mathrm{d}y</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/interate%20integral2.gif" alt=""></p>
+<p>将两个积分结合到一起，就是一个非常重要的概念，<strong>累次积分</strong>(interated integral)：   </p>
+<script type="math/tex; mode=display">\iint_{R} f(x,y)\mathrm{d} A =
+\int_{x_\min}^{x_\max}
+\left [\int_{y_{\min(x)}}^{y_{\max(x)}}  f(x,y)\mathrm{d}y \right ]\mathrm{d}x</script><p>计算累次积分就是分别对变量进行一次积分。</p>
+<h2 id="1-2-Examples-of-Double-Integration-二重积分例子"><a href="#1-2-Examples-of-Double-Integration-二重积分例子" class="headerlink" title="1.2 Examples of Double Integration 二重积分例子"></a>1.2 Examples of Double Integration 二重积分例子</h2><p><strong>例1</strong>   </p>
+<p>计算以下函数的积分,x，y的区间都为[0,1]：</p>
+<script type="math/tex; mode=display">z=1-x^2-y^2</script><p>这是最简单的情况，x和y的取值互相独立。积分域为矩形，阴影部分体积为所求积分。注意一部分在xy平面上方，为正，一部分为在xy平面下方，为负。    </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E6%96%B9.png" alt="">   </p>
+<script type="math/tex; mode=display">\int_{0}^{1}
+\int_{0}^{1} (1-x^2-y^2) \mathrm{d}y\mathrm{d}x</script><p>首先计算内积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (1-x^2-y^2) \mathrm{d}y=
+\left [ y^2-x^2y-\frac{1}{3}y^3\right ]_ 0^1=
+\frac{2}{3}-x^2</script><p>其次计算外积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (\frac{2}{3}-x^2) \mathrm{d}x=
+\left [ \frac{2}{3}x-\frac{1}{3}x^3 \right ]_ 0^1=
+\frac{1}{3}</script><p><strong>例2</strong><br>计算以下函数的积分, 积分域为x,y&gt;0，并且图像大于xy平面的部分</p>
+<script type="math/tex; mode=display">z=1-x^2-y^2</script><p>y的取值依赖于x，此时的积分域为四分之一个圆。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E5%9C%86.png" alt="">  </p>
+<script type="math/tex; mode=display">\iint_{R} (1-x^2-y^2) \mathrm{d}A=
+\int_{0}^{1}
+\int_{0}^{\sqrt{1-x^2}} (1-x^2-y^2) \mathrm{d}y\mathrm{d}x</script><p>内积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{\sqrt{1-x^2}} (1-x^2-y^2) \mathrm{d}y=
+\left [ y^2-x^2y-\frac{1}{3}y^3\right ]_ 0^{\sqrt{1-x^2}}=
+\frac{2}{3}(1-x^2)^{\frac{2}{3}}</script><p>外积分(用到三角变换，在极坐标下更好计算)：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} \frac{2}{3}(1-x^2)^{\frac{2}{3}} \mathrm{d}x=
+\frac{\pi}{8}</script><h2 id="1-3-Exchanging-the-Order-of-Integration-交换积分次序"><a href="#1-3-Exchanging-the-Order-of-Integration-交换积分次序" class="headerlink" title="1.3 Exchanging the Order of Integration 交换积分次序"></a>1.3 Exchanging the Order of Integration 交换积分次序</h2><p>几何学上，交换积分次序是有意义的，从不同的方向对积分域做切面。</p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{0}^{2} \mathrm{d}y\mathrm{d}x</script><p>交换积分次序也可能会让计算变得简单。改变积分次序，要考虑取值范围。    </p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{x}^{\sqrt{x}} \frac{e^y}{y}\mathrm{d}y\mathrm{d}x</script><p>积分域：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E4%BA%A4%E6%8D%A2%E7%A7%AF%E5%88%86%E7%A7%AF%E5%88%86%E5%9F%9F.png" alt="">  </p>
+<script type="math/tex; mode=display">\int_{0}^{1}\int_{y^2}^{y} \frac{e^y}{y}\mathrm{d}x\mathrm{d}y</script><p>内积分：</p>
+<script type="math/tex; mode=display">\int_{y^2}^{y} \frac{e^y}{y}\mathrm{d}x=
+\left [ \frac{e^y}{y}x\right ]_ {y^2}^{y}=
+e^y-e^yy</script><p>外积分(不定积分)：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} (e^y-e^yy) \mathrm{d}y=
+e-2</script>
       
     </div>
 
@@ -440,7 +491,17 @@
       
         <div class="post-tags">
           
-            <a href="/tags/一盒品邮/" rel="tag"># 一盒品邮</a>
+            <a href="/tags/微积分/" rel="tag"># 微积分</a>
+          
+            <a href="/tags/二重积分/" rel="tag"># 二重积分</a>
+          
+            <a href="/tags/线积分/" rel="tag"># 线积分</a>
+          
+            <a href="/tags/工程数学/" rel="tag"># 工程数学</a>
+          
+            <a href="/tags/公开课/" rel="tag"># 公开课</a>
+          
+            <a href="/tags/18-02/" rel="tag"># 18.02</a>
           
         </div>
       
@@ -453,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/07/《一盒品邮》方寸间的壮美河山（1）/" rel="next" title="《一盒品邮》方寸间的壮美河山（1）上">
-                <i class="fa fa-chevron-left"></i> 《一盒品邮》方寸间的壮美河山（1）上
+              <a href="/2017/05/24/MIT多元微积分二：偏微分-笔记/" rel="next" title="MIT多元微积分二：偏微分 笔记">
+                <i class="fa fa-chevron-left"></i> MIT多元微积分二：偏微分 笔记
               </a>
             
           </div>
@@ -462,10 +523,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/17/eclipse搭建scala语言的spark环境/" rel="prev" title="eclipse搭建scala语言的spark环境">
-                eclipse搭建scala语言的spark环境 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -603,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1997-16-黄山"><span class="nav-number">1.</span> <span class="nav-text">1997-16 黄山</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Double-Integrals-二重积分"><span class="nav-number">1.</span> <span class="nav-text">1. Double Integrals 二重积分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Definition-of-Double-Integration-二重积分定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Definition of Double Integration 二重积分定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Examples-of-Double-Integration-二重积分例子"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Examples of Double Integration 二重积分例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Exchanging-the-Order-of-Integration-交换积分次序"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Exchanging the Order of Integration 交换积分次序</span></a></li></ol></li></ol></div>
             
 
           </div>
