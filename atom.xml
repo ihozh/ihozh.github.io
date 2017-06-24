@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-23T11:03:03.000Z</updated>
+  <updated>2017-06-24T06:18:12.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Matplotlib 配色方案</title>
+    <link href="http://ihozh.com/2017/06/24/Matplotlib%20%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/"/>
+    <id>http://ihozh.com/2017/06/24/Matplotlib 配色方案/</id>
+    <published>2017-06-24T04:37:47.000Z</published>
+    <updated>2017-06-24T06:18:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用matplotlib做图的时候，通常需要配色。 matplotlib 自己提供了一套解决配色方案，除此之外还有一个非常小巧的python包 palettable 提供了一系列的专业配色方案。这些对于python画图来说应该是足够了。</p>
+<h1 id="Matplotlib-配色方案"><a href="#Matplotlib-配色方案" class="headerlink" title="Matplotlib 配色方案"></a>Matplotlib 配色方案</h1><p><a href="https://matplotlib.org/examples/color/colormaps_reference.html" target="_blank" rel="external">官方网址</a><br><a id="more"></a><br>colormap 分为四种类型：   </p>
+<ul>
+<li><p>Sequential：在两个色调中近似单色的变化平稳的色图。Sequential colormap 是绘制科学数据理想的配色方案，这种方案内在表现出从低到高的变化。<br><img src="https://matplotlib.org/_images/colormaps_reference_01.png" alt=""></p>
+</li>
+<li><p>Diverging: 有中间色，由中间色向两段不同的颜色缓慢变化。这种配色方案适合数据有中间值的情况。<br><img src="https://matplotlib.org/_images/colormaps_reference_03.png" alt=""></p>
+</li>
+<li><p>Qualitative: 离散的颜色，颜色变化较快。<br><img src="https://matplotlib.org/_images/colormaps_reference_04.png" alt="">   </p>
+</li>
+<li><p>Miscellaneous: 其他不属于以上三种的配色方案。<br><img src="https://matplotlib.org/_images/colormaps_reference_05.png" alt=""></p>
+</li>
+</ul>
+<h1 id="Palettable-配色方案"><a href="#Palettable-配色方案" class="headerlink" title="Palettable 配色方案"></a>Palettable 配色方案</h1><p>完全基于Python的配色库，小巧，没有其他依赖。体格虽小但是能力不小，不仅是matplotlib完美的解决方案还可以为网站应用配色。</p>
+<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>Palettable 收录了以下配色库中的配色。</p>
+<ul>
+<li>cmocean</li>
+<li>Colorbrewer2</li>
+<li>Cubehelix</li>
+<li>matplotlib</li>
+<li>MyCarta</li>
+<li>Tableau</li>
+<li>The Wes Anderson Palettes blog</li>
+</ul>
+<p>推荐一个在线的可视化配色库<br><a href="http://colorbrewer2.org/" target="_blank" rel="external">colorbrewer2</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Python2 Python3 都支持pip    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install palettable</div></pre></td></tr></table></figure>
+<h2 id="寻找颜色"><a href="#寻找颜色" class="headerlink" title="寻找颜色"></a>寻找颜色</h2><p>命名规则 <code>&lt;颜色名&gt;_&lt;颜色数量&gt;</code>，反色加上<code>_r</code>。<br>使用时需要先导入包：</p>
+<p><a href="https://jiffyclub.github.io/palettable/cmocean/diverging/" target="_blank" rel="external">palettable.cmocean.diverging</a><br><a href="https://jiffyclub.github.io/palettable/cmocean/sequential/" target="_blank" rel="external">palettable.cmocean.sequential</a><br><a href="https://jiffyclub.github.io/palettable/colorbrewer/diverging/" target="_blank" rel="external">palettable.colorbrewer.diverging</a><br><a href="https://jiffyclub.github.io/palettable/colorbrewer/qualitative/" target="_blank" rel="external">palettable.colorbrewer.qualitative</a><br><a href="https://jiffyclub.github.io/palettable/colorbrewer/sequential/" target="_blank" rel="external">palettable.colorbrewer.sequential</a><br><a href="https://jiffyclub.github.io/palettable/matplotlib/" target="_blank" rel="external">palettable.matplotlib</a><br><a href="https://jiffyclub.github.io/palettable/mycarta/" target="_blank" rel="external">palettable.mycarta</a><br><a href="https://jiffyclub.github.io/palettable/tableau/" target="_blank" rel="external">palettable.tableau</a><br><a href="https://jiffyclub.github.io/palettable/wesanderson/" target="_blank" rel="external">palettable.wesanderson</a></p>
+<p>如果要使用 Dark2_7 配色方案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from palettable.colorbrewer.qualitative import Dark2_7</div></pre></td></tr></table></figure></p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="通用接口"><a href="#通用接口" class="headerlink" title="通用接口"></a>通用接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">name</div><div class="line">    The name of the palette.</div><div class="line">type</div><div class="line">    One of &apos;diverging&apos;, &apos;qualitative&apos;, or &apos;sequential&apos;.</div><div class="line">number</div><div class="line">    The number of defined colors in the palette.</div><div class="line">colors</div><div class="line">    The defined colors in the palette as a list of RGB tuples in the range 0-255.</div><div class="line">hex_colors</div><div class="line">    Colors as a list of hex strings (e.g. &apos;#A912F4&apos;).</div><div class="line">mpl_colors</div><div class="line">    Colors as a list of RGB tuples in the range 0-1 as used by matplotlib.</div><div class="line">mpl_colormap</div><div class="line">    A continuous, interpolated matplotlib LinearSegmentedColormap.</div></pre></td></tr></table></figure>
+<h3 id="Palette-接口"><a href="#Palette-接口" class="headerlink" title="Palette 接口"></a>Palette 接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">get_mpl_colormap</div><div class="line">    Use this method to get a matplotlib color map and pass custom keyword arguments to LinearSegmentedColormap.from_list.</div><div class="line">show_as_blocks</div><div class="line">    Show the defined colors of the palette in the IPython Notebook. Requires ipythonblocks to be installed.</div><div class="line">show_discrete_image</div><div class="line">    Show the defined colors of the palette in the IPython Notebook. Requires Matplotlib Palettes to be installed.</div><div class="line">show_continuous_image</div><div class="line">    Show the continuous, interpolated palette in the IPython Notebook. Requires Matplotlib Palettes to be installed.</div><div class="line">save_discrete_image</div><div class="line">    Save an image of the defined colors of palette to a file. Requires Matplotlib Palettes to be installed.</div><div class="line">save_continuous_image</div><div class="line">    Save an image of the continuous, interpolated palette to a file. Requires Matplotlib Palettes to be installed.</div></pre></td></tr></table></figure>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>三种常见使用方法   </p>
+<h3 id="Color-Cycle"><a href="#Color-Cycle" class="headerlink" title="Color Cycle"></a>Color Cycle</h3><p>改变matplotlib的默认颜色循环。使用 <code>.mpl_color</code> 属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ax.set_color_cycle(palettable.colorbrewer.qualitative.Dark2_8.mpl_colors)</div></pre></td></tr></table></figure></p>
+<h3 id="Colormap"><a href="#Colormap" class="headerlink" title="Colormap"></a>Colormap</h3><p>给cmap传参，使用 <code>.mpl_color</code> 属性。：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ax.imshow(data, cmap=Blues_8.mpl_colormap)</div><div class="line"> #or</div><div class="line">ax.plot(data, cmap=Blues_8.mpl_colormap)</div></pre></td></tr></table></figure></p>
+<h3 id="Discrete-Colormap"><a href="#Discrete-Colormap" class="headerlink" title="Discrete Colormap"></a>Discrete Colormap</h3><p><code>.mpl_colormap</code>属性是连续的，使用 <code>ListedColormap</code> 离散化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cmap = ListedColormap(palettable.colorbrewer.qualitative.Dark2_7.mpl_colors)</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用matplotlib做图的时候，通常需要配色。 matplotlib 自己提供了一套解决配色方案，除此之外还有一个非常小巧的python包 palettable 提供了一系列的专业配色方案。这些对于python画图来说应该是足够了。&lt;/p&gt;
+&lt;h1 id=&quot;Matplotlib-配色方案&quot;&gt;&lt;a href=&quot;#Matplotlib-配色方案&quot; class=&quot;headerlink&quot; title=&quot;Matplotlib 配色方案&quot;&gt;&lt;/a&gt;Matplotlib 配色方案&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://matplotlib.org/examples/color/colormaps_reference.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方网址&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="Python" scheme="http://ihozh.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MIT多元微积分四：三重积分和曲面积分</title>
+    <link href="http://ihozh.com/2017/06/23/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E5%9B%9B%EF%BC%9A%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/"/>
+    <id>http://ihozh.com/2017/06/23/MIT多元微积分四：三重积分和曲面积分/</id>
+    <published>2017-06-24T03:37:01.000Z</published>
+    <updated>2017-06-24T04:22:07.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="苦境" scheme="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+    
+    
+      <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+  </entry>
   
   <entry>
     <title>MIT多元微积分三：二重积分和线积分</title>
@@ -80,15 +162,15 @@ e-2</script>]]></content>
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
-    
-      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
       <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
     
       <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     
       <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
     
   </entry>
   
@@ -477,11 +559,11 @@ A_{b}\left ( \frac{\partial{b}}{\partial{\theta}} \right )_ {a}</script><p>第�
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
