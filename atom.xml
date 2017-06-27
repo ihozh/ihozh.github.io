@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-24T06:18:12.000Z</updated>
+  <updated>2017-06-27T06:05:59.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -16,11 +16,160 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Matplotlib Backend</title>
+    <link href="http://ihozh.com/2017/06/27/Matplotlib-Backend/"/>
+    <id>http://ihozh.com/2017/06/27/Matplotlib-Backend/</id>
+    <published>2017-06-27T05:50:49.000Z</published>
+    <updated>2017-06-27T06:05:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Some people use matplotlib interactively from the python shell and have plotting windows pop up when they type commands. Some people embed matplotlib into graphical user interfaces like wxpython or pygtk to build rich applications. Others use matplotlib in batch scripts to generate postscript images from some numerical simulations, and still others in web application servers to dynamically serve up graphs.<br><a id="more"></a><br>To support all of these use cases, matplotlib can target different outputs, and each of these capabilities is called a backend; the “frontend” is the user facing code, i.e., the plotting code, whereas the “backend” does all the hard work behind-the-scenes to make the figure. There are two types of backends: user interface backends (for use in pygtk, wxpython, tkinter, qt4, or macosx; also referred to as “interactive backends”) and hardcopy backends to make image files (PNG, SVG, PDF, PS; also referred to as “non-interactive backends”).</p>
+<p>There are four ways to configure your backend. If they conflict each other, the method mentioned last in the following list will be used, e.g. calling use() will override the setting in your <strong>matplotlibrc</strong>.</p>
+<ol>
+<li><p>The backend parameter in your <strong>matplotlibrc</strong> file (see Customizing matplotlib):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">backend : WXAgg   # use wxpython with antigrain (agg) rendering</div></pre></td></tr></table></figure>
+</li>
+<li><p>Setting the MPLBACKEND environment variable, either for your current shell or for a single script:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; export MPLBACKEND=&quot;module://my_backend&quot;</div><div class="line">&gt; python simple_plot.py</div><div class="line"></div><div class="line">&gt; MPLBACKEND=&quot;module://my_backend&quot; python simple_plot.py</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Setting this environment variable will override the backend parameter in any matplotlibrc, even if there is a matplotlibrc in your current working directory. Therefore setting MPLBACKEND globally, e.g. in your .bashrc or .profile, is discouraged as it might lead to counter-intuitive behavior.</p>
+<ol>
+<li>To set the backend for a single script, you can alternatively use the -d command line argument:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; python script.py -dbackend</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>This method is deprecated as the -d argument might conflict with scripts which parse command line arguments (see issue <a href="https://github.com/matplotlib/matplotlib/issues/1986" target="_blank" rel="external">#1986</a>). You should use MPLBACKEND instead.</p>
+<p>4.If your script depends on a specific backend you can use the use() function:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import matplotlib</div><div class="line">matplotlib.use(&apos;PS&apos;)   # generate postscript output by default</div></pre></td></tr></table></figure></p>
+<p>If you use the use() function, this must be done before importing matplotlib.pyplot. Calling use() after pyplot has been imported will have no effect. Using use() will require changes in your code if users want to use a different backend. Therefore, you should avoid explicitly calling use() unless absolutely necessary.</p>
+<blockquote>
+<p><strong>Note</strong><br>Backend name specifications are not case-sensitive; e.g., ‘GTKAgg’ and ‘gtkagg’ are equivalent.</p>
+</blockquote>
+<p>With a typical installation of matplotlib, such as from a binary installer or a linux distribution package, a good default backend will already be set, allowing both interactive work and plotting from scripts, with output to the screen and/or to a file, so at least initially you will not need to use any of the methods given above.</p>
+<p>If, however, you want to write graphical user interfaces, or a web application server (Matplotlib in a web application server), or need a better understanding of what is going on, read on. To make things a little more customizable for graphical user interfaces, matplotlib separates the concept of the renderer (the thing that actually does the drawing) from the canvas (the place where the drawing goes). The canonical renderer for user interfaces is Agg which uses the Anti-Grain Geometry C++ library to make a raster (pixel) image of the figure. All of the user interfaces except macosx can be used with agg rendering, e.g., WXAgg, GTKAgg, QT4Agg, QT5Agg, TkAgg. In addition, some of the user interfaces support other rendering engines. For example, with GTK, you can also select GDK rendering (backend GTK deprecated in 2.0) or Cairo rendering (backend GTKCairo).</p>
+<p>For the rendering engines, one can also distinguish between vector or raster renderers. Vector graphics languages issue drawing commands like “draw a line from this point to this point” and hence are scale free, and raster backends generate a pixel representation of the line whose accuracy depends on a DPI setting.</p>
+<p>Here is a summary of the matplotlib renderers (there is an eponymous backed for each; these are non-interactive backends, capable of writing to a file):</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Renderer</th>
+<th style="text-align:left">Filetypes</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AGG</td>
+<td style="text-align:left">png</td>
+<td style="text-align:left">raster graphics – high quality images using the Anti-Grain Geometry engine</td>
+</tr>
+<tr>
+<td style="text-align:left">PS</td>
+<td style="text-align:left">ps eps</td>
+<td style="text-align:left">vector graphics – Postscript output</td>
+</tr>
+<tr>
+<td style="text-align:left">PDF</td>
+<td style="text-align:left">PDF</td>
+<td style="text-align:left">vector graphics – Portable Document Format</td>
+</tr>
+<tr>
+<td style="text-align:left">SVG</td>
+<td style="text-align:left">svg</td>
+<td style="text-align:left">vector graphics – Scalable Vector Graphics</td>
+</tr>
+<tr>
+<td style="text-align:left">Cairo</td>
+<td style="text-align:left">png ps pdf svg</td>
+<td style="text-align:left">vector graphics – Cairo graphics</td>
+</tr>
+<tr>
+<td style="text-align:left">GDK</td>
+<td style="text-align:left">png jpg tiff</td>
+<td style="text-align:left">raster graphics – the Gimp Drawing Kit Deprecated in 2.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>And here are the user interfaces and renderer combinations supported; these are interactive backends, capable of displaying to the screen and of using appropriate renderers from the table above to write to a file:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Backend</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GTKAgg</td>
+<td style="text-align:left">Agg rendering to a GTK 2.x canvas (requires PyGTK and pycairo or cairocffi; Python2 only)</td>
+</tr>
+<tr>
+<td style="text-align:left">GTK3Agg</td>
+<td style="text-align:left">Agg rendering to a GTK 3.x canvas (requires PyGObject and pycairo or cairocffi)</td>
+</tr>
+<tr>
+<td style="text-align:left">GTK</td>
+<td style="text-align:left">GDK rendering to a GTK 2.x canvas (not recommended and d eprecated in 2.0) (requires PyGTK and pycairo or cairocffi; Python2 only)</td>
+</tr>
+<tr>
+<td style="text-align:left">GTKCairo</td>
+<td style="text-align:left">Cairo rendering to a GTK 2.x canvas (requires PyGTK and pycairo or cairocffi; Python2 only)</td>
+</tr>
+<tr>
+<td style="text-align:left">GTK3Cairo</td>
+<td style="text-align:left">Cairo rendering to a GTK 3.x canvas (requires PyGObject and pycairo or cairocffi)</td>
+</tr>
+<tr>
+<td style="text-align:left">WXAgg</td>
+<td style="text-align:left">Agg rendering to to a wxWidgets canvas (requires wxPython)</td>
+</tr>
+<tr>
+<td style="text-align:left">WX</td>
+<td style="text-align:left">Native wxWidgets drawing to a wxWidgets Canvas (not recommended and deprecated in 2.0) (requires wxPython)</td>
+</tr>
+<tr>
+<td style="text-align:left">TkAgg</td>
+<td style="text-align:left">Agg rendering to a Tk canvas (requires TkInter)</td>
+</tr>
+<tr>
+<td style="text-align:left">Qt4Agg</td>
+<td style="text-align:left">Agg rendering to a Qt4 canvas (requires PyQt4 or pyside)</td>
+</tr>
+<tr>
+<td style="text-align:left">Qt5Agg</td>
+<td style="text-align:left">Agg rendering in a Qt5 canvas (requires PyQt5)</td>
+</tr>
+<tr>
+<td style="text-align:left">macosx</td>
+<td style="text-align:left">Cocoa rendering in OSX windows (presently lacks blocking show() behavior when matplotlib is in non-interactive mode)</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Some people use matplotlib interactively from the python shell and have plotting windows pop up when they type commands. Some people embed matplotlib into graphical user interfaces like wxpython or pygtk to build rich applications. Others use matplotlib in batch scripts to generate postscript images from some numerical simulations, and still others in web application servers to dynamically serve up graphs.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="Python" scheme="http://ihozh.com/tags/Python/"/>
+    
+      <category term="Matplotlib" scheme="http://ihozh.com/tags/Matplotlib/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Matplotlib 配色方案</title>
     <link href="http://ihozh.com/2017/06/24/Matplotlib%20%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/"/>
     <id>http://ihozh.com/2017/06/24/Matplotlib 配色方案/</id>
     <published>2017-06-24T04:37:47.000Z</published>
-    <updated>2017-06-24T06:18:12.000Z</updated>
+    <updated>2017-06-27T05:53:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>在用matplotlib做图的时候，通常需要配色。 matplotlib 自己提供了一套解决配色方案，除此之外还有一个非常小巧的python包 palettable 提供了一系列的专业配色方案。这些对于python画图来说应该是足够了。</p>
 <h1 id="Matplotlib-配色方案"><a href="#Matplotlib-配色方案" class="headerlink" title="Matplotlib 配色方案"></a>Matplotlib 配色方案</h1><p><a href="https://matplotlib.org/examples/color/colormaps_reference.html" target="_blank" rel="external">官方网址</a><br><a id="more"></a><br>colormap 分为四种类型：   </p>
@@ -70,6 +219,8 @@
     
     
       <category term="Python" scheme="http://ihozh.com/tags/Python/"/>
+    
+      <category term="Matplotlib" scheme="http://ihozh.com/tags/Matplotlib/"/>
     
   </entry>
   
