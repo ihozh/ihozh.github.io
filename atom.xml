@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-27T06:05:59.000Z</updated>
+  <updated>2017-06-27T06:12:58.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://ihozh.com/2017/06/27/Matplotlib-Backend/"/>
     <id>http://ihozh.com/2017/06/27/Matplotlib-Backend/</id>
     <published>2017-06-27T05:50:49.000Z</published>
-    <updated>2017-06-27T06:05:59.000Z</updated>
+    <updated>2017-06-27T06:12:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Some people use matplotlib interactively from the python shell and have plotting windows pop up when they type commands. Some people embed matplotlib into graphical user interfaces like wxpython or pygtk to build rich applications. Others use matplotlib in batch scripts to generate postscript images from some numerical simulations, and still others in web application servers to dynamically serve up graphs.<br><a id="more"></a><br>To support all of these use cases, matplotlib can target different outputs, and each of these capabilities is called a backend; the “frontend” is the user facing code, i.e., the plotting code, whereas the “backend” does all the hard work behind-the-scenes to make the figure. There are two types of backends: user interface backends (for use in pygtk, wxpython, tkinter, qt4, or macosx; also referred to as “interactive backends”) and hardcopy backends to make image files (PNG, SVG, PDF, PS; also referred to as “non-interactive backends”).</p>
 <p>There are four ways to configure your backend. If they conflict each other, the method mentioned last in the following list will be used, e.g. calling use() will override the setting in your <strong>matplotlibrc</strong>.</p>
@@ -29,16 +29,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">backend : WXAgg   # use wxpython with antigrain (agg) rendering</div></pre></td></tr></table></figure>
 </li>
 <li><p>Setting the MPLBACKEND environment variable, either for your current shell or for a single script:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; export MPLBACKEND=&quot;module://my_backend&quot;</div><div class="line">&gt; python simple_plot.py</div><div class="line"></div><div class="line">&gt; MPLBACKEND=&quot;module://my_backend&quot; python simple_plot.py</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; export MPLBACKEND=&quot;module://my_backend&quot;</div><div class="line">&gt; python simple_plot.py</div><div class="line">&gt; MPLBACKEND=&quot;module://my_backend&quot; python simple_plot.py</div></pre></td></tr></table></figure>
 <p>Setting this environment variable will override the backend parameter in any matplotlibrc, even if there is a matplotlibrc in your current working directory. Therefore setting MPLBACKEND globally, e.g. in your .bashrc or .profile, is discouraged as it might lead to counter-intuitive behavior.</p>
-<ol>
-<li>To set the backend for a single script, you can alternatively use the -d command line argument:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; python script.py -dbackend</div></pre></td></tr></table></figure>
+</li>
+<li><p>To set the backend for a single script, you can alternatively use the -d command line argument:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; python script.py -dbackend</div></pre></td></tr></table></figure>
+<p>This method is deprecated as the -d argument might conflict with scripts which parse command line arguments (see issue <a href="https://github.com/matplotlib/matplotlib/issues/1986" target="_blank" rel="external">#1986</a>). You should use MPLBACKEND instead.</p>
+</li>
+<li>If your script depends on a specific backend you can use the use() function:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import matplotlib</div><div class="line">matplotlib.use(&apos;PS&apos;)   # generate postscript output by default</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>This method is deprecated as the -d argument might conflict with scripts which parse command line arguments (see issue <a href="https://github.com/matplotlib/matplotlib/issues/1986" target="_blank" rel="external">#1986</a>). You should use MPLBACKEND instead.</p>
-<p>4.If your script depends on a specific backend you can use the use() function:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import matplotlib</div><div class="line">matplotlib.use(&apos;PS&apos;)   # generate postscript output by default</div></pre></td></tr></table></figure></p>
 <p>If you use the use() function, this must be done before importing matplotlib.pyplot. Calling use() after pyplot has been imported will have no effect. Using use() will require changes in your code if users want to use a different backend. Therefore, you should avoid explicitly calling use() unless absolutely necessary.</p>
 <blockquote>
 <p><strong>Note</strong><br>Backend name specifications are not case-sensitive; e.g., ‘GTKAgg’ and ‘gtkagg’ are equivalent.</p>
