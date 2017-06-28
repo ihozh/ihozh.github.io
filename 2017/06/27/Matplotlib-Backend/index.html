@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Som">
+<meta name="description" content="introductionA lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output">
 <meta name="keywords" content="Python,Matplotlib">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matplotlib Backend">
 <meta property="og:url" content="http://ihozh.com/2017/06/27/Matplotlib-Backend/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Som">
-<meta property="og:updated_time" content="2017-06-27T06:12:58.000Z">
+<meta property="og:description" content="introductionA lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output">
+<meta property="og:updated_time" content="2017-06-28T10:03:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matplotlib Backend">
-<meta name="twitter:description" content="A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Som">
+<meta name="twitter:description" content="introductionA lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output">
 
 
 
@@ -409,7 +409,7 @@
       
 
       
-        <p>A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Some people use matplotlib interactively from the python shell and have plotting windows pop up when they type commands. Some people embed matplotlib into graphical user interfaces like wxpython or pygtk to build rich applications. Others use matplotlib in batch scripts to generate postscript images from some numerical simulations, and still others in web application servers to dynamically serve up graphs.<br><a id="more"></a><br>To support all of these use cases, matplotlib can target different outputs, and each of these capabilities is called a backend; the “frontend” is the user facing code, i.e., the plotting code, whereas the “backend” does all the hard work behind-the-scenes to make the figure. There are two types of backends: user interface backends (for use in pygtk, wxpython, tkinter, qt4, or macosx; also referred to as “interactive backends”) and hardcopy backends to make image files (PNG, SVG, PDF, PS; also referred to as “non-interactive backends”).</p>
+        <h1 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h1><p>A lot of documentation on the website and in the mailing lists refers to the “backend” and many new users are confused by this term. matplotlib targets many different use cases and output formats. Some people use matplotlib interactively from the python shell and have plotting windows pop up when they type commands. Some people embed matplotlib into graphical user interfaces like wxpython or pygtk to build rich applications. Others use matplotlib in batch scripts to generate postscript images from some numerical simulations, and still others in web application servers to dynamically serve up graphs.<br><a id="more"></a><br>To support all of these use cases, matplotlib can target different outputs, and each of these capabilities is called a backend; the “frontend” is the user facing code, i.e., the plotting code, whereas the “backend” does all the hard work behind-the-scenes to make the figure. There are two types of backends: user interface backends (for use in pygtk, wxpython, tkinter, qt4, or macosx; also referred to as “interactive backends”) and hardcopy backends to make image files (PNG, SVG, PDF, PS; also referred to as “non-interactive backends”).</p>
 <p>There are four ways to configure your backend. If they conflict each other, the method mentioned last in the following list will be used, e.g. calling use() will override the setting in your <strong>matplotlibrc</strong>.</p>
 <ol>
 <li><p>The backend parameter in your <strong>matplotlibrc</strong> file (see Customizing matplotlib):</p>
@@ -534,6 +534,10 @@
 </tbody>
 </table>
 </div>
+<h1 id="application"><a href="#application" class="headerlink" title="application"></a>application</h1><h2 id="using-matplotlib-with-pygame"><a href="#using-matplotlib-with-pygame" class="headerlink" title="using matplotlib with pygame"></a>using matplotlib with pygame</h2><p>Matplotlib is an open source library for easy plotting. We can integrate Matplotlib into Pygame game and create various plots.</p>
+<p>In order to integrate Matplotlib with Pygame, we need to use a non-interactive backend, otherwise Matplotlib will present us with a GUI window by default. We will import the main Matplotlib module and call the <code>use</code> function. This function has to be called immediately after importing the main <code>matplotlib</code> module and before other <code>matplotlib</code> modules are imported:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import matplotlib</div><div class="line">matplotlib.use(&quot;Agg&quot;)</div></pre></td></tr></table></figure>
+<p>notice: non-interactive backend, meaning it won’t display on the screen, only save to files. If we do not change the default backend. Python will give us <code>NSException</code>.   </p>
 
       
     </div>
@@ -654,8 +658,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/mainphoto.png"
@@ -724,6 +737,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#application"><span class="nav-number">2.</span> <span class="nav-text">application</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#using-matplotlib-with-pygame"><span class="nav-number">2.1.</span> <span class="nav-text">using matplotlib with pygame</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
