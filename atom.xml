@@ -282,7 +282,7 @@
     <link href="http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     <id>http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/</id>
     <published>2017-06-19T20:43:14.000Z</published>
-    <updated>2017-06-28T08:12:16.000Z</updated>
+    <updated>2017-06-30T03:09:57.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Double-Integrals-二重积分"><a href="#1-Double-Integrals-二重积分" class="headerlink" title="1. Double Integrals 二重积分"></a>1. Double Integrals 二重积分</h1><p>回顾单变量积分，积分可以看成函数与坐标轴所围成的面积。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png" alt=""></p>
 <a id="more"></a>
@@ -335,8 +335,58 @@ e-2</script><h2 id="1-4-Double-Integrals-in-Polar-Coordinates-极坐标的二重
   x^2+y^2\leq 1\\
   x,y\geq 0
   \end{matrix}
-} (1-x^2-y^2) \mathrm{d}A</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E7%A7%AF%E5%88%86%E5%9F%9F%E4%B8%BA%E5%9C%86.png" alt="">  </p>
-<p>在直角坐标系下，算这个积分并不容易。用极坐标代替直角坐标。</p>
+} (1-x^2-y^2) \mathrm{d}A</script><p>在直角坐标系下，算这个积分并不容易。用极坐标代替直角坐标。</p>
+<p>极坐标下，二元函数的几何意义是相同的，即函数与定义域围成的体积。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/doubleIntegralPolar.gif" alt="doubleIntegralPolar.gif"></p>
+<p>将定义域直角坐标系的x和y分别替换成对应极坐标系的 $r$ 和 $\theta$，同理，定义域可以细分为无数的小块，先来计算每个小区域的面积。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/polarInegral.png" alt="polarInetegral.png"></p>
+<script type="math/tex; mode=display">\Delta A \approx r\Delta\theta\Delta r</script><p>注意不是：</p>
+<script type="math/tex; mode=display">\neq \Delta\theta\Delta r</script><p>当面积足够小时；</p>
+<script type="math/tex; mode=display">\mathrm{d} A =r\mathrm{d}\theta\mathrm{d} r</script><p>再来看看被积分的函数：</p>
+<script type="math/tex; mode=display">f(x,y)=1-x^2-y^2</script><p>由于有直角坐标系和极坐标系的转换公式：</p>
+<script type="math/tex; mode=display">\left\{\begin{matrix}
+x=r\cos\theta \\
+y=r\sin\theta
+\end{matrix}\right.</script><script type="math/tex; mode=display">f(r,\theta)=1-r^2</script><p>得到最后极坐标下的积分公式：</p>
+<script type="math/tex; mode=display">\int_{0}^{\frac{\pi}{2}}\int_{0}^{1} (1-r^2)r\mathrm{d}r\mathrm{d}\theta</script><p>内积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{1} r-r^3\mathrm{d}x=
+\left [ \frac{1}{2}r^2=\frac{1}{4}r^4\right ]_ {0}^{1}=\frac{1}{4}</script><p>外积分：</p>
+<script type="math/tex; mode=display">\int_{0}^{\frac{\pi}{2}} \frac{1}{4} \mathrm{d}\theta=\frac{\pi}{8}</script><p>这个例子是幸运的，当从直角坐标系变换的极坐标的时候</p>
+<ul>
+<li>积分区域更加简单</li>
+<li>积分对象更加简单</li>
+</ul>
+<p>但是一般来说，这种转换总会有牺牲的。   </p>
+<ul>
+<li>积分区域不确定，大部分情况下，首先给定角度，对r做积分</li>
+<li>积分对象变复杂，因为引入了三角函数</li>
+</ul>
+<h2 id="1-5-Applications-Mass-and-Average-Value-应用：质量和平均体积"><a href="#1-5-Applications-Mass-and-Average-Value-应用：质量和平均体积" class="headerlink" title="1.5 Applications: Mass and Average Value 应用：质量和平均体积"></a>1.5 Applications: Mass and Average Value 应用：质量和平均体积</h2><p>跳出二重积分的几何意义是求体积的观念，现在看下更广泛的应用</p>
+<h3 id="计算某区域的面积"><a href="#计算某区域的面积" class="headerlink" title="计算某区域的面积"></a>计算某区域的面积</h3><p>一说计算面积，很容易就让人联想到，这是一重积分的工作，但是二重积分也是可以算面积的。面积可以看作是对小区域 $\mathrm{d}A$ 求和：</p>
+<script type="math/tex; mode=display">Area(R)=\iint_{R}1 \cdot \mathrm{d}A</script><h3 id="计算平面物体的质量"><a href="#计算平面物体的质量" class="headerlink" title="计算平面物体的质量"></a>计算平面物体的质量</h3><p>我们都知道，</p>
+<script type="math/tex; mode=display">质量=密度\times体积</script><p>可以对密度做积分得到质量，但这是三重积分的工作。注意二重积分只能处理平面。</p>
+<p>但是考虑一个平面物体，比如金属板，就可以用二重积分计算了。平面金属板的质量是板上每一小片质量的总和。一个平面物体的密度是每单位面积元的质量，因此可以对密度积分求平面物体质量。<br>使用 $\delta$ 表示密度</p>
+<script type="math/tex; mode=display">\Delta m \approx \delta \Delta A</script><script type="math/tex; mode=display">\mathrm{Mass} = \iint_{R} \delta \cdot \mathrm{d} A</script><h3 id="在区域R上求函数f的平均值"><a href="#在区域R上求函数f的平均值" class="headerlink" title="在区域R上求函数f的平均值"></a>在区域R上求函数f的平均值</h3><p>大家都知道有限数据集平均的意义，比如一个班的考试平均成绩。但是无限数据集呢？</p>
+<p>测量一个空间的平均温度，更高的准确度要求更多的测量点。<strong>数学上定义连续数据集合的平均值的方法是对整个数据集合的函数做积分，再除以这个集合的大小，也就是区域的面积。</strong></p>
+<script type="math/tex; mode=display">\mathrm{Average} (f)=\overline{f}=\frac{1}{\mathrm{Area(R)}}\iint_R f \cdot\mathrm{d}A</script><p>这个平均值对各点的权重是一样的。如果是加权平均则在积分内乘以权重系数。</p>
+<script type="math/tex; mode=display">\mathrm{Average} (f)=\overline{f}=\frac{1}{\mathrm{Area(R)}}\iint_R f \delta\cdot\mathrm{d}A</script><h3 id="平面物体的质心"><a href="#平面物体的质心" class="headerlink" title="平面物体的质心"></a>平面物体的质心</h3><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/centerMass.gif" alt="centerMass.gif"><br>在直角坐标系下，物体的质心在(x,y)的加权平均处。</p>
+<script type="math/tex; mode=display">\overline{x}=\frac{1}{\mathrm{Mass}}\iint x \delta \cdot\mathrm{d}A</script><script type="math/tex; mode=display">\overline{y}=\frac{1}{\mathrm{Mass}}\iint y \delta \cdot\mathrm{d}A</script><h2 id="1-6-Applications-Moment-of-Inertia-应用：转动惯量"><a href="#1-6-Applications-Moment-of-Inertia-应用：转动惯量" class="headerlink" title="1.6 Applications: Moment of Inertia 应用：转动惯量"></a>1.6 Applications: Moment of Inertia 应用：转动惯量</h2><p>质量是使物体平动的困难程度。<br>转动惯量用来描述刚体转动时的惯性，和质量不同，和旋转轴有关。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/Moment%20of%20Inertia.png" alt="Moment of Inertia"></p>
+<p>质点的动能：</p>
+<script type="math/tex; mode=display">\frac{1}{2}mv^2</script><p>距离质点o的r处有一点m，角速度为w：</p>
+<script type="math/tex; mode=display">\frac{1}{2}mv^2=\frac{1}{2}mr^2\omega^2</script><p>所以，转动惯量的定义为：</p>
+<script type="math/tex; mode=display">mr^2</script><p>一个大物体的转动惯量是所有小物体的转动惯量总和。</p>
+<script type="math/tex; mode=display">\Delta m \approx \delta \Delta A</script><script type="math/tex; mode=display">\Delta m r^2\approx r^2\delta \Delta A</script><p>关于原点的转动惯量</p>
+<script type="math/tex; mode=display">I_o=\iint_R (x^2+y^2)\delta \cdot\mathrm{d}A</script><script type="math/tex; mode=display">转动动能=\frac{1}{2}I_o\omega^2</script><p>如果沿着x轴转动，质点到x轴的距离为|y|，表示了沿着x轴转动的难度。</p>
+<script type="math/tex; mode=display">I_x=\iint_R y^2\delta \cdot\mathrm{d}A</script><p>同理，我们可以求出刚体绕任意轴转动的公式，只要能够找到每个点到转轴的距离。</p>
+<p><strong>例子：</strong><br>一张正在播放的碟片，设密度均匀为1</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/flatdisc.png" alt="flatdisc.png"></p>
+<script type="math/tex; mode=display">I_o=\iint_R r^2 r\cdot\mathrm{d}r\mathrm{d}\theta\\
+=\int_0^{2\pi}\int_0^a r^3\cdot\mathrm{d}r\mathrm{d}\theta\\
+=\frac{\pi a^4}{2}</script><p>这就是沿着中心点转动碟片的难度，再来看下飞盘，飞盘沿边界处一点转动<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/%E9%A3%9E%E7%9B%98.png" alt="飞盘"></p>
+<script type="math/tex; mode=display">I_o=\iint_R r^2 r\cdot\mathrm{d}r\mathrm{d}\theta\\
+=\int_{2\pi}^{2\pi}\int_0^{2a\cos{\theta}} r^3\cdot\mathrm{d}r\mathrm{d}\theta\\
+=\frac{3}{2}\pi a^4</script><p>如果飞盘绕着边界一点旋转会比绕中心旋转难3倍。</p>
 ]]></content>
     
     <summary type="html">
