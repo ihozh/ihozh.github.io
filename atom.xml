@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-06-27T09:39:08.000Z</updated>
+  <updated>2017-08-19T07:51:20.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Complex Analysis-Ahlfors学习笔记</title>
+    <link href="http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/"/>
+    <id>http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/</id>
+    <published>2017-08-19T07:39:08.000Z</published>
+    <updated>2017-08-19T07:51:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>书名：《COMPLEX ANALYSIS》<br>      An Introduction to the Theory of Analytic Functions of One Complex Variable   </p>
+<p>作者： Lars V. Ahlfors<br>      哈佛大学 数学系    </p>
+<p>版本： 3rd   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/Complex%20Analysis-Ahlfors%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Complex%20analysis-Lars%20V.%20Ahlfors.jpg" alt="Complex analysis-Lars V. Ahlfors.jpg"></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;书名：《COMPLEX ANALYSIS》&lt;br&gt;      An Introduction to the Theory of Analytic Functions of One Complex Variable   &lt;/p&gt;
+&lt;p&gt;作者： Lars V. Ahlfors&lt;br&gt;      哈佛大学 数学系    &lt;/p&gt;
+&lt;p&gt;版本： 3rd   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/Complex%20Analysis-Ahlfors%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Complex%20analysis-Lars%20V.%20Ahlfors.jpg&quot; alt=&quot;Complex analysis-Lars V. Ahlfors.jpg&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="苦境" scheme="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+    
+    
+      <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="复变函数，笔记，经典" scheme="http://ihozh.com/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%EF%BC%8C%E7%AC%94%E8%AE%B0%EF%BC%8C%E7%BB%8F%E5%85%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 模块化编程 - 笔记</title>
@@ -282,7 +314,7 @@
     <link href="http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     <id>http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/</id>
     <published>2017-06-19T20:43:14.000Z</published>
-    <updated>2017-08-18T07:04:05.000Z</updated>
+    <updated>2017-08-18T21:24:48.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Double-Integrals-二重积分"><a href="#1-Double-Integrals-二重积分" class="headerlink" title="1. Double Integrals 二重积分"></a>1. Double Integrals 二重积分</h1><p>回顾单变量积分，积分可以看成函数与坐标轴所围成的面积。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png" alt=""></p>
 <a id="more"></a>
@@ -476,15 +508,15 @@ y & x
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
-    
-      <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
-    
       <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+      <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
@@ -1320,16 +1352,16 @@ z(t)=2-3t
 <h1 id="从裸机开始的环境准备"><a href="#从裸机开始的环境准备" class="headerlink" title="从裸机开始的环境准备"></a>从裸机开始的环境准备</h1><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
 <h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
 <h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> install</span></div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> basic operation</span></div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
 <p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
 <h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
 <p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
 <p>用wWSGI挂起：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create project</span></div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create app</span></div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">同步数据库</span></div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">开发服务器</span></div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
 <h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
 <h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
@@ -1353,7 +1385,7 @@ z(t)=2-3t
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
 <h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
 <p>linux 新建用户名用于部署Nginx并赋予权限.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span><span class="bash"> 添加权限：</span></div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
 <p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
 <p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>
@@ -1782,50 +1814,6 @@ z(t)=2-3t
     
     
       <category term="总结" scheme="http://ihozh.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 博客搭建</title>
-    <link href="http://ihozh.com/2016/03/16/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>http://ihozh.com/2016/03/16/hexo-博客搭建/</id>
-    <published>2016-03-17T02:05:21.000Z</published>
-    <updated>2016-03-17T16:08:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_github%2Bhexo.png-ihogithubfirst" alt=""><br><a id="more"></a></p>
-<h2 id="第一个标题"><a href="#第一个标题" class="headerlink" title="第一个标题"></a>第一个标题</h2><p>心血来潮，在github上自己搭了个博客，写第一篇留个纪念吧。<br>初探hexo，还有很多地方不懂，这篇博客也会持续更新探索hexo发现的好玩的事物。<br>关于如何在github上搭建静态博客，网上的教程已经非常多了，大多很清晰，详细请看<a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客</a>。<br>两个关键要素： github 和 域名</p>
-<h2 id="第二个标题"><a href="#第二个标题" class="headerlink" title="第二个标题"></a>第二个标题</h2><p>虽然看了教程，但还是在一些地方花了不少时间。例如，在 <code>_config.yml</code>中，要填入值的<code>:</code>后边一定要留一个空格，不然是不会产生效果的。</p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>我使用了DNSPod做域名解析。不论自动还是手动，要确保添加了主机纪录为<code>www</code>和<code>@</code>，记录类型为CNAME，记录值为<code>xxxx.github.io</code>的解析记录。这里解释下所谓的主机纪录就是域名前缀，常见的有<code>www</code>(万维网：www.xxx.com),<code>@</code>(直接解析：xxx.com),<code>*</code>(泛解析：*.xxx.com)   </p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p><strong>创建新的文章</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;My New Post&quot;</div><div class="line">hexo n</div></pre></td></tr></table></figure></p>
-<p><strong>创建新页面</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page img</div></pre></td></tr></table></figure></p>
-<p>前一条会在<code>/source/_posts</code>下生成一个新的｀.md｀文件，后一条会在<code>/source/</code>下生成新的文件夹</p>
-<p><strong>生成静态文件</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo g</div></pre></td></tr></table></figure></p>
-<p><strong>本地服务器测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<p><strong>部署github</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
-<p>如果部署Github时没有任何反应，需要安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<h3 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">language: zh-Hans #简体汉字</div><div class="line"></div><div class="line"># depolyment</div><div class="line">deploy:</div><div class="line">	type: git</div><div class="line">	repo:&lt;ssh of github&gt;</div></pre></td></tr></table></figure>
-<h2 id="NEXT主题"><a href="#NEXT主题" class="headerlink" title="NEXT主题"></a>NEXT主题</h2><p>看到在知乎中主题排名第一，我就拿来用了，提供很多的有趣的内容，还在探索中。  </p>
-<h3 id="增加菜单栏"><a href="#增加菜单栏" class="headerlink" title="增加菜单栏"></a>增加菜单栏</h3><p>例如增加学习菜单：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">	学习: /categories/学习/  #菜单的URL，绝对路径，在source下</div></pre></td></tr></table></figure>
-<p>如果要保证名字正常显示，进入｀‘主题路径’/language/zh-Hans.yml｀</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">	学习: 学习  # 学习菜单显示为“学习”</div></pre></td></tr></table></figure>
-<h3 id="添加侧边栏头像"><a href="#添加侧边栏头像" class="headerlink" title="添加侧边栏头像"></a>添加侧边栏头像</h3><p>将头像命名为<code>default_avatar.jpg</code> 放入<code>‘主题路径’/source/images</code>下，可以看到侧边栏头像更改</p>
-<h3 id="添加logo"><a href="#添加logo" class="headerlink" title="添加logo"></a>添加logo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">custom_logs:</div><div class="line">	enabled: true</div><div class="line">	image:&lt;image url&gt;  #logo的绝对路径</div></pre></td></tr></table></figure>
-<h3 id="添加tag页"><a href="#添加tag页" class="headerlink" title="添加tag页"></a>添加tag页</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
-<p>在生成的 <code>source/tags/index.md</code> 添加   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type: &quot;tags&quot;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_github%2Bhexo.png-ihogithubfirst&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="杂货铺" scheme="http://ihozh.com/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
-    
-    
-      <category term="hexo" scheme="http://ihozh.com/tags/hexo/"/>
     
   </entry>
   
