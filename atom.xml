@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-08-19T07:51:20.000Z</updated>
+  <updated>2017-08-20T09:12:01.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -16,17 +16,128 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>复数的矩阵表示</title>
+    <link href="http://ihozh.com/2017/08/20/%E5%A4%8D%E6%95%B0%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA/"/>
+    <id>http://ihozh.com/2017/08/20/复数的矩阵表示/</id>
+    <published>2017-08-20T07:25:57.000Z</published>
+    <updated>2017-08-20T09:12:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>复数的本质是找到一个域，在这个域中可以解决类似 $x^2+1=0$ 这种在实数域R下不能解决的问题。</p>
+<p>Ahlfors在《COMPLEX ANALYSIS》一书中给出一种枚举 $\alpha+\beta i$ 构造复数域的方法并且给予证明。当然，还有其他的构造方法。</p>
+<p>复数可以用类似平面的方式表示，在复平面中，横轴表示实数，纵轴表示虚数。但是复数域和平面空间并不是同构的。因为他们的维度不同。此外，在平面空间，并没有所谓的向量乘法，如何在平面空间使用乘法运算？</p>
+<p>引入矩阵(a,b都为实数)：   </p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+a & b\\
+-b & a
+\end{pmatrix}</script><a id="more"></a>
+<p>用矩阵表示复数。</p>
+<p>定义：</p>
+<script type="math/tex; mode=display">f(a+bi)=
+\begin{bmatrix}
+a & b\\
+-b & a
+\end{bmatrix}</script><p>加法：</p>
+<script type="math/tex; mode=display">f（(a_1+b_1i)+(a_2+b_2i))
+=f((a_1+a_2)+(b_1+b_2)i)\\
+=\begin{bmatrix}
+a_1+a_2 & b_1+b_2\\
+-b_1-b_2 & a_1+a_2
+\end{bmatrix}
+=\begin{bmatrix}
+a_1 & b_1\\
+-b_1 & a_1
+\end{bmatrix}
++\begin{bmatrix}
+a_2 & b_2\\
+-b_2 & a_2
+\end{bmatrix}</script><p>乘法：   </p>
+<script type="math/tex; mode=display">f（(a_1+b_1i)(a_2+b_2i))
+=f((a_1a_2-b_1b_2)+(a_2b_1+a_1b_2)i)\\
+=\begin{bmatrix}
+a_1a_2-b_1b_2 & a_2b_1+a_1b_2\\
+-a_2b_1-a_1b_2 & a_1a_2-b_1b_2
+\end{bmatrix}
+=\begin{bmatrix}
+a_1 & b_1\\
+-b_1 & a_1
+\end{bmatrix}
+\begin{bmatrix}
+a_2 & b_2\\
+-b_2 & a_2
+\end{bmatrix}</script><p>将矩阵分解：</p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+a & b\\
+-b & a
+\end{bmatrix}
+=a\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
++b\begin{bmatrix}
+0 & -1\\
+-1 & 0
+\end{bmatrix}
+=aI+bJ</script><p>其中</p>
+<script type="math/tex; mode=display">J^2=-1</script><p>另外，复数的共轭实际上是矩阵的转置。</p>
+<script type="math/tex; mode=display">f(a-bi)=
+\begin{bmatrix}
+a & -b\\
+b & a
+\end{bmatrix}</script><p>复数的模为矩阵的行列式。<br>使用极坐标的转换公式可以得到复数在极坐标下的表示。    </p>
+<p>使用矩阵表示的好处，可以把复数的乘法和旋转联系起来。复数的乘法实际上就是在复数域上的旋转，2*2矩阵表示的就是平面上的旋转操作。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;复数的本质是找到一个域，在这个域中可以解决类似 $x^2+1=0$ 这种在实数域R下不能解决的问题。&lt;/p&gt;
+&lt;p&gt;Ahlfors在《COMPLEX ANALYSIS》一书中给出一种枚举 $\alpha+\beta i$ 构造复数域的方法并且给予证明。当然，还有其他的构造方法。&lt;/p&gt;
+&lt;p&gt;复数可以用类似平面的方式表示，在复平面中，横轴表示实数，纵轴表示虚数。但是复数域和平面空间并不是同构的。因为他们的维度不同。此外，在平面空间，并没有所谓的向量乘法，如何在平面空间使用乘法运算？&lt;/p&gt;
+&lt;p&gt;引入矩阵(a,b都为实数)：   &lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{pmatrix}
+a &amp; b\\
+-b &amp; a
+\end{pmatrix}&lt;/script&gt;
+    
+    </summary>
+    
+      <category term="苦境" scheme="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+    
+    
+      <category term="矩阵 复数" scheme="http://ihozh.com/tags/%E7%9F%A9%E9%98%B5-%E5%A4%8D%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Complex Analysis-Ahlfors学习笔记</title>
     <link href="http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/"/>
     <id>http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/</id>
     <published>2017-08-19T07:39:08.000Z</published>
-    <updated>2017-08-19T07:51:20.000Z</updated>
+    <updated>2017-08-20T06:05:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>书名：《COMPLEX ANALYSIS》<br>      An Introduction to the Theory of Analytic Functions of One Complex Variable   </p>
 <p>作者： Lars V. Ahlfors<br>      哈佛大学 数学系    </p>
 <p>版本： 3rd   </p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/Complex%20Analysis-Ahlfors%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Complex%20analysis-Lars%20V.%20Ahlfors.jpg" alt="Complex analysis-Lars V. Ahlfors.jpg"></p>
 <a id="more"></a>
+<h1 id="第一章-复数"><a href="#第一章-复数" class="headerlink" title="第一章 复数"></a>第一章 复数</h1><h2 id="1-1-复数的代数表示"><a href="#1-1-复数的代数表示" class="headerlink" title="1.1 复数的代数表示"></a>1.1 复数的代数表示</h2><h3 id="1-1-1-算数操作符"><a href="#1-1-1-算数操作符" class="headerlink" title="1.1.1 算数操作符"></a>1.1.1 算数操作符</h3><ul>
+<li>复数代数表示：   <script type="math/tex; mode=display">\alpha+\beta i</script></li>
+<li><p>实数的运算对复数同样适用，包括加减乘除   </p>
+</li>
+<li><p>1 $i^n$ y有四种可能值</p>
+<script type="math/tex; mode=display">i^0=1,i^1=1,i^2=-1,i^3=-i</script></li>
+</ul>
+<h3 id="1-1-2-平方根"><a href="#1-1-2-平方根" class="headerlink" title="1.1.2 平方根"></a>1.1.2 平方根</h3><script type="math/tex; mode=display">\sqrt{\alpha+i\beta}=\\
+\pm \left ( \sqrt{\frac{\alpha+\sqrt{\alpha^2+\beta^2}}{2}}
++i\frac{\beta}{|\beta|}
+\sqrt{\frac{-\alpha+\sqrt{\alpha^2+\beta^2}}{2}} \right)</script><p>要注意选择符号符合的解。</p>
+<h3 id="1-1-3-证明"><a href="#1-1-3-证明" class="headerlink" title="1.1.3 证明"></a>1.1.3 证明</h3><p>回顾一下实数，用符号R表示。首先R是一个域（field），这说明加法和乘法（addition and multiplication）是定义了的并且满足交换律（commutative law），结合律（associative law）和分配律（distributive law）。0和1分别是加法和乘法的中性元素（neutral elements）。与未知数相加相乘（本身不为0）都有解。每个域都是整环。     </p>
+<p>关于整环，交换环，参考抽象代数（abstract algebra）。</p>
+<p>此外，域还有个特性是顺序关联（order relation）。(1) 0 不是正数; (2) 如果a不等于0，a或者-a是正数; (3) 正数相加或者相乘还是正数。   </p>
+<p>最后，R满足每一个增加和有界的序列都有限制。   </p>
+<p>但是，$x^2+1=0$在R上没有解。假设有一个域F包括R，在F内，方程有解，为i，-i。再假设F内的子集域C，包括所有的 $\alpha+\beta i$。 不同的F得到不同的C，计为C‘，C和C’是同构的（field isomorphism）。</p>
+<p>现在还没有证明F也存在同样的性质。</p>
+<p>最简单的构造方法，枚举所有的 $\alpha+\beta i$（+和i仅仅当作符号）。定义加法和乘法。定义形式 $a+0i$ 是和R同构的子域，元素 $0 + i1$ 是$x^2+1=0$的解。得到 $(0 + i1)^2 = -(1 + i0)$。F域因此满足了要求，而且和C相同。</p>
+<p>复数域的存在得证。</p>
 ]]></content>
     
     <summary type="html">
@@ -508,15 +619,15 @@ y & x
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
+    
       <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
-    
-      <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
@@ -1352,16 +1463,16 @@ z(t)=2-3t
 <h1 id="从裸机开始的环境准备"><a href="#从裸机开始的环境准备" class="headerlink" title="从裸机开始的环境准备"></a>从裸机开始的环境准备</h1><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
 <h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
 <h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> install</span></div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> basic operation</span></div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
 <p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
 <h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
 <p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
 <p>用wWSGI挂起：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create project</span></div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create app</span></div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">同步数据库</span></div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">开发服务器</span></div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
 <h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
 <h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
@@ -1385,7 +1496,7 @@ z(t)=2-3t
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
 <h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
 <p>linux 新建用户名用于部署Nginx并赋予权限.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span><span class="bash"> 添加权限：</span></div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
 <p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
 <p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>
@@ -1766,54 +1877,6 @@ z(t)=2-3t
     
     
       <category term="一盒品邮" scheme="http://ihozh.com/tags/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CC的学习经验</title>
-    <link href="http://ihozh.com/2016/03/18/CC%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
-    <id>http://ihozh.com/2016/03/18/CC学习的经验/</id>
-    <published>2016-03-19T01:20:46.000Z</published>
-    <updated>2017-05-01T06:59:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="CC的半学期学习总结"><a href="#CC的半学期学习总结" class="headerlink" title="CC的半学期学习总结"></a>CC的半学期学习总结</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg" alt=""><br><a id="more"></a><br>感谢王达师兄，让我在学习他的同时感觉到点滴进步。<br>学期过了一半，Cloud Computing 的project也已过半。<br>20号凌晨5点，随着强一致和终端一致的两个测试的通过，意味着可以享受一下周末的惬意了。白天的时间去冲了下奖励，拿到两分后也是黔驴技穷，还是腾出点时间写写总结，分享分享学习经验。通常自己一个星期挣扎出的作业，见识过第一天就能荣登榜首的神牛。也不用提在第二周作业就被EMR活活逼哭的黑历史。说是分享，也请各位大神高抬贵手。<br>我是如何学习这门课的，有什么感悟。这里不会过多去纠结课程本身内容，而是分享下我自身的学习经历。</p>
-<h2 id="实验指导是否理解透彻"><a href="#实验指导是否理解透彻" class="headerlink" title="实验指导是否理解透彻"></a>实验指导是否理解透彻</h2><p>实验指导是指在每次做项目前，官方发布的说明文档。它包括   </p>
-<ul>
-<li>项目简介   </li>
-<li>知识点讲解   </li>
-<li>平台要求   </li>
-<li>任务步骤和目标   </li>
-<li>惩罚，奖励，提示   </li>
-</ul>
-<p>对指导的理解程度会极大的影响每次作业的速度和质量。<br>刚开学时，每次CC的作业在读完指导后就直接开始，这样虽然可以很快的进入工作，有两个缺点。   </p>
-<ol>
-<li>写程序bug百出   </li>
-<li>完成后很快忘记   </li>
-</ol>
-<p>如果bug如果不是代码的生疏，便是自己没有理解。 </p>
-<h3 id="做一项最愚蠢的工作"><a href="#做一项最愚蠢的工作" class="headerlink" title="做一项最愚蠢的工作"></a>做一项最愚蠢的工作</h3><p>开始试着重新排版指导说明，对重点部分进行加粗和注释，通过这种方法，加强对指导的梳理和理解。问题来了，这样每次的作业都有一多半的时间在处理这项任务。这是一项很蠢的工作，直到突然看到师兄在博客中翻译上课内容，才恍然一笑，原来还有一样蠢的人。但是师兄，很快！后来的实验开始，我尝试着去翻译这些指导。刚开始极其痛苦，汉语翻译是要比英文注释还要慢的一项工作，有几周差点没有完成作业。但坚信的是，学习方法是比内容更重要的，既然你觉得是对的，那就做下去。</p>
-<h3 id="你会越来越快"><a href="#你会越来越快" class="headerlink" title="你会越来越快"></a>你会越来越快</h3><p>翻译的工作实际上是，在理解原文的情况下做出总结，这是一个双倍的学习工程。翻译的难点在于：   </p>
-<ol>
-<li>准确把握原文   </li>
-<li>翻译通顺   </li>
-<li>专业词汇的使用   </li>
-</ol>
-<p>奇迹也会来的很突然。在翻译工作进行了一个月左右的时候，可以很明显感觉到翻译速度的提升，伴随对指导的理解深入，作业会完成的越来越顺利。以这一周为例，个人项目花费两天时间翻译理解指导，复习涉及到的知识和自己查找的一些资料，笔记字数1万字左右。作业程序花费1天通过了12个测试的11个，半天时间冲奖励和补漏。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_CC%E5%AD%A6%E4%B9%A0%E5%8D%8A%E5%AD%A6%E6%9C%9F.png" alt=""></p>
-<h3 id="深入理解是一种技能"><a href="#深入理解是一种技能" class="headerlink" title="深入理解是一种技能"></a>深入理解是一种技能</h3><p>深入理解是翻译这项愚蠢工作的副产品，也是主要目的。<br>举个例子来说，在最近的一次作业，要求实现一个终端一致的服务器，只有一个要求：（原文）with only one requirement- the newly received write operation must have a greater timestamp than the write operation that updated the currently stored value. 就这一个要求挡住了不少同学满分的道路。这里我理解的至关重要的一个词就是<strong>write</strong>而不是<strong>new</strong>。只有在连续写请求的条件下，终端一致有效。如遇读请求，复位。这并不是官方提供模版的标准写法，我甚至没有补全其他的相关联函数，因为这样的理解已经实现了终端一致的要求，足够通过所有的测试了。</p>
-<h2 id="自立更生与舶来主义"><a href="#自立更生与舶来主义" class="headerlink" title="自立更生与舶来主义"></a>自立更生与舶来主义</h2><p>没有对错之分。一定要给自己足够的思考空间！一定要给自己足够的思考空间！一定要给自己足够的思考空间。我总结这三句，是因为前半学期的作业中，依赖他人思想过多。自己思考和交流讨论都是学习的基本方式。我自己总结了一个请教他人最佳的时间点：在对方不对你感到厌烦的同时，因为帮助你解决了问题而能极大满足自己虚荣心的那个时间就是最佳请教时间。嘿嘿，只是道理是这样讲的。</p>
-<h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>看个标题就能懂了。也没有什么过多的内容，亘古不变的真理。对学习的坚持，不要轻言放弃；对学习习惯的坚持，习惯会提高能力。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;CC的半学期学习总结&quot;&gt;&lt;a href=&quot;#CC的半学期学习总结&quot; class=&quot;headerlink&quot; title=&quot;CC的半学期学习总结&quot;&gt;&lt;/a&gt;CC的半学期学习总结&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
-    
-    
-      <category term="总结" scheme="http://ihozh.com/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
