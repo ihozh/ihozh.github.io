@@ -400,8 +400,7 @@
 
       
         
-          
-            <h1 id="伯努利试验和伯努利过程"><a href="#伯努利试验和伯努利过程" class="headerlink" title="伯努利试验和伯努利过程"></a>伯努利试验和伯努利过程</h1><p>当一系列的随机事件发生时，包含这些随机变量的集合，称为随机过程。</p>
+          <h1 id="伯努利试验和伯努利过程"><a href="#伯努利试验和伯努利过程" class="headerlink" title="伯努利试验和伯努利过程"></a>伯努利试验和伯努利过程</h1><p>当一系列的随机事件发生时，包含这些随机变量的集合，称为随机过程。</p>
 <p>根据随机变量的不同，随机过程也有很多种，如伯努利过程（离散，无记忆），泊松过程（连续，无记忆），马尔可夫链（有记忆，不独立）等。伯努利过程是随机过程中最简单的形式。   </p>
 <p>抛硬币是概率统计中一个著名的试验，每次抛出银币得到正面或者反面，抛第二次时和第一次的结果没有任何关联。每次抛硬币就是一个伯努利试验。</p>
 <p>给出定义：</p>
@@ -412,28 +411,13 @@
 </ul>
 <p>这就是一个yes or no 的问题</p>
 <p>重复的独立同分布的伯努利试验就是伯努利过程。伯努利过程有三个常见的模型。</p>
-<h1 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h1><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>二项分布（Binomial distribution）   </p>
-<blockquote>
-<p>例：随机抛出硬币n次，出现k次正面朝上的概率(S=k)，每次正面概率为p。   </p>
-</blockquote>
-<p>这是一个典型的二项分布问题。抛出正面为成功，结果为1；抛出反面为失败，记为0.在n次中有k次正面朝上，k次朝上的试验也是随机分布在k次试验中，可以得到二项分布的概率：</p>
-<script type="math/tex; mode=display">P(S=k)=\binom{n}{k}p^k(1-p)^{n-k}</script><script type="math/tex; mode=display">E(S)=n\cdot p</script><script type="math/tex; mode=display">Var(S)=n\cdot p\cdot (1-p)</script><h2 id="二项式系数"><a href="#二项式系数" class="headerlink" title="二项式系数"></a>二项式系数</h2><p>二项分布之所以叫这个名字，因为二项分布的公式带二项系数。   </p>
-<p>来看看帕斯卡／杨辉三角（Pascal’s triangle）：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Bernoulli%20process%20%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B/Pascal%27s%20triangle.gif" alt="Pascal triangle">   </p>
-<p>每一个元素都是元素上方两元素相加得到。将第n行所有的元素加起来有 $2^n$，这也是n次试验的样本空间。第n行第k个元素对应n次试验，k次成功，n-k次失败的可能性。   </p>
-<h2 id="几何上的理解"><a href="#几何上的理解" class="headerlink" title="几何上的理解"></a>几何上的理解</h2><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Bernoulli%20process%20%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B/Binomial%20coefficient.png" alt=""></p>
-<h1 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h1><h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p>几何分布（Geometric distribution）<br>几何分布的典型问题是第一次成功问题。将k次成功问题的反过来，第一次成功需要进过几次试验？</p>
-<blockquote>
-<p>例：连续抛硬币，第一次出现正面的概率（T=t）</p>
-</blockquote>
-<p>假设在第t次出现正面，则t次之前都会是反面</p>
-<script type="math/tex; mode=display">P(T=t)=(1-p)^{t-1}p</script><script type="math/tex; mode=display">E(T)=\frac{1}{p}</script><script type="math/tex; mode=display">Var(T)=\frac{1-p}{p^2}</script><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>几何分布是无记忆的，并且分布具有相似性。每次新的试验与之前的结果无关。假如说已经抛了10次硬币并且都是反面，第11次抛硬币概率与第一次相同。如同将前十次的结果去掉，将剩下的部分归一化，得到的分布和第一次抛硬币的概率分布是完全相同的。   </p>
-<h1 id="负二项分布"><a href="#负二项分布" class="headerlink" title="负二项分布"></a>负二项分布</h1><h2 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h2><p>第一次成功问题是几何分布，k次成功问题便是负二项分布。</p>
-<blockquote>
-<p>例：连续抛硬币，第k次出现正面的概率。</p>
-</blockquote>
-<script type="math/tex; mode=display">Y_k=T_1+...+T_k</script><p>考虑到第k次成功，就要考虑到第k-1次成功，k次成功和k-1次成功是独立的。其实可以换个角度来思考，即所有到成功k次时即终止的独立试验中，失败次数n-k的分布。也可以认为是k个独立的二项分布。</p>
-<script type="math/tex; mode=display">P(Y_k=t)=\binom{t-1}{k-1}p^{k-1}(1-p)^{t-k}p</script><script type="math/tex; mode=display">E(Y_k)=\frac{k}{p}</script>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/21/Bernoulli-process-伯努利过程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
