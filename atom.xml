@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-08-20T09:12:01.000Z</updated>
+  <updated>2017-08-20T19:16:00.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,69 +20,69 @@
     <link href="http://ihozh.com/2017/08/20/%E5%A4%8D%E6%95%B0%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA/"/>
     <id>http://ihozh.com/2017/08/20/复数的矩阵表示/</id>
     <published>2017-08-20T07:25:57.000Z</published>
-    <updated>2017-08-20T09:12:01.000Z</updated>
+    <updated>2017-08-20T19:16:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>复数的本质是找到一个域，在这个域中可以解决类似 $x^2+1=0$ 这种在实数域R下不能解决的问题。</p>
 <p>Ahlfors在《COMPLEX ANALYSIS》一书中给出一种枚举 $\alpha+\beta i$ 构造复数域的方法并且给予证明。当然，还有其他的构造方法。</p>
 <p>复数可以用类似平面的方式表示，在复平面中，横轴表示实数，纵轴表示虚数。但是复数域和平面空间并不是同构的。因为他们的维度不同。此外，在平面空间，并没有所谓的向量乘法，如何在平面空间使用乘法运算？</p>
-<p>引入矩阵(a,b都为实数)：   </p>
+<p>引入矩阵( $\alpha$, $\beta$ 都为实数)：   </p>
 <script type="math/tex; mode=display">\begin{pmatrix}
-a & b\\
--b & a
+\alpha & \beta\\
+-\beta & \alpha
 \end{pmatrix}</script><a id="more"></a>
 <p>用矩阵表示复数。</p>
 <p>定义：</p>
-<script type="math/tex; mode=display">f(a+bi)=
+<script type="math/tex; mode=display">f(\alpha+\beta i)=
 \begin{bmatrix}
-a & b\\
--b & a
+\alpha & \beta\\
+-\beta & \alpha
 \end{bmatrix}</script><p>加法：</p>
-<script type="math/tex; mode=display">f（(a_1+b_1i)+(a_2+b_2i))
-=f((a_1+a_2)+(b_1+b_2)i)\\
+<script type="math/tex; mode=display">f（(\alpha_1+\beta_1i)+(\alpha_2+\beta_2i))
+=f((\alpha_1+\alpha_2)+(\beta_1+\beta_2)i)\\
 =\begin{bmatrix}
-a_1+a_2 & b_1+b_2\\
--b_1-b_2 & a_1+a_2
+\alpha_1+\alpha_2 & \beta_1+\beta_2\\
+-\beta_1-\beta_2 & \alpha_1+\alpha_2
 \end{bmatrix}
 =\begin{bmatrix}
-a_1 & b_1\\
--b_1 & a_1
+\alpha_1 & \beta_1\\
+-\beta_1 & \alpha_1
 \end{bmatrix}
 +\begin{bmatrix}
-a_2 & b_2\\
--b_2 & a_2
+\alpha_2 & \beta_2\\
+-\beta_2 & \alpha_2
 \end{bmatrix}</script><p>乘法：   </p>
-<script type="math/tex; mode=display">f（(a_1+b_1i)(a_2+b_2i))
-=f((a_1a_2-b_1b_2)+(a_2b_1+a_1b_2)i)\\
+<script type="math/tex; mode=display">f（(\alpha_1+\beta_1i)(\alpha_2+\beta_2i))
+=f((\alpha_1\alpha_2-\beta_1\beta_2)+(\alpha_2\beta_1+\alpha_1\beta_2)i)\\
 =\begin{bmatrix}
-a_1a_2-b_1b_2 & a_2b_1+a_1b_2\\
--a_2b_1-a_1b_2 & a_1a_2-b_1b_2
+\alpha_1\alpha_2-\beta_1\beta_2 & \alpha_2\beta_1+\alpha_1\beta_2\\
+-\alpha_2\beta_1-\alpha_1\beta_2 & \alpha_1\alpha_2-\beta_1\beta_2
 \end{bmatrix}
 =\begin{bmatrix}
-a_1 & b_1\\
--b_1 & a_1
+\alpha_1 & b_1\\
+-\beta_1 & \alpha_1
 \end{bmatrix}
 \begin{bmatrix}
-a_2 & b_2\\
--b_2 & a_2
+\alpha_2 & \beta_2\\
+-\beta_2 & \alpha_2
 \end{bmatrix}</script><p>将矩阵分解：</p>
 <script type="math/tex; mode=display">\begin{bmatrix}
-a & b\\
--b & a
+\alpha & \beta\\
+-\beta & \alpha
 \end{bmatrix}
-=a\begin{bmatrix}
+=\alpha\begin{bmatrix}
 1 & 0\\
 0 & 1
 \end{bmatrix}
-+b\begin{bmatrix}
++\beta\begin{bmatrix}
 0 & -1\\
 -1 & 0
 \end{bmatrix}
-=aI+bJ</script><p>其中</p>
+=\alpha I+\beta J</script><p>其中</p>
 <script type="math/tex; mode=display">J^2=-1</script><p>另外，复数的共轭实际上是矩阵的转置。</p>
-<script type="math/tex; mode=display">f(a-bi)=
+<script type="math/tex; mode=display">f(\alpha-\beta i)=
 \begin{bmatrix}
-a & -b\\
-b & a
+\alpha & -\beta\\
+\beta & \alpha
 \end{bmatrix}</script><p>复数的模为矩阵的行列式。<br>使用极坐标的转换公式可以得到复数在极坐标下的表示。    </p>
 <p>使用矩阵表示的好处，可以把复数的乘法和旋转联系起来。复数的乘法实际上就是在复数域上的旋转，2*2矩阵表示的就是平面上的旋转操作。</p>
 ]]></content>
@@ -92,10 +92,10 @@ b & a
       &lt;p&gt;复数的本质是找到一个域，在这个域中可以解决类似 $x^2+1=0$ 这种在实数域R下不能解决的问题。&lt;/p&gt;
 &lt;p&gt;Ahlfors在《COMPLEX ANALYSIS》一书中给出一种枚举 $\alpha+\beta i$ 构造复数域的方法并且给予证明。当然，还有其他的构造方法。&lt;/p&gt;
 &lt;p&gt;复数可以用类似平面的方式表示，在复平面中，横轴表示实数，纵轴表示虚数。但是复数域和平面空间并不是同构的。因为他们的维度不同。此外，在平面空间，并没有所谓的向量乘法，如何在平面空间使用乘法运算？&lt;/p&gt;
-&lt;p&gt;引入矩阵(a,b都为实数)：   &lt;/p&gt;
+&lt;p&gt;引入矩阵( $\alpha$, $\beta$ 都为实数)：   &lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{pmatrix}
-a &amp; b\\
--b &amp; a
+\alpha &amp; \beta\\
+-\beta &amp; \alpha
 \end{pmatrix}&lt;/script&gt;
     
     </summary>
@@ -112,7 +112,7 @@ a &amp; b\\
     <link href="http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/"/>
     <id>http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/</id>
     <published>2017-08-19T07:39:08.000Z</published>
-    <updated>2017-08-20T06:05:41.000Z</updated>
+    <updated>2017-08-21T00:19:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>书名：《COMPLEX ANALYSIS》<br>      An Introduction to the Theory of Analytic Functions of One Complex Variable   </p>
 <p>作者： Lars V. Ahlfors<br>      哈佛大学 数学系    </p>
@@ -138,6 +138,11 @@ a &amp; b\\
 <p>现在还没有证明F也存在同样的性质。</p>
 <p>最简单的构造方法，枚举所有的 $\alpha+\beta i$（+和i仅仅当作符号）。定义加法和乘法。定义形式 $a+0i$ 是和R同构的子域，元素 $0 + i1$ 是$x^2+1=0$的解。得到 $(0 + i1)^2 = -(1 + i0)$。F域因此满足了要求，而且和C相同。</p>
 <p>复数域的存在得证。</p>
+<h3 id="1-1-4-共轭和绝对值"><a href="#1-1-4-共轭和绝对值" class="headerlink" title="1.1.4 共轭和绝对值"></a>1.1.4 共轭和绝对值</h3><p>因为方程有两个根，所以i和-i有相同的属性。用-i代替i就得到共轭。<br>对于复数 $a$ 有共轭 $\bar{a}$, 有如下属性：    </p>
+<script type="math/tex; mode=display">\overline{a+b}=\overline{a}+\overline{b}</script><script type="math/tex; mode=display">\overline{ab}=\overline{a}\cdot\overline{b}</script><script type="math/tex; mode=display">a\overline{a}=|a|^2=\alpha^2+\beta^2</script><p>|a|被称做模或者绝对值。绝对值有属性：</p>
+<script type="math/tex; mode=display">|a|=|\overline{a}|</script><script type="math/tex; mode=display">|ab|=|a|\cdot|b|</script><p>注意共轭和模的关系，相似的，在电力系统中，总功率也是PQ的共轭乘积。</p>
+<h3 id="1-1-5-不等性"><a href="#1-1-5-不等性" class="headerlink" title="1.1.5 不等性"></a>1.1.5 不等性</h3><p>复数空间没有顺序关系，所以比较大小必须要用实数。<br>三角不等式（triangle inequality）：</p>
+<script type="math/tex; mode=display">|a+b|\leq |a|+|b|</script><p>注意柯西不等式和拉格朗日恒等式</p>
 ]]></content>
     
     <summary type="html">
