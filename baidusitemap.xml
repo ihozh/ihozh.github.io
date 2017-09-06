@@ -4,18 +4,46 @@
 
     
   <url>
-    <loc>http://ihozh.com/2017/08/21/Bernoulli-process-%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2017-08-21T08:00:40.000Z</lastmod>
+    <loc>http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/</loc>
+    <lastmod>2017-09-06T18:25:40.000Z</lastmod>
     <data>
         <display>
-        <title>Bernoulli process 伯努利过程</title>
-        <pubTime>2017-08-21T05:46:47.000Z</pubTime>
+        <title>MIT多元微积分三：二重积分和线积分</title>
+        <pubTime>2017-06-19T20:43:14.000Z</pubTime>
         
         <tag>微积分</tag>
          
-        <tag>二项分布</tag>
+        <tag>二重积分</tag>
          
-        <tag>伯努利</tag>
+        <tag>线积分</tag>
+         
+        <tag>工程数学</tag>
+         
+        <tag>公开课</tag>
+         
+        <tag>18.02</tag>
+         
+         
+           
+             
+              <breadCrumb title="苦境" url="http://ihozh.com/categories/%E8%8B%A6%E5%A2%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ihozh.com/2017/08/31/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%88%9D%E6%8E%A2/</loc>
+    <lastmod>2017-09-01T16:58:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>贝叶斯统计初探</title>
+        <pubTime>2017-09-01T03:46:44.000Z</pubTime>
+        
+        <tag>概率论</tag>
+         
+        <tag>贝叶斯</tag>
          
          
            
@@ -29,7 +57,7 @@
     
   <url>
     <loc>http://ihozh.com/2017/08/19/Complex-Analysis-Ahlfors/</loc>
-    <lastmod>2017-08-21T08:00:39.000Z</lastmod>
+    <lastmod>2017-09-01T03:47:09.000Z</lastmod>
     <data>
         <display>
         <title>Complex Analysis-Ahlfors学习笔记</title>
@@ -55,7 +83,7 @@
     
   <url>
     <loc>http://ihozh.com/2017/08/20/%E5%A4%8D%E6%95%B0%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA/</loc>
-    <lastmod>2017-08-21T08:00:37.000Z</lastmod>
+    <lastmod>2017-09-01T03:47:03.000Z</lastmod>
     <data>
         <display>
         <title>复数的矩阵表示</title>
@@ -76,24 +104,18 @@
 
     
   <url>
-    <loc>http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/</loc>
-    <lastmod>2017-08-18T21:24:48.000Z</lastmod>
+    <loc>http://ihozh.com/2017/08/21/Bernoulli-process-%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2017-09-01T03:46:57.000Z</lastmod>
     <data>
         <display>
-        <title>MIT多元微积分三：二重积分和线积分</title>
-        <pubTime>2017-06-19T20:43:14.000Z</pubTime>
+        <title>Bernoulli process 伯努利过程</title>
+        <pubTime>2017-08-21T05:46:47.000Z</pubTime>
         
         <tag>微积分</tag>
          
-        <tag>公开课</tag>
+        <tag>二项分布</tag>
          
-        <tag>18.02</tag>
-         
-        <tag>工程数学</tag>
-         
-        <tag>二重积分</tag>
-         
-        <tag>线积分</tag>
+        <tag>伯努利</tag>
          
          
            
@@ -181,11 +203,11 @@
         
         <tag>微积分</tag>
          
+        <tag>工程数学</tag>
+         
         <tag>公开课</tag>
          
         <tag>18.02</tag>
-         
-        <tag>工程数学</tag>
          
          
            
@@ -207,11 +229,11 @@
         
         <tag>微积分</tag>
          
+        <tag>工程数学</tag>
+         
         <tag>公开课</tag>
          
         <tag>18.02</tag>
-         
-        <tag>工程数学</tag>
          
          
            
