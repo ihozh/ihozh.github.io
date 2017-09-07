@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-09-01T16:58:11.000Z</updated>
+  <updated>2017-09-07T21:34:04.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://ihozh.com/2017/08/31/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%88%9D%E6%8E%A2/"/>
     <id>http://ihozh.com/2017/08/31/贝叶斯统计初探/</id>
     <published>2017-09-01T03:46:44.000Z</published>
-    <updated>2017-09-01T16:58:11.000Z</updated>
+    <updated>2017-09-07T21:34:04.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="引子："><a href="#引子：" class="headerlink" title="引子："></a>引子：</h1><p>贝叶斯统计和经典统计是两种不同的思考方法，有不同也有联系，一方面，不能把他们绝对地视为完全对立的不同方法。 另一方面，虽然在某些特殊条件下，贝叶斯统计和经典统计会在数学形式上表现得一模一样，但我们并不能简单的就在两个数学公式之间画个等号。为了探究关于贝叶斯和经典统计的不同思考方式，我像苦行僧一般修行，翻阅大量的资料，苦思冥想，最终悟出一二。就像突然悟出了某本武林秘籍的真谛，激动之情难以言表。现在就慢慢拨开贝叶斯统计的表象，看看他里边究竟是什么。   </p>
 <p>不论是概率论，随机过程，系统辨识，还是机器学习，概率图模型，模式识别，贝叶斯都是一个不可能抹去的名字。这也是第一次，我感受到数学和哲学之间纠缠不清的暧昧关系，我也想先从哲学的角度去看看贝叶斯统计和经典统计。</p>
+<a id="more"></a>
 <p>简单来说，经典统计是对世界，对事件的客观认识。客观认识是符合直觉的，一个自然界的规律已经存在，如果想要了解这个规律，就要一遍遍的观察。就拿抛硬币这个最简单的例子来说，当一枚硬币造好的那一刻起，抛出正面和抛出反面的可能性就被决定了，只要一个有毅力的人不断的抛这枚硬币，一千次，一万次，根据弱大数定律，最终结果会无限逼近这个可能性，即出现多少次正面，多少次反面。这就是一个最简单的经典统计的例子，有些人发现了，要发现这个出现正反面的可能性，需要重复性的试验，所以这也被称作频率统计。自然规律已经存在，剩下的就是靠样本来发现。</p>
 <p>贝叶斯统计，在哲学上完全相反。贝叶斯们认为这个世界是可以由我们主动认识的，不用被动的去接受自然规律，而是主动去找到这个自然规律。我认为，这也是理解贝叶斯统计的核心。为什么这么说呢？还是以抛硬币为例，硬币已经造好，如何通过有限次数的试验得到出现正反面的可能性？贝叶斯们认为，这枚银币什么可能都会有，它有可能每次都能抛出正面，也有可能每次都是反面，当然也有可能正反各占一半，这个概率，就是先验概率。引出另一个重要的概念，这个概率是一个随机变量的概率。硬币的每一种可能性，在贝叶斯们看来仅仅是一个随机变量。在这个假设条件下，即假设银币的正反可能性为某值，开始观察结果，根据条件概率，就可以得到当前结果下的可能性估计，这就是后验概率。</p>
 <p>总结来看，经典统计是对世界的客观认识，而贝叶斯统计是对世界的主观认识。但是为什么客观认识的世界能和主观认识的世界是同样的呢？这是一个深奥的哲学问题，我不是哲学家，解答不了，并且这也超出了这篇文章的探索范围。 有好奇的朋友可以去看看杰恩斯的《概率论沉思录》，这本凝聚了他40年心血的著作有对这个问题透彻的思考。在这里我们认为主观和客观的世界完美的统一了。</p>
@@ -38,7 +39,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;引子：&quot;&gt;&lt;a href=&quot;#引子：&quot; class=&quot;headerlink&quot; title=&quot;引子：&quot;&gt;&lt;/a&gt;引子：&lt;/h1&gt;&lt;p&gt;贝叶斯统计和经典统计是两种不同的思考方法，有不同也有联系，一方面，不能把他们绝对地视为完全对立的不同方法。 另一方面，虽然在某些特殊
+      &lt;h1 id=&quot;引子：&quot;&gt;&lt;a href=&quot;#引子：&quot; class=&quot;headerlink&quot; title=&quot;引子：&quot;&gt;&lt;/a&gt;引子：&lt;/h1&gt;&lt;p&gt;贝叶斯统计和经典统计是两种不同的思考方法，有不同也有联系，一方面，不能把他们绝对地视为完全对立的不同方法。 另一方面，虽然在某些特殊条件下，贝叶斯统计和经典统计会在数学形式上表现得一模一样，但我们并不能简单的就在两个数学公式之间画个等号。为了探究关于贝叶斯和经典统计的不同思考方式，我像苦行僧一般修行，翻阅大量的资料，苦思冥想，最终悟出一二。就像突然悟出了某本武林秘籍的真谛，激动之情难以言表。现在就慢慢拨开贝叶斯统计的表象，看看他里边究竟是什么。   &lt;/p&gt;
+&lt;p&gt;不论是概率论，随机过程，系统辨识，还是机器学习，概率图模型，模式识别，贝叶斯都是一个不可能抹去的名字。这也是第一次，我感受到数学和哲学之间纠缠不清的暧昧关系，我也想先从哲学的角度去看看贝叶斯统计和经典统计。&lt;/p&gt;
     
     </summary>
     
@@ -540,7 +542,7 @@
     <link href="http://ihozh.com/2017/06/19/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     <id>http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/</id>
     <published>2017-06-19T20:43:14.000Z</published>
-    <updated>2017-09-06T18:25:40.000Z</updated>
+    <updated>2017-09-07T09:59:01.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Double-Integrals-二重积分"><a href="#1-Double-Integrals-二重积分" class="headerlink" title="1. Double Integrals 二重积分"></a>1. Double Integrals 二重积分</h1><p>回顾单变量积分，积分可以看成函数与坐标轴所围成的面积。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/integral.png" alt=""></p>
 <a id="more"></a>
@@ -781,6 +783,48 @@ y=t^2\\
 <li>单变量的向量积</li>
 <li>多变量的微分</li>
 <li>几何法</li>
+</ul>
+<h2 id="2-4-Example-Line-Integrals-for-Work-例子：功的线积分"><a href="#2-4-Example-Line-Integrals-for-Work-例子：功的线积分" class="headerlink" title="2.4 Example: Line Integrals for Work 例子：功的线积分"></a>2.4 Example: Line Integrals for Work 例子：功的线积分</h2><p>回顾一下线积分：<br>平面上有一曲线C，有一向量场来描述每一个点上的向量，我们要找出沿着这条曲线所做的功：</p>
+<script type="math/tex; mode=display">\int_C \vec{F}\cdot\mathrm{d}\vec{r}
+=\int_C \vec{F}\cdot\widehat{T}\mathrm{d}s
+=\int_C M\mathrm{d}x+N\mathrm{d}y</script><p>三个公式分别为定义式，几何表达式和直角坐标系下表达式。   </p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>在向量场yi+xj里，质点沿一扇形轨迹运动，扇形轨迹由三部分构成。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/lineIntegralFan.gif" alt="lineIntegralFan"></p>
+<p>要计算这个线积分，只要三段分别求和再相加就可以了。   </p>
+<p>c1：<br>从(0,0) 到(1,0)，y=0, dy=0</p>
+<script type="math/tex; mode=display">\int_{c1} y\mathrm{d}x+x\mathrm{d}y=0</script><p>c2:<br>单位圆的一部分。根据圆的参数方程：</p>
+<script type="math/tex; mode=display">\int_{c2} y\mathrm{d}x+x\mathrm{d}y\\
+=\int_{0}^{\frac{\pi}{4}}\sin\theta(-\sin\theta\mathrm{d}\theta)+\cos\theta(-\cos\theta\mathrm{d}\theta)\\
+=\int_{0}^{\frac{\pi}{4}}\cos^2\theta-\sin^2\theta\mathrm{d}\theta
+=\int_{0}^{\frac{\pi}{4}}\cos 2\theta\mathrm{d}\theta=\frac{1}{2}</script><p>c3:<br>参数化这条路径：</p>
+<script type="math/tex; mode=display">x=\frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}t</script><script type="math/tex; mode=display">y=\frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}t</script><script type="math/tex; mode=display">0\leq t\leq 1</script><p>更简单的表达，使用c3的反向路径：  </p>
+<script type="math/tex; mode=display">x=t</script><script type="math/tex; mode=display">y=t</script><script type="math/tex; mode=display">0\leq t\leq \frac{1}{\sqrt{2}}</script><script type="math/tex; mode=display">\int_{-c3} =-\int_{c3}\\
+=\int_{\frac{1}{\sqrt{2}}}^{0}y\mathrm{d}x+x\mathrm{d}y
+=\int_{\frac{1}{\sqrt{2}}}^{0}2t\mathrm{d}t=-\frac{1}{2}</script><p>总功：</p>
+<script type="math/tex; mode=display">\int_{c} =\int_{c1}+\int_{c2}+\int_{c3}=0</script><h2 id="2-5-Fundamental-Theorem-for-Line-Integrals-线积分的基本定理"><a href="#2-5-Fundamental-Theorem-for-Line-Integrals-线积分的基本定理" class="headerlink" title="2.5 Fundamental Theorem for Line Integrals  线积分的基本定理"></a>2.5 Fundamental Theorem for Line Integrals  线积分的基本定理</h2><p>怎么避免计算？<br>当多元方程存在的时候，就有梯度向量。但实际上，是一个向量场。在这种特殊情况下，向量场实际上是一个函数的梯度，也就是梯度场。f是关于x和y的函数，称为向量场的势函数（potential）。</p>
+<p>在物理学中，计算重力或者电场所做的功，只需要计算起点和终点的势能差，与路径无关。</p>
+<p>一个微积分的基本定理是，如果对函数的导数积分，就可以得到原函数。多元微积分也一样，如果对函数的梯度做线积分，也可以得到原函数。</p>
+<p><strong>基本定理：</strong><br>如果沿轨迹对向量场，即方程的梯度做线积分，其结果为原方程的终点与起点值之差</p>
+<script type="math/tex; mode=display">\int_{c}\nabla f \cdot\mathrm{d}\vec{r}=f(P_1)-f(P_0)</script><p>注意：非常有局限性，仅仅在向量场是梯度的情况下才满足。  </p>
+<p>来看看基本定理的物理和几何解释。   </p>
+<p>对梯度积分，其实是对函数的导数积分：</p>
+<script type="math/tex; mode=display">\int_{c}f_x \mathrm{d}x+f_y\mathrm{d}y
+=\int_{c}\mathrm{d}f=f(P_1)-f(P_0)</script><p><strong>证明：</strong>    </p>
+<script type="math/tex; mode=display">\int_{c}\nabla f \cdot\mathrm{d}\vec{r}
+=\int_{c}(f_x \frac{\mathrm{d}x}{\mathrm{d}t}+f_y\frac{\mathrm{d}y}{\mathrm{d}t})\mathrm{d}t\\
+=\int_{t_0}^{t_1}\frac{\mathrm{d}f}{\mathrm{d}t}\mathrm{d}t
+=\left [ f(x(t),y(t)) \right ]_ {t_0}^{t_1}
+=f(P_1)-f(P_0)</script><h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><p>回到最开始的例子，向量场为：</p>
+<script type="math/tex; mode=display">\vec{F}=\left \langle y,x \right \rangle = \nabla f</script><script type="math/tex; mode=display">f=xy</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/lineIntegralFanPlot.png" alt="lineIntegralFanPlot"></p>
+<p>图像显示了等高线和向量场的重合，可以看出，向量场垂直于等高线，所以也是梯度。由于在同一等高线上，各点的值相等，物理上可以理解为势能相等。再来看扇形的运动轨迹，从一条等高线移动到另一条等高线，再移动回原来的等高线，做功为0。</p>
+<p>物理上来说，重力场，电场都是势函数的梯度场，但是有很多的向量场不是梯度场，比如说磁场。  </p>
+<h3 id="基本定理的结果"><a href="#基本定理的结果" class="headerlink" title="基本定理的结果"></a>基本定理的结果</h3><p>如果F是梯度场，会得到什么结果？<br>梯度场做的功有很多漂亮的性质，但是它们是特殊的向量场。梯度场有这样一些特殊的性质：</p>
+<ul>
+<li><p>路径独立（path independent）<br>如果要计算线积分，无论两点间路径如何，积分值只跟起止点有关。只有在梯度场里才成立。如果c1，c2有相同的起止点：   </p>
+<script type="math/tex; mode=display">\int_{c_1}\nabla f \cdot\mathrm{d}\vec{r}
+=\int_{c_2}\nabla f \cdot\mathrm{d}\vec{r}</script></li>
+<li><p>梯度场是保守场（conservative）<br>保守这个次来源于物理学，是说能量的守恒。在这个场中，不可能无偿地得到能量。</p>
+</li>
 </ul>
 ]]></content>
     
