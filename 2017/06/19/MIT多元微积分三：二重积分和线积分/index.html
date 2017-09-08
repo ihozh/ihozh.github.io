@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="微积分,公开课,18.02,工程数学,二重积分,线积分," />
+  <meta name="keywords" content="微积分,公开课,18.02,二重积分,线积分,工程数学," />
 
 
 
@@ -98,7 +98,7 @@
 
 
 <meta name="description" content="1. Double Integrals 二重积分回顾单变量积分，积分可以看成函数与坐标轴所围成的面积。">
-<meta name="keywords" content="微积分,公开课,18.02,工程数学,二重积分,线积分">
+<meta name="keywords" content="微积分,公开课,18.02,二重积分,线积分,工程数学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT多元微积分三：二重积分和线积分">
 <meta property="og:url" content="http://ihozh.com/2017/06/19/MIT多元微积分三：二重积分和线积分/index.html">
@@ -138,7 +138,7 @@
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/notConservativeField.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/Ascending%20and%20Descending1.jpg">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/Ascending%20and%20Descending2.jpeg">
-<meta property="og:updated_time" content="2017-09-08T06:00:11.000Z">
+<meta property="og:updated_time" content="2017-09-08T06:43:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT多元微积分三：二重积分和线积分">
 <meta name="twitter:description" content="1. Double Integrals 二重积分回顾单变量积分，积分可以看成函数与坐标轴所围成的面积。">
@@ -645,7 +645,7 @@ y=t^2\\
 =\int_{0}^{1}t^2\mathrm{d}t=\frac{1}{3}</script><p>注意：<br>线积分只取决于轨迹C，跟如何参数化无关。所以只要能简化成任何一个参数都行，比如使用极坐标。    </p>
 <h2 id="2-3-Geometric-Approach-几何法"><a href="#2-3-Geometric-Approach-几何法" class="headerlink" title="2.3 Geometric Approach 几何法"></a>2.3 Geometric Approach 几何法</h2><p>首先来看看向量dr的含义。什么是向量 $\mathrm{d}\vec{r}$，什么是向量 $\Delta \vec{r}$ ?   </p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%89%EF%BC%9A%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%BF%E7%A7%AF%E5%88%86/lineTangent.png" alt="ineTangent"></p>
-<p>在轨迹上取非常小的一段，$\Delta \vec{r}$ 的方向就是向量的方向，它与单位切向量 $\vec{T}$ 有相同的方向。，$\Delta \vec{r}$ 的长度就是就是轨迹上的弧长，记为 $\Delta s$。这个向量方向沿着切线方向，大小为轨迹的弧长。   </p>
+<p>在轨迹上取非常小的一段，$\Delta \vec{r}$ 的方向就是向量的方向，它与单位切向量 $\vec{T}$ 有相同的方向。所以，$\Delta \vec{r}$ 的长度就是就是轨迹上的弧长，记为 $\Delta s$。这个向量方向沿着切线方向，大小为轨迹的弧长。   </p>
 <script type="math/tex; mode=display">\mathrm{d}\vec{r} = <\mathrm{d}x,\mathrm{d}y>=\widehat{T}\mathrm{d}s</script><script type="math/tex; mode=display">\frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = <\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t}>=\widehat{T}\frac{\mathrm{d}s}{\mathrm{d}t}</script><script type="math/tex; mode=display">\int_C \vec{F}\cdot\mathrm{d}\vec{r}
 =\int_C M\mathrm{d}x+N\mathrm{d}y
 =\int_C \vec{F}\cdot\widehat{T}\mathrm{d}s</script><p>F和T的点积是一个标量，几何上表示外力投影到轨迹切线方向的成分，然后求出这个成分在曲线上的积分。结果是一样的，但是这种思考方法会让问题变得简单。   </p>
@@ -761,11 +761,11 @@ y=t^2\\
           
             <a href="/tags/18-02/" rel="tag"># 18.02</a>
           
-            <a href="/tags/工程数学/" rel="tag"># 工程数学</a>
-          
             <a href="/tags/二重积分/" rel="tag"># 二重积分</a>
           
             <a href="/tags/线积分/" rel="tag"># 线积分</a>
+          
+            <a href="/tags/工程数学/" rel="tag"># 工程数学</a>
           
         </div>
       
