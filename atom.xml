@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-09-07T21:34:04.000Z</updated>
+  <updated>2017-09-10T17:51:15.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Julia</title>
+    <link href="http://ihozh.com/2017/09/09/Julia/"/>
+    <id>http://ihozh.com/2017/09/09/Julia/</id>
+    <published>2017-09-10T03:26:06.000Z</published>
+    <updated>2017-09-10T17:51:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。</p>
+<a id="more"></a>
+<p>官方称Julia是一个高性能的专门用来数值计算的编程语言，集matlab，python，R各家之所长，从官网的数据来看，其性能确实是不错。MIT都在推荐使用，那必然是有过人之处，但是具体的区别还是要等我熟悉了才能更为清楚。</p>
+<p>工欲善其事，必先利其器。和python十分相像，三种在python下常用的布置方式在Julia上居然可以生搬硬套，完全一致的照搬过来。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>三种安装使用方式</p>
+<h3 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p>首先强调一下这个工具<a href="JuliaBox.com">JuliaBox.com</a>。这是一个在线的Julia工具，通过Jupyter notebooks，不需要安装，通过浏览器就可以计算了。非常像mathematica online，只可惜mathematica online被阉割的不像样了。强烈推荐。</p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>官方提供了一个叫做JuliaPro 的IDE，包括了各种各样的包。自己不太喜欢每一个语言都使用不同的IDE，非常麻烦，安装包也要1个多G，看起来很臃肿。</p>
+<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>homebrew</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install julia</div></pre></td></tr></table></figure>
+<p>可能需要gcc，因为平时都是经常更新，所以安装没有任何问题。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="命令行-1"><a href="#命令行-1" class="headerlink" title="命令行"></a>命令行</h3><p>可对比python，几乎一摸一样。<br>命令行输入julia，可看到欢迎页面。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/juliaCLWelcome.png" alt="juliaCLWelcom"></p>
+<p>新建文件以<code>.jl</code>结尾，命令行输入<code>julia XXX.jl</code>便可以执行</p>
+<h3 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h3><p>Anaconda还是能派上用场，不仅有Jupyter，还提供一整套python环境。（最简单的方法，强烈推荐）<br><a href="https://github.com/JuliaLang/IJulia.jl#installation" target="_blank" rel="external">IJulia</a>为Jupyter提供了Julia内核。<br>命令行中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Pkg.add(&quot;IJulia&quot;)</div></pre></td></tr></table></figure></p>
+<p>再输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure></p>
+<p>就可以看到有Julia的内核了。</p>
+<p>更方便，直接使用在线版本<a href="JuliaBox.com">JuliaBox.com</a>。</p>
+<h3 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a>ATOM</h3><p>ATOM提供了插件包<code>uber-Juno</code>，可以把ATOM打造成IDE，推荐<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/AtomJuliaIDE.png" alt="AtomJuliaIDE"></p>
+<p>有了这些工具，就来看看Julia是如何玩转MIT公开课的吧！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="搏浪" scheme="http://ihozh.com/categories/%E6%90%8F%E6%B5%AA/"/>
+    
+    
+      <category term="Julia" scheme="http://ihozh.com/tags/Julia/"/>
+    
+  </entry>
   
   <entry>
     <title>贝叶斯统计初探</title>
@@ -529,11 +569,11 @@
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -853,15 +893,15 @@ y=t^2\\
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
-    
-      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
       <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
     
       <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
     
       <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+      <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
     
   </entry>
   
@@ -1250,11 +1290,11 @@ A_{b}\left ( \frac{\partial{b}}{\partial{\theta}} \right )_ {a}</script><p>第�
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
-    
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -1697,16 +1737,16 @@ z(t)=2-3t
 <h1 id="从裸机开始的环境准备"><a href="#从裸机开始的环境准备" class="headerlink" title="从裸机开始的环境准备"></a>从裸机开始的环境准备</h1><h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><p>zsh，oh-my-zsh，vimrc从github上pull过来，一切都是熟悉的感觉。<br>apt-get 要更新。</p>
 <h2 id="Python3-pip-和-虚拟环境"><a href="#Python3-pip-和-虚拟环境" class="headerlink" title="Python3/pip 和 虚拟环境"></a>Python3/pip 和 虚拟环境</h2><p>主要是为了环境简洁和适应版本</p>
 <h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><p>远程服务器这个是第一步的，没有服务器，开发调试都是头疼的事情。Nginx是一款反向代理服务器，可以让网站的内容呈现给客户。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> install</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line"># basic operation</div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> install</span></div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> basic operation</span></div><div class="line">sudo /etc/init.d/nginx start</div><div class="line">sudo /etc/init.d/nginx stop</div><div class="line">sudo /etc/init.d/nginx restart</div><div class="line"></div><div class="line">or:</div><div class="line">sudo service nginx start</div><div class="line">sudo service nginx stop</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure>
 <p>启动后访问服务器ip，会看到<strong>Welcome to nginx!</strong>信息。  </p>
 <h2 id="uWSGI-安装"><a href="#uWSGI-安装" class="headerlink" title="uWSGI 安装"></a>uWSGI 安装</h2><p>uWSGI是实现了WSGI的服务器。WSGI一个Web接口。提供规范化协议，提高服务器的工作效率。uWSGI本身已经可以胜任服务器的工作，为什么要再前面挡一个Nginx，这是出于更好的安全性，更有效率的工作和Nginx作为专业的服务器的优势。可以详见<a href="https://serverfault.com/questions/590819/why-do-i-need-nginx-when-i-have-uwsgi" target="_blank" rel="external">这个讨论</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">apt-get install python-dev</div><div class="line">sudo pip install uwsgi --upgrade</div></pre></td></tr></table></figure>
 <p>用wWSGI挂起一个最简单的程序，创建一个文件命名test.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></div><div class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</div><div class="line">    <span class="comment">#return ["Hello World"] # python2</span></div><div class="line">    <span class="keyword">return</span> [<span class="string">b"Hello World"</span>] <span class="comment"># python3</span></div></pre></td></tr></table></figure>
 <p>用wWSGI挂起：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --http :8000 --wsgi-file test.py</div></pre></td></tr></table></figure>
 <p>这条命令是说，使用http协议，8000端口，加载指定文件。文件很简单，收到GET请求后，返回<code>Hello World</code>，在浏览器输入<code>ip:8000</code>就可以看到结果了。</p>
-<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>install</div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#create project</div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#create app</div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#同步数据库</div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#开发服务器</div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
+<h2 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">install</span></div><div class="line">pip install django</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create project</span></div><div class="line">django-admin.py startproject project-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">create app</span></div><div class="line">python manage.py startapp app-name</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">同步数据库</span></div><div class="line">python manage.py makemigrations</div><div class="line">python manage.py migrate</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash">开发服务器</span></div><div class="line">python manage.py runserver #localhost</div><div class="line">python manage.py runserver 0.0.0.0:8000  #ip:8000端口</div></pre></td></tr></table></figure>
 <h1 id="理解Nginx服务器的结构"><a href="#理解Nginx服务器的结构" class="headerlink" title="理解Nginx服务器的结构"></a>理解Nginx服务器的结构</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Nginx%20+%20uWSGI%20%E9%83%A8%E7%BD%B2Django%E7%AB%99%E7%82%B9/Nginx.png" alt="Nginx结构"></p>
 <h2 id="最重要的文件-一开始就要加载"><a href="#最重要的文件-一开始就要加载" class="headerlink" title="最重要的文件:一开始就要加载"></a>最重要的文件:一开始就要加载</h2><p>默认下，Nginx会安装在<code>/usr/local/nginx</code>，所有的配置文件在<code>/etc/nginx</code>下，最主要的配置文件是 <code>/etc/nginx/nginx.conf</code>，这个文件建议放在git上，或者进行周期性备份</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.$(date "+%b_%d_%Y_%H.%M.%S")</div></pre></td></tr></table></figure>
@@ -1730,7 +1770,7 @@ z(t)=2-3t
 <p>注意字符串的匹配是最佳匹配，Nginx会选择匹配的最好的location。更复杂的匹配情况请参照官方文件。</p>
 <h2 id="部署一个Nginx的最小Web结构"><a href="#部署一个Nginx的最小Web结构" class="headerlink" title="部署一个Nginx的最小Web结构"></a>部署一个Nginx的最小Web结构</h2><p>实践是检验真理的唯一标准，这里部署一个Nginx的最小结构，看看Nginx能不能正常工作。</p>
 <p>linux 新建用户名用于部署Nginx并赋予权限.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span> 添加权限：</div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line"><span class="meta">#</span><span class="bash"> 添加权限：</span></div><div class="line">username    ALL=(ALL) ALL</div></pre></td></tr></table></figure>
 <p>将<code>nginx.conf</code>用户名修改为当前用户。<br>在当前用户的根目录下创建如下结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysite:</div><div class="line">	- mysite.conf</div><div class="line">	- www</div><div class="line">	- media</div><div class="line">		-test.png	</div><div class="line">	- log</div></pre></td></tr></table></figure>
 <p>最简单的目标就是通过ip访问网站里的静态内容。简单的配置下，注意使用绝对路径：</p>
@@ -1960,57 +2000,6 @@ z(t)=2-3t
     
       &lt;p&gt;作者： 一盒&lt;br&gt;微信： zyh_1991   &lt;/p&gt;
 &lt;h3 id=&quot;1997-16-黄山&quot;&gt;&lt;a href=&quot;#1997-16-黄山&quot; class=&quot;headerlink&quot; title=&quot;1997-16 黄山&quot;&gt;&lt;/a&gt;1997-16 黄山&lt;/h3&gt;&lt;p&gt;继特57《
-    
-    </summary>
-    
-      <category term="一盒品邮" scheme="http://ihozh.com/categories/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
-    
-    
-      <category term="一盒品邮" scheme="http://ihozh.com/tags/%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《一盒品邮》方寸间的壮美河山（1）上</title>
-    <link href="http://ihozh.com/2016/04/07/%E3%80%8A%E4%B8%80%E7%9B%92%E5%93%81%E9%82%AE%E3%80%8B%E6%96%B9%E5%AF%B8%E9%97%B4%E7%9A%84%E5%A3%AE%E7%BE%8E%E6%B2%B3%E5%B1%B1%EF%BC%881%EF%BC%89/"/>
-    <id>http://ihozh.com/2016/04/07/《一盒品邮》方寸间的壮美河山（1）/</id>
-    <published>2016-04-07T07:41:58.000Z</published>
-    <updated>2016-04-16T04:25:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>作者: 一盒<br>微信: zyh_1991<br>自古神仙清修境，今有三山睥睨之。   </p>
-<p>在新中国的邮票中，自然山川的主题无疑是一道最亮丽的风景。即使是在方寸中，仍然不失原景，要么大气磅礴，要么温婉灵动的神韵，再加以设计师的独特写意，使这些邮票至今散发着无尽的韵味。  </p>
-<p>笔者在学生时代就已经将名山系列基本收集齐全。该系列除了部分主题入手难度较大，整体非常适合初级的集邮爱好者。     </p>
-<a id="more"></a>   
-<p>中国名山首推五岳，但在邮票世界，五岳的成就却远逊于三山，所以方寸之间当属三山。三山五岳是个成语，出于清人曹寅的《舟中望惠山举酒调培山》：“三山五岳渺何许？云烟汗漫空竛竮。”一句。其实已经泛指中国名山。但是还是有人愿意将其一一指定，就像五湖四海，也有好事之人一定要说出是哪五个湖，哪四片海。强迫症患者看来是古来就有了。而至现代，也不妨旅游景区给自己加一个噱头。   </p>
-<p>中国有着很深厚的名山文化，这个文化是受到道教的影响。但凡烟波飘渺，云雾缭绕之处，便让人产生对“神”和“仙”的向往。在《史记卷二十八封禅书》和《史记秦始皇本纪中》都有过记载，“海中有三神山,名曰蓬莱、方丈、瀛洲”，山上有神仙居住，金屋银瓦，长生不老药。这是古时三山原型。那时五岳已经有所名气，五岳的方位也是相对中原而言。随着后来文化南迁, 可能是古人惊羡于南方山水之美，所以在南方又选了三座山代替了传说中的三座神山，也就逐渐形成了现在三山的的概念。</p>
-<h2 id="黄山"><a href="#黄山" class="headerlink" title="黄山"></a>黄山</h2><p>黄山位于安徽省黄山市，明人徐霞客曾赞道：“登黄山，天下无山，观止矣”，后来便演化成耳熟能详的“五岳归来不看山，黄山归来不看岳”一说。<br>首先介绍的这套邮票在名山系列中，不论设计还是价值，都是前无古人后无来者，她是名山系列邮票的标杆之作，也是新中国邮票的标杆之作，我没有任何理由不先从她开始讲起。   </p>
-<h3 id="特57-黄山风景-比黄山更美的邮票"><a href="#特57-黄山风景-比黄山更美的邮票" class="headerlink" title="特57 黄山风景 比黄山更美的邮票"></a>特57 黄山风景 比黄山更美的邮票</h3><p>特57黄山风景发行于1963年，由邮票设计泰斗－孙传哲设计。全套邮票16枚，选取了黄山16处绝胜景致。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%89%B957%20%E9%BB%84%E5%B1%B1%E9%A3%8E%E6%99%AF.jpg" alt=""><br>黄山邮票之绝一绝在于取景。孙老师在1962中国摄影学会举办的《黄山风景摄影展览》中，精选出16帧照片作为蓝本进行二次创作，集合百家之长。以最简之笔法，凝炼出黄山之精髓。山川再美，只不过数笔之间，此乃二绝。全套邮票使用影雕套印技术，得益于60年北京邮票厂的建立，先进技术的使用，雕刻处尽显苍遒，影写出峰峦隐绰，此乃三绝。有此三绝，才有人评论：“比黄山实景更美！”。<br>面对实景，已经无法用语言形容，描述邮票，更绝词穷。笔者也只用一些诗句或是聊聊数语做简介，而将欣赏的权利完全交给读者。<br>4分：   </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%8E%89%E5%B1%8F%E5%B3%B0.jpg" alt=""><br>玉屏峰：因峰壁如玉雕屏障，清人汪土宏有诗赞曰：“玉屏峙霄汉，鸟道度松门。”  峰顶建有文殊院，人文景观丰富，徐霞客誉为“黄山绝胜处”。</p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%BF%8E%E5%AE%A2%E6%9D%BE.jpg" alt=""><br>迎客松：位于玉屏峰左侧，奇松乃黄山四绝之一，有“迎客”、“陪客”、“送客”三大名松。 前景松树雕刻细腻，背景简洁明亮。     </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%90%8E%E6%B5%B7%E6%9D%BE%E7%9F%B3.jpg" alt=""><br>后海松石：奇松怪石，皆为四绝。“百道飞泉鸣玉佩，千寻石柱架琼峦。”，由远及近，层次鲜明，中间所绘，似航海观音。     </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E6%B8%85%E5%87%89%E5%8F%B0.jpg" alt=""><br>清凉台： 为观黄山绝景云海的最佳处。玉屏楼观南海，清凉台望北海，排云亭看西海，白鹅岭赏东海，螯鱼峰眺天海。      </p>
-<p>8分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%A4%A9%E9%83%BD%E8%BF%9C%E7%9C%BA.jpg" alt=""><br>天都远眺： 天都峰与莲花峰、光明顶并称为黄山三大主峰。乾隆御题“天都九百仞，巍然切太虚”。 天都以奇险闻名，古诗有赞：“任它五岳归来客，一见天都也叫奇”。邮票让人不由自主从近及远，远眺天都峰，明人罗洪先应该也是由于此景，发出“何年白日骑鸾鹤，踏碎天都峰上云”之感慨。   </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E5%89%AA%E5%88%80%E5%B3%B0.jpg" alt=""><br>剪刀峰：“欲借剪刀峰下景，好裁一半与平分”， 票中景色取自黄昏，阳面如熊熊烈火，使人望而生畏。    </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%87%E6%9D%BE%E6%9E%97.jpg" alt=""><br>万松林：李白诗句“昨夜谁为吴会吟，风生万壑振空林”应是由此景而发。群峦之间，松林摇曳，诗与画融为一体。    </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E6%A2%A6%E7%AC%94%E7%94%9F%E8%8A%B1.jpg" alt=""><br>梦笔生花：仙人的一支笔斗，画尽黄山绝胜。笔锋的遗墨，化作一棵苍松。正如清人项黻所赞：“天然一管生花笔，写遍奇峰入画图。”    </p>
-<p>10分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%8E%B2%E8%8A%B1%E5%B3%B0.jpg" alt=""><br>莲花峰：黄山最高峰，李白赞曰“黄山四千仞，三十二莲峰。丹崔夹石柱，菡萏金芙蓉”。票面如雨后般清新，云雾缭绕，正是“真好造化”，“非人间也”。   </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%A5%BF%E6%B5%B7%E4%BA%91%E6%BD%AE.jpg" alt=""><br>西海云潮：西海奇秀，由四周山峰围成巨大空间，如入画境，奇哉幻哉。    </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E9%BB%84%E5%B1%B1%E5%8F%A4%E6%9D%BE.jpg" alt=""><br>黄山古松：描绘始信峰古松。始信峰，指古人到了这里才开始相信，黄山之奇。有言道：“不到始信峰，不知黄山松”     </p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E4%B8%9C%E6%B5%B7%E8%A7%82%E6%BD%AE.jpg" alt=""><br>东海观潮：描绘黄山云海日出，蕴红色调。 海到尽头天是岸，山登绝顶我为峰。   </p>
-<p>20分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%9F%B3%E7%AC%8B%E5%B3%B0.jpg" alt=""><br>石笋峰：黄山的石笋与雁荡的龙湫、匡庐的瀑布并称天下三奇。此处应有仙人下棋等景点，可邮票中并不明显。    </p>
-<p>22分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%9F%B3%E7%8C%B4%E8%A7%82%E6%B5%B7.jpg" alt=""><br>石猴观海：一巧石，静观潮起潮落。坐看人间兴废事，几经沧海变桑田。      </p>
-<p>30分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E7%8B%AE%E5%AD%90%E6%9E%97.jpg" alt=""><br>狮子林：清晨薄暮，熟睡的雄狮还未醒来，轻轻的，请不要吵醒它。      </p>
-<p>50分：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_stamp_%E8%93%AC%E8%8E%B1%E4%B8%89%E5%B2%9B.jpg" alt=""><br>蓬莱三岛：每到云海弥漫，三座山峰山尖微露，犹如海上仙岛。    </p>
-<p>设计者孙传哲一生情系黄山，在去世后留下未完成遗作《黄山图》，遗书中也要求将骨灰撒在黄山。</p>
-<p>黄山风景凭借出色的设计，荣获建国三十周年最佳邮票奖。其价格在2013年也一度创下1万5000元记录。现在市场价依然在1万元附近，足见其珍贵。全套票以30分狮子林和50分蓬莱仙岛为精票，因其发行量稀少为100万枚。 集邮爱好者可以像笔者一样，即使入手盖销或者信销，仍然会满足感十足。     </p>
-<h3 id="1997-16-黄山"><a href="#1997-16-黄山" class="headerlink" title="1997-16 黄山"></a>1997-16 黄山</h3><p>继特57《黄山风光》发行34年后，1997年10月中国邮政又发行了《黄山》特种邮票，志号为1997-16。这套邮票一共八枚，由版画名家诗松龄先生设计，连印成套票小版张。套票小版张是指将整套邮票在一版上呈现出来。由于特57占尽天时地利，在邮市的口碑高居不下，这套小版张在还未发行时就一直被人瞩目，能否在设计上超越前者一直是热门话题。这也是我国第一套套票小版。<br>同一题材的二次发行还有一个原因就是给99年的世界集邮展览筹款，所以我们可以注意到这八枚邮票的面值都为200分，高于当时的平信邮资80分。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作者: 一盒&lt;br&gt;微信: zyh_1991&lt;br&gt;自古神仙清修境，今有三山睥睨之。   &lt;/p&gt;
-&lt;p&gt;在新中国的邮票中，自然山川的主题无疑是一道最亮丽的风景。即使是在方寸中，仍然不失原景，要么大气磅礴，要么温婉灵动的神韵，再加以设计师的独特写意，使这些邮票至今散发着无尽的韵味。  &lt;/p&gt;
-&lt;p&gt;笔者在学生时代就已经将名山系列基本收集齐全。该系列除了部分主题入手难度较大，整体非常适合初级的集邮爱好者。     &lt;/p&gt;
     
     </summary>
     

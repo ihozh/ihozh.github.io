@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="总结," />
+  <meta name="keywords" content="Julia," />
 
 
 
@@ -97,20 +97,20 @@
 
 
 
-<meta name="description" content="CC的半学期学习总结">
-<meta name="keywords" content="总结">
+<meta name="description" content="虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。">
+<meta name="keywords" content="Julia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CC的学习经验">
-<meta property="og:url" content="http://ihozh.com/2016/03/18/CC学习的经验/index.html">
+<meta property="og:title" content="Julia">
+<meta property="og:url" content="http://ihozh.com/2017/09/09/Julia/index.html">
 <meta property="og:site_name" content="一盒酥">
-<meta property="og:description" content="CC的半学期学习总结">
-<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg">
-<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_CC%E5%AD%A6%E4%B9%A0%E5%8D%8A%E5%AD%A6%E6%9C%9F.png">
-<meta property="og:updated_time" content="2017-05-01T06:59:10.000Z">
+<meta property="og:description" content="虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/juliaCLWelcome.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/AtomJuliaIDE.png">
+<meta property="og:updated_time" content="2017-09-10T17:51:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CC的学习经验">
-<meta name="twitter:description" content="CC的半学期学习总结">
-<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg">
+<meta name="twitter:title" content="Julia">
+<meta name="twitter:description" content="虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。">
+<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/juliaCLWelcome.png">
 
 
 
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://ihozh.com/2016/03/18/CC学习的经验/"/>
+  <link rel="canonical" href="http://ihozh.com/2017/09/09/Julia/"/>
 
 
 
 
 
-  <title>CC的学习经验 | 一盒酥</title>
+  <title>Julia | 一盒酥</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2016/03/18/CC学习的经验/">
+    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/09/09/Julia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一盒酥">
@@ -320,7 +320,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">CC的学习经验</h2>
+          <h2 class="post-title" itemprop="name headline">Julia</h2>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-18T21:20:46-04:00">
-                2016-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T23:26:06-04:00">
+                2017-09-09
               </time>
             
 
@@ -392,32 +392,24 @@
       
 
       
-        <h1 id="CC的半学期学习总结"><a href="#CC的半学期学习总结" class="headerlink" title="CC的半学期学习总结"></a>CC的半学期学习总结</h1><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_cloudcomputing.jpg" alt=""><br><a id="more"></a><br>感谢王达师兄，让我在学习他的同时感觉到点滴进步。<br>学期过了一半，Cloud Computing 的project也已过半。<br>20号凌晨5点，随着强一致和终端一致的两个测试的通过，意味着可以享受一下周末的惬意了。白天的时间去冲了下奖励，拿到两分后也是黔驴技穷，还是腾出点时间写写总结，分享分享学习经验。通常自己一个星期挣扎出的作业，见识过第一天就能荣登榜首的神牛。也不用提在第二周作业就被EMR活活逼哭的黑历史。说是分享，也请各位大神高抬贵手。<br>我是如何学习这门课的，有什么感悟。这里不会过多去纠结课程本身内容，而是分享下我自身的学习经历。</p>
-<h2 id="实验指导是否理解透彻"><a href="#实验指导是否理解透彻" class="headerlink" title="实验指导是否理解透彻"></a>实验指导是否理解透彻</h2><p>实验指导是指在每次做项目前，官方发布的说明文档。它包括   </p>
-<ul>
-<li>项目简介   </li>
-<li>知识点讲解   </li>
-<li>平台要求   </li>
-<li>任务步骤和目标   </li>
-<li>惩罚，奖励，提示   </li>
-</ul>
-<p>对指导的理解程度会极大的影响每次作业的速度和质量。<br>刚开学时，每次CC的作业在读完指导后就直接开始，这样虽然可以很快的进入工作，有两个缺点。   </p>
-<ol>
-<li>写程序bug百出   </li>
-<li>完成后很快忘记   </li>
-</ol>
-<p>如果bug如果不是代码的生疏，便是自己没有理解。 </p>
-<h3 id="做一项最愚蠢的工作"><a href="#做一项最愚蠢的工作" class="headerlink" title="做一项最愚蠢的工作"></a>做一项最愚蠢的工作</h3><p>开始试着重新排版指导说明，对重点部分进行加粗和注释，通过这种方法，加强对指导的梳理和理解。问题来了，这样每次的作业都有一多半的时间在处理这项任务。这是一项很蠢的工作，直到突然看到师兄在博客中翻译上课内容，才恍然一笑，原来还有一样蠢的人。但是师兄，很快！后来的实验开始，我尝试着去翻译这些指导。刚开始极其痛苦，汉语翻译是要比英文注释还要慢的一项工作，有几周差点没有完成作业。但坚信的是，学习方法是比内容更重要的，既然你觉得是对的，那就做下去。</p>
-<h3 id="你会越来越快"><a href="#你会越来越快" class="headerlink" title="你会越来越快"></a>你会越来越快</h3><p>翻译的工作实际上是，在理解原文的情况下做出总结，这是一个双倍的学习工程。翻译的难点在于：   </p>
-<ol>
-<li>准确把握原文   </li>
-<li>翻译通顺   </li>
-<li>专业词汇的使用   </li>
-</ol>
-<p>奇迹也会来的很突然。在翻译工作进行了一个月左右的时候，可以很明显感觉到翻译速度的提升，伴随对指导的理解深入，作业会完成的越来越顺利。以这一周为例，个人项目花费两天时间翻译理解指导，复习涉及到的知识和自己查找的一些资料，笔记字数1万字左右。作业程序花费1天通过了12个测试的11个，半天时间冲奖励和补漏。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/ihozh_1_CC%E5%AD%A6%E4%B9%A0%E5%8D%8A%E5%AD%A6%E6%9C%9F.png" alt=""></p>
-<h3 id="深入理解是一种技能"><a href="#深入理解是一种技能" class="headerlink" title="深入理解是一种技能"></a>深入理解是一种技能</h3><p>深入理解是翻译这项愚蠢工作的副产品，也是主要目的。<br>举个例子来说，在最近的一次作业，要求实现一个终端一致的服务器，只有一个要求：（原文）with only one requirement- the newly received write operation must have a greater timestamp than the write operation that updated the currently stored value. 就这一个要求挡住了不少同学满分的道路。这里我理解的至关重要的一个词就是<strong>write</strong>而不是<strong>new</strong>。只有在连续写请求的条件下，终端一致有效。如遇读请求，复位。这并不是官方提供模版的标准写法，我甚至没有补全其他的相关联函数，因为这样的理解已经实现了终端一致的要求，足够通过所有的测试了。</p>
-<h2 id="自立更生与舶来主义"><a href="#自立更生与舶来主义" class="headerlink" title="自立更生与舶来主义"></a>自立更生与舶来主义</h2><p>没有对错之分。一定要给自己足够的思考空间！一定要给自己足够的思考空间！一定要给自己足够的思考空间。我总结这三句，是因为前半学期的作业中，依赖他人思想过多。自己思考和交流讨论都是学习的基本方式。我自己总结了一个请教他人最佳的时间点：在对方不对你感到厌烦的同时，因为帮助你解决了问题而能极大满足自己虚荣心的那个时间就是最佳请教时间。嘿嘿，只是道理是这样讲的。</p>
-<h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>看个标题就能懂了。也没有什么过多的内容，亘古不变的真理。对学习的坚持，不要轻言放弃；对学习习惯的坚持，习惯会提高能力。</p>
+        <p>虽然听说过Julia已经有一段时间了，但是一直没有想过会去用她。一是python和matlab已经用着很上手，其次Julia的不稳定和不太丰富的扩展让人有些头疼。可是就在今年，MIT公开课18.06线性代数已经开始推荐使用Julia做为学习语言了，在github上的例子全部为Julia所写，所以我也打算与时俱进，来看看Julia究竟是何方神圣。</p>
+<a id="more"></a>
+<p>官方称Julia是一个高性能的专门用来数值计算的编程语言，集matlab，python，R各家之所长，从官网的数据来看，其性能确实是不错。MIT都在推荐使用，那必然是有过人之处，但是具体的区别还是要等我熟悉了才能更为清楚。</p>
+<p>工欲善其事，必先利其器。和python十分相像，三种在python下常用的布置方式在Julia上居然可以生搬硬套，完全一致的照搬过来。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>三种安装使用方式</p>
+<h3 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p>首先强调一下这个工具<a href="JuliaBox.com">JuliaBox.com</a>。这是一个在线的Julia工具，通过Jupyter notebooks，不需要安装，通过浏览器就可以计算了。非常像mathematica online，只可惜mathematica online被阉割的不像样了。强烈推荐。</p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>官方提供了一个叫做JuliaPro 的IDE，包括了各种各样的包。自己不太喜欢每一个语言都使用不同的IDE，非常麻烦，安装包也要1个多G，看起来很臃肿。</p>
+<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>homebrew</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install julia</div></pre></td></tr></table></figure>
+<p>可能需要gcc，因为平时都是经常更新，所以安装没有任何问题。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="命令行-1"><a href="#命令行-1" class="headerlink" title="命令行"></a>命令行</h3><p>可对比python，几乎一摸一样。<br>命令行输入julia，可看到欢迎页面。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/juliaCLWelcome.png" alt="juliaCLWelcom"></p>
+<p>新建文件以<code>.jl</code>结尾，命令行输入<code>julia XXX.jl</code>便可以执行</p>
+<h3 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h3><p>Anaconda还是能派上用场，不仅有Jupyter，还提供一整套python环境。（最简单的方法，强烈推荐）<br><a href="https://github.com/JuliaLang/IJulia.jl#installation" target="_blank" rel="external">IJulia</a>为Jupyter提供了Julia内核。<br>命令行中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Pkg.add(&quot;IJulia&quot;)</div></pre></td></tr></table></figure></p>
+<p>再输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure></p>
+<p>就可以看到有Julia的内核了。</p>
+<p>更方便，直接使用在线版本<a href="JuliaBox.com">JuliaBox.com</a>。</p>
+<h3 id="ATOM"><a href="#ATOM" class="headerlink" title="ATOM"></a>ATOM</h3><p>ATOM提供了插件包<code>uber-Juno</code>，可以把ATOM打造成IDE，推荐<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E6%90%8F%E6%B5%AA/Julia/AtomJuliaIDE.png" alt="AtomJuliaIDE"></p>
+<p>有了这些工具，就来看看Julia是如何玩转MIT公开课的吧！</p>
 
       
     </div>
@@ -438,7 +430,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://ihozh.com/2016/03/18/CC学习的经验/" title="CC的学习经验">http://ihozh.com/2016/03/18/CC学习的经验/</a>
+    <a href="http://ihozh.com/2017/09/09/Julia/" title="Julia">http://ihozh.com/2017/09/09/Julia/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -453,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/总结/" rel="tag"># 总结</a>
+            <a href="/tags/Julia/" rel="tag"># Julia</a>
           
         </div>
       
@@ -466,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/hexo-博客搭建/" rel="next" title="hexo 博客搭建">
-                <i class="fa fa-chevron-left"></i> hexo 博客搭建
+              <a href="/2017/08/31/贝叶斯统计初探/" rel="next" title="贝叶斯统计初探">
+                <i class="fa fa-chevron-left"></i> 贝叶斯统计初探
               </a>
             
           </div>
@@ -475,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/01/一盒品邮邮票上的中国古代名画－清明上河图/" rel="prev" title="《一盒品邮》邮票上的中国古代名画－清明上河图">
-                《一盒品邮》邮票上的中国古代名画－清明上河图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +640,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CC的半学期学习总结"><span class="nav-number">1.</span> <span class="nav-text">CC的半学期学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验指导是否理解透彻"><span class="nav-number">1.1.</span> <span class="nav-text">实验指导是否理解透彻</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#做一项最愚蠢的工作"><span class="nav-number">1.1.1.</span> <span class="nav-text">做一项最愚蠢的工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你会越来越快"><span class="nav-number">1.1.2.</span> <span class="nav-text">你会越来越快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入理解是一种技能"><span class="nav-number">1.1.3.</span> <span class="nav-text">深入理解是一种技能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自立更生与舶来主义"><span class="nav-number">1.2.</span> <span class="nav-text">自立更生与舶来主义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坚持"><span class="nav-number">1.3.</span> <span class="nav-text">坚持</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在线工具"><span class="nav-number">1.1.</span> <span class="nav-text">在线工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE"><span class="nav-number">1.2.</span> <span class="nav-text">IDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-number">1.3.</span> <span class="nav-text">命令行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行-1"><span class="nav-number">2.1.</span> <span class="nav-text">命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jupyter"><span class="nav-number">2.2.</span> <span class="nav-text">Jupyter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ATOM"><span class="nav-number">2.3.</span> <span class="nav-text">ATOM</span></a></li></ol></li></ol></div>
             
 
           </div>
