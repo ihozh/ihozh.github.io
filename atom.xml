@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ihozh.com/"/>
-  <updated>2017-09-13T07:09:15.000Z</updated>
+  <updated>2017-09-13T15:28:10.000Z</updated>
   <id>http://ihozh.com/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="http://ihozh.com/2017/09/10/%E5%90%91%E9%87%8F/"/>
     <id>http://ihozh.com/2017/09/10/向量/</id>
     <published>2017-09-10T19:10:03.000Z</published>
-    <updated>2017-09-13T07:09:15.000Z</updated>
+    <updated>2017-09-13T15:28:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>向量是攻克线性代数的第一道关卡，向量和矩阵是构成线性代数的基础。微积分和线性代数学科都兴起于17世纪，但是和微积分拥有悠久的历史不同，成熟的线性代数不过只有百年历史，尤其在计算机出现后，才真正发挥出了巨大作用。如果说微积分是古老智慧的沉淀，线性代数则是当代科技的鬼斧神工。对线性代数的总结，不仅仅是对知识点的总结，而是对数学知识体系的总结，将数学当作一门语言，一门与科学沟通的语言。</p>
 <a id="more"></a>  
 <p>线性代数的关键就是向量的线性组合。这就包括了线性代数的两个基本操作：加法和乘法。如果两向量 $v$ 和 $w$ 不共线，向量的所有线性组合可以表示整个平面。</p>
-<iframe width="600" height="500" frameborder="0" scrolling="no" src="//plot.ly/~ihozh/7.embed"></iframe>
 ]]></content>
     
     <summary type="html">
@@ -601,11 +600,11 @@
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -925,8 +924,6 @@ y=t^2\\
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
@@ -934,6 +931,8 @@ y=t^2\\
       <category term="二重积分" scheme="http://ihozh.com/tags/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/"/>
     
       <category term="线积分" scheme="http://ihozh.com/tags/%E7%BA%BF%E7%A7%AF%E5%88%86/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -1322,11 +1321,11 @@ A_{b}\left ( \frac{\partial{b}}{\partial{\theta}} \right )_ {a}</script><p>第�
     
       <category term="微积分" scheme="http://ihozh.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
-      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="公开课" scheme="http://ihozh.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
       <category term="18.02" scheme="http://ihozh.com/tags/18-02/"/>
+    
+      <category term="工程数学" scheme="http://ihozh.com/tags/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
