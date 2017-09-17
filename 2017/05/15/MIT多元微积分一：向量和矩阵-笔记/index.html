@@ -104,6 +104,7 @@
 <meta property="og:url" content="http://ihozh.com/2017/05/15/MIT多元微积分一：向量和矩阵-笔记/index.html">
 <meta property="og:site_name" content="一盒酥">
 <meta property="og:description" content="1. Vectors, Determinations and Planes 向量，行列式和平面1.1 基础向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。    Pythagorean theory 毕达哥拉斯定理，勾股定理    计算向量的长度">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/det.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/right-hand%20rule.png?imageMogr2/auto-orient/thumbnail/200x200>/blur/1x0/quality/75|imageslim">
@@ -410,17 +411,17 @@
         <h1 id="1-Vectors-Determinations-and-Planes-向量，行列式和平面"><a href="#1-Vectors-Determinations-and-Planes-向量，行列式和平面" class="headerlink" title="1. Vectors, Determinations and Planes 向量，行列式和平面"></a>1. Vectors, Determinations and Planes 向量，行列式和平面</h1><h2 id="1-1-基础"><a href="#1-1-基础" class="headerlink" title="1.1 基础"></a>1.1 基础</h2><p>向量是一个既有大小又有方向的量。with both direction and magnitude/length。通过带箭头的直线将向量直观的表示出来。引入空间直角坐标系和单位向量是向量间计算的基础。   </p>
 <p>Pythagorean theory 毕达哥拉斯定理，勾股定理   </p>
 <p><strong>计算向量的长度</strong> $\left | \overrightarrow{a} \right |$，多维向量还是通过勾股定理计算。   </p>
-<p><strong>向量的加法</strong>    </p>
-<script type="math/tex; mode=display">\overrightarrow{A}+\overrightarrow{B}=\left \langle a_{1}+b_{1},a_{2}+b_{2} \right \rangle</script><p>向量是头尾加法，同一方向可以进行标量加法。    </p>
+<p><strong>向量的加法</strong><br>$$\overrightarrow{A}+\overrightarrow{B}=\left \langle a<em>{1}+b</em>{1},a<em>{2}+b</em>{2} \right \rangle$$<br>向量是头尾加法，同一方向可以进行标量加法。    </p>
 <a id="more"></a>
 <h2 id="1-2-Dot-Products点积"><a href="#1-2-Dot-Products点积" class="headerlink" title="1.2 Dot Products点积"></a>1.2 Dot Products点积</h2><p>两个向量相乘，结果是标量。几何意义是计算两个向量的夹角，以及在某一方向上的投影。   </p>
-<p><strong>定义：</strong>    </p>
-<script type="math/tex; mode=display">\overrightarrow{A}\cdot \overrightarrow{B}=\sum_{a_i,b_i}=a_{1}b_{1}+a_{2}b_{2}</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png" alt="dot product 向量点乘">   </p>
+<p><strong>定义：</strong><br>$$\overrightarrow{A}\cdot \overrightarrow{B}=\sum_{a_i,b<em>i}=a</em>{1}b<em>{1}+a</em>{2}b_{2}$$     </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/vector.png" alt="dot product 向量点乘">   </p>
 <p>点积的几何意义：$\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)$   </p>
-<p><strong>证明：</strong>    </p>
-<script type="math/tex; mode=display">\overrightarrow{c}=\overrightarrow{a}-\overrightarrow{b}</script><script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}=(\overrightarrow{a}-\overrightarrow{b})\cdot (\overrightarrow{a}-\overrightarrow{b})={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\overrightarrow{a}\cdot \overrightarrow{b}</script><p>根据余弦定理：   </p>
-<script type="math/tex; mode=display">\overrightarrow{c}\cdot \overrightarrow{c}={\left | c \right |}^2={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\left | a \right |\left | b \right |\cos(\theta )</script><p>所以：  </p>
-<script type="math/tex; mode=display">\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)</script><h2 id="1-3-点积的应用"><a href="#1-3-点积的应用" class="headerlink" title="1.3 点积的应用"></a>1.3 点积的应用</h2><ul>
+<p><strong>证明：</strong><br>$$\overrightarrow{c}=\overrightarrow{a}-\overrightarrow{b}$$     </p>
+<p>$$\overrightarrow{c}\cdot \overrightarrow{c}=(\overrightarrow{a}-\overrightarrow{b})\cdot (\overrightarrow{a}-\overrightarrow{b})={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\overrightarrow{a}\cdot \overrightarrow{b}$$   </p>
+<p>根据余弦定理：<br>$$\overrightarrow{c}\cdot \overrightarrow{c}={\left | c \right |}^2={\left | a \right |}^{2}+{\left | b \right |}^{2}-2\left | a \right |\left | b \right |\cos(\theta )$$    </p>
+<p>所以：<br>$$\overrightarrow{a}\cdot \overrightarrow{b}=\left | a \right |\left | b \right |\cos(\theta)$$   </p>
+<h2 id="1-3-点积的应用"><a href="#1-3-点积的应用" class="headerlink" title="1.3 点积的应用"></a>1.3 点积的应用</h2><ul>
 <li>计算长度和角度<br>计算向量的角度的时候，先算出来的是cos，有趣的是cos的符号   <ul>
 <li>sign&gt;0，锐角   </li>
 <li>sign&lt;0，钝角   </li>
@@ -429,7 +430,8 @@
 </li>
 <li>检测正交<br>$x+2y+3z=0$ 的点集是什么形状?  平面    </li>
 </ul>
-<script type="math/tex; mode=display">\overrightarrow{A}=\left \langle 1,2,3 \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{P}=\left \langle x,y,z \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{A}\cdot \overrightarrow{OP}=0</script><script type="math/tex; mode=display">\overrightarrow{A}\perp \overrightarrow{OP}</script><ul>
+<p>$$\overrightarrow{A}=\left \langle 1,2,3 \right \rangle$$<br>$$\overrightarrow{P}=\left \langle x,y,z \right \rangle$$<br>$$\overrightarrow{A}\cdot \overrightarrow{OP}=0$$<br>$$\overrightarrow{A}\perp \overrightarrow{OP}$$    </p>
+<ul>
 <li>向量沿一个方向的成分，单位向量<ul>
 <li>计算悬挂摆，分解力</li>
 </ul>
@@ -438,40 +440,18 @@
 <h2 id="1-4-Determinations-行列式"><a href="#1-4-Determinations-行列式" class="headerlink" title="1.4 Determinations 行列式"></a>1.4 Determinations 行列式</h2><blockquote>
 <p>如何计算几个向量围成的面积?<br>三角形的面积怎么计算？</p>
 </blockquote>
-<script type="math/tex; mode=display">Area=\frac{1}{2}\left | a \right |\left | b \right |\sin{\theta }</script><p>奇妙的是，这和底乘高的得到结果一样。<br>再算出余弦，带入，会很麻烦。   </p>
+<p>$$Area=\frac{1}{2}\left | a \right |\left | b \right |\sin{\theta }$$<br>奇妙的是，这和底乘高的得到结果一样。<br>再算出余弦，带入，会很麻烦。   </p>
 <blockquote>
 <p>下面的内容会非常有趣</p>
 </blockquote>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/det.png" alt="determination 行列式">   </p>
-<p>考虑两个向量，$\overrightarrow{a}$ 和差90度的向量 $\overrightarrow{a’}$    </p>
-<script type="math/tex; mode=display">Area=\frac{1}{2}\left | a \right |\left | b \right |\sin{\theta }</script><script type="math/tex; mode=display">\sin{\theta}=\cos{\theta'}</script><script type="math/tex; mode=display">Area=\frac{1}{2}\overrightarrow{a'}\cdot \overrightarrow{b}</script><script type="math/tex; mode=display">\overrightarrow{a'}=\left \langle -a_2,a_1 \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{a'}\cdot \overrightarrow{b}=\left \langle -a_2,a_1 \right \rangle \cdot \left \langle b_1,b_2 \right \rangle=a_1b_2-a_2b_1</script><script type="math/tex; mode=display">=\begin{vmatrix}
-a_1&a_2\\
-b_1&b_2
-\end{vmatrix}=\det(a,b)</script><p>发现行列式代数上是余向量的点积，几何上行列式的绝对值是向量所围成的面积。<br>Area=abs value of det.</p>
+<p>考虑两个向量，$\overrightarrow{a}$ 和差90度的向量 $\overrightarrow{a’}$<br>$$Area=\frac{1}{2}\left | a \right |\left | b \right |\sin{\theta }$$<br>$$\sin{\theta}=\cos{\theta’}$$<br>$$Area=\frac{1}{2}\overrightarrow{a’}\cdot \overrightarrow{b}$$<br>$$\overrightarrow{a’}=\left \langle -a_2,a_1 \right \rangle$$<br>$$\overrightarrow{a’}\cdot \overrightarrow{b}=\left \langle -a_2,a_1 \right \rangle \cdot \left \langle b_1,b_2 \right \rangle=a_1b_2-a_2b_1$$<br>$$=\begin{vmatrix}<br>a_1&amp;a_2\<br>b_1&amp;b_2<br>\end{vmatrix}=\det(a,b)$$</p>
+<p>发现行列式代数上是余向量的点积，几何上行列式的绝对值是向量所围成的面积。<br>Area=abs value of det.</p>
 <h2 id="1-5-空间行列式"><a href="#1-5-空间行列式" class="headerlink" title="1.5 空间行列式"></a>1.5 空间行列式</h2><p>高维行列式计算方法，扩展：奇正偶负。正负是因为改变了空间的方向。更复杂的内容会在18.06讲解。</p>
-<script type="math/tex; mode=display">\begin{vmatrix}
- a_1&  a_2& a_3\\
- b_1&  b_2& b_3\\
- c_1&  c_2& c_3\\
-\end{vmatrix}=a_1
-\begin{vmatrix}
- b_2& b_3\\
- c_2& c_3\\
-\end{vmatrix}-a_2
-\begin{vmatrix}
- b_1& b_3\\
- c_1& c_3\\
-\end{vmatrix}+a_3
-\begin{vmatrix}
- b_1& b_2\\
- c_1& c_2\\
-\end{vmatrix}</script><p>几何学上，三维行列式就是长方体体积的加减。</p>
-<h2 id="1-6-Cross-product-叉乘"><a href="#1-6-Cross-product-叉乘" class="headerlink" title="1.6 Cross product 叉乘"></a>1.6 Cross product 叉乘</h2><p>三纬空间的两个向量<br>定义:   </p>
-<script type="math/tex; mode=display">\overrightarrow{A}\times \overrightarrow{B}  =\begin{vmatrix}
-\widehat{i}& \widehat{j}& \widehat{k}\\
- a_1&  a_2& a_3\\
- b_1&  b_2& b_3
-\end{vmatrix}</script><p>叉乘的结果是个向量。   </p>
+<p>$$\begin{vmatrix}<br> a_1&amp;  a_2&amp; a_3\<br> b_1&amp;  b_2&amp; b_3\<br> c_1&amp;  c_2&amp; c_3\<br>\end{vmatrix}=a_1<br>\begin{vmatrix}<br> b_2&amp; b_3\<br> c_2&amp; c_3\<br>\end{vmatrix}-a_2<br>\begin{vmatrix}<br> b_1&amp; b_3\<br> c_1&amp; c_3\<br>\end{vmatrix}+a_3<br>\begin{vmatrix}<br> b_1&amp; b_2\<br> c_1&amp; c_2\<br>\end{vmatrix}$$</p>
+<p>几何学上，三维行列式就是长方体体积的加减。</p>
+<h2 id="1-6-Cross-product-叉乘"><a href="#1-6-Cross-product-叉乘" class="headerlink" title="1.6 Cross product 叉乘"></a>1.6 Cross product 叉乘</h2><p>三纬空间的两个向量<br>定义:<br>$$\overrightarrow{A}\times \overrightarrow{B}  =\begin{vmatrix}<br>\widehat{i}&amp; \widehat{j}&amp; \widehat{k}\<br> a_1&amp;  a_2&amp; a_3\<br> b_1&amp;  b_2&amp; b_3<br>\end{vmatrix}$$</p>
+<p>叉乘的结果是个向量。   </p>
 <ul>
 <li>$\left |\overrightarrow{A}\times \overrightarrow{B}  \right |$ = 向量围成平行四边形的面积。</li>
 <li>$dir(\overrightarrow{A}\times \overrightarrow{B})$ 垂直于两向量所在平面</li>
@@ -483,24 +463,17 @@ b_1&b_2
 </li>
 </ul>
 <p>例子：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/right-hand%20rule.png?imageMogr2/auto-orient/thumbnail/200x200&gt;/blur/1x0/quality/75|imageslim" alt="右手法则"></p>
-<script type="math/tex; mode=display">\widehat{i}\times \widehat{j}=
-\begin{vmatrix}
- \widehat{i}& \widehat{j}& \widehat{k} \\
- 1& 0& 0 \\
- 0& 1& 0
-\end{vmatrix}
-=0\widehat{i}-0\widehat{j}+1\widehat{k}</script><p><strong>关于空间体积的一些观点</strong><br>前面说到三维行列式的几何学意义就是体积。   </p>
+<p>$$\widehat{i}\times \widehat{j}=<br>\begin{vmatrix}<br> \widehat{i}&amp; \widehat{j}&amp; \widehat{k} \<br> 1&amp; 0&amp; 0 \<br> 0&amp; 1&amp; 0<br>\end{vmatrix}<br>=0\widehat{i}-0\widehat{j}+1\widehat{k}$$</p>
+<p><strong>关于空间体积的一些观点</strong><br>前面说到三维行列式的几何学意义就是体积。   </p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/volume.png" alt="volume">  </p>
-<script type="math/tex; mode=display">Volume=base(area)\cdot height=\left | \overrightarrow{B}\times \overrightarrow{C} \right |(\overrightarrow{A}\cdot \overrightarrow{n})</script><script type="math/tex; mode=display">\overrightarrow{n}=\frac{\overrightarrow{B}\times \overrightarrow{C}}{\left | \overrightarrow{B}\times \overrightarrow{C} \right |}</script><script type="math/tex; mode=display">Volume=\overrightarrow{A}\cdot (\overrightarrow{B}\times \overrightarrow{C})=\det(\overrightarrow{A},\overrightarrow{B},\overrightarrow{C})</script><p><strong>补充</strong><br>$\overrightarrow{A}\times \overrightarrow{B}$ 和  $\overrightarrow{B}\times \overrightarrow{A}$ 由于方向的原因，是完全相反的。<br>$\overrightarrow{A}\times \overrightarrow{A}=0$</p>
+<p>$$Volume=base(area)\cdot height=\left | \overrightarrow{B}\times \overrightarrow{C} \right |(\overrightarrow{A}\cdot \overrightarrow{n})$$<br>$$\overrightarrow{n}=\frac{\overrightarrow{B}\times \overrightarrow{C}}{\left | \overrightarrow{B}\times \overrightarrow{C} \right |}$$<br>$$Volume=\overrightarrow{A}\cdot (\overrightarrow{B}\times \overrightarrow{C})=\det(\overrightarrow{A},\overrightarrow{B},\overrightarrow{C})$$</p>
+<p><strong>补充</strong><br>$\overrightarrow{A}\times \overrightarrow{B}$ 和  $\overrightarrow{B}\times \overrightarrow{A}$ 由于方向的原因，是完全相反的。<br>$\overrightarrow{A}\times \overrightarrow{A}=0$</p>
 <h2 id="1-7-Equations-of-planes-平面的方程"><a href="#1-7-Equations-of-planes-平面的方程" class="headerlink" title="1.7 Equations of planes 平面的方程"></a>1.7 Equations of planes 平面的方程</h2><p>这一节主要讲的是叉乘的应用。   </p>
 <blockquote>
 <p>如何已知三点构成的平面，和另外一个点P，如何确定点P在这个平面上。   </p>
 </blockquote>
-<p>一个方法是：</p>
-<script type="math/tex; mode=display">\det(\overrightarrow{P_1P},\overrightarrow{P_1P_2},\overrightarrow{P_1P_3})=0</script><p>带入 $P(x,y,z)$ 就得到平面的方程。    </p>
-<p>另一个方法：如果P在平面上则可以推出   </p>
-<script type="math/tex; mode=display">\overrightarrow{P_1P}\perp \overrightarrow{n}</script><p>$\overrightarrow{n}$ 是平面法向量（normal vector）。<br>最后得到了一个我们很熟悉的公式，也是计算体积的公式：</p>
-<script type="math/tex; mode=display">\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})=0</script><p>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
+<p>一个方法是：<br>$$\det(\overrightarrow{P_1P},\overrightarrow{P_1P_2},\overrightarrow{P_1P_3})=0$$<br>带入 $P(x,y,z)$ 就得到平面的方程。    </p>
+<p>另一个方法：如果P在平面上则可以推出<br>$$\overrightarrow{P_1P}\perp \overrightarrow{n}$$<br>$\overrightarrow{n}$ 是平面法向量（normal vector）。<br>最后得到了一个我们很熟悉的公式，也是计算体积的公式：<br>$$\overrightarrow{P_1P}\cdot (\overrightarrow{P_1P_2} \times \overrightarrow{P_1P_3})=0$$<br>这个形式在向量计算中有个别名，叫做三重积（Triple product），和行列式是一回事。</p>
 <h1 id="2-Matrices-and-Systems-of-Equations-矩阵和系统方程"><a href="#2-Matrices-and-Systems-of-Equations-矩阵和系统方程" class="headerlink" title="2. Matrices and Systems of Equations 矩阵和系统方程"></a>2. Matrices and Systems of Equations 矩阵和系统方程</h1><blockquote>
 <p>为什么要使用矩阵，使用矩阵的动机是什么</p>
 </blockquote>
@@ -508,116 +481,44 @@ b_1&b_2
 <h2 id="2-1-Matrix-Multiplication-矩阵乘法"><a href="#2-1-Matrix-Multiplication-矩阵乘法" class="headerlink" title="2.1 Matrix Multiplication 矩阵乘法"></a>2.1 Matrix Multiplication 矩阵乘法</h2><blockquote>
 <p>举个熟悉的鸡兔同笼的问题. 鸡和兔共有 $a$只，共有脚 $b$ 个，用矩阵去表达这个问题。</p>
 </blockquote>
-<p>假设有鸡$x$只，兔$y$只</p>
-<script type="math/tex; mode=display">\left\{\begin{matrix}
-x+y=a\\
-2x+4y=b
-\end{matrix}\right.</script><p>用矩阵乘法表示：   </p>
-<script type="math/tex; mode=display">\begin{bmatrix}
- 1& 1\\
- 2& 4
-\end{bmatrix}
-\begin{bmatrix}
- x\\
- y
-\end{bmatrix}=
-\begin{bmatrix}
- a\\
- b
-\end{bmatrix}</script><p>通用的数学符号表达方式为：</p>
-<script type="math/tex; mode=display">A\cdot X=U</script><p>在矩阵和向量中的每一个值都叫做元素（entries）<br>在计算矩阵乘法 $A\cdot B$ 时，每个元素都可以通过A矩阵的行和B矩阵的列做点乘得到。<strong>A矩阵的宽度必须要等于B矩阵的高度</strong>。</p>
+<p>假设有鸡$x$只，兔$y$只<br>$$\left{\begin{matrix}<br>x+y=a\<br>2x+4y=b<br>\end{matrix}\right.$$<br>用矩阵乘法表示：<br>$$\begin{bmatrix}<br> 1&amp; 1\<br> 2&amp; 4<br>\end{bmatrix}<br>\begin{bmatrix}<br> x\<br> y<br>\end{bmatrix}=<br>\begin{bmatrix}<br> a\<br> b<br>\end{bmatrix}$$<br>通用的数学符号表达方式为：<br>$$A\cdot X=U$$</p>
+<p>在矩阵和向量中的每一个值都叫做元素（entries）<br>在计算矩阵乘法 $A\cdot B$ 时，每个元素都可以通过A矩阵的行和B矩阵的列做点乘得到。<strong>A矩阵的宽度必须要等于B矩阵的高度</strong>。</p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Matrix_multiplication_diagram.png" alt="矩阵乘法示意图"></p>
 <p>AB的乘积代表先做变换B再做变换A。我们习惯从左往右，但是矩阵计算是从右往左。直观的解释就是如果有两个连续的方程 $f(g(x))$ ，先要计算 $g(x)$, 再做 $f(x)$。   </p>
-<p><strong>矩阵的结合律（associativity）</strong></p>
-<script type="math/tex; mode=display">(AB)X=A(BX)</script><p><strong>补充</strong></p>
-<script type="math/tex; mode=display">AB \neq BA</script><p><strong>Identity matrix 单位矩阵</strong></p>
-<script type="math/tex; mode=display">IX=X</script><p>单位矩阵即对角全为一的矩阵。是一种“可有可无”的矩阵，单位矩阵的变换叫做恒等变换。</p>
+<p><strong>矩阵的结合律（associativity）</strong><br>$$(AB)X=A(BX)$$</p>
+<p><strong>补充</strong></p>
+<p>$$AB \neq BA $$</p>
+<p><strong>Identity matrix 单位矩阵</strong><br>$$IX=X$$</p>
+<p>单位矩阵即对角全为一的矩阵。是一种“可有可无”的矩阵，单位矩阵的变换叫做恒等变换。</p>
 <blockquote>
 <p>在平面上，做90度逆时针旋转的变换</p>
 </blockquote>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E6%97%8B%E8%BD%AC90%E5%BA%A6.png" alt="旋转90度"></p>
-<script type="math/tex; mode=display">R=\begin{bmatrix}
- 0& -1\\
- 1& 0
-\end{bmatrix}</script><script type="math/tex; mode=display">R\hat{i}=
-\begin{bmatrix}
- 0& -1\\
- 1& 0
-\end{bmatrix}
-\begin{bmatrix}
- 1\\
- 0
-\end{bmatrix}=
-\begin{bmatrix}
- 0\\
- 1
-\end{bmatrix}=\hat{j}</script><script type="math/tex; mode=display">R\hat{j}=
-\begin{bmatrix}
- 0& -1\\
- 1& 0
-\end{bmatrix}
-\begin{bmatrix}
- 0\\
- 1
-\end{bmatrix}=
-\begin{bmatrix}
- -1\\
- 0
-\end{bmatrix}=-\hat{i}</script><script type="math/tex; mode=display">(x,y)\rightarrow (-y,x)</script><p>变换矩阵的每一列说明了对要变换的对象进行什么操作。<br>R的第一列就是对第一个基向量做R变换的结果，第二列是对第二个基向量做R变换后的结果。</p>
-<p>最有意思的是，通过矩阵计算大大简化了需要用公式计算的计算量，如果考虑连续做两次90度逆时针变换：</p>
-<script type="math/tex; mode=display">R^2=\begin{bmatrix}
- -1& 0\\
- 0& -1
-\end{bmatrix}=-I</script><script type="math/tex; mode=display">(x,y)\rightarrow (-x,-y)</script><script type="math/tex; mode=display">R^4=\begin{bmatrix}
- 1& 0\\
- 0& 1
-\end{bmatrix}=I</script><h2 id="2-2-Matrix-Inverses-逆矩阵"><a href="#2-2-Matrix-Inverses-逆矩阵" class="headerlink" title="2.2 Matrix Inverses 逆矩阵"></a>2.2 Matrix Inverses 逆矩阵</h2><p>如果定义A的逆矩阵为M，则有</p>
-<script type="math/tex; mode=display">AM=I</script><script type="math/tex; mode=display">MA=I</script><script type="math/tex; mode=display">M=A^{-1}</script><p>这里A需要是 $n\times n$的方阵，如果不是方阵的情况不在这里讨论。</p>
-<p>对线性系统 $AX=B$ 的解可以使用逆矩阵。等式两边同时乘A的逆矩阵</p>
-<script type="math/tex; mode=display">X=A^{-1}B</script><p><strong>公式（适合小矩阵）</strong></p>
-<script type="math/tex; mode=display">A^{-1}=\frac{1}{det(A)}adj(A)</script><p>adj（adjoint）是 <strong>伴随矩阵</strong></p>
+<p>$$R=\begin{bmatrix}<br> 0&amp; -1\<br> 1&amp; 0<br>\end{bmatrix}$$<br>$$R\hat{i}=<br>\begin{bmatrix}<br> 0&amp; -1\<br> 1&amp; 0<br>\end{bmatrix}<br>\begin{bmatrix}<br> 1\<br> 0<br>\end{bmatrix}=<br>\begin{bmatrix}<br> 0\<br> 1<br>\end{bmatrix}=\hat{j}$$</p>
+<p>$$R\hat{j}=<br>\begin{bmatrix}<br> 0&amp; -1\<br> 1&amp; 0<br>\end{bmatrix}<br>\begin{bmatrix}<br> 0\<br> 1<br>\end{bmatrix}=<br>\begin{bmatrix}<br> -1\<br> 0<br>\end{bmatrix}=-\hat{i}$$</p>
+<p>$$(x,y)\rightarrow (-y,x)$$<br>变换矩阵的每一列说明了对要变换的对象进行什么操作。<br>R的第一列就是对第一个基向量做R变换的结果，第二列是对第二个基向量做R变换后的结果。</p>
+<p>最有意思的是，通过矩阵计算大大简化了需要用公式计算的计算量，如果考虑连续做两次90度逆时针变换：<br>$$R^2=\begin{bmatrix}<br> -1&amp; 0\<br> 0&amp; -1<br>\end{bmatrix}=-I$$<br>$$(x,y)\rightarrow (-x,-y)$$<br>$$R^4=\begin{bmatrix}<br> 1&amp; 0\<br> 0&amp; 1<br>\end{bmatrix}=I$$</p>
+<h2 id="2-2-Matrix-Inverses-逆矩阵"><a href="#2-2-Matrix-Inverses-逆矩阵" class="headerlink" title="2.2 Matrix Inverses 逆矩阵"></a>2.2 Matrix Inverses 逆矩阵</h2><p>如果定义A的逆矩阵为M，则有<br>$$AM=I$$<br>$$MA=I$$<br>$$M=A^{-1}$$<br>这里A需要是 $n\times n$的方阵，如果不是方阵的情况不在这里讨论。</p>
+<p>对线性系统 $AX=B$ 的解可以使用逆矩阵。等式两边同时乘A的逆矩阵<br>$$X=A^{-1}B$$</p>
+<p><strong>公式（适合小矩阵）</strong><br>$$A^{-1}=\frac{1}{det(A)}adj(A)$$</p>
+<p>adj（adjoint）是 <strong>伴随矩阵</strong></p>
 <p><strong>步骤（3*3矩阵)</strong>   </p>
-<script type="math/tex; mode=display">A=\begin{bmatrix}
- 2& 2& 2\\
- 2& 4& 5\\
- 1& 1& 2
-\end{bmatrix}</script><p>1.首先要做的是，是找一个叫 <strong>余子式（minors）</strong> 的东西。   </p>
+<p>$$A=\begin{bmatrix}<br> 2&amp; 2&amp; 2\<br> 2&amp; 4&amp; 5\<br> 1&amp; 1&amp; 2<br>\end{bmatrix}$$</p>
+<p>1.首先要做的是，是找一个叫 <strong>余子式（minors）</strong> 的东西。   </p>
 <p>余子式是去除了一些元素的行列式。要找到A矩阵一行一列的余子式，去掉这个元素所在的行和列，计算剩余部分的行列式，即</p>
-<script type="math/tex; mode=display">\begin{vmatrix}
- X& X& X\\
- X& 4& 5\\
- X& 1& 2
-\end{vmatrix}=
-\begin{vmatrix}
- 4& 5\\
- 1& 2
-\end{vmatrix}=3</script><p>得到矩阵A的余子式：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
- 3& -1& -2\\
- 3&  1& -1\\
- 3&  4& 2
-\end{pmatrix}</script><p>2.找到另外一个矩阵，叫做 <strong>代数余子式（cofactors)</strong><br>代数余子式就是给余子式加上符号。根据棋盘图所示，+表示保留余子式值，-表示反转余子式的值。顺便一提，棋盘法可以同样用来做叉乘的符号判定。</p>
+<p>$$\begin{vmatrix}<br> X&amp; X&amp; X\<br> X&amp; 4&amp; 5\<br> X&amp; 1&amp; 2<br>\end{vmatrix}=<br>\begin{vmatrix}<br> 4&amp; 5\<br> 1&amp; 2<br>\end{vmatrix}=3$$</p>
+<p>得到矩阵A的余子式：<br>$$\begin{pmatrix}<br> 3&amp; -1&amp; -2\<br> 3&amp;  1&amp; -1\<br> 3&amp;  4&amp; 2<br>\end{pmatrix}$$</p>
+<p>2.找到另外一个矩阵，叫做 <strong>代数余子式（cofactors)</strong><br>代数余子式就是给余子式加上符号。根据棋盘图所示，+表示保留余子式值，-表示反转余子式的值。顺便一提，棋盘法可以同样用来做叉乘的符号判定。</p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E6%A3%8B%E7%9B%98%E5%9B%BE.png" alt="棋盘图"></p>
-<p>得到代数余子式：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-  3&  1& -2\\
- -3&  1& 1\\
-  3& -4& 2
-\end{pmatrix}</script><p>3.<strong>转置（transpose）</strong>，得到伴随矩阵<br>行列互换</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-  3&  -3& 3\\
-  1&  1& -4\\
-  -2& 1& 2
-\end{pmatrix}=adj(A)</script><p>4.除以行列式</p>
-<script type="math/tex; mode=display">A^{-1}=\frac{1}{3}\begin{pmatrix}
-  3&  -3& 3\\
-  1&  1& -4\\
-  -2& 1& 2
-\end{pmatrix}</script><h2 id="2-3-Equations-of-planes-平面的方程再探"><a href="#2-3-Equations-of-planes-平面的方程再探" class="headerlink" title="2.3 Equations of planes 平面的方程再探"></a>2.3 Equations of planes 平面的方程再探</h2><p>之前学习点积的时候就知道如何去检测正交或者垂直。平面的公式是：</p>
-<script type="math/tex; mode=display">ax+by+cz=d</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B.png" alt="平面方程"></p>
-<p>第一种情况，平面过原点，知道法向量 $\overrightarrow{N}=\left \langle 1,5,10 \right \rangle$ , 对于在平面上的点 $P(x,y,z)$ , 有：</p>
-<script type="math/tex; mode=display">\overrightarrow{OP}\cdot \overrightarrow{N}=0</script><script type="math/tex; mode=display">x+5y+10z=0</script><p>第二种情况，同样的法向量，平面过 $P0(2,1,-1)$    </p>
-<script type="math/tex; mode=display">\overrightarrow{P_0P}\cdot \overrightarrow{N}=0</script><script type="math/tex; mode=display">x+5y+10z=-3</script><p>总结下两种情况下的特点：</p>
+<p>得到代数余子式：<br>$$\begin{pmatrix}<br>  3&amp;  1&amp; -2\<br> -3&amp;  1&amp; 1\<br>  3&amp; -4&amp; 2<br>\end{pmatrix}$$</p>
+<p>3.<strong>转置（transpose）</strong>，得到伴随矩阵<br>行列互换<br>$$\begin{pmatrix}<br>  3&amp;  -3&amp; 3\<br>  1&amp;  1&amp; -4\<br>  -2&amp; 1&amp; 2<br>\end{pmatrix}=adj(A)$$   </p>
+<p>4.除以行列式<br>$$A^{-1}=\frac{1}{3}\begin{pmatrix}<br>  3&amp;  -3&amp; 3\<br>  1&amp;  1&amp; -4\<br>  -2&amp; 1&amp; 2<br>\end{pmatrix}$$   </p>
+<h2 id="2-3-Equations-of-planes-平面的方程再探"><a href="#2-3-Equations-of-planes-平面的方程再探" class="headerlink" title="2.3 Equations of planes 平面的方程再探"></a>2.3 Equations of planes 平面的方程再探</h2><p>之前学习点积的时候就知道如何去检测正交或者垂直。平面的公式是：<br>$$ax+by+cz=d$$   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E6%96%B9%E7%A8%8B.png" alt="平面方程"></p>
+<p>第一种情况，平面过原点，知道法向量 $\overrightarrow{N}=\left \langle 1,5,10 \right \rangle$ , 对于在平面上的点 $P(x,y,z)$ , 有：<br>$$\overrightarrow{OP}\cdot \overrightarrow{N}=0$$<br>$$x+5y+10z=0$$</p>
+<p>第二种情况，同样的法向量，平面过 $P0(2,1,-1)$    </p>
+<p>$$\overrightarrow{P_0P}\cdot \overrightarrow{N}=0$$<br>$$x+5y+10z=-3$$</p>
+<p>总结下两种情况下的特点：</p>
 <ul>
 <li>不同情况等式右边常数项不同</li>
 <li>常数项是平面的平移距离的一个表示</li>
@@ -627,8 +528,7 @@ x+y=a\\
 <p>举个例子：</p>
 <p>向量 $\overrightarrow{v}=\left \langle 1,2,-1 \right \rangle$ 和平面方程 $x+y+3z=5$ 是什么关系？   </p>
 <p>快速确定平面方程的法向量，发现和已知向量不成比例，但是点积为0，说明向量垂直于法向量，所以和平面是平行的。如果把平面移到原点，如果向量和平面平行，向量的末端就在被移动到原点的平面上。    </p>
-<h2 id="2-4-Linear-Systems-and-Planes-线性系统和平面"><a href="#2-4-Linear-Systems-and-Planes-线性系统和平面" class="headerlink" title="2.4 Linear Systems and Planes 线性系统和平面"></a>2.4 Linear Systems and Planes 线性系统和平面</h2><p>线性方程组的几何意义。<br>线性方程组，对于三纬空间来说（3*3线性方程组），方程组的每一个方程决定一个平面。解方程组的本质就是找平面的交点。<br>一般会有这三种情况：<br>三条交线交于一点：有唯一解</p>
-<script type="math/tex; mode=display">X=A^{-1}B</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E4%BA%A4%E7%82%B9.png" alt="三面交于一点"></p>
+<h2 id="2-4-Linear-Systems-and-Planes-线性系统和平面"><a href="#2-4-Linear-Systems-and-Planes-线性系统和平面" class="headerlink" title="2.4 Linear Systems and Planes 线性系统和平面"></a>2.4 Linear Systems and Planes 线性系统和平面</h2><p>线性方程组的几何意义。<br>线性方程组，对于三纬空间来说（3*3线性方程组），方程组的每一个方程决定一个平面。解方程组的本质就是找平面的交点。<br>一般会有这三种情况：<br>三条交线交于一点：有唯一解<br>$$X=A^{-1}B$$<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E4%BA%A4%E7%82%B9.png" alt="三面交于一点"></p>
 <p>平面交线平行：没有解，条件矛盾，无法同时满足<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%B9%B3%E9%9D%A2%E4%BA%A4%E7%BA%BF%E5%B9%B3%E8%A1%8C.png" alt="交线平行"></p>
 <p>平面交线重叠：有无数解，条件不足</p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E4%B8%89%E9%9D%A2%E5%85%B1%E7%BA%BF.png" alt="交线重叠"></p>
@@ -636,76 +536,39 @@ x+y=a\\
 <p>将这个问题回归到从代数上，矩阵不一定能够求逆是因为行列式有可能为0（矩阵的求逆公式）。所以，矩阵的行列式不为0，矩阵可求逆，方程组有解。  </p>
 <p>行列式不为0是三个平面有唯一交点的情况，行列式为0是交线平行的情况。</p>
 <h2 id="2-5-Solutions-to-Square-Systems-方阵系统的解"><a href="#2-5-Solutions-to-Square-Systems-方阵系统的解" class="headerlink" title="2.5 Solutions to Square Systems 方阵系统的解"></a>2.5 Solutions to Square Systems 方阵系统的解</h2><p>这一节从另一个角度去认识行列式为0，为什么方程会没有解。</p>
-<p>有一种方程组叫做 <strong>齐次方程组(homogeneous systems)</strong>, 特点是常数项全部为0。方程组各项次数整齐，在数乘运算下不变。    </p>
-<script type="math/tex; mode=display">AX=0</script><p>齐次方程总是存在一个平凡解(trivial solution)，即原点。几何学表示三个平面都过原点。   </p>
-<p>第一种情况，A的行列式不为0</p>
-<script type="math/tex; mode=display">AX=0\Leftrightarrow X=A^{-1}0=0</script><p>原点是唯一解。   </p>
-<p>第二种情况，A的行列式为0<br>我们知道A中的项是方程组的系数，而方程组的系数又是平面的法向量。行列式为0，说明三个平面的法向量的行列式为0:</p>
-<script type="math/tex; mode=display">\det(\overrightarrow{N_1},\overrightarrow{N_2},\overrightarrow{N_3})=0</script><p>这就意味着三个法向量共面（coplanar）（参考上一章）。用这三个法向量围成了一个不占任何体积的平行六面体。   </p>
+<p>有一种方程组叫做 <strong>齐次方程组(homogeneous systems)</strong>, 特点是常数项全部为0。方程组各项次数整齐，在数乘运算下不变。<br>$$AX=0$$<br>齐次方程总是存在一个平凡解(trivial solution)，即原点。几何学表示三个平面都过原点。   </p>
+<p>第一种情况，A的行列式不为0<br>$$AX=0\Leftrightarrow X=A^{-1}0=0$$<br>原点是唯一解。   </p>
+<p>第二种情况，A的行列式为0<br>我们知道A中的项是方程组的系数，而方程组的系数又是平面的法向量。行列式为0，说明三个平面的法向量的行列式为0:<br>$$\det(\overrightarrow{N_1},\overrightarrow{N_2},\overrightarrow{N_3})=0$$<br>这就意味着三个法向量共面（coplanar）（参考上一章）。用这三个法向量围成了一个不占任何体积的平行六面体。   </p>
 <p>证明有无穷多解：<br>存在一条垂直于三个法向量所在平面且过原点的直线，平行于三个平面，而且现在面上，所以存在无穷多解。</p>
 <p>如何求出这些解：<br>对法向量做叉乘，这就是方程的非平凡解（nontrivial solution）</p>
 <hr>
-<p>如果是一般情况，系统不再是齐次方程。</p>
-<script type="math/tex; mode=display">AX=B</script><p>if $\det(A) \neq 0$</p>
-<script type="math/tex; mode=display">AX=B\Leftrightarrow X=A^{-1}B</script><p>if $\det(A) = 0$ 无解或无穷多解</p>
+<p>如果是一般情况，系统不再是齐次方程。<br>$$AX=B$$<br>if $\det(A) \neq 0$<br>$$AX=B\Leftrightarrow X=A^{-1}B$$   </p>
+<p>if $\det(A) = 0$ 无解或无穷多解</p>
 <h1 id="3-Parametric-Equations-for-Curves-直线和曲线的参数方程"><a href="#3-Parametric-Equations-for-Curves-直线和曲线的参数方程" class="headerlink" title="3. Parametric Equations for Curves  直线和曲线的参数方程"></a>3. Parametric Equations for Curves  直线和曲线的参数方程</h1><h2 id="3-1-Equations-of-Lines-直线的方程"><a href="#3-1-Equations-of-Lines-直线的方程" class="headerlink" title="3.1  Equations of Lines 直线的方程"></a>3.1  Equations of Lines 直线的方程</h2><p>直线，可以用两个平面的交集表示，但这种方法并不高效率。更好的办法是 <strong>把直线当作运动点的轨迹</strong>。轨迹就是 <strong>参数方程</strong>。</p>
-<p>例：确定经过点 $Q0=(-1,2,2)$ 和 $Q1=(1,3,-1)$ 的直线。<br>定义Q(t)是一个移动点，在t=0时刻，在Q0点。在直线上做匀速运动，在单位时间内，到达点Q1。直线的方程问题就转化为当时刻为t的时候，点Q(t)在什么位置？   </p>
-<script type="math/tex; mode=display">\overrightarrow{Q_0Q(t)}=t\overrightarrow{Q_0Q_1}</script><p>分别以x(t),y(t),z(t)表示Q(t)的坐标，可以得到直线的参数方程：</p>
-<script type="math/tex; mode=display">\left\{\begin{matrix}
-x(t)=-1+2t\\
-y(t)=2+t\\
-z(t)=2-3t
-\end{matrix}\right.</script><p>等价于：</p>
-<script type="math/tex; mode=display">Q(t)=Q_0+t\overrightarrow{Q_0Q_1}</script><p>常数项（-1，2，2）是t0时刻的位置，一次项（2，1，-3）就是向量P0P1，告诉了点应该移动的方向。</p>
+<p>例：确定经过点 $Q0=(-1,2,2)$ 和 $Q1=(1,3,-1)$ 的直线。<br>定义Q(t)是一个移动点，在t=0时刻，在Q0点。在直线上做匀速运动，在单位时间内，到达点Q1。直线的方程问题就转化为当时刻为t的时候，点Q(t)在什么位置？<br>$$\overrightarrow{Q_0Q(t)}=t\overrightarrow{Q_0Q_1}$$<br>分别以x(t),y(t),z(t)表示Q(t)的坐标，可以得到直线的参数方程：<br>$$\left{\begin{matrix}<br>x(t)=-1+2t\<br>y(t)=2+t\<br>z(t)=2-3t<br>\end{matrix}\right.$$<br>等价于：<br>$$Q(t)=Q_0+t\overrightarrow{Q_0Q_1}$$<br>常数项（-1，2，2）是t0时刻的位置，一次项（2，1，-3）就是向量P0P1，告诉了点应该移动的方向。</p>
 <h2 id="3-2-Intersection-of-a-Line-and-a-Plane-直线和平面的相交"><a href="#3-2-Intersection-of-a-Line-and-a-Plane-直线和平面的相交" class="headerlink" title="3.2 Intersection of a Line and a Plane  直线和平面的相交"></a>3.2 Intersection of a Line and a Plane  直线和平面的相交</h2><p>得到了直线的参数方程，再来一个平面 $x+2y+4z=7$，平面和直线是否相交，交点在哪里。如何判断点相对于平面的位置。<br>将点的坐标带入平面方程，可判断点相对平面的位置。带入参数方程，可以求出交点。<strong>带入方程实际上是运动轨迹和平面法向量做点积。</strong> 如果t的系数为0，说明运动轨迹平行于平面。等式成立说明轨迹在平面上。   </p>
 <h2 id="3-3-General-Parametric-Equations-the-Cycloid-参数方程组-摆线"><a href="#3-3-General-Parametric-Equations-the-Cycloid-参数方程组-摆线" class="headerlink" title="3.3 General Parametric Equations: the Cycloid 参数方程组:摆线"></a>3.3 General Parametric Equations: the Cycloid 参数方程组:摆线</h2><p>除直线外，更普遍的是点的任意运动，如何用参数方程表示，以摆线为例子。<br>摆线：半径为a的轮子，沿着x轴方向滚动，轮子边缘上的一点产生的轨迹。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid_f.gif" alt="Cycloid"></p>
 <p>参数有很多种选择，这里使用角度代替时间参数t，这样可以使结果更加简单。</p>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid_h.png" alt="Cycloid"></p>
-<script type="math/tex; mode=display">\overrightarrow{OP}=\overrightarrow{OT}+\overrightarrow{TC}+\overrightarrow{CP}</script><script type="math/tex; mode=display">\overrightarrow{OT}=\left \langle r\theta,0 \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{TC}=\left \langle 0,r \right \rangle</script><script type="math/tex; mode=display">\overrightarrow{CP}=\left \langle -r\sin{\theta},-r\cos{\theta} \right \rangle</script><p>得到P的参数方程为：</p>
-<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle</script><h2 id="3-4-Point-Cusp-on-Cycloid-摆线的顶点"><a href="#3-4-Point-Cusp-on-Cycloid-摆线的顶点" class="headerlink" title="3.4 Point (Cusp) on Cycloid 摆线的顶点"></a>3.4 Point (Cusp) on Cycloid 摆线的顶点</h2><p>仔细思考，摆线在接近底面的时候到底是什么样子？<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid-%E9%A1%B6%E7%82%B9.png" alt="摆线的顶点"></p>
-<p>想要知道原点处到底发生了什么，就要自己的研究参数方程了，首先要做的就是近似。大家都知道的是，当角度足够小的时候，</p>
-<script type="math/tex; mode=display">\sin{\theta}\sim 0</script><script type="math/tex; mode=display">\cos{\theta}\sim 1</script><p>但是将这个近似代入原参数方程中，并不能提供好的结果，我们需要更加准确的近似：<strong>泰勒展开</strong>。   </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid_h.png" alt="Cycloid"><br>$$\overrightarrow{OP}=\overrightarrow{OT}+\overrightarrow{TC}+\overrightarrow{CP}$$<br>$$\overrightarrow{OT}=\left \langle r\theta,0 \right \rangle$$<br>$$\overrightarrow{TC}=\left \langle 0,r \right \rangle$$<br>$$\overrightarrow{CP}=\left \langle -r\sin{\theta},-r\cos{\theta} \right \rangle$$<br>得到P的参数方程为：<br>$$\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle$$  </p>
+<h2 id="3-4-Point-Cusp-on-Cycloid-摆线的顶点"><a href="#3-4-Point-Cusp-on-Cycloid-摆线的顶点" class="headerlink" title="3.4 Point (Cusp) on Cycloid 摆线的顶点"></a>3.4 Point (Cusp) on Cycloid 摆线的顶点</h2><p>仔细思考，摆线在接近底面的时候到底是什么样子？<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/Cycloid-%E9%A1%B6%E7%82%B9.png" alt="摆线的顶点"></p>
+<p>想要知道原点处到底发生了什么，就要自己的研究参数方程了，首先要做的就是近似。大家都知道的是，当角度足够小的时候，<br>$$\sin{\theta}\sim 0$$<br>$$\cos{\theta}\sim 1$$<br>但是将这个近似代入原参数方程中，并不能提供好的结果，我们需要更加准确的近似：<strong>泰勒展开</strong>。   </p>
 <blockquote>
-<p>定理：<br>设 n 是一个正整数。如果定义在一个包含 a 的区间上的函数 f 在 a 点处 n+1 次可导，那么对于这个区间上的任意 x，都有：</p>
-<script type="math/tex; mode=display">f(x)=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+...+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)</script><p>其中的多项式称为函数在$a$处的泰勒展开式，剩余的 <script type="math/tex">R_n(x)</script> 是泰勒公式的余项，是 $(x−a)^n$ 的高阶无穷小。</p>
+<p>定理：<br>设 n 是一个正整数。如果定义在一个包含 a 的区间上的函数 f 在 a 点处 n+1 次可导，那么对于这个区间上的任意 x，都有：<br>$$f(x)=f(a)+\frac{f’(a)}{1!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+…+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)$$<br>其中的多项式称为函数在$a$处的泰勒展开式，剩余的 <code>$R_n(x)$</code> 是泰勒公式的余项，是 $(x−a)^n$ 的高阶无穷小。</p>
 </blockquote>
-<p>得到三角函数的三阶泰勒展开：</p>
-<script type="math/tex; mode=display">\sin(\theta)\approx\theta-\frac{1}{6}\theta^3</script><script type="math/tex; mode=display">\cos(\theta)\approx 1-\frac{1}{2}\theta^2</script><p>当半径为1，这时候的参数方程变成：   </p>
-<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle \frac{1}{6}\theta^3,\frac{1}{2}\theta^2 \right \rangle</script><p>在原点处的斜率，当角度足够小时：</p>
-<script type="math/tex; mode=display">\frac{y}{x}=\frac{3}{\theta}\rightarrow \infty</script><p>说明摆线在原点处有一个垂直的切线，选项是d。</p>
-<h2 id="3-5-Velocity-and-Acceleration-速度和加速度"><a href="#3-5-Velocity-and-Acceleration-速度和加速度" class="headerlink" title="3.5  Velocity and Acceleration 速度和加速度"></a>3.5  Velocity and Acceleration 速度和加速度</h2><p>不用泰勒展开，换一个思路来研究点的运动，还是摆线，看看摆线的速度和加速度</p>
-<script type="math/tex; mode=display">\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle</script><p><strong>位置向量</strong> 可以表示任意时刻的点的坐标，角度和时间成正比，半径为1，以单位速度运动的摆线：</p>
-<script type="math/tex; mode=display">\overrightarrow{r}=\left \langle t-\sin{t},1-\cos{t} \right \rangle</script><p><strong>速度向量（Velocity vector）：</strong>   </p>
-<script type="math/tex; mode=display">\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=
-\left \langle \frac{\mathrm{d} x}{\mathrm{d} t},\frac{\mathrm{d} y}{\mathrm{d} t} \right \rangle=
-\left \langle 1-\cos{t},\sin{t}\right \rangle</script><p>在t=0时刻时，速度为0。<br><strong>速率（speed）：</strong></p>
-<script type="math/tex; mode=display">\left | \overrightarrow{v} \right |=\sqrt{v_x^2+v_y^2}=
-\sqrt{2-2\cos{t}}</script><p>当$t=\pi$时，瞬时速率最大，这是点的运动速度是轮子速度的两倍。<br><strong>加速度（Acceleration）：</strong></p>
-<script type="math/tex; mode=display">\overrightarrow{a}=\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=
-\left \langle \sin{t},\cos{t}\right \rangle</script><p>在 t=0 时刻时，</p>
-<script type="math/tex; mode=display">\overrightarrow{a}=
-\left \langle 0,1\right \rangle</script><p>说明摆线在原点处只有垂直于x轴的向上加速度。</p>
-<h2 id="3-6-Velocity-and-Arc-Length-速度和弧长"><a href="#3-6-Velocity-and-Arc-Length-速度和弧长" class="headerlink" title="3.6 Velocity and Arc Length 速度和弧长"></a>3.6 Velocity and Arc Length 速度和弧长</h2><p><strong>单位切向量（unit tangent vector）：</strong> 用来表示轨迹运动的方向。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F.png" alt="单位切向量"></p>
-<script type="math/tex; mode=display">\widehat{T}=\frac{\overrightarrow{v}}{\left | v \right |}</script><p><strong>弧长（arc length）：</strong> 点运动沿着轨迹的长度。</p>
-<script type="math/tex; mode=display">\left | \frac{\mathrm{d} s}{\mathrm{d} t} \right |=
-\mathrm{speed/速率}=
-\left | \overrightarrow{v}\right |</script><p>求摆线的弧长，需要对速率进行积分</p>
-<script type="math/tex; mode=display">\int_{0}^{2\pi}\sqrt{2-2\sin{t}} \mathrm{d}t</script><p>发现，这个积分不太容易算。怎么用向量的思想解决问题呢？重新来看速度向量，我们把它分解下</p>
-<script type="math/tex; mode=display">\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=
-\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s}
-\frac{\mathrm{d} s}{\mathrm{d} t}=
-\widehat{T}\frac{\mathrm{d} s}{\mathrm{d} t}</script><p>发现第一部分近似于切向量，第二部分是速率，为什么可以把第一部分近似为切向量，如图所示：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F%E8%BF%91%E4%BC%BC.png" alt="近似为单位切向量"><br>由于移动的距离s是位置向量的模，在单位时间段足够小时，就可以近似的认为两者的比例为单位切向量：</p>
-<script type="math/tex; mode=display">\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s} \approx
-\widehat{T}</script><p>现在新的速度方程也是又有大小，又有方向，而且聪明的使用了切向量的概念。</p>
+<p>得到三角函数的三阶泰勒展开：<br>$$\sin(\theta)\approx\theta-\frac{1}{6}\theta^3$$<br>$$\cos(\theta)\approx 1-\frac{1}{2}\theta^2$$</p>
+<p>当半径为1，这时候的参数方程变成：<br>$$\overrightarrow{OP}=\left \langle \frac{1}{6}\theta^3,\frac{1}{2}\theta^2 \right \rangle$$<br>在原点处的斜率，当角度足够小时：<br>$$\frac{y}{x}=\frac{3}{\theta}\rightarrow \infty$$<br>说明摆线在原点处有一个垂直的切线，选项是d。</p>
+<h2 id="3-5-Velocity-and-Acceleration-速度和加速度"><a href="#3-5-Velocity-and-Acceleration-速度和加速度" class="headerlink" title="3.5  Velocity and Acceleration 速度和加速度"></a>3.5  Velocity and Acceleration 速度和加速度</h2><p>不用泰勒展开，换一个思路来研究点的运动，还是摆线，看看摆线的速度和加速度<br>$$\overrightarrow{OP}=\left \langle r\theta-r\sin{\theta},r-r\cos{\theta} \right \rangle$$<br><strong>位置向量</strong> 可以表示任意时刻的点的坐标，角度和时间成正比，半径为1，以单位速度运动的摆线：<br>$$\overrightarrow{r}=\left \langle t-\sin{t},1-\cos{t} \right \rangle$$<br><strong>速度向量（Velocity vector）：</strong><br>$$\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=<br>\left \langle \frac{\mathrm{d} x}{\mathrm{d} t},\frac{\mathrm{d} y}{\mathrm{d} t} \right \rangle=<br>\left \langle 1-\cos{t},\sin{t}\right \rangle $$<br>在t=0时刻时，速度为0。<br><strong>速率（speed）：</strong><br>$$\left | \overrightarrow{v} \right |=\sqrt{v_x^2+v_y^2}=<br>\sqrt{2-2\cos{t}}$$<br>当$t=\pi$时，瞬时速率最大，这是点的运动速度是轮子速度的两倍。<br><strong>加速度（Acceleration）：</strong><br>$$\overrightarrow{a}=\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=<br>\left \langle \sin{t},\cos{t}\right \rangle $$<br>在 t=0 时刻时，<br>$$\overrightarrow{a}=<br>\left \langle 0,1\right \rangle $$<br>说明摆线在原点处只有垂直于x轴的向上加速度。</p>
+<h2 id="3-6-Velocity-and-Arc-Length-速度和弧长"><a href="#3-6-Velocity-and-Arc-Length-速度和弧长" class="headerlink" title="3.6 Velocity and Arc Length 速度和弧长"></a>3.6 Velocity and Arc Length 速度和弧长</h2><p><strong>单位切向量（unit tangent vector）：</strong> 用来表示轨迹运动的方向。<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F.png" alt="单位切向量"><br>$$\widehat{T}=\frac{\overrightarrow{v}}{\left | v \right |}$$</p>
+<p><strong>弧长（arc length）：</strong> 点运动沿着轨迹的长度。<br>$$\left | \frac{\mathrm{d} s}{\mathrm{d} t} \right |=<br>\mathrm{speed/速率}=<br>\left | \overrightarrow{v}\right |$$</p>
+<p>求摆线的弧长，需要对速率进行积分<br>$$\int_{0}^{2\pi}\sqrt{2-2\sin{t}} \mathrm{d}t$$<br>发现，这个积分不太容易算。怎么用向量的思想解决问题呢？重新来看速度向量，我们把它分解下</p>
+<p>$$\overrightarrow{v}=\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}=<br>\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s}<br>\frac{\mathrm{d} s}{\mathrm{d} t}=<br>\widehat{T}\frac{\mathrm{d} s}{\mathrm{d} t}<br> $$<br>发现第一部分近似于切向量，第二部分是速率，为什么可以把第一部分近似为切向量，如图所示：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%8D%95%E4%BD%8D%E5%88%87%E5%90%91%E9%87%8F%E8%BF%91%E4%BC%BC.png" alt="近似为单位切向量"><br>由于移动的距离s是位置向量的模，在单位时间段足够小时，就可以近似的认为两者的比例为单位切向量：</p>
+<p>$$\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} s} \approx<br>\widehat{T}$$</p>
+<p>现在新的速度方程也是又有大小，又有方向，而且聪明的使用了切向量的概念。</p>
 <h2 id="3-7-例子：Kepler’s-Second-Law-开普勒第二定律"><a href="#3-7-例子：Kepler’s-Second-Law-开普勒第二定律" class="headerlink" title="3.7 例子：Kepler’s Second Law 开普勒第二定律"></a>3.7 例子：Kepler’s Second Law 开普勒第二定律</h2><p>这个例子说明为什么用向量的方法去分析运动是很好的方法。    </p>
 <blockquote>
 <p>普勒第二定律：<br>1.每个行星的运动都保持在一个平面内。<br>2.在相等时间内，太阳和运动着的行星的连线所扫过的面积都是相等的。   </p>
 </blockquote>
-<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%BC%80%E6%99%AE%E5%8B%92%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B2.png" alt="开普勒第二定律"></p>
-<script type="math/tex; mode=display">面积=
-\frac{1}{2}\left | \overrightarrow{r}\times\Delta\overrightarrow{r}\right |=
-\frac{1}{2}\left | \overrightarrow{r}\times\overrightarrow{v}\right |\Delta t</script><p>根据开普勒第二定律，叉乘的模是常数，向量叉乘的方向是常数。也就是：</p>
-<script type="math/tex; mode=display">\overrightarrow{r}\times\overrightarrow{v}=constant</script><script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} t}(\overrightarrow{r}\times\overrightarrow{v})=0</script><script type="math/tex; mode=display">\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}\times \overrightarrow{v}+\overrightarrow{r}\times\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=0</script><script type="math/tex; mode=display">\overrightarrow{v}\times \overrightarrow{v}+\overrightarrow{r}\times\overrightarrow{a}=0</script><script type="math/tex; mode=display">\overrightarrow{r}\times\overrightarrow{a}=0</script><script type="math/tex; mode=display">\overrightarrow{r}\parallel\overrightarrow{a}</script><p>加速度是和位矢平行的。由于加速度由万有引力引起的，这个力是永远指向施力物体的，也就是太阳。现在发现，在向量的观念里，开普勒第二定律和牛顿万有引力定律有着异曲同工的妙处。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/MIT%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%80%EF%BC%9A%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5-%E7%AC%94%E8%AE%B0/%E5%BC%80%E6%99%AE%E5%8B%92%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B2.png" alt="开普勒第二定律"><br>$$面积=<br>\frac{1}{2}\left | \overrightarrow{r}\times\Delta\overrightarrow{r}\right |=<br>\frac{1}{2}\left | \overrightarrow{r}\times\overrightarrow{v}\right |\Delta t$$<br>根据开普勒第二定律，叉乘的模是常数，向量叉乘的方向是常数。也就是：<br>$$\overrightarrow{r}\times\overrightarrow{v}=constant$$<br>$$\frac{\mathrm{d} }{\mathrm{d} t}(\overrightarrow{r}\times\overrightarrow{v})=0$$<br>$$\frac{\mathrm{d} \overrightarrow{r}}{\mathrm{d} t}\times \overrightarrow{v}+\overrightarrow{r}\times\frac{\mathrm{d} \overrightarrow{v}}{\mathrm{d} t}=0$$<br>$$\overrightarrow{v}\times \overrightarrow{v}+\overrightarrow{r}\times\overrightarrow{a}=0$$<br>$$\overrightarrow{r}\times\overrightarrow{a}=0$$<br>$$\overrightarrow{r}\parallel\overrightarrow{a}$$<br>加速度是和位矢平行的。由于加速度由万有引力引起的，这个力是永远指向施力物体的，也就是太阳。现在发现，在向量的观念里，开普勒第二定律和牛顿万有引力定律有着异曲同工的妙处。</p>
 
       
     </div>
