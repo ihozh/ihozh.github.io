@@ -393,16 +393,65 @@
         <p>复数的本质是找到一个域，在这个域中可以解决类似 $x^2+1=0$ 这种在实数域R下不能解决的问题。</p>
 <p>Ahlfors在《COMPLEX ANALYSIS》一书中给出一种枚举 $\alpha+\beta i$ 构造复数域的方法并且给予证明。当然，还有其他的构造方法。</p>
 <p>复数可以用类似平面的方式表示，在复平面中，横轴表示实数，纵轴表示虚数。但是复数域和平面空间并不是同构的。因为他们的维度不同。此外，在平面空间，并没有所谓的向量乘法，如何在平面空间使用乘法运算？</p>
-<p>引入矩阵( $\alpha$, $\beta$ 都为实数)：<br>$$\begin{pmatrix}<br>\alpha &amp; \beta\<br>-\beta &amp; \alpha<br>\end{pmatrix}$$</p>
-<a id="more"></a>
+<p>引入矩阵( $\alpha$, $\beta$ 都为实数)：   </p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+\alpha & \beta\\
+-\beta & \alpha
+\end{pmatrix}</script><a id="more"></a>
 <p>用矩阵表示复数。</p>
-<p>定义：<br>$$f(\alpha+\beta i)=<br>\begin{bmatrix}<br>\alpha &amp; \beta\<br>-\beta &amp; \alpha<br>\end{bmatrix}$$</p>
-<p>加法：<br>$$f（(\alpha_1+\beta_1i)+(\alpha_2+\beta_2i))<br>=f((\alpha_1+\alpha_2)+(\beta_1+\beta_2)i)\<br>=\begin{bmatrix}<br>\alpha_1+\alpha_2 &amp; \beta_1+\beta_2\<br>-\beta_1-\beta_2 &amp; \alpha_1+\alpha_2<br>\end{bmatrix}<br>=\begin{bmatrix}<br>\alpha_1 &amp; \beta_1\<br>-\beta_1 &amp; \alpha_1<br>\end{bmatrix}<br>+\begin{bmatrix}<br>\alpha_2 &amp; \beta_2\<br>-\beta_2 &amp; \alpha_2<br>\end{bmatrix}$$</p>
-<p>乘法：<br>$$f（(\alpha_1+\beta_1i)(\alpha_2+\beta_2i))<br>=f((\alpha_1\alpha_2-\beta_1\beta_2)+(\alpha_2\beta_1+\alpha_1\beta_2)i)\<br>=\begin{bmatrix}<br>\alpha_1\alpha_2-\beta_1\beta_2 &amp; \alpha_2\beta_1+\alpha_1\beta_2\<br>-\alpha_2\beta_1-\alpha_1\beta_2 &amp; \alpha_1\alpha_2-\beta_1\beta_2<br>\end{bmatrix}<br>=\begin{bmatrix}<br>\alpha_1 &amp; b_1\<br>-\beta_1 &amp; \alpha_1<br>\end{bmatrix}<br>\begin{bmatrix}<br>\alpha_2 &amp; \beta_2\<br>-\beta_2 &amp; \alpha_2<br>\end{bmatrix}$$</p>
-<p>将矩阵分解：<br>$$\begin{bmatrix}<br>\alpha &amp; \beta\<br>-\beta &amp; \alpha<br>\end{bmatrix}<br>=\alpha\begin{bmatrix}<br>1 &amp; 0\<br>0 &amp; 1<br>\end{bmatrix}<br>+\beta\begin{bmatrix}<br>0 &amp; -1\<br>-1 &amp; 0<br>\end{bmatrix}<br>=\alpha I+\beta J$$</p>
-<p>其中<br>$$J^2=-1$$</p>
-<p>另外，复数的共轭实际上是矩阵的转置。<br>$$f(\alpha-\beta i)=<br>\begin{bmatrix}<br>\alpha &amp; -\beta\<br>\beta &amp; \alpha<br>\end{bmatrix}$$</p>
-<p>复数的模为矩阵的行列式。<br>使用极坐标的转换公式可以得到复数在极坐标下的表示。    </p>
+<p>定义：</p>
+<script type="math/tex; mode=display">f(\alpha+\beta i)=
+\begin{bmatrix}
+\alpha & \beta\\
+-\beta & \alpha
+\end{bmatrix}</script><p>加法：</p>
+<script type="math/tex; mode=display">f（(\alpha_1+\beta_1i)+(\alpha_2+\beta_2i))
+=f((\alpha_1+\alpha_2)+(\beta_1+\beta_2)i)\\
+=\begin{bmatrix}
+\alpha_1+\alpha_2 & \beta_1+\beta_2\\
+-\beta_1-\beta_2 & \alpha_1+\alpha_2
+\end{bmatrix}
+=\begin{bmatrix}
+\alpha_1 & \beta_1\\
+-\beta_1 & \alpha_1
+\end{bmatrix}
++\begin{bmatrix}
+\alpha_2 & \beta_2\\
+-\beta_2 & \alpha_2
+\end{bmatrix}</script><p>乘法：   </p>
+<script type="math/tex; mode=display">f（(\alpha_1+\beta_1i)(\alpha_2+\beta_2i))
+=f((\alpha_1\alpha_2-\beta_1\beta_2)+(\alpha_2\beta_1+\alpha_1\beta_2)i)\\
+=\begin{bmatrix}
+\alpha_1\alpha_2-\beta_1\beta_2 & \alpha_2\beta_1+\alpha_1\beta_2\\
+-\alpha_2\beta_1-\alpha_1\beta_2 & \alpha_1\alpha_2-\beta_1\beta_2
+\end{bmatrix}
+=\begin{bmatrix}
+\alpha_1 & b_1\\
+-\beta_1 & \alpha_1
+\end{bmatrix}
+\begin{bmatrix}
+\alpha_2 & \beta_2\\
+-\beta_2 & \alpha_2
+\end{bmatrix}</script><p>将矩阵分解：</p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+\alpha & \beta\\
+-\beta & \alpha
+\end{bmatrix}
+=\alpha\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
++\beta\begin{bmatrix}
+0 & -1\\
+-1 & 0
+\end{bmatrix}
+=\alpha I+\beta J</script><p>其中</p>
+<script type="math/tex; mode=display">J^2=-1</script><p>另外，复数的共轭实际上是矩阵的转置。</p>
+<script type="math/tex; mode=display">f(\alpha-\beta i)=
+\begin{bmatrix}
+\alpha & -\beta\\
+\beta & \alpha
+\end{bmatrix}</script><p>复数的模为矩阵的行列式。<br>使用极坐标的转换公式可以得到复数在极坐标下的表示。    </p>
 <p>使用矩阵表示的好处，可以把复数的乘法和旋转联系起来。复数的乘法实际上就是在复数域上的旋转，2*2矩阵表示的就是平面上的旋转操作。</p>
 
       
