@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="概率论,贝叶斯,Beta 分布,共轭先验," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一盒酥" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="对于贝叶斯主义者，从贝叶斯的角度去看伯努利过程，会得到一些重要而且有意思的结果。">
+<meta name="keywords" content="概率论,贝叶斯,Beta 分布,共轭先验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beta 分布">
+<meta property="og:url" content="http://ihozh.com/2017/09/20/Beta-分布/index.html">
+<meta property="og:site_name" content="一盒酥">
+<meta property="og:description" content="对于贝叶斯主义者，从贝叶斯的角度去看伯努利过程，会得到一些重要而且有意思的结果。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20Bernoulli%20Toil.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta_distribution_pdf.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/beta%20distribution%20with%20same%20alpha%20or%20beta.gif">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20same%20parameter.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20beta%20=%203.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20coin%20toil.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20seller.png">
+<meta property="og:updated_time" content="2017-09-23T07:39:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Beta 分布">
+<meta name="twitter:description" content="对于贝叶斯主义者，从贝叶斯的角度去看伯努利过程，会得到一些重要而且有意思的结果。">
+<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20Bernoulli%20Toil.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ihozh.com/2017/09/20/Beta-分布/"/>
+
+
+
+
+
+  <title>Beta 分布 | 一盒酥</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5029b9f7bb715f7c960a4fa38d5669c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一盒酥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-搏浪">
+          <a href="/categories/搏浪/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envira"></i> <br />
+            
+            搏浪
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-苦境">
+          <a href="/categories/苦境/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-linode"></i> <br />
+            
+            苦境
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-兰山">
+          <a href="/categories/兰山/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            兰山
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/09/20/Beta-分布/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一盒酥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/mainphoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一盒酥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Beta 分布</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T17:26:50-04:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/苦境/" itemprop="url" rel="index">
+                    <span itemprop="name">苦境</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于贝叶斯主义者，从贝叶斯的角度去看伯努利过程，会得到一些重要而且有意思的结果。</p>
+<a id="more"></a>
+<h1 id="伯努利过程"><a href="#伯努利过程" class="headerlink" title="伯努利过程"></a>伯努利过程</h1><p><a href="http://ihozh.com/2017/08/21/Bernoulli-process-%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B/">伯努利过程</a>是一系列离散的独立同分布随机试验，当我们具体看伯努利过程的一些分布函数的时候，会发现这一类分布有着相似的结构。</p>
+<p><strong>二项分布</strong></p>
+<script type="math/tex; mode=display">P(S=k)=\binom{n}{k}p^k(1-p)^{n-k}</script><p><strong>几何分布</strong></p>
+<script type="math/tex; mode=display">P(T=t)=(1-p)^{t-1}p</script><p><strong>帕斯卡分布</strong></p>
+<script type="math/tex; mode=display">P(Y_k=t)=\binom{t-1}{k-1}p^{k-1}(1-p)^{t-k}p</script><p>找到一个统一的公式去描述这些分布，那就是 <strong>Beta分布</strong> 了：</p>
+<script type="math/tex; mode=display">B(x|\alpha,\beta)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1}</script><p>其中 $B(\alpha,\beta)$ 是标准化函数，他的作用是使总概率为1，$\alpha$ 和 $\beta$ 是形状参数，不同的参数选择不但可以表示常见的二项分布，几何分布等，它更有一个好处，那就是你跟本不用去管某个试验服从什么分布。用 $\alpha,\beta$ 可以调出任意你想使用的分布图像。   </p>
+<h2 id="抛个硬币吧"><a href="#抛个硬币吧" class="headerlink" title="抛个硬币吧"></a>抛个硬币吧</h2><p>写概率论的文章总是一言不合就抛硬币，这就像是达芬奇画鸡蛋，基础的掌握也是思维的形成。抛硬币的试验可以从几何学角度来直观了解beta分布的工作原理。先撇开Beta分布，来看下简单的变体，没有了-1的次方项，也没有了用于归一化的常数。</p>
+<script type="math/tex; mode=display">f(x|\alpha,\beta)=x^{\alpha}(1-x)^{\beta}</script><p>如果抛硬币，抛出7次正面，3次反面，如何判断这个硬币的概率分布。注意我们都是贝叶斯主义者，硬币的概率是个随机变量，不要用频率主义去把概率当作一个定值。思考最简单的伯努利过程，7次正面，3次反面，概率分布是关于x的函数（随机变量），那么这个类似 beta分布的函数就是：</p>
+<script type="math/tex; mode=display">f(x|7,3)=x^{7}(1-x)^{3}</script><p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20Bernoulli%20Toil.png" alt="Beta Distribution Bernoulli Toil"></p>
+<p>这幅图是很直观的表达，当某次试验出现正面7次，背面3次的情况下，函数图像在0.7附近得到最大值。也就是说，现在的概率极有可能是0.7，当然也有可能是其他的情况，比如说0.5，只是概率更小罢了。这就是我们不知道服从某种特定分布的参数分布曲线。</p>
+<p>更笼统的说，$\alpha,\beta$ 决定了分布的形状。</p>
+<h1 id="Beta-分布形状"><a href="#Beta-分布形状" class="headerlink" title="Beta 分布形状"></a>Beta 分布形状</h1><p>当 $\alpha,\beta$ 取不同的值时，Beta分布会随之变化。其中有几种特殊情况。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta_distribution_pdf.png" alt="Beta_distribution_pdf"></p>
+<p>首先是 $\alpha=\beta$ 的情况。分别使用3D和动画来演示。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/beta%20distribution%20with%20same%20alpha%20or%20beta.gif" alt=""></p>
+<p>当 $\alpha=\beta$ 时， beta分布都是对称的，如果<1，分布是u形，这时的pdf也叫做反正弦分布（arcsin distribution）,="" 此时分布的cdf是反正弦函数。如果="">1，分布呈山峰状凸起，特别注意，当 $\alpha=\beta = 1$ 时，分布为[0,1]均匀分布。当 $\alpha=\beta = 2$ 时，pdf为抛物线。</1，分布是u形，这时的pdf也叫做反正弦分布（arcsin></p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20same%20parameter.png" alt="beta pdf a = b "></p>
+<p>当 $\alpha\neq\beta$ 时, Beta pdf 函数呈较大值一方倾斜，$\alpha$ 较大，pdf峰值向1偏移，$\beta$ 越大，pdf峰值向0偏移。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20beta%20=%203.png" alt="beta pdf a != b "></p>
+<h1 id="贝叶斯推断-（Bayesian-inference）"><a href="#贝叶斯推断-（Bayesian-inference）" class="headerlink" title="贝叶斯推断 （Bayesian inference）"></a>贝叶斯推断 （Bayesian inference）</h1><p>Beta分布在概率统计中非常好用。因为在贝叶斯推断下，beta分布有个非常棒的特点。那么先来看看贝叶斯推断。   </p>
+<p>在统计模型中，我们往往关心的是模型的参数，比如说抛出硬币的正面概率是多少，一个射击运动员平均射击环数。在贝叶斯主义看来，这些参数并不是一个明确的数，而是一个概率分布，在某些地方值大一些，就说明参数更有可能分布在这些地方。这个参数，被定义为随机变量 $\Theta$。</p>
+<p>随机变量 $\Theta$ 中某一个值 $\theta$ 可能就是模型的真值，在这个真值下，我们有做了一些观察，即 $X=(X<em>1,X_2,…X_n)$，同理这些观察也都是随机变量，更进一步，他们是在某参数下的条件概率，也即联合分布。 可以表示为 $p</em>{X|\Theta}$ 或者 $f<em>{X|\Theta}$。现在有了参数的分布 $(p</em>{\Theta}|f_{\Theta})$, 也有了观察量，根据条件概率公式，我们就得到了贝叶斯角度的贝叶斯推断：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|x)=\frac{p_{\Theta}(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'}p_{\Theta}(\theta')p_{X|\Theta}(x|\theta')}</script><p>这里只给出了离散模型，各部分都可替换成各自的连续模型。等式右边的部分我们都有了，分母部分是用来归一化的，$p<em>{\Theta}$ 也被称作先验概率，$p</em>{X|\Theta}$ 也是似然函数，等式左边的部分即为在先验存在下，通过一些观察，更新的参数分布概率，也被称作后验概率。</p>
+<p>关于贝叶斯推断更详细的内容可参考<a href="">贝叶斯推断</a>。既然提到贝叶斯，可不是让他白来的，beta 分布的一些特性，让贝叶斯推断发挥出了巨大作用。  </p>
+<h1 id="共轭先验-Conjugate-prior"><a href="#共轭先验-Conjugate-prior" class="headerlink" title="共轭先验 Conjugate prior"></a>共轭先验 Conjugate prior</h1><p>暂时先回到抛硬币的例子中，如果观察到了某次试验结果k，选择使用beta分布，不考虑分母常数，也不进行精确计算：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|k)=cp_{\Theta}(\theta)p_{X|\Theta}(k|\theta)</script><script type="math/tex; mode=display">p_{\Theta|X}(\theta|k)=dp_{\Theta}(\theta)\theta^k(1-\theta)^{n-k}</script><p>根据前面所讲，我们不论假设先验分布是均匀分布，二项分布，几何分布还是其他伯努利过程中的分布情况，后验概率都可以得到一个统一的形式：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|k)=\frac{d}{B(\alpha,\beta)}\theta^{k+\alpha-1}(1-\theta)^{n-k+\beta-1}</script><p>其中 $B(\alpha,\beta)$ 是 beta函数，发现新的beta分布，新的 $\alpha’=\alpha+k$，新的 $\beta’=n-k+\beta$，当 $\alpha=\beta = 1$ 时，形状参数为k+1和n-k+1，如果我们认为 $\alpha$ 是抛出正面的次数，$\beta$ 是抛出反面的次数，这不就是我们抛硬币的例子的beta分布吗？这种特性就是共轭先验。有着这种特性的函数并不多，另一个有共轭先验特性的分布就是正态分布。</p>
+<p>后验分布与先验分布是同种类型的分布。这又什么用呢？</p>
+<p>首先，可以迭代了。先验分布通过新的观察结果可以更新后验分布，新的后验分布又可以做为先验分布进行下一次的更新。</p>
+<p>其次，给贝叶斯推断提供了理论依据，为什么可以用beta分布做为观察模型的先验分布，每次观察试验不会改变分布模型，改变的只是分布形状。</p>
+<p>归根结底，共轭先验让计算变简单了。beta分布的众数，期望和方差分别为：</p>
+<script type="math/tex; mode=display">Mode[X]=\frac{\alpha-1}{\alpha+\beta-2}</script><script type="math/tex; mode=display">E[X]=\frac{\alpha}{\alpha+\beta}</script><script type="math/tex; mode=display">Var[X]=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}</script><p>免去了计算指数，阶乘的复杂运算，只用形状参数就足够了，是不是很方便呢？</p>
+<h2 id="又要抛硬币了"><a href="#又要抛硬币了" class="headerlink" title="又要抛硬币了"></a>又要抛硬币了</h2><p>这次抛硬币是对开始那个例子的完善。我们说观察一枚硬币，观察前有人告诉我以前有人抛过这枚硬币，出现了7次正面，3次反面。我们估计这个硬币是服从beta分布的，即 $X\sim Beta(8,4)$，开始观察5次抛掷结果以后，发现出现了2次正面，三次反面，那我们可以直接计算了：</p>
+<script type="math/tex; mode=display">Mode[X]=\frac{8+2-1}{(8+2)+(4+3)-2}=0.6</script><script type="math/tex; mode=display">E[X]=\frac{8+2}{(8+2)+(4+3)}\approx 0.59</script><p>在新的观察下，概率分布的峰值从0.7移动向0.6。从整个计算过程中，有没有发现，我们根本不用去考虑以前的结果，只要在先验的基础上变更形状参数就行了。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20coin%20toil.png" alt="Beta distribution of coin toil"></p>
+<h1 id="一个更加实际的例子"><a href="#一个更加实际的例子" class="headerlink" title="一个更加实际的例子"></a>一个更加实际的例子</h1><p>逛淘宝的时候，想买一双鞋子，同一双鞋子发现了两个不同的商家，商家A有10条评论，9个好评1个差评。商家B有500条评论，400条好评100个差评。那么应该去买哪个商家的鞋子。  </p>
+<p>鞋子的质量是商家的参数，商家一定存在反应鞋子质量的真值，但是我们不知道。但是，根据大数定理，大量的样本会让结果更趋近于真值。商家A可以使用 $\alpha=10,\beta=2$的Beta分布，商家B可以使用 $\alpha=401,\beta=101$的Beta分布，商家的质量在[0,1]内表示。得到结果：<br><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20seller.png" alt="beta distribution o seller"></p>
+<p>取一个95%的置信区间，也就是说，真值有95%的概率在这个区间内。商家A[0.58,0.98]，商家B[0.76,0.84]。商家A的均值更高，但是方差更大。这里就有两个不同的策略，如果考虑的是产品质量的稳定性，就选择B商家，因为商家B的质量标准底线比商家A更高。另一方面，如果你愿意看脸，商家A的商品有很大机率高达0.98的质量标准。</p>
+<p>这就是Beta分布在生活中直观的表现。Beta分布的应用不止于此，当其进化为更加抽象的狄利克雷分布时，就是无监督贝叶斯模型的基础了，而后者，就是现在学术领域非常重要的一个分支了。以后我会慢慢把他补上的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    一盒酥
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://ihozh.com/2017/09/20/Beta-分布/" title="Beta 分布">http://ihozh.com/2017/09/20/Beta-分布/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/概率论/" rel="tag"># 概率论</a>
+          
+            <a href="/tags/贝叶斯/" rel="tag"># 贝叶斯</a>
+          
+            <a href="/tags/Beta-分布/" rel="tag"># Beta 分布</a>
+          
+            <a href="/tags/共轭先验/" rel="tag"># 共轭先验</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/18/单峰映射和混沌/" rel="next" title="单峰映射和混沌">
+                <i class="fa fa-chevron-left"></i> 单峰映射和混沌
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/img/mainphoto.png"
+              alt="一盒酥" />
+          
+            <p class="site-author-name" itemprop="name">一盒酥</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#伯努利过程"><span class="nav-number">1.</span> <span class="nav-text">伯努利过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抛个硬币吧"><span class="nav-number">1.1.</span> <span class="nav-text">抛个硬币吧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Beta-分布形状"><span class="nav-number">2.</span> <span class="nav-text">Beta 分布形状</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯推断-（Bayesian-inference）"><span class="nav-number">3.</span> <span class="nav-text">贝叶斯推断 （Bayesian inference）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共轭先验-Conjugate-prior"><span class="nav-number">4.</span> <span class="nav-text">共轭先验 Conjugate prior</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#又要抛硬币了"><span class="nav-number">4.1.</span> <span class="nav-text">又要抛硬币了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一个更加实际的例子"><span class="nav-number">5.</span> <span class="nav-text">一个更加实际的例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一盒酥</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143459"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
