@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20beta%20=%203.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20coin%20toil.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20distribution%20of%20seller.png">
-<meta property="og:updated_time" content="2017-09-23T07:58:16.000Z">
+<meta property="og:updated_time" content="2017-09-23T08:00:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Beta 分布">
 <meta name="twitter:description" content="对于贝叶斯主义者，从贝叶斯的角度去看伯努利过程，会得到一些重要而且有意思的结果。">
@@ -421,7 +421,7 @@
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/Beta%20%E5%88%86%E5%B8%83/Beta%20Distribution%20with%20beta%20=%203.png" alt="beta pdf a != b "></p>
 <h1 id="贝叶斯推断-（Bayesian-inference）"><a href="#贝叶斯推断-（Bayesian-inference）" class="headerlink" title="贝叶斯推断 （Bayesian inference）"></a>贝叶斯推断 （Bayesian inference）</h1><p>Beta分布在概率统计中非常好用。因为在贝叶斯推断下，beta分布有个非常棒的特点。那么先来看看贝叶斯推断。   </p>
 <p>在统计模型中，我们往往关心的是模型的参数，比如说抛出硬币的正面概率是多少，一个射击运动员平均射击环数。在贝叶斯主义看来，这些参数并不是一个明确的数，而是一个概率分布，在某些地方值大一些，就说明参数更有可能分布在这些地方。这个参数，被定义为随机变量 $\Theta$。</p>
-<p>随机变量 $\Theta$ 中某一个值 $\theta$ 可能就是模型的真值，在这个真值下，我们有做了一些观察，即 $X=(X<em>1,X_2,…X_n)$，同理这些观察也都是随机变量，更进一步，他们是在某参数下的条件概率，也即联合分布。 可以表示为 $p</em>{X|\Theta}$ 或者 $f<em>{X|\Theta}$。现在有了参数的分布 $(p</em>{\Theta}|f_{\Theta})$, 也有了观察量，根据条件概率公式，我们就得到了贝叶斯角度的贝叶斯推断：</p>
+<p>随机变量 $\Theta$ 中某一个值 $\theta$ 可能就是模型的真值，在这个真值下，我们有做了一些观察，即 $X=(X<em> 1,X</em> 2,…X<em> n)$ ，同理这些观察也都是随机变量，更进一步，他们是在某参数下的条件概率，也即联合分布。 可以表示为 $p</em>{X|\Theta}$ 或者 $f<em>{X|\Theta}$。现在有了参数的分布 $(p</em>{\Theta}|f_{\Theta})$, 也有了观察量，根据条件概率公式，我们就得到了贝叶斯角度的贝叶斯推断：</p>
 <script type="math/tex; mode=display">p_{\Theta|X}(\theta|x)=\frac{p_{\Theta}(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'}p_{\Theta}(\theta')p_{X|\Theta}(x|\theta')}</script><p>这里只给出了离散模型，各部分都可替换成各自的连续模型。等式右边的部分我们都有了，分母部分是用来归一化的，$p<em>{\Theta}$ 也被称作先验概率，$p</em>{X|\Theta}$ 也是似然函数，等式左边的部分即为在先验存在下，通过一些观察，更新的参数分布概率，也被称作后验概率。</p>
 <p>关于贝叶斯推断更详细的内容可参考<a href="">贝叶斯推断</a>。既然提到贝叶斯，可不是让他白来的，beta 分布的一些特性，让贝叶斯推断发挥出了巨大作用。  </p>
 <h1 id="共轭先验-Conjugate-prior"><a href="#共轭先验-Conjugate-prior" class="headerlink" title="共轭先验 Conjugate prior"></a>共轭先验 Conjugate prior</h1><p>暂时先回到抛硬币的例子中，如果观察到了某次试验结果k，选择使用beta分布，不考虑分母常数，也不进行精确计算：</p>
