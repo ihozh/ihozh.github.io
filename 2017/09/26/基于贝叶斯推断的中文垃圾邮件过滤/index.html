@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="概率论,贝叶斯,垃圾邮件过滤," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一盒酥" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，">
+<meta name="keywords" content="概率论,贝叶斯,垃圾邮件过滤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于贝叶斯推断的中文垃圾邮件过滤">
+<meta property="og:url" content="http://ihozh.com/2017/09/26/基于贝叶斯推断的中文垃圾邮件过滤/index.html">
+<meta property="og:site_name" content="一盒酥">
+<meta property="og:description" content="这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/prior%20distribution%20of%20spam%20email.png">
+<meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/posterior%20distribution%20of%20spam%20email.png">
+<meta property="og:updated_time" content="2017-09-27T06:26:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于贝叶斯推断的中文垃圾邮件过滤">
+<meta name="twitter:description" content="这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，">
+<meta name="twitter:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/prior%20distribution%20of%20spam%20email.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ihozh.com/2017/09/26/基于贝叶斯推断的中文垃圾邮件过滤/"/>
+
+
+
+
+
+  <title>基于贝叶斯推断的中文垃圾邮件过滤 | 一盒酥</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5029b9f7bb715f7c960a4fa38d5669c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一盒酥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-搏浪">
+          <a href="/categories/搏浪/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-envira"></i> <br />
+            
+            搏浪
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-苦境">
+          <a href="/categories/苦境/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-linode"></i> <br />
+            
+            苦境
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-兰山">
+          <a href="/categories/兰山/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            兰山
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ihozh.com/2017/09/26/基于贝叶斯推断的中文垃圾邮件过滤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一盒酥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/mainphoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一盒酥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">基于贝叶斯推断的中文垃圾邮件过滤</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T17:13:38-04:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/苦境/" itemprop="url" rel="index">
+                    <span itemprop="name">苦境</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，结果还是不错的。</p>
+<a id="more"></a>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>垃圾邮件过滤就是贝叶斯推断的一个运用，先来看公式：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|x)=\frac{p_{\Theta}(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'}p_{\Theta}(\theta')p_{X|\Theta}(x|\theta')}</script><p>稍微有些了解会大概知道 $p<em>{\Theta}(\theta)$ 是先验概率，在观测前，我们自己对模型参数的一些估计。$p</em>{X|\Theta}(x|\theta)$ 是似然函数，这是在当前模型参数下（未知），我们的观测结果，分母部分作用就是让概率的和为1，是标准化函数。</p>
+<h1 id="垃圾邮件过滤"><a href="#垃圾邮件过滤" class="headerlink" title="垃圾邮件过滤"></a>垃圾邮件过滤</h1><p>如何将贝叶斯推断运用在垃圾邮件过滤的问题上，看看下面这个例子。</p>
+<p>任何邮件都有可能是“垃圾”或者“正常”，使用随机变量 $\Theta$ 表示两种可能性，分别用 <script type="math/tex">\theta_1</script> 和 <script type="math/tex">\theta_2</script> 表示。 <script type="math/tex">p_{\Theta}(\theta_1)</script> ，<script type="math/tex">p_{\Theta}(\theta_2)</script> 分别是垃圾邮件或者正常邮件的概率。这也是先验概率，在类似机器学习的方式下，可以通过对训练集的学习，得到这两个参数。当然也可以认为“垃圾”或者“正常”的概率各占50%，这样只会对最后的结果稍微有点影响。这篇文章会对训练集分析得到先验概率。根据分析，垃圾邮件一般占到所有邮件的70%左右。</p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/prior%20distribution%20of%20spam%20email.png" alt="prior distribution of spam email"></p>
+<p>每一封邮件所有词语，记为：</p>
+<script type="math/tex; mode=display">{w_1,w_2,\cdots w_n}</script><p>当收到一封新邮件的时候，就会得到一组观察（其实就是用数学表达）：</p>
+<script type="math/tex; mode=display">{X_1,X_2,\cdots X_n}</script><p>分别表示邮件中有单词 <script type="math/tex">w_i</script>，我们可以认为 <script type="math/tex">{X_1,X_2,\cdots X_n}</script> 是独立同分布的。条件概率 <script type="math/tex">p_{X|\Theta}(x_i|1)</script> 就是垃圾邮件中出现 <script type="math/tex">w_i</script> 的概率，<script type="math/tex">p_{X|\Theta}(x_i|2)</script> 表示普通邮件中出现 <script type="math/tex">w_i</script> 的概率。  </p>
+<p>现在收到一封邮件，邮件中有“发票”一词，根据统计结果，在普通邮件中出现“发票”的概率为 万分之0.04，而在垃圾邮件中，“发票”的出现概率为0.5%。而在我所有邮件中，有70%是垃圾邮件。通过这个词语，我可以判断，这封邮件为垃圾邮件的概率为：</p>
+<script type="math/tex; mode=display">p_{\Theta_1|X}(\theta_1|x)=\frac{70\%* 0.5\%}{70\%* 0.5\%+30\%* 万分之0.04}\approx 1</script><p>同理，不是垃圾邮件的概率：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta_2|x)=\frac{30\%* 万分之0.04}{70\%* 0.5\%+30\%* 万分之0.04}\approx 0</script><p>在先验概率的基础上，由于得到一些观察，概率分布变化了：  </p>
+<p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/posterior%20distribution%20of%20spam%20email.png" alt="posterior distribution of spam email"></p>
+<p>通过“发票”这一个词，几乎100%确定这是一封垃圾邮件了。但是问题也出现了，一个单词判断误差太大了，所以需要用邮件中的多个关键词进行判断。</p>
+<h1 id="联合概率分布"><a href="#联合概率分布" class="headerlink" title="联合概率分布"></a>联合概率分布</h1><p>已经观察到邮件中有“发票”，“信誉”，“全面” 三个词，去判断邮件是否为垃圾邮件。三个词分别在垃圾邮件和正常邮件中出现的概率：   </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>$x_1$ (发票)</th>
+<th>$x_2$ (信誉)</th>
+<th>$x_3$ (全面)</th>
+<th>$\theta$(垃圾邮件)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1(垃圾邮件)</td>
+<td>0.5%</td>
+<td>0.015%</td>
+<td>0.06%</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>E2(正常邮件)</td>
+<td>万分之0.04</td>
+<td>0.02%</td>
+<td>0.006%</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果这是一封垃圾邮件，“发票”，“信誉”，“全面”同时出现的概率为（姑且认为是独立事件）：</p>
+<script type="math/tex; mode=display">p(E1)=p(x_1|\theta_1)p(x_2|\theta_1)p(x_3|\theta_1)p_{\Theta}(\theta_1)</script><p>同理，如果不是垃圾邮件，三个词同时出现的概率为：</p>
+<script type="math/tex; mode=display">p(E2)=p(x_1|\theta_2)p(x_2|\theta_2)p(x_3|\theta_2)p_{\Theta}(\theta_2)</script><p>当三个词同时存在，这是一封垃圾邮件的概率为</p>
+<script type="math/tex; mode=display">p(\theta|x_1,x_2,x_3)=\frac{p(E1)}{p(E1)+p(E2)}</script><p>可推出有n个关键字的概率分布：</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|X_1=x_1,X_2=x_2,\cdots,X_n=x_n)=\frac{p_{\Theta}(\theta)\prod p_{X_i|\Theta}(x_i|\theta)}{\sum_{j=\theta_1,\theta_2}p_{\Theta}(j)\prod p_{X_i|\Theta}(x_i|j)}</script><h1 id="程序实现-（python）"><a href="#程序实现-（python）" class="headerlink" title="程序实现 （python）"></a>程序实现 （python）</h1><p>理论的部分就是这么多了，后面的部分是对算法的实现，由于算法本来简单，而且这样做的目的是理解算法的工作原来你，所以没有使用一些现有机器学习包。因为是对中文的邮件过滤，提取中文词组时，出现了大量对邮件分类的意义不大的词语，比如“一下”，“几个”等等，我都没有进行过滤。另外由于这个项目只是演示，训练集我只选取了30000封邮件，按理来说是非常少的。参数学习的时间在我的笔记本电脑上大概只花了十多秒的时间，但是在500封邮件的测试集上，平均达到大于98%的准确率，十分震撼。对未通过测试的邮件，很多都是因为词典收录不全的原因引起，所以还是有提升空间的，但作为演示来说，这样已经足够了。</p>
+<p>代码链接:<a href="">github</a></p>
+<h2 id="一些好用的工具"><a href="#一些好用的工具" class="headerlink" title="一些好用的工具"></a>一些好用的工具</h2><p>训练参数模型，首先需要大量的数据集，<a href="https://plg.uwaterloo.ca/~gvcormac/treccorpus06/" target="_blank" rel="external">滑铁卢大学</a>提供了一个非常丰富的中文邮件数据集，通过链接可下载，共有超过60000封中文邮件，并且已经做了标注。</p>
+<p><strong>结巴分词</strong><a href="https://github.com/fxsjy/jieba" target="_blank" rel="external">github</a><br>由于中文不同于英文，中文的断句完全依赖于语意，没有天然的空格进行分隔，通过比较，结巴分词真的是非常好用的一款分词工具，这也是整个项目中唯一需要安装的资源包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install jieba</div></pre></td></tr></table></figure>
+<p>这里有一个例子，看看结巴分词的效果。</p>
+<blockquote>
+<p>原文：<br>您好,以下是特别为阁下发的香港信息(图片、景点、BBS等),不知道阁下是否喜<br>   …希望没有打扰到阁下<br>   如果无法看到下面内容,请稍侯..  </p>
+</blockquote>
+<p>去除所有标点后，结巴分词会返回一个列表：</p>
+<blockquote>
+<p>您好, 以下, 是, 特别, 为, 阁下, 发, 的, 香港, 信息, 图片, 景点, BBS, 等, 不, 知道, 阁下, 是否, 喜, 希望, 没有, 打扰到, 阁下, 如果, 无法, 看到, 下面, 内容, 请, 稍侯</p>
+</blockquote>
+<h2 id="数据清理"><a href="#数据清理" class="headerlink" title="数据清理"></a>数据清理</h2><p>首先是格式问题，原始文件是GBK编码，使用前先转为utf8或者以utf8读取文件。不同来源的数据集都要注意编码问题。</p>
+<p>其次，每封邮件都有大量的无关信息，比如说收发件人和自带的格式信息，所以我过滤掉了所有英文，数字，标点符号，特殊符号，这样只保留了汉字。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">re.sub(<span class="string">"[0-9a-zA-Z\-\s+\.\!\/_,$%^*\(\)\+(+\"\')]+|[+——！，。？、~@#￥%……&amp;*（）&lt;&gt;\[\]:：★◆【】《》;；=?？]+"</span>,<span class="string">""</span>,input)</div></pre></td></tr></table></figure>
+<p>在剩余内容里还存在一些长相奇怪的文字，通过unicode中文编码范围 <code>0x4e00-0x9fff</code> 过滤</p>
+<p>分词，将得到的一个字的结果全部剔除，这样就基本得到了一个可以使用的数据集了。</p>
+<h2 id="训练集与测试集"><a href="#训练集与测试集" class="headerlink" title="训练集与测试集"></a>训练集与测试集</h2><p>选取30000封邮件做训练集，500封做为测试集。</p>
+<h2 id="mapReduce"><a href="#mapReduce" class="headerlink" title="mapReduce"></a>mapReduce</h2><p>Map: 对邮件分词后，以词为键，1为值，并对键进行排序：</p>
+<blockquote>
+<p>下面    1<br>以下    1<br>信息    1<br>内容    1<br>图片    1<br>如果    1<br>希望    1<br>您好    1<br>无法    1<br>是否    1<br>景点    1<br>没有    1<br>特别    1<br>看到    1<br>知道    1<br>稍侯    1<br>阁下    1<br>阁下    1<br>阁下    1<br>香港    1<br>打扰到    1</p>
+</blockquote>
+<p>Reduce：对同样的键合并，这里“阁下”出现了3词，值记为3。</p>
+<blockquote>
+<p>下面    1<br>以下    1<br>信息    1<br>内容    1<br>图片    1<br>如果    1<br>希望    1<br>您好    1<br>无法    1<br>是否    1<br>景点    1<br>没有    1<br>特别    1<br>看到    1<br>知道    1<br>稍侯    1<br>阁下    3<br>香港    1<br>打扰到    1</p>
+</blockquote>
+<p>MapReduce 处理文本非常高效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python map.py |sort| reduce.py &gt; output</div></pre></td></tr></table></figure></p>
+<h2 id="建立词典"><a href="#建立词典" class="headerlink" title="建立词典"></a>建立词典</h2><p>分别对训练集中的垃圾邮件和正常邮件做MapReduce，得到唯一的键值对。做了半天的工作，这其实就是得到贝叶斯推断中所说的先验和似然了。通过mapreduce，很容易得到每个键出现了多少次，也知道30000封邮件中有多少个词组了。建立一个字典，每个键对应一个该键（词组）在所有词组中出现的频率。如“阁下”在垃圾邮件中和正常邮件中的出现频率是不同的，这些信息存在字典中。这就是似然的思想，似然表示的就是常识，这里就是每个词组出现的概率。</p>
+<h2 id="测试文本处理"><a href="#测试文本处理" class="headerlink" title="测试文本处理"></a>测试文本处理</h2><p>大致过程与训练集一样，但是文本的内容很多，不能使用所有的词组去做垃圾邮件过滤，所以每篇邮件，选取十个出现次数最多的词组做为特征词。</p>
+<p>先验分布是我们估计的垃圾邮件出现的概率。在训练集的处理过程中，我所选取的30000封邮件中有20156封垃圾邮件，9844封正常邮件。这就是先验分布。垃圾邮件的先验分布概率是67.2%，正常邮件是32.8%。每个单词的似然值通过词典查找对应的出现频率，查出所有10个特征词的频率。</p>
+<p>贝叶斯推断中所有需要的值都得到了，可带入公式计算后验分布。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果某个词组在字典中不存在，那就设这个词组的似然值是一个小于十万分之一的及小量，这是合理的，30000封邮件共出现了超过五十万个词组（有重复）。</p>
+<p>判断是否为垃圾邮件，我取了阈值0.1，此时效果最好。</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>对每次500封测试邮件，垃圾邮件识别和不误判正常邮件的概率超过了98%，真是一种简单暴力的方法。这也说明了贝叶斯推断不可动摇的地位，在很多机器学习的算法中，都可以见到他的身影。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    一盒酥
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://ihozh.com/2017/09/26/基于贝叶斯推断的中文垃圾邮件过滤/" title="基于贝叶斯推断的中文垃圾邮件过滤">http://ihozh.com/2017/09/26/基于贝叶斯推断的中文垃圾邮件过滤/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/概率论/" rel="tag"># 概率论</a>
+          
+            <a href="/tags/贝叶斯/" rel="tag"># 贝叶斯</a>
+          
+            <a href="/tags/垃圾邮件过滤/" rel="tag"># 垃圾邮件过滤</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/20/Beta-分布/" rel="next" title="Beta 分布">
+                <i class="fa fa-chevron-left"></i> Beta 分布
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/img/mainphoto.png"
+              alt="一盒酥" />
+          
+            <p class="site-author-name" itemprop="name">一盒酥</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾邮件过滤"><span class="nav-number">2.</span> <span class="nav-text">垃圾邮件过滤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联合概率分布"><span class="nav-number">3.</span> <span class="nav-text">联合概率分布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序实现-（python）"><span class="nav-number">4.</span> <span class="nav-text">程序实现 （python）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些好用的工具"><span class="nav-number">4.1.</span> <span class="nav-text">一些好用的工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据清理"><span class="nav-number">4.2.</span> <span class="nav-text">数据清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练集与测试集"><span class="nav-number">4.3.</span> <span class="nav-text">训练集与测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapReduce"><span class="nav-number">4.4.</span> <span class="nav-text">mapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立词典"><span class="nav-number">4.5.</span> <span class="nav-text">建立词典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试文本处理"><span class="nav-number">4.6.</span> <span class="nav-text">测试文本处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">4.7.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">4.8.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一盒酥</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143459"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
