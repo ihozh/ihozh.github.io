@@ -107,7 +107,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/prior%20distribution%20of%20spam%20email.png">
 <meta property="og:image" content="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/posterior%20distribution%20of%20spam%20email.png">
-<meta property="og:updated_time" content="2017-09-27T06:26:07.000Z">
+<meta property="og:updated_time" content="2017-09-27T17:40:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于贝叶斯推断的中文垃圾邮件过滤">
 <meta name="twitter:description" content="这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，">
@@ -396,7 +396,7 @@
         <p>这篇文章不讲学术，仅仅是对一部分概率论教科书最常见的问题之一（——垃圾邮件过滤）进行实现。垃圾邮件过滤几乎是贝叶斯推论中必提的例子，原理非常简单，但是由于很多的例子仅仅把数带入公式计算，有时候也让人有些摸不着头脑。这篇文章内容实现了Bertsekas的《Introduction to Probability》中的例子，自己改成了对中文邮件的分类，在没有任何的优化下，测试中平均超过了98%的准确度，结果还是不错的。</p>
 <a id="more"></a>
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>垃圾邮件过滤就是贝叶斯推断的一个运用，先来看公式：</p>
-<script type="math/tex; mode=display">p_{\Theta|X}(\theta|x)=\frac{p_{\Theta}(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'}p_{\Theta}(\theta')p_{X|\Theta}(x|\theta')}</script><p>稍微有些了解会大概知道 $p<em>{\Theta}(\theta)$ 是先验概率，在观测前，我们自己对模型参数的一些估计。$p</em>{X|\Theta}(x|\theta)$ 是似然函数，这是在当前模型参数下（未知），我们的观测结果，分母部分作用就是让概率的和为1，是标准化函数。</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|x)=\frac{p_{\Theta}(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'}p_{\Theta}(\theta')p_{X|\Theta}(x|\theta')}</script><p>稍微有些了解会大概知道 <script type="math/tex">p_{\Theta}(\theta)</script> 是先验概率，在观测前，我们自己对模型参数的一些估计。<script type="math/tex">p_{X|\Theta}(x|\theta)</script> 是似然函数，这是在当前模型参数下（未知），我们的观测结果，分母部分作用就是让概率的和为1，是标准化函数。</p>
 <h1 id="垃圾邮件过滤"><a href="#垃圾邮件过滤" class="headerlink" title="垃圾邮件过滤"></a>垃圾邮件过滤</h1><p>如何将贝叶斯推断运用在垃圾邮件过滤的问题上，看看下面这个例子。</p>
 <p>任何邮件都有可能是“垃圾”或者“正常”，使用随机变量 $\Theta$ 表示两种可能性，分别用 <script type="math/tex">\theta_1</script> 和 <script type="math/tex">\theta_2</script> 表示。 <script type="math/tex">p_{\Theta}(\theta_1)</script> ，<script type="math/tex">p_{\Theta}(\theta_2)</script> 分别是垃圾邮件或者正常邮件的概率。这也是先验概率，在类似机器学习的方式下，可以通过对训练集的学习，得到这两个参数。当然也可以认为“垃圾”或者“正常”的概率各占50%，这样只会对最后的结果稍微有点影响。这篇文章会对训练集分析得到先验概率。根据分析，垃圾邮件一般占到所有邮件的70%左右。</p>
 <p><img src="http://7xrzpr.com1.z0.glb.clouddn.com/%E8%8B%A6%E5%A2%83/%E4%BA%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD%E7%9A%84%E4%B8%AD%E6%96%87%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6%E8%BF%87%E6%BB%A4/prior%20distribution%20of%20spam%20email.png" alt="prior distribution of spam email"></p>
@@ -442,7 +442,8 @@
 <script type="math/tex; mode=display">p(E1)=p(x_1|\theta_1)p(x_2|\theta_1)p(x_3|\theta_1)p_{\Theta}(\theta_1)</script><p>同理，如果不是垃圾邮件，三个词同时出现的概率为：</p>
 <script type="math/tex; mode=display">p(E2)=p(x_1|\theta_2)p(x_2|\theta_2)p(x_3|\theta_2)p_{\Theta}(\theta_2)</script><p>当三个词同时存在，这是一封垃圾邮件的概率为</p>
 <script type="math/tex; mode=display">p(\theta|x_1,x_2,x_3)=\frac{p(E1)}{p(E1)+p(E2)}</script><p>可推出有n个关键字的概率分布：</p>
-<script type="math/tex; mode=display">p_{\Theta|X}(\theta|X_1=x_1,X_2=x_2,\cdots,X_n=x_n)=\frac{p_{\Theta}(\theta)\prod p_{X_i|\Theta}(x_i|\theta)}{\sum_{j=\theta_1,\theta_2}p_{\Theta}(j)\prod p_{X_i|\Theta}(x_i|j)}</script><h1 id="程序实现-（python）"><a href="#程序实现-（python）" class="headerlink" title="程序实现 （python）"></a>程序实现 （python）</h1><p>理论的部分就是这么多了，后面的部分是对算法的实现，由于算法本来简单，而且这样做的目的是理解算法的工作原来你，所以没有使用一些现有机器学习包。因为是对中文的邮件过滤，提取中文词组时，出现了大量对邮件分类的意义不大的词语，比如“一下”，“几个”等等，我都没有进行过滤。另外由于这个项目只是演示，训练集我只选取了30000封邮件，按理来说是非常少的。参数学习的时间在我的笔记本电脑上大概只花了十多秒的时间，但是在500封邮件的测试集上，平均达到大于98%的准确率，十分震撼。对未通过测试的邮件，很多都是因为词典收录不全的原因引起，所以还是有提升空间的，但作为演示来说，这样已经足够了。</p>
+<script type="math/tex; mode=display">p_{\Theta|X}(\theta|X_1=x_1,X_2=x_2,\cdots,X_n=x_n)\\
+=\frac{p_{\Theta}(\theta)\prod p_{X_i|\Theta}(x_i|\theta)}{\sum_{j=\theta_1,\theta_2}p_{\Theta}(j)\prod p_{X_i|\Theta}(x_i|j)}</script><h1 id="程序实现-（python）"><a href="#程序实现-（python）" class="headerlink" title="程序实现 （python）"></a>程序实现 （python）</h1><p>理论的部分就是这么多了，后面的部分是对算法的实现，由于算法本来简单，而且这样做的目的是理解算法的工作原来你，所以没有使用一些现有机器学习包。因为是对中文的邮件过滤，提取中文词组时，出现了大量对邮件分类的意义不大的词语，比如“一下”，“几个”等等，我都没有进行过滤。另外由于这个项目只是演示，训练集我只选取了30000封邮件，按理来说是非常少的。参数学习的时间在我的笔记本电脑上大概只花了十多秒的时间，但是在500封邮件的测试集上，平均达到大于98%的准确率，十分震撼。对未通过测试的邮件，很多都是因为词典收录不全的原因引起，所以还是有提升空间的，但作为演示来说，这样已经足够了。</p>
 <p>代码链接:<a href="">github</a></p>
 <h2 id="一些好用的工具"><a href="#一些好用的工具" class="headerlink" title="一些好用的工具"></a>一些好用的工具</h2><p>训练参数模型，首先需要大量的数据集，<a href="https://plg.uwaterloo.ca/~gvcormac/treccorpus06/" target="_blank" rel="external">滑铁卢大学</a>提供了一个非常丰富的中文邮件数据集，通过链接可下载，共有超过60000封中文邮件，并且已经做了标注。</p>
 <p><strong>结巴分词</strong><a href="https://github.com/fxsjy/jieba" target="_blank" rel="external">github</a><br>由于中文不同于英文，中文的断句完全依赖于语意，没有天然的空格进行分隔，通过比较，结巴分词真的是非常好用的一款分词工具，这也是整个项目中唯一需要安装的资源包。</p>
