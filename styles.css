@@ -259,3 +259,84 @@ footer {
     border-top: 1px solid #eee;
     padding-top: 1rem;
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    /* Header adjustments */
+    .header-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-photo-space {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    /* Profile section adjustments */
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .profile-photo {
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+    
+    .bio {
+        padding-top: 0;
+    }
+    
+    /* Education section adjustments */
+    .edu-entry {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    
+    .edu-tag {
+        flex: none;
+        text-align: left;
+        margin-bottom: 0.3rem;
+    }
+    
+    .edu-info {
+        padding-left: 0;
+    }
+    
+    /* Publication section adjustments */
+    .paper {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    
+    .pub-tag {
+        flex: none;
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+    
+    .paper-info {
+        padding-left: 0;
+    }
+    
+    /* Services section adjustments */
+    .service-entry {
+        flex-direction: column;
+    }
+    
+    .service-tag {
+        flex: none;
+        text-align: left;
+    }
+    
+    .service-info {
+        padding-left: 0;
+    }
+}
