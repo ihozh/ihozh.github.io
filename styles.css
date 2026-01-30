@@ -161,6 +161,46 @@ section {
     margin-top: 2px;
 }
 
+/* Research category color tags */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+    justify-content: flex-end; /* Right align tags */
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+}
+
+.tag-human {
+    background-color: #9ACD32; /* Green - Human-centered */
+}
+
+.tag-platform {
+    background-color: #5DADE2; /* Blue - Platform-centered */
+}
+
+.tag-model {
+    background-color: #FF9933; /* Orange - Model-centered */
+}
+
+.tag-application {
+    background-color: #C8A2C8; /* Light Purple - AI Application */
+}
+
+.tag-dataset {
+    background-color: #F5B7B1; /* Light Pink/Red - Dataset */
+    color: #333; /* Darker text for better contrast on light background */
+}
+
 .paper-info {
     flex: 1;
     padding-left: 1rem;
@@ -211,6 +251,42 @@ section {
 .institution {
     color: #555;
     margin-bottom: 0.2rem;
+}
+
+/* Research Vision Section */
+.research-vision {
+    margin-bottom: 2rem;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.vision-item {
+    text-align: center;
+}
+
+.vision-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.vision-item img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.vision-item p {
+    margin-top: 0.8rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
 }
 
 /* Professional Services Section */
@@ -338,5 +414,11 @@ footer {
     
     .service-info {
         padding-left: 0;
+    }
+    
+    /* Research Vision section adjustments */
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
