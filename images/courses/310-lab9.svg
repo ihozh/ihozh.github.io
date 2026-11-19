@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="96" height="96" class="iso-icon" data-icon="radar-scan" data-mode="static" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Radar scan">
+  <circle cx="12" cy="12" r="9.3" fill="#fdfdfd" stroke="#006456" stroke-width="0.5"></circle>
+  <circle cx="12" cy="12" r="6.3" fill="none" stroke="#006456" stroke-width="0.5"></circle>
+  <circle cx="12" cy="12" r="3.3" fill="none" stroke="#006456" stroke-width="0.5"></circle>
+  <line x1="12" y1="2.7" x2="12" y2="21.3" stroke="#006456" stroke-width="0.5"></line>
+  <line x1="2.7" y1="12" x2="21.3" y2="12" stroke="#006456" stroke-width="0.5"></line>
+  <line x1="12" y1="12" x2="20.05" y2="7.35" stroke="#006456" stroke-width="0.5"></line>
+  <circle cx="15.6" cy="8.1" r="1.25" fill="#ffba00" stroke="#006456" stroke-width="0.5"></circle>
+  <circle cx="12" cy="12" r="0.9" fill="#fdfdfd" stroke="#006456" stroke-width="0.5"></circle>
+</svg>

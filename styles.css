@@ -338,6 +338,169 @@ footer {
 }
 
 /* Responsive Design for Mobile */
+/* Teaching tiles */
+.course-tiles {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding-left: 1rem;
+}
+
+.course-tile {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    color: #006456;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.course-tile:hover,
+.lab-card:hover {
+    border-color: #006456;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.course-tile img {
+    width: 52px;
+    height: 52px;
+}
+
+/* Course pages */
+.back-link {
+    font-size: 0.9rem;
+}
+
+.course-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.course-header h1 {
+    margin-bottom: 0.3rem;
+}
+
+.course-header-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+}
+
+.course-meta {
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.labs-button {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    background: #006456;
+    color: #fff;
+    font-weight: 500;
+}
+
+.labs-button:hover {
+    background: #004d42;
+    text-decoration: none;
+}
+
+.course-page section p,
+.outcomes li {
+    color: #444;
+}
+
+.outcomes li {
+    margin-bottom: 0.4rem;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.8rem;
+}
+
+.lab-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.lab-card img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.course-page .lab-card p {
+    margin: 0;
+}
+
+.lab-num {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #006456;
+}
+
+.course-page .lab-title {
+    font-weight: 600;
+    color: #333;
+    line-height: 1.35;
+}
+
+.course-page .lab-topic {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.week-list {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+}
+
+.week-list li {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    break-inside: avoid;
+}
+
+.week-num {
+    flex: 0 0 64px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.week-list li.exam {
+    color: #a00;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -369,6 +532,19 @@ footer {
     
     .bio {
         padding-top: 0;
+    }
+    
+    .course-tiles {
+        padding-left: 0;
+    }
+    
+    .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .week-list {
+        columns: 1;
     }
     
     /* Education section adjustments */
