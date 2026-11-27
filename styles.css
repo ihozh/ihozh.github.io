@@ -112,9 +112,9 @@ section {
     margin-bottom: 8px;
 }
 
-.circular-photo {
+.portrait-photo {
     width: 180px;
-    height: 180px;
+    height: 240px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #eee;
